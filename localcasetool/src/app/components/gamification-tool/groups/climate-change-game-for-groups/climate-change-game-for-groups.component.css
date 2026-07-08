@@ -1,0 +1,319 @@
+html,body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.nevermore_top_icon img {
+  width: 100px;
+  height: 40px;
+}
+
+.nav-button {
+  background-color: rgb(129, 216, 129);
+  width: 50px;
+  height: 26.4px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 9px;
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+.nevermore-top-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #465c95;
+}
+
+#next-button {
+  text-align: center;
+  height: 40px;
+  margin-top: 40px;
+}
+
+.the-next-button {
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: 4.5rem;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.the-next-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+}
+
+#initial_money_amount {
+  margin-left: 10%;
+  margin-top: 10px;
+}
+
+#initial_money_amount p {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 5%;
+  height: 20px;
+}
+
+#measures {
+  margin-left: 10%;
+  margin-top: 20px;
+  padding-left: 10%;
+}
+
+#chat {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px;
+  height: 190px;
+}
+
+#chat p {
+  margin-top: -20px;
+}
+
+.the_chat_button {
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+.the_chat_button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.option_with_price {
+  display: flex;
+  align-items: center;
+}
+
+#prices_and_place {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.wrapper_measures {
+  top: -100px;
+}
+
+.deserted_place_with_measures {
+  border: 2px solid black;
+}
+.deserted_place_with_measures img {
+  height: 400px;
+  width: 430px;
+  vertical-align: middle;
+}
+.wrapper {
+  border: 2px solid black;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  /* .nevermore-top-title {
+    font-size: 16px;
+    margin-left: 10px;
+  } 
+*/
+  #navigation_button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  #prices_and_place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: fit-content;
+  }
+
+  .deserted_place_with_measures img {
+    width: 100%;
+    height: fit-content;
+  }
+  #measures {
+    margin-left: 0;
+    margin-top: 20px;
+    padding-left: 0;
+  }
+
+  h2{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #chat {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+    height: inherit;
+    padding: 0px;
+  }
+
+  #initial_money_amount {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .nevermore-top-title {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+h2{
+  margin-top: 20px;
+}
+
+  #navigation_button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+
+  #prices_and_place {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  #measures {
+    margin-left: 0px;
+    margin-top: 20px;
+    padding-left:0px;
+  }
+
+  #chat {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    height: inherit;
+    padding: 0px;
+  }
+  .deserted_place_with_measures img {
+    width: 100%;
+  }
+
+  #initial_money_amount {
+    margin-left: 10%;
+    margin-top: 10px;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .nevermore-top-title {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+h2{
+  margin-top: 20px;
+}
+
+  #navigation_button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+
+  #prices_and_place {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  #measures {
+    margin-left: 0px;
+    margin-top: 20px;
+    padding-left: 0px;
+  }
+
+  #chat {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    height: inherit;
+    padding: 0px;
+  }
+
+  #initial_money_amount {
+    margin-left: 10%;
+    margin-top: 10px;
+  }
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+

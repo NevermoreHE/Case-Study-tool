@@ -1,0 +1,538 @@
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: rgb(234, 238, 236);
+}
+
+.nevermore_top_icon img {
+  margin-top: 10px;
+  width: 100px;
+  height: 40px;
+}
+
+.nav-button {
+  background-color: rgb(129, 216, 129);
+  width: 50px;
+  height: 30px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 15px;
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+.models-list {
+  display: flex;
+    gap: 2%;
+    width: 100%;
+    align-items: center;
+    overflow-x: auto;
+    justify-content: center;      /* 👈 prevents breaking layout if screen is small */
+}
+
+.models-list label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;    /* 🚀 prevents text breaking (like ACCESS-CM2) */
+}
+
+#navigation_button {
+  align-items: center;
+  display: flex;
+}
+
+.nav-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+.nevermore-top-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #465c95;
+}
+
+.CS-4_MURCIA_REGION_TITLE {
+  margin-left: 150px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#ecv-info {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#type_graph {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.documentation_of_ECV {
+  margin-left: 20px;
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.documentation_of_ECV:hover {
+  transform: scale(1.1);
+  transition: ease-in 0.3s;
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+#graph-image {
+  text-align: center;
+}
+
+.myDataChart {
+  display: flex;
+  justify-content: center;
+}
+
+#main_hazards p {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#main_hazards ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline: 0;
+  list-style: none;
+  margin-top: 25px;
+  justify-content: center;
+  text-align: center;
+}
+
+#main_hazards ul li {
+  width: 120px;
+  margin-left: 20px;
+  cursor: pointer;
+  justify-items: center;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-container .tooltip {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the text */
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+#main_hazards ul li:hover {
+  border: 2px solid rgb(129, 216, 129);
+  border-radius: 16px;
+  color: rgb(129, 216, 129);
+}
+
+#main_hazards ul li img {
+  height: 100px;
+}
+
+figcaption {
+  margin-top: 10px;
+  width: 100px;
+}
+
+.figure:hover{
+
+}
+
+figure.active {
+  border: 2px solid rgb(129, 216, 129);
+  /* transform: scale(1.1);
+  transition: ease-in 0.3s; */
+  color: rgb(129, 216, 129);
+  border-radius: 10px;
+}
+
+li.active {
+  border: 2px solid rgb(129, 216, 129);
+  /* transform: scale(1.1);
+  transition: ease-in 0.3s; */
+  color: rgb(129, 216, 129);
+  border-radius: 10px;
+}
+#next-button {
+  text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  
+}
+
+.the-next-button {
+  background-color: rgb(129, 216, 129);
+  border: none;
+  border-radius: 3vh;
+  font-size: 2vh;
+  padding: 1vh;
+  cursor: pointer;
+  width:fit-content ;
+  margin-right: 3%;
+  margin-bottom: 1%;
+}
+
+
+
+.the-next-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+}
+
+.explore_assets {
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.chart-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.chart-placeholder {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #465c95;
+  font-weight: 600;
+}
+
+.dataset-popup {
+  position: absolute; top: 30%; right: 5%;
+  
+  width: 30%;
+  height: fit-content;
+  overflow: auto;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 1vh;
+}
+
+.ecvs-comp{
+  background-color: white;
+  width: 90%;
+  margin-left:5%;
+  margin-top:1%;
+  margin-bottom: 4.5rem;
+}
+
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header-buttons{
+        display: flex
+;
+    justify-content: flex-end;
+    /* flex-direction: row; */
+    padding-top: 2%;
+    padding-right: 2%;
+}
+
+.header-button {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  color: #2a40b1;
+}
+
+.header-button-help {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: #ccc;
+  color: #2a40b1;
+}
+
+.header-button-home {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: #ccc;
+  color: #2a40b1;
+}
+
+.header-button-help:hover {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: white;
+  color: #2a40b1;
+}
+
+.header-button-home:hover {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: white;
+  color: #2a40b1;
+}
+
+.popup-title {
+  margin: 0 22px 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #465c95;
+}
+
+.popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+.myDataChart {
+  width: 100%;
+  max-width: 1100px;   /* optional */
+  height: 55vh;        /* pick a height you like */
+  margin: 0 auto;
+}
+
+#windspeedChartCanvas,
+#windSpeedChartCanvas {   /* keep whichever id you use */
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+
+.popup-description{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 2vh;
+  color:rgb(40, 140, 241)
+}
+
+.popup-titles{
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2vh;
+  border-bottom: 1vh dashed #eee;
+  padding-bottom: 0.5vh;
+}
+
+.popup-year {
+  color: #666;
+}
+
+.popup-value {
+  font-weight: 600;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/*For small screens (phones, 600px and below) */
+@media screen and (max-width: 600px) {
+  .nevermore-top-title {
+    width: 100%;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+ 
+
+  #ecv-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .documentation_of_ECV {
+    margin-top: 1%;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #graph-image img {
+    margin-top: 2%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #main_hazards ul li {
+    width: 90px;
+    margin-left: 10px;
+  }
+
+  #main_hazards ul li img {
+    height: 80px;
+  }
+
+  #next-button {
+    margin-left: 0;
+  }
+
+  .the-next-button {
+    /* margin-bottom: 4.5rem; */
+  }
+
+  #navigation_button {
+    justify-content: space-evenly;
+  }
+}
+
+/* Medium screens (tablets, 600px to 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .nevermore-top-title {
+    width: 70%;
+    font-size: 18px;
+    margin-left: 20px;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    margin-left: 50px;
+    font-size: 18px;
+  }
+
+  #ecv-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .documentation_of_ECV {
+    margin-top: 1%;
+    width: 250px;
+  }
+
+  #main_hazards ul li {
+    width: 120px;
+    margin-left: 15px;
+  }
+
+  #main_hazards ul li img {
+    height: 90px;
+  }
+
+  #next-button {
+    margin-left: 0px;
+  }
+
+  .the-next-button {
+    /* margin-bottom: 4.5rem; */
+  }
+
+  #navigation_button {
+    justify-content: space-evenly;
+  }
+}
+
+/* Large screens (desktops and larger) */
+@media screen and (min-width: 1025px) {
+  .nevermore-top-title {
+    width: 500px;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    margin-left: 150px;
+    font-size: 20px;
+  }
+
+  #main_hazards ul li {
+    width: 120px;
+    margin-left: 20px;
+  }
+
+  .documentation_of_ECV {
+    width: 200px;
+  }
+
+  #next-button {
+    margin-left: 0px;
+  }
+  #navigation_button {
+    justify-content: space-evenly;
+  }
+
+  .the-next-button {
+    /* margin-bottom: 4.5rem; */
+  }
+}

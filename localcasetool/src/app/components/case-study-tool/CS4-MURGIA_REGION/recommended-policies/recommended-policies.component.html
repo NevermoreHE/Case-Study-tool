@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="recommended-policies.component.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">CASE STUDY TOOL</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">CS-4 MURCIA REGION</span> -->
+      <span class="nevermore-top-title">{{
+        "CASE_STUDY_TOOL_COMPONENT.THE_CASE_STUDY_TOOL_TITLE" | translate
+      }}</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">{{
+        "CASE_STUDY_TOOL_COMPONENT." + selectedTitleCase | translate
+      }}</span>
+    </section>
+
+    <section id="recommended_policies_header">
+      <h2>
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.RECOMMENDED_POLICIES_COMPONENT.RECOMMENDED_POLICIES_TITLE"
+            | translate
+        }}
+      </h2>
+      <!-- <p>
+        According to your previously defined criteria, this is the set of
+        recommended policies to be applied in the case study to adapt to climate
+        change.
+      </p> -->
+      <p>
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.RECOMMENDED_POLICIES_COMPONENT.SET_OF_RECOMMENDED_POLICIES"
+            | translate
+        }}
+      </p>
+    </section>
+
+    <section id="policy_options">
+      <div style="display: flex; justify-content: center">
+        <div class="selected_policy_option">
+          <div *ngFor="let policy of policies">
+            <label>
+              <input
+                [(ngModel)]="policy_selected"
+                type="radio"
+                value="{{ policy.policy_type }}"
+                name=""
+                (click)="choosePolicy()"
+                (click)="selectedPolicyStatus(policy.policy_type)"
+              />{{
+                "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.RECOMMENDED_POLICIES_COMPONENT." +
+                  policy.policy_type +
+                  ".MAIN_OBJECTIVE" | translate
+              }}
+            </label>
+          </div>
+
+          <!-- <input type="radio" id="water_storage_tanks" name="policy_option" value="water_storage_tanks" onclick="javascript:showHide();" checked>
+            <a href="#" onclick="javascript:showHideRadio('water_storage_tanks');"></a>
+            <label for="water_storage_tanks">Implement water storage tanks</label><br>
+
+            <input type="radio" id="desalination_plants" name="policy_option" value="desalination_plants" onclick="javascript:showHide();">
+            <a href="#" onclick="javascript:showHideRadio('desalination_plants');"></a>
+            <label for="desalination_plants">Build new desalination plants</label><br>
+        
+            <input type="radio" id="water_savings" name="policy_option" value="water_savings" onclick="javascript:showHide();">
+            <a href="#" onclick="javascript:showHideRadio('water_savings');"></a>
+            <label for="water_savings">Improve water savings at household level </label><br>
+
+            <input type="radio" id="water_patterns" name="policy_option" value="water_patterns" onclick="javascript:showHide();">
+            <a href="#" onclick="javascript:showHideRadio('water_patterns');"></a>
+            <label for="water_patterns">Change water user patterns in agriculture</label><br>
+
+            <input type="radio" id="reforestation" name="policy_option" value="reforestation" onclick="javascript:showHide();">
+            <a href="#" onclick="javascript:showHideRadio('reforestation');"></a>
+            <label for="reforestation">Reforestation with adapted species</label><br> -->
+        </div>
+
+        <div class="selected_policy_option_description">
+          <h2 style="margin-top: 0">Policy Description</h2>
+          <section
+            class="policy_desription_in_depth"
+            *ngIf="policy_selected_status === true"
+          >
+            <p>
+              {{
+                "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.RECOMMENDED_POLICIES_COMPONENT." +
+                  policy_selected +
+                  ".POLICY_DESCRIPTION.OPTION1" | translate
+              }}
+            </p>
+            <p>
+              {{
+                "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.RECOMMENDED_POLICIES_COMPONENT." +
+                  policy_selected +
+                  ".POLICY_DESCRIPTION.OPTION2" | translate
+              }}
+            </p>
+            <p>
+              {{
+                "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.RECOMMENDED_POLICIES_COMPONENT." +
+                  policy_selected +
+                  ".POLICY_DESCRIPTION.OPTION3" | translate
+              }}
+            </p>
+          </section>
+          <section
+            class="policy_desription_in_depth"
+            *ngIf="policy_selected_status === false"
+          >
+            <p>
+              {{ policy_selected }} <br /><br />
+              {{ policy_selected_recommandations }}
+            </p>
+          </section>
+
+          <!-- <div id="desalination_plants_description">
+                    <p>This policy could be applied to desalination_plants....</p>
+                    <p>The cost of this policy...</p>
+                    <p>The benefits....</p>
+                </div>
+                <div id="water_savings_description">
+                    <p>This policy could be applied to water_savings....</p>
+                    <p>The cost of this policy...</p>
+                    <p>The benefits....</p>
+                </div>
+                <div id="water_patterns_description">
+                    <p>This policy could be applied to water_patterns....</p>
+                    <p>The cost of this policy...</p>
+                    <p>The benefits....</p>
+                </div>
+                <div id="reforestation_description">
+                    <p>This policy could be applied to reforestation ....</p>
+                    <p>The cost of this policy...</p>
+                    <p>The benefits....</p>
+                </div> -->
+
+          <!-- </section> -->
+        </div>
+      </div>
+      <div *ngIf="!finishedExperience" class="finisedCaseText">
+        {{ finalText }}
+      </div>
+    </section>
+
+    <section id="next-button">
+      <!-- <p>#To go to the desired case study press on the study's name</p> -->
+      <button
+        mat-raised-button
+        [routerLink]="['/'+theRoutingTitleCase+'/Policy_Priorities']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+      >
+        Back
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/home']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="disableReturnButton"
+      >
+        Return to tool selection
+      </button>
+    </section>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

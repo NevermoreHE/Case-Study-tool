@@ -1,0 +1,515 @@
+{
+    "HEADER": {
+        "ABOUT_US": "About Us",
+        "HELP": "Help",
+        "TOOL_SELECTION": "Tool Selection",
+        "LOG_OUT": "Log Out",
+        "CHANGE_LANGUAGE": "Change Language",
+        "LANGUAGES": {
+            "ITALIAN": "ITALIAN",
+            "ROMANIAN": "ROMANIAN",
+            "SWEDISH": "SWEDISH",
+            "GREEK": "GREEK",
+            "SPANISH": "SPANISH",
+            "ENGLISH":"ENGLISH"
+        }
+    },
+    "FOOTER": {
+        "EU_FUNDING_BY": "Funded by",
+        "EU_FUNDING_UNION": "the European Union",
+        "EU_FUNDING_INFO": "This project has received funding from the European Union’s Horizon research and innovation program under grant agreement No 101056858"
+    },
+    "HOME_COMPONENT": {
+        "HOME_PAGE_CONTENT_TOOL_DESCRIPTION": {
+            "DESCRIPTION": "Description",
+            "WELCOME_TITLE": "Welcome to NEVERMORE ICT Toolkit!",
+            "CATALOGUE_EXPLORER_TITLE": "Catalogue Explorer",
+            "EU_SCALE_TOOL_TITLE": "EU-SCALE Tool",
+            "CASE_STUDY_TOOL_TITLE": "Case Study Tool",
+            "GAMIFICATION_TOOL_TITLE": "Gamification tool",
+            "ICT_TOOLS_DESCRIPTION": {
+                "CATALOGUE_EXPLORER_TOOL_DESCRIPTION": "The Adaptation and Mitigation ( A&M) Catalogue Tool is an integral component of the NEVERMORE ICT toolkit. This user-friendly tool aligns with the core principles of the ICT toolkit, aiming to empower users in understanding the intricate interplay between climate change and adaptation and mitigation policies through a user-friendly and interactive interface. The tool is designed to provide a catalogue of solutions related to climate change mitigation and adaptation. It encompasses a review of cross-sectoral measures that have already been put into action, potential solutions identified through literature research, and scenarios collaboratively developed with local councils and stakeholders.",
+                "GAMIFICATION_TOOL_DESCRIPTION": "The main objective of NEVERMORE gamification tool is to create awareness about climate change. It is developed as an educational simulation game where players explore different solutions to fight  and adapt to the impacts of climate change. The game teaches players about the impacts of climate change while inspiring hope and motivating users to act and find effective solutions that will help to define a greener, better adapted and safer future. The game players must complete two different missions to finish the game.",
+                "CASE_STUDY_TOOL_DESCRIPTION": "The NEVERMORE Case Study tool will be a software component that allows users to select a case study and display the main climate change impacts, vulnerabilities and risks.  The information provided will be useful in order to create different adaptation and mitigation policy action scenarios based on measures selected by the user from the A&M catalogue at local scale. ",
+                "EU_SCALE_TOOL": "The goal of the tool is to become a “policy-making tool”  that could offer relevant policy recommendations. The tool will be using pre-simulated data results from an Integrated Assessment Model (IAM), in order to decrease the complexity through the means of lowering the degree of freedom of the client input variables. This filtering and reduction of inputs will be done using the stakeholders’ knowledge."
+            }
+        },
+        "HOME_PAGE_TOOL_SELECTION": {
+            "CONFIRM_SELECTION": "Confirm Selection",
+            "TOOL_SELECTION": "Tool selection",
+            "EU_SCALE_TOOL_SELECTOR": "EU-SCALE Tool",
+            "CATALOGUE_EXPLORER_TOOL_SELECTOR": "Catalogue Explorer",
+            "CASE_STUDY_TOOL_SELECTOR": "Case Study Tool",
+            "GAMIFICATION_TOOL_SELECTOR": "Gamification tool"
+        }
+    },
+    "EU_SCALE_TOOL_COMPONENT": {
+        "WELCOME_EU_SCALE_TOOL_TITLE": "Welcome to EU-SCALE tool page",
+        "EU_SCALE_TOOL_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "CATALOGUE_EXPLORER_COMPONENT": {
+        "WELCOME_CATALOGUE_EXPLORER": "Welcome to Catalogue explorer page",
+        "CATALOGUE_EXPLORER_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "HELP_COMPONENT": {
+        "HELP_EXPLORER": "Welcome to the Help page",
+        "HELP_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "CASE_STUDY_TOOL_COMPONENT": {
+        "THE_CASE_STUDY_TOOL_TITLE": "CASE STUDY TOOL",
+        "WELCOME_CASE_STUDY_TOOL": "Welcome to NEVERMORE Case Study Tool",
+        "CASE_STUDY_TOOL_INFO": "The tool will make possible the evaluation of climate change impacts, vulnerabilities and risks. After that, some policy recommendationwill be provided according to your predefined hazards, expertise and interests. As a result, mitigation and adaptation indicators will be provided in order to evaluate the effects of policy selection.",
+        "CASE_STUDY_TOOL_SELECT_CASE_STUDY": "Select a case study to carry out your assessment!",
+        "SELECT_YOUR_CASE_STUDY": "Select your case study",
+        "CS1_CRETE_ISLAND": "CS1-Crete Island",
+        "CS2_TRENTINO_REGION": "CS2-Trentino region",
+        "CS3_NORRBOTTEN_COUNTRY": "CS3-Norrbotten country",
+        "CS4_MURCIA_REGION": "CS4-Murcia region",
+        "CS5_DANUBE_DELTA": "CS5-Danube delta",
+        "NAVIGATION_ADVICE": "#To go to the desired case study press on the study's name",
+        "MURCIA_REGION_COMPONENT": {
+            "SECTION_DESCRIPTION": "In this section , you can find a general description of this case study and relevant information about the priority sectors and challenges to be covered during the adaptation and mitigation assessment.",
+            "MORE_INFO": "More information>>>",
+            "SECTOR_INFO": "Click on a sector to know more information!",
+            "AGRICULTURE_FORESTRY_AND_FISHING": "Agriculture, forestry and fishing",
+            "WATER_AND_WASTE": "Water and waste",
+            "INDUSTRY_AND_COMMERCE": "Industry and commerce",
+            "TOURISM": "Tourism, leisure and cultural heritage",
+            "ENERGY":"Energy",
+            "MAIN_CHALLENGES": "Main Challenges",
+            "DESERTIFICATION": "Desertification due to soil erosion",
+            "SUSTAINABLE_WATER_MANAGEMENT": "Sustainable water management",
+            "AGRICULTURAL_PRODUCTION": "Agricultural production",
+            "VISUALIZE_ECV": "Visualize ECV's and climate hazards >>>",
+            "ECVS_COMPONENT": {
+                "ESSENTIAL_ECVS": "Essential Climate Variables (ECVs)",
+                "ECV_DOC": "ECV Documentation",
+                "ECV_GRAPH_SELECTION": "Choose a type of graph",
+                "MAIN_HAZARDS": "Main Hazards. Click on each one to know more information",
+                "SEA_LEVEL_RAISE": "See level raise",
+                "FLOODING": "Flooding",
+                "DROUGHTS_AND_WATER_SCARCITY": "Droughts and water scarcity",
+                "SOIL_EROSION": "Soil erosion",
+                "HEATING_AND_COOLING_DEMAND": "Heating and Cooling demand",
+                "CROP_PRODUCTION": "Crop production",
+                "BIODIVERSITY_LOSS": "Biodiversity loss",
+                "EXPLORE_ASSETS_AND_RISKS": "Explore assets, vulnerabilities and risks >>"
+            },
+            "ASSETS_AND_RISKS_COMPONENT": {
+                "ASSETS_AND_RISKS_TITLE": "Assets, vulnerabilities and risks",
+                "TOPIC_SELECTION": "Topic",
+                "SECTOR_SELECTION": "Sector",
+                "HAZARD_SELECTION": "Hazard",
+                "TOPIC_OPTIONS": "Choose a topic",
+                "SECTOR_OPTIONS": "Choose a sector",
+                "HAZARD_OPTIONS": "Choose a hazard",
+                "VULNERABILITY": "Vulnerability",
+                "AGRICULTURE": "Agriculture",
+                "DROUGHTS": "Droughts",
+                "DESCRIPTION": "Description",
+                "DESCRIPTION_BOX": " In this box information related with the vulnerability assessment will be provided. It will include the different components used to characterize the vulnerability, including the number of affected assets, the main hazards and the indicators used in the assessment procedure",
+                "DOWNLOAD_MAP": "Download Map",
+                "SECTORAL_COMPARISON": "Sectoral Comparison >>>"
+            },
+            "SECTORAL_COMPARISON_COMPONENT": {
+                "VULNERABILITIES_AND_RISKS": "Vulnerabilities and risks - Sectoral comparison Hazard",
+                "HAZARD_SELECTION": "Hazard",
+                "HAZARD_OPTIONS": "Choose a hazard",
+                "DROUGHTS": "Draughts",
+                "VULNERABILITIES": "Vulnerabilities",
+                "RISK": "Risk",
+                "POLICY_PRIORITIES": "Policy Priorities >>"
+            },
+            "POLICY_PRIORITIES_COMPONENT": {
+                "POLICY_PRIORITIES_TITLE": "Policy Priorities",
+                "WHAT_ARE_YOUR_OBJ": "What are your objectives and priorities?",
+                "PROVIDE_INPUTS": " Provide your inputs to get the Adaptation and Mitigation measures more related with the case study and related hazard.",
+                "MAIN_SECTOR_SELECTOR": {
+                    "SELECT_MAIN_SECTOR": "Select the main sectors to evaluate",
+                    "AGRICULTURE": "Agriculture",
+                    "TURISM": "Turism",
+                    "WATER": "Water"
+                },
+                "MAIN_PRIORITIES_SELECTOR": {
+                    "SELECT_MAIN_PRIORITIES": "Select priorities and Objectives",
+                    "WATER_SECURITY": "Water Security",
+                    "WELL_BEING": "Well being",
+                    "ENERGY_SECURITY": "Energy Security",
+                    "JOB_CREATION": "Job Creation"
+                },
+                "ADAPTATION_AND_MITIGATION_SELECTOR": {
+                    "SELECT_ADAPTATION_AND_MITIGATION": "Adaptation and Mitigation",
+                    "ADAPTAION": "Adaptation",
+                    "MITIGATION": "Mitigation"
+                },
+                "PROVIDE_RANK": {
+                    "SELECT_PROVIDE_RANK": "Please provide a rank for the previously selected objectives",
+                    "1)WATER_SCARCITY": "1.Water Security",
+                    "2)WELL_BEING": "2.Well being"
+                },
+                "RECOMMENDED_POLICIES": "Recommended Policies >>"
+            },
+            "RECOMMENDED_POLICIES_COMPONENT": {
+                "RECOMMENDED_POLICIES_TITLE": "Recommended Policies",
+                "SET_OF_RECOMMENDED_POLICIES": "According to your previously defined criteria, this is the set of recommended policies to be applied in the case study to adapt to climate change.",
+                "IMPROVE_WATER_STORAGE_TANKS": {
+                    "MAIN_OBJECTIVE": "Improve water storage tanks",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "This policy could be applied to water-storage-tanks..",
+                        "OPTION2": "The cost of this policy...",
+                        "OPTION3": "The benefits are...."
+                    }
+                },
+                "IMPROVE_DESALINATION_PLANTS": {
+                    "MAIN_OBJECTIVE": "Improve desalination plants",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "This policy could be applied to desalination-plants..",
+                        "OPTION2": "The cost of this policy...",
+                        "OPTION3": "The benefits are...."
+                    }
+                },
+                "IMPROVE_WATER_SAVINGS_AT_HOUSEHOLD_LEVEL": {
+                    "MAIN_OBJECTIVE": "Improve pattern in agriculture",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "This policy could be applied to improve-water-savings-at-household-level..",
+                        "OPTION2": "The cost of this policy...",
+                        "OPTION3": "The benefits are...."
+                    }
+                },
+                "IMPROVE_PATTERN_IN_AGRICULTURE": {
+                    "MAIN_OBJECTIVE": "Improve pattern in agriculture",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "This policy could be applied to pattern-in-agriculture..",
+                        "OPTION2": "The cost of this policy...",
+                        "OPTION3": "The benefits are...."
+                    }
+                },
+                "IMPROVE_REFORESTATION_WITH_ADAPTED_SPICIES": {
+                    "MAIN_OBJECTIVE": "Improve reforestation with adapted species",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "This policy could be applied to reforestation-with-adapted-species..",
+                        "OPTION2": "The cost of this policy...",
+                        "OPTION3": "The benefits are...."
+                    }
+                }
+            }
+        }
+    },
+    "GAMIFICATION_TOOL_COMPONENT": {
+        "THE_GAMIFICATION_TOOL_TITLE": "GAMIFICATION TOOL",
+        "WELCOME_TO_GAMIFICATION_TOOL": "Welcome to NEVERMORE gamification tool!",
+        "GAMIFICATION_TOOL_INFO": "The game teaches players about the impacts of climate change while inspiring hope and motivating users to act and find effective solutions that will help to define a greener, better adapted and safe future. The game players must complete two different missions to finish the game. In mission 1 players will explore pathways to reduce greenhouse gas (GHG) emissions applying solutions. Decisions in mission 1 will lead players to a high, medium or low carbon scenario in mission 2. In mission 2 players will be able to select one of the five NEVERMORE case studies (mountain, Mediterranean, boreal, island and flooding) and must act to prepare the communities for the impacts of climate change.",
+        "CHOOSING_OPTION_INFO": "The game will be able for execution as a single player or in groups. Choose your option!",
+        "SINGLE_PLAYER_OPTION_INFO": "Play the game as an individual user",
+        "GROUP_OPTION_INFO": "Use the game for group dynamics",
+        "SINGLE_PLAYER": {
+            "SINGLE_PLAYER_GAMIFICATION_TOOL_TITLE": "MISSION 1: CLIMATE CHANGE MITIGATION",
+            "ROLE_SELECTION": "Select your role",
+            "ENERGY_EXPERT": "Energy Expert",
+            "ENVIRONMENTAL_EXPERT": "Environmental Expert",
+            "ECONOMY_EXPERT": "Economy Expert",
+            "SOCIAL_EXPERT": "Social Expert",
+            "SELECTION_KEY_INFO": "*This selection is key to provide you useful policy recommendation before implementation",
+            "POLICY_RECOMMENDATION_COMPONENT": {
+                "PROVIDE_INPUTS_FOR_QUESTIONS": "Provide your inputs for the following questions",
+                "QUESTIONNARE": {
+                    "QUESTION_1": {
+                        "THE_QUESTION": "1. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_2": {
+                        "THE_QUESTION": "2. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_3": {
+                        "THE_QUESTION": "3. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_4": {
+                        "THE_QUESTION": "4. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_5": {
+                        "THE_QUESTION": "5. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_6": {
+                        "THE_QUESTION": "6. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_7": {
+                        "THE_QUESTION": "7. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_8": {
+                        "THE_QUESTION": "8. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_9": {
+                        "THE_QUESTION": "9. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_10": {
+                        "THE_QUESTION": "10. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    }
+                },
+                "NEXT_QUESTION": "Next Question",
+                "PROFILE_SELECTION_RECOMMANDATION": "*According to your profile (Energy expert), the most appropriate selection would be to apply a policy that generates a large change in transportation demand modes."
+            },
+            "RECOMMANDATION_GRAPH_DATA_COMPONENT": {
+                "GRAPH_OPTIONS": {
+                    "OPTION_1": "CO2 emissions per capita",
+                    "OPTION_2": "Option2",
+                    "OPTION_3": "Option3",
+                    "OPTION_4": "Option4"
+                },
+                "TEMPERATURE_STATUS": "Temperature Increases:",
+                "CONTINUE_TO_MISSION_2": "Continue to MISSION 2 >>"
+            },
+            "MISSION_2_COMPONENT": {
+                "MISSION_2_TITLE": "MISSION 2: CLIMATE CHANGE ADAPTATION",
+                "SELECT_CASE_STUDY": "Select your case study tool",
+                "SEA_LEVEL_RAISE": "See level raise",
+                "FLOODING": "Flooding",
+                "DROUGHTS_AND_WATER_SCARCITY": "Droughts and water scarcity",
+                "SOIL_EROSION": "Soil erosion",
+                "HEATING_AND_COOLING_DEMAND": "Heating and Cooling demand",
+                "CROP_PRODUCTION": "Crop production",
+                "BIODIVERSITY_LOSS": "Biodiversity loss",
+                "CS1_CRETE_ISLAND": "CS1-Crete Island",
+                "CS2_TRENTINO_REGION": "CS2-Trentino region",
+                "CS3_NORRBOTTEN_COUNTRY": "CS3-Norrbotten county",
+                "CS4_MURCIA_REGION": "CS4-Murcia region",
+                "CS5_DANUBE_DELTA": "CS5-Danube delta",
+                "SELECT_MAIN_HAZARD_FOR_ADAPT": "Select the main hazard you want to adapt"
+            },
+            "CLIMATE_CHANGE_ADAPTATION_COMPONENT": {
+                "MONEY_AMOUNT_FOR_MEASURES": "This is your initial amount of money to implement measures",
+                "IMPLEMENT_WATER_STORAGE_TANKS": "Implement water storage tanks.",
+                "DESALINATION_PLANTS": "Build new desalination plants.",
+                "WATER_SAVINGS": "Improve water savings at household level.",
+                "CHANGES_IN_AGRICULTURE": "Change use patterns in agriculture.",
+                "REFORESTATION": "Reforestation with adapted species."
+            }
+        },
+        "BY_GROUP": {
+            "MISSION_1": "MISSION 1: CLIMATE CHANGE MITIGATION",
+            "SELECT_TEAM": "Select your team",
+            "CHOOSE_TEAM": "*Choose Team 1",
+            "TEAM_1": "Team 1",
+            "TEAM_2": "Team 2",
+            "TEAM_3": "Team 3",
+            "SELECT_ROLE": "Select your role",
+            "ENERGY_EXPERT": "Energy Expert",
+            "ENVIRONMENTAL_EXPERT": "Environmental Expert",
+            "ECONOMY_EXPERT": "Economy Expert",
+            "SOCIAL_EXPERT": "Social Expert",
+            "SELECTION_INFO": "*This selection is key to provide you useful policy recommendation before implementation",
+            "POLICY_RECOMMENDATION_COMPONENT": {
+                "PROVIDE_INPUTS_FOR_QUESTIONS": "Provide your inputs for the following questions",
+                "QUESTIONNARE": {
+                    "QUESTION_1": {
+                        "THE_QUESTION": "1. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_2": {
+                        "THE_QUESTION": "2. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_3": {
+                        "THE_QUESTION": "3. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_4": {
+                        "THE_QUESTION": "4. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_5": {
+                        "THE_QUESTION": "5. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_6": {
+                        "THE_QUESTION": "6. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_7": {
+                        "THE_QUESTION": "7. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_8": {
+                        "THE_QUESTION": "8. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_9": {
+                        "THE_QUESTION": "9. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    },
+                    "QUESTION_10": {
+                        "THE_QUESTION": "10. According to your knowledge, do you consider it necessary to apply policies that influence the transport demand in participation model?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy to modify transport share is not required",
+                            "ANSWER_2": "2.It is necessary to implement a policy with medium values",
+                            "ANSWER_3": "3.It is necessary to implement a policy with high values"
+                        }
+                    }
+                },
+                "CHAT": {
+                    "THE_CHAT": "Chat",
+                    "PLAYER_1": "The best option is policy one",
+                    "PLAYER_2": "The best option is policy two",
+                    "PLAYER_3": "The most feasible is policy three",
+                    "PLAYER_2_ANSWER": "We need to have an agreement",
+                    "PLAYER_3_ANSWER": "Let's all select the policy two"
+                },
+                "NEXT_QUESTION": "Next Question",
+                "PROFILE_SELECTION_RECOMMANDATION": "*According to your profile (Energy expert), the most appropriate selection would be to apply a policy that generates a large change in transportation demand modes."
+            },
+            "RECOMMANDATION_GRAPH_DATA_COMPONENT": {
+                "TEAM_1_RESULTS": "TEAM 1 RESULTS",
+                "CHOOSE_A_GRAPH": "Choose a graph",
+                "GRAPH_OPTIONS": {
+                    "OPTION_1": "CO2 emissions per capita",
+                    "OPTION_2": "Option 2"
+                },
+                "SELECTION_INFO": "*This selection is key to provide you useful policy recommendation before implementation"
+            },
+            "COMPARISON_OF_RESULTS_COMPONENT": {
+                "TITLE": "COMPARISON OF RESULTS",
+                "TEAMS": {
+                    "TEAM_1": "TEAM 1",
+                    "TEAM_2": "TEAM 2",
+                    "TEAM_3": "TEAM 3",
+                    "TEAM_4": "TEAM 4"
+                },
+                "TEMPERATURE_STATUS": "Temperature Increases:",
+                "CONTINUE_TO_MISSION_2": "Continue to MISSION 2>>"
+            },
+            "CLIMATE_CHANGE_ADAPTATION_FOR_GROUPS_COMPONENT": {
+                "TITLE": "MISSION 2: CLIMATE CHANGE ADAPTATION",
+                "SELECT_YOUR_CASE_STUDY_TOOL": "Select your case study tool",
+                "CASE_STUDY_TOOL_SELECTION_ADVISE": "*Choose  CS4-Murgia Region",
+                "CS1_CRETE_ISLAND": "CS1-Crete Island",
+                "CS2_TRENTINO_REGION": "CS2-Trentino region",
+                "CS3_NORRBOTTEN_COUNTRY": "CS3-Norrbotten county",
+                "CS4_MURCIA_REGION": "CS4-Murcia region",
+                "CS5_DANUBE_DELTA": "CS5-Danube delta",
+                "SELECT_MAIN_HAZARD_FOR_ADAPT": "Select the main hazard you want to adapt",
+                "MAIN_HAZARD_SELECTION_ADVISE": "*Choose “Droughts and water scarcity”",
+                "SEA_LEVEL_RAISE": "See level raise",
+                "FLOODING": "Flooding",
+                "DROUGHTS_AND_WATER_SCARCITY": "Droughts and water scarcity",
+                "SOIL_EROSION": "Soil erosion",
+                "HEATING_AND_COOLING_DEMAND": "Heating and Cooling demand",
+                "CROP_PRODUCTION": "Crop production",
+                "BIODIVERSITY_LOSS": "Biodiversity loss"
+            },
+            "CLIMATE_CHANGE_GAME_FOR_GROUPS_COMPONENT": {
+                "MONEY_AMOUNT_FOR_MEASURES": "This is your initial amount of money to implement measures",
+                "IMPLEMENT_WATER_STORAGE_TANKS": "Implement water storage tanks.",
+                "DESALINATION_PLANTS": "Build new desalination plants.",
+                "WATER_SAVINGS": "Improve water savings at household level.",
+                "CHANGES_IN_AGRICULTURE": "Change use patterns in agriculture.",
+                "REFORESTATION": "Reforestation with adapted species.",
+                "CHAT": {
+                    "THE_CHAT": "Chat",
+                    "PLAYER_1": "We can select improve 'Improve water savings'",
+                    "PLAYER_2": "I agree",
+                    "PLAYER_3": "Me too",
+                    "PLAYER_2_ANSWER": "What about reforestation?",
+                    "PLAYER_3_ANSWER": "Is also a good selection"
+                }
+            },
+            "COMPARISON_OF_RESULTS_FOR_GROUPS_COMPONENT": {
+                "TITLE": "COMPARISON OF RESULTS",
+                "CHOSEN_CASE": "Case study: CS4-Murcia Region / Hazard: Droughts and water scarcity",
+                "TEAMS": {
+                    "TEAM_1": "TEAM 1",
+                    "TEAM_2": "TEAM 2",
+                    "TEAM_3": "TEAM 3",
+                    "TEAM_4": "TEAM 4"
+                },
+                "TOTAL_INVESTMENT": "Total invested: 30",
+                "COST_OF_INACTION": "Cost of inaction: 60",
+                "BENEFITS": "Benefits: 30",
+                "WINNER": "WINNER"
+            }
+        }
+    }
+}

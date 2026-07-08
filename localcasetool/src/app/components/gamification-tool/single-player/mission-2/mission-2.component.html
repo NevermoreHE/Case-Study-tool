@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="mission-2.component.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section>
+    <section id="navigation_button">
+      <button class="nav-button"><i class="fa fa-bars"></i></button>
+      <span class="nevermore-top-title">NEVERMORE Gamification tool</span>
+    </section> -->
+
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+        <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+        <!-- <span class="nevermore-top-title">GAMIFICATION TOOL</span> -->
+        <span class="nevermore-top-title">{{
+            "GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE" | translate
+            }}</span>
+    </section>
+
+    <!-- <h1>MISSION 2: CLIMATE CHANGE ADAPTATION</h1> -->
+    <h1>
+        {{
+        "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.MISSION_2_TITLE"
+        | translate
+        }}
+    </h1>
+    <!-- <h2 style="font-weight: bold;text-align: center;">Select your case study tool</h2> -->
+    <h2 style="font-weight: bold; text-align: center">
+        {{
+        "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.SELECT_CASE_STUDY"
+        | translate
+        }}
+    </h2>
+
+    <!-- <button (click)="switchLanguage('EN')">EN</button>
+    <button (click)="switchLanguage('RO')">RO</button> -->
+
+    <section id="select-your-case-study">
+        <ul>
+            <li>
+                <button mat-raised-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    [disabled]="true" class="case-study-button">
+                    {{
+                    "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.CS1_CRETE_ISLAND"
+                    | translate
+                    }}
+                </button>
+            </li>
+
+            <li>
+                <button mat-raised-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    [disabled]="true" class="case-study-button">
+                    {{
+                    "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.CS2_TRENTINO_REGION"
+                    | translate
+                    }}
+                </button>
+            </li>
+
+            <li>
+                <button mat-raised-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    [disabled]="true" class="case-study-button">
+                    {{
+                    "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.CS3_NORRBOTTEN_COUNTRY"
+                    | translate
+                    }}
+                </button>
+            </li>
+
+            <li>
+                <button mat-raised-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    [disabled]="false" class="case-study-button">
+                    {{
+                    "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.CS4_MURCIA_REGION"
+                    | translate
+                    }}
+                </button>
+            </li>
+
+            <li>
+                <button mat-raised-button routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    [disabled]="true" class="case-study-button">
+                    {{
+                    "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.CS5_DANUBE_DELTA"
+                    | translate
+                    }}
+                </button>
+            </li>
+        </ul>
+    </section>
+
+    <section id="main_hazards">
+        <!-- <p>Select the main hazard you want to adapt</p> -->
+        <p>
+            {{
+            "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.SELECT_MAIN_HAZARD_FOR_ADAPT"
+            | translate
+            }}
+        </p>
+        <ul>
+            <li tabindex="1">
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/sea-level-raise.png" alt="deserticated_tree" />
+                        <!-- <figcaption>See level raise</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div> -->
+                        <figcaption>
+                            {{
+                            "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.SEA_LEVEL_RAISE"
+                            | translate
+                            }}
+                        </figcaption>
+                        <!-- <div class="tooltip">This is an info bubble !</div> -->
+                    </div>
+                </figure>
+            </li>
+            <li tabindex="1">
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/flooding.png" alt="sustainable water" />
+                        <!-- <figcaption>Flooding</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div> -->
+                        <figcaption>
+                            {{
+                            "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.FLOODING"
+                            | translate
+                            }}
+                        </figcaption>
+                        <!-- <div class="tooltip">This is an info bubble !</div> -->
+                    </div>
+                </figure>
+            </li>
+            <li tabindex="1">
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/draughts_and_water_scarcity.png" alt="sustainable food" />
+                        <!-- <figcaption>Droughts and water scarcity</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div> -->
+                        <figcaption>
+                            {{
+                            "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.DROUGHTS_AND_WATER_SCARCITY"
+                            | translate
+                            }}
+                        </figcaption>
+                        <!-- <div class="tooltip">This is an info bubble !</div> -->
+                    </div>
+                </figure>
+            </li>
+            <li tabindex="1">
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/soil_erosion.png" alt="deserticated_tree" />
+                        <!-- <figcaption>Soil erosion</figcaption>
+                        <div class="tooltip">
+                                This is an info bubble !
+                        </div> -->
+                        <figcaption>
+                            {{
+                            "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.SOIL_EROSION"
+                            | translate
+                            }}
+                        </figcaption>
+                        <!-- <div class="tooltip">This is an info bubble !</div> -->
+                    </div>
+                </figure>
+            </li>
+            <li tabindex="1">
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/heating_and_cooling_demand.png" alt="sustainable water" />
+                        <!-- <figcaption>Heating and Cooling demand</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div> -->
+                        <figcaption>
+                            {{
+                            "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.HEATING_AND_COOLING_DEMAND"
+                            | translate
+                            }}
+                        </figcaption>
+                        <!-- <div class="tooltip">This is an info bubble !</div> -->
+                    </div>
+                </figure>
+            </li>
+            <li tabindex="1">
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/crop_production.png" alt="sustainable food" />
+                        <!-- <figcaption>Crop production</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div> -->
+                        <figcaption>
+                            {{
+                            "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.CROP_PRODUCTION"
+                            | translate
+                            }}
+                        </figcaption>
+                        <!-- <div class="tooltip">This is an info bubble !</div> -->
+                    </div>
+                </figure>
+            </li>
+            <li tabindex="1">
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/biodiversity_loss.jfif" alt="sustainable food" />
+                        <!-- <figcaption>Biodiversity loss</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div> -->
+                        <figcaption>
+                            {{
+                            "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.BIODIVERSITY_LOSS"
+                            | translate
+                            }}
+                        </figcaption>
+                        <!-- <div class="tooltip">This is an info bubble !</div> -->
+                    </div>
+                </figure>
+            </li>
+        </ul>
+    </section>
+
+    <section id="next-button">
+        <button mat-raised-button [routerLink]="['/single_player/Recommendations_GraphData']" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }" class="the-next-button">
+            Back
+        </button>
+        <button mat-raised-button [routerLink]="['/single_player/Climate_Change_Adaptation']" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }" [disabled]="false" class="the-next-button">
+            Next
+        </button>
+    </section>
+    <section class="the_footer">
+        <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+</body>
+
+</html>

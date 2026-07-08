@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="ecv.component.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="header-buttons">
+      <button
+        mat-raised-button
+        [routerLink]="['/help']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="header-button-help"
+      >
+        <!-- Help -->
+        {{ "HEADER.HELP" | translate }}
+      </button>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/home']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="header-button-home"
+      >
+        <!-- Tool selection -->
+        Home
+      </button>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/caseStudy']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="header-button"
+      >
+        <!-- Tool selection -->
+        Case Study Tool
+      </button>
+    </div>
+    <div class="ecvs-comp">
+      <!-- <section id="navigation_button">
+
+      <span class="nevermore-top-title">{{
+        "CASE_STUDY_TOOL_COMPONENT.THE_CASE_STUDY_TOOL_TITLE" | translate
+      }}</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">{{
+        "CASE_STUDY_TOOL_COMPONENT." + selectedTitleCase | translate
+      }}</span>
+    </section> -->
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        {{ displayableTitleCase }}
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+
+      <section id="ecv-info">
+        <!-- <h2>Essential Climate Variables (ECVs)</h2> -->
+        <h2 style="margin: 0;">Analyse Essential Climate Variable (ECVs)</h2>
+        <select
+          name="type_of_graph"
+          id="type_graph"
+          [(ngModel)]="selectedVariable"
+          (change)="onSelectComponents()"
+        >
+          <!-- <option value="">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.ECV_GRAPH_SELECTION' | translate}}</option> -->
+          <!-- <option value="type-of-graph">Choose a type of graph</option> -->
+          <option value="">Choose a variable for graph</option>
+
+          <option value="PREC_MAX">Mean Maximun Precipitation</option>
+          <option value="TEMP_MIN">Mean Minimun Temperature</option>
+          <option value="WIND">Mean Wind Speed</option>
+          <option value="PREC">Mean Precipitation</option>
+          <option value="TEMP_MAX">Mean Maximun Temperature</option>
+          <option value="TEMP">Mean Temperature</option>
+
+          <!-- <option value="temperature">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.ESSENTIAL_ECVS' | translate}}</option> -->
+        </select>
+
+        <select
+          name="type_of_graph"
+          id="type_graph"
+          [(ngModel)]="selectedScenario"
+          (change)="onSelectComponents()"
+        >
+          <!-- <option value="">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.ECV_GRAPH_SELECTION' | translate}}</option> -->
+          <!-- <option value="type-of-graph">Choose a type of graph</option> -->
+          <option value="">Choose a scenario for graph</option>
+
+          <!-- <option value="historical">Historical</option> -->
+          <option value="ssp245">SSP245</option>
+          <option value="ssp585">SSP585</option>
+          <option value="simhist">SIMHIST</option>
+
+          <!-- <option value="temperature">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.ESSENTIAL_ECVS' | translate}}</option> -->
+        </select>
+        <!-- <button class="documentation_of_ECV">ECV Documentation</button> -->
+        <!-- <button class="documentation_of_ECV">
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.ECV_DOC"
+            | translate
+        }}
+      </button> -->
+      <div class="models-selector" *ngIf="chartReady" style="margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;">
+  <p style="margin: 0 0 .5rem 0; font-size: 1.8vh;">
+    Select one or more models to display:
+  </p>
+
+  <div class="models-list" >
+    <label
+  *ngFor="let model of models"
+  style="display: flex; align-items: center; gap: 0.8%;"
+>
+  <input
+    type="checkbox"
+    [checked]="isModelSelected(model)"
+    (change)="toggleModel(model, $any($event.target).checked)"
+  />
+
+  <!-- color indicator (small square) -->
+  
+
+  <!-- model label in same color -->
+  <span [style.color]="modelColors[model]">
+    {{ model }}
+  </span>
+</label>
+  </div>
+</div>
+      </section>
+
+      <!-- <section id="graph-image">
+        <img src="assets/images/temperature_graph_image.png" alt="image_of_temperature_graph">
+    </section> -->
+
+      <!-- <section id="graph-image" *ngIf="defaultChart">
+  <div class="myDataChart">
+    <canvas #myDefaultChart id="defaultChartCanvas"></canvas>
+  </div>
+</section> -->
+
+      <!-- <section id="graph-image" *ngIf="showTemperatureChart && !defaultChart">
+      <div class="myDataChart">
+        <canvas #myChart id="temperatureChartCanvas"></canvas>
+      </div>
+    </section> -->
+
+      <!-- <section *ngIf="showDefaultChart"  >
+</section> -->
+
+      <section id="graph-image">
+        <!-- show nothing until both selects chosen -->
+        <div *ngIf="!chartReady" class="chart-placeholder">
+          Select a variable and a scenario to display the chart.
+        </div>
+
+        <div class="chart-wrap" *ngIf="chartReady">
+          <div class="myDataChart">
+            <canvas #myWindSpeedChart id="windSpeedChartCanvas"></canvas>
+          </div>
+
+          <!-- Right-side popup -->
+          <div class="dataset-popup" *ngIf="popupOpen">
+            <button class="popup-close" (click)="closePopup()">✕</button>
+            <h4 class="popup-title">{{ popupTitle }}</h4>
+
+            <!-- show data (you can change formatting however you want) -->
+            <div class="popup-body">
+              <div class="popup-description">
+                !Here it will be *if needed* a short description that can help
+                the user understand the element chosen!
+              </div>
+              <!-- <div class="popup-titles">
+          <span class="popup-year-title">Years</span>
+          <span class="popup-value-title">Values</span>
+        </div>
+        <div class="popup-row" *ngFor="let row of popupRows">
+          <span class="popup-year">{{ row.year }}</span>
+          <span class="popup-value">{{ row.value }}</span>
+        </div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="main_hazards">
+        <!-- <p>Main Hazards. Click on each one to know more information</p> -->
+        <p>
+          {{
+            "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.MAIN_HAZARDS"
+              | translate
+          }}
+        </p>
+        <ul>
+          <li
+            *ngFor="let hazard of hazardsReceived"
+            [class.active]="selectedHazard === hazard"
+          >
+            <figure>
+              <div
+                class="tooltip-container"
+                (click)="selectTheHazard(hazard)"
+                [routerLink]="['/moreHazardInfo']"
+              >
+                <img [src]="imagesForHazards(hazard)" alt="deserticated_tree" />
+                <!-- <figcaption>See level raise</figcaption> -->
+                <figcaption>{{ hazard }}</figcaption>
+                <!-- <div class="tooltip">
+                                This is an info bubble !
+                            </div> -->
+              </div>
+            </figure>
+          </li>
+          <!-- <li>
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/flooding.png" alt="sustainable water"> -->
+          <!-- <figcaption>Flooding</figcaption> -->
+          <!-- <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.FLOODING' | translate}}</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div>
+                    </div>
+                </figure>
+            </li> -->
+          <!-- <li> 
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/draughts_and_water_scarcity.png" alt="sustainable food">
+                        <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.DROUGHTS_AND_WATER_SCARCITY' | translate}}</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div>
+                    </div>
+                </figure>
+            </li><li>
+                <figure>
+                    <div class="tooltip-container">
+                        <img src='assets/images/soil_erosion.png' alt="deserticated_tree">
+                        <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.SOIL_EROSION' | translate}}</figcaption>
+                        <div class="tooltip">
+                                This is an info bubble !
+                        </div>
+                    </div>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/heating_and_cooling_demand.png" alt="sustainable water">
+                        <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.HEATING_AND_COOLING_DEMAND' | translate}}</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div>
+                    </div>
+                </figure>
+            </li>
+            <li> 
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/crop_production.png" alt="sustainable food">
+                        <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.CROP_PRODUCTION' | translate}}</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div>
+                    </div>
+                </figure>
+            </li>
+            <li> 
+                <figure>
+                    <div class="tooltip-container">
+                        <img src="assets/images/biodiversity_loss.jfif" alt="sustainable food">
+                        <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.BIODIVERSITY_LOSS' | translate}}</figcaption>
+                            <div class="tooltip">
+                                This is an info bubble !
+                            </div>
+                    </div>
+                </figure>
+            </li> -->
+        </ul>
+
+        <section id="next-button">
+          <!-- <p class="explore_assets">Explore assets, vulnerabilities and risks >></p> -->
+          <!-- <p class="explore_assets">
+          {{
+            "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ECVS_COMPONENT.EXPLORE_ASSETS_AND_RISKS"
+              | translate
+          }}
+        </p> -->
+          <!-- <button
+          mat-raised-button
+          [routerLink]="['/'+theRoutingTitleCase+'/']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the-next-button"
+        >
+          Back
+        </button> -->
+
+          <!-- <button
+          class="the-next-button"
+          *ngIf="hazardSelectedStatus"
+          mat-raised-button
+          [routerLink]="[
+            '/CS4-Murcia_region/Explore_assets_and_vulnerabilities'
+          ]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [disabled]="false"
+        >
+          Next
+        </button> -->
+
+          <!-- <button
+          class="the-next-button"
+          *ngIf="hazardSelectedStatus == false"
+          mat-raised-button
+          [routerLink]="[
+            '/'+theRoutingTitleCase+'/Explore_assets_and_vulnerabilities'
+          ]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [disabled]="false"
+        > 
+          Policy Overview
+        </button> -->
+
+          <button
+            class="the-next-button"
+            *ngIf="hazardSelectedStatus == false"
+            mat-raised-button
+            [routerLink]="['/policyScenarios']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [disabled]="false"
+          >
+            Policy Overview
+          </button>
+        </section>
+      </section>
+    </div>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

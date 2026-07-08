@@ -1,0 +1,61 @@
+<div class="external-container">
+    <div class="wrapper">
+      <app-header style="align-self: flex-end;"></app-header>
+      <div class="login-content-wrapper">
+        <div class="welcome-info">
+          <img src="/assets/logos/logo.png" />
+          <!-- <h1>Welcome to NEVERMORE ICT Toolkit!</h1> -->
+          <h1>{{'HOME_COMPONENT.HOME_PAGE_CONTENT_TOOL_DESCRIPTION.WELCOME_TITLE' | translate}}</h1>
+
+
+          <div class="tool-selection-description" style="font-size: 2.5vh;">
+         
+            <!-- <p style="font-weight: 800; font-size: 17px;color: #003399;">{{tools[selectedToolIndex].name}} Description</p>
+            <p>{{tools[selectedToolIndex].description}}</p> -->
+            <p style="font-weight: 800; font-size: 2vh;color: #003399;">{{'HOME_COMPONENT.HOME_PAGE_CONTENT_TOOL_DESCRIPTION.' + tools[selectedToolIndex].name | translate}} {{'HOME_COMPONENT.HOME_PAGE_CONTENT_TOOL_DESCRIPTION.DESCRIPTION' | translate}}</p>
+            <p>{{'HOME_COMPONENT.HOME_PAGE_CONTENT_TOOL_DESCRIPTION.ICT_TOOLS_DESCRIPTION.' + tools[selectedToolIndex].description | translate}}</p>
+            
+          </div>
+          <!-- <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum.
+          </p> -->
+        </div>
+        <div class="divider">
+          <hr class="vertical-line" />
+        </div>
+        <div class="tool-container">
+            <!-- <h2 class="tool-selection-title">Tool selection</h2> -->
+            <h2 class="tool-selection-title" style="font-size: 3vh;">{{'HOME_COMPONENT.HOME_PAGE_TOOL_SELECTION.TOOL_SELECTION' | translate}}</h2>
+            <div class="tool-selection-wrapper">
+              <button class="nav-button left" (click)="navigateLeft()">
+                <img src="/assets/images/left_arr.png" alt="Left Arrow" />
+              </button>
+              <div class="tool-cards">
+                <div
+                  class="tool-card"
+                  *ngFor="let tool of getVisibleTools(); let i = index"
+                  [class.active]="i === 1"
+                >
+                  <!-- <div>
+                    <p>{{tool.description}}</p>
+                  </div> -->
+                  <div class="tool-icon">
+                    <img [src]="tool.image" [alt]="tool.name"/>
+                  </div>
+                </div>
+              </div>              
+              <button class="nav-button right" (click)="navigateRight()">
+                <img src="/assets/images/right_arr.png" alt="Right Arrow" />
+              </button>
+            </div>
+            <!-- <button class="confirm-button" (click)="selectTool()">Confirm Selection</button> -->
+            <button class="confirm-button" (click)="selectTool()">{{'HOME_COMPONENT.HOME_PAGE_TOOL_SELECTION.CONFIRM_SELECTION' | translate}}</button>
+
+          </div>
+          
+      </div>
+    </div>
+    <div class="the_footer">
+    <app-footer class="fixed bottom-0"></app-footer></div>
+  </div>
+  

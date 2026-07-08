@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="policy-priorities.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">CASE STUDY TOOL</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">CS-4 MURCIA REGION</span> -->
+      <span class="nevermore-top-title">{{
+        "CASE_STUDY_TOOL_COMPONENT.THE_CASE_STUDY_TOOL_TITLE" | translate
+      }}</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">{{
+        "CASE_STUDY_TOOL_COMPONENT." + selectedTitleCase | translate
+      }}</span>
+    </section>
+
+    <h2>Policy Priorities</h2>
+
+    <section id="objectives_and_priorities">
+      <!-- <h3>What are your objectives and priorities?</h3> -->
+      <h3>
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.WHAT_ARE_YOUR_OBJ"
+            | translate
+        }}
+      </h3>
+      <!-- <p>
+        Provide your inputs to get the Adaptation and Mitigation measures more
+        related with the case study and related hazard.
+      </p> -->
+      <p>
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.PROVIDE_INPUTS"
+            | translate
+        }}
+      </p>
+    </section>
+
+    <section id="sectors_and_adaptation_lists">
+      <ul class="sectors_list">
+        <!-- <p>Select the main sectors to evaluate</p>
+        <li><button>Agriculture</button></li>
+        <li><button>Turism</button></li>
+        <li><button>Water</button></li> -->
+        <p>
+          {{
+            "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_SECTOR_SELECTOR.SELECT_MAIN_SECTOR"
+              | translate
+          }}
+        </p>
+        <li *ngFor="let sector of mainSectorList">
+          <button
+            (click)="chosedMainSector(sector)"
+            (click)="checkValueForMainSector()"
+            [class.active]="mainSectorToEvaluate === sector"
+          >
+            {{
+              "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_SECTOR_SELECTOR." +
+                sector | translate
+            }}
+          </button>
+        </li>
+        <!-- <li><button>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_SECTOR_SELECTOR.AGRICULTURE' | translate}}</button></li>
+        <li><button>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_SECTOR_SELECTOR.TURISM' | translate}}</button></li>
+        <li><button>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_SECTOR_SELECTOR.WATER' | translate}}</button></li> -->
+      </ul>
+      <ul class="adaptation_list">
+        <!-- <p style="margin-top: 16px">Adaptation and Mitigation</p>
+        <li><button>Adaptation</button></li>
+        <li><button>Mitigation</button></li> -->
+        <p style="margin-top: 16px">
+          {{
+            "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.ADAPTATION_AND_MITIGATION_SELECTOR.SELECT_ADAPTATION_AND_MITIGATION"
+              | translate
+          }}
+        </p>
+        <li *ngFor="let adaptation of adaptationAndMitigationList">
+          <button
+            (click)="chosedAdaptationAndMitigation(adaptation)"
+            (click)="checkValueForAdaptationAndMitigation()"
+            [class.active]="adaptationAndMitigationOption === adaptation"
+          >
+            {{
+              "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.ADAPTATION_AND_MITIGATION_SELECTOR." +
+                adaptation | translate
+            }}
+          </button>
+        </li>
+        <!-- <li><button>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.ADAPTATION_AND_MITIGATION_SELECTOR.ADAPTAION' | translate}}</button></li>
+        <li><button>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.ADAPTATION_AND_MITIGATION_SELECTOR.MITIGATION' | translate}}</button></li> -->
+      </ul>
+    </section>
+    <section id="priorities_and_rank_lists">
+      <ul class="priorities_list">
+        <!-- <p>Select priorities and Objectives</p>
+        <li><button>Water Security</button></li>
+        <li><button>Well being</button></li>
+        <li><button>Energy Security</button></li>
+        <li><button>Job Creation</button></li> -->
+        <p>
+          {{
+            "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_PRIORITIES_SELECTOR.SELECT_MAIN_PRIORITIES"
+              | translate
+          }}
+        </p>
+        <!-- <li><button [class.active] value="water_security">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_PRIORITIES_SELECTOR.WATER_SECURITY' | translate}}</button></li>
+        <li><button [class.active] value="well_being">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_PRIORITIES_SELECTOR.WELL_BEING' | translate}}</button></li>
+        <li><button [class.active] value="energy_security">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_PRIORITIES_SELECTOR.ENERGY_SECURITY' | translate}}</button></li>
+        <li><button [class.active] value="job_creation">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_PRIORITIES_SELECTOR.JOB_CREATION' | translate}}</button></li> -->
+        <li *ngFor="let priority of priorityAndObjectivesList">
+          <button
+            (click)="chosedPriorityAndObjective(priority)"
+            (click)="checkValueForPriorityAndObjective()"
+            [class.active]="priorityAndObjective === priority"
+          >
+            {{
+              "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.MAIN_PRIORITIES_SELECTOR." +
+                priority | translate
+            }}
+          </button>
+        </li>
+      </ul>
+      <ul class="rank_list">
+        <!-- <p>Please provide a rank for the previously selected objectives</p>
+        <li><button>1.Water Security</button></li>
+        <li><button>2.Well being</button></li> -->
+        <p>
+          {{
+            "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.PROVIDE_RANK.SELECT_PROVIDE_RANK"
+              | translate
+          }}
+        </p>
+        <li *ngFor="let rank of ranksList">
+          <button
+            (click)="chosedProvidedRank(rank)"
+            (click)="checkValueForRank()"
+            [class.active]="provideARank === rank"
+          >
+            {{
+              "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.PROVIDE_RANK." +
+                rank | translate
+            }}
+          </button>
+        </li>
+        <!-- <li><button>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.PROVIDE_RANK.1)WATER_SCARCITY' | translate}}</button></li>
+        <li><button>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.POLICY_PRIORITIES_COMPONENT.PROVIDE_RANK.2)WELL_BEING' | translate}}</button></li> -->
+      </ul>
+    </section>
+
+    <section id="next-button">
+      <p style="margin-left: 20px">Recommended Policies >></p>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/'+theRoutingTitleCase+'/Sectoral_Comparison']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+
+      <button 
+        class="the-next-button"
+        mat-raised-button
+        [routerLink]="['/'+theRoutingTitleCase+'/Recommended_Policies']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="needsFullfiledStatus"
+      >
+        Next
+      </button>
+    </section>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<div class="external-container">
+  <div class="wrapper">
+    <app-header style="align-self: flex-end;"></app-header>
+    <div class="login-content-wrapper">
+      <div class="welcome-info">
+        <img src="/assets/logos/logo.png" />
+        <h1>Welcome to NEVERMORE ICT Toolkit!</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum.</p>
+        <a href="#">More information about this project >></a>
+        <div class="cards-wrapper">
+          <img src="/assets/images/catalogue_explorer.png" />
+          <img src="/assets/images/eu-scale-tool.png" />
+          <img src="/assets/images/case-study-tool.png" />
+          <img src="/assets/images/gamification-tool.png" />
+        </div>
+      </div>
+      <div class="divider">
+        <hr class="vertical-line" />
+      </div>
+      <div class="login-form-wrapper">
+        <div class="login-box">
+          <h2>Login as tool user</h2>
+          <form (ngSubmit)="onLogin()">
+            <div class="input-wrapper">
+              <label for="user" class="form-label">User</label>
+              <input
+                type="text"
+                id="user"
+                [(ngModel)]="username"
+                name="username"
+                placeholder="Enter your username"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                [(ngModel)]="password"
+                name="password"
+                placeholder="Enter your password"
+                class="form-control"
+                required
+              />
+            </div>
+            <div *ngIf="errorMessage" class="error-message">
+              {{ errorMessage }}
+            </div>
+            <div class="form-text-center">
+              <a routerLink="/forgot_password" class="d-block mb-3">Forgot password?</a>
+              <button type="submit" class="btn btn-success w-100">Log in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer class="fixed bottom-0"></app-footer>
+</div>

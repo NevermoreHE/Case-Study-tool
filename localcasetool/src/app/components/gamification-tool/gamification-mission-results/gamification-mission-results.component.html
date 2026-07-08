@@ -1,0 +1,168 @@
+<div
+  class="wrapper"
+  style="
+    height: 95vh;
+    background-color: rgba(215, 223, 219);
+    margin-bottom: 5vh;
+    overflow-x: hidden;
+  "
+>
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      Help
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/gamificationMissionSelect']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+      (click)="resetToCCgame()"
+    >
+      <!-- Tool selection -->
+      CC game
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    style="width: 90%; margin-left: 5%; margin-top: 1%; background-color: white"
+  >
+    <div style="background-color: white; height: 100%; margin-bottom: 5rem">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        Mission 1: Climate Change Mitigation
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="context-graph"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 89%;
+          justify-content: space-between;
+        "
+      >
+        <div class="case-studies" style="width: 95%; height: 70%">
+                    <!-- <select  id="graph_type"> -->
+    <!-- <option value="option_1">CO2 emissions per capita</option>
+    <option value="option_2">Option2</option>
+    <option value="option_3">Option3</option>
+    <option value="option_4">Option4</option> -->
+    <!-- <option value="option_1">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.OPTION_1' | translate}}</option> -->
+    <!-- <option value="option_2">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.OPTION_2' | translate}}</option>
+    <option value="option_3">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.OPTION_3' | translate}}</option>
+    <option value="option_4">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.OPTION_4' | translate}}</option> -->
+  <!-- </select> -->
+        <div
+  class="graphs"
+  style="
+    display: flex;
+    justify-content: center;
+    gap: 4vh;
+    height: -webkit-fill-available;
+  "
+>
+  <!-- BASELINE vs SCENARIO -->
+  <div class="ghg-graph" style="display: flex; flex-direction: column">
+    <div
+      class="graph-wrapper"
+      style="background-color: #52d3891a; border-radius: 8vh; padding: 4vh"
+    >
+      <canvas
+        #myScenaryChart
+        style="height: 60vh; width: 40vw"
+      ></canvas>
+    </div>
+  </div>
+
+  <div class="ghg-graph" style="display: flex; flex-direction: column">
+    <div
+      class="graph-wrapper"
+      style="background-color: #ffb74a1a; border-radius: 8vh; padding: 4vh"
+    >
+      <canvas
+        #myTempChart
+        style="height: 60vh; width: 40vw"
+      ></canvas>
+    </div>
+  </div>
+</div>
+          <p
+            style="
+              font-size: 1.1vw;
+              text-align: center;
+              margin-top: 2vh;
+              line-height: 2vw;
+            "
+          >
+            Your applied decisions will
+            <span style="color: #465c95; font-size: 1.1vw; font-weight: bold"
+              >increase/decrease temperature in 0.3 ºC </span
+            >comparing to the baseline scenario in 2060. This is a change of 1.2
+            ºC in 2060 comparing to per-industrial values.
+          </p>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+          "
+        >
+          <button
+            mat-raised-button
+            [routerLink]="['/gamificationMissionSelect']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            style="margin: 6vh; font-size: 1.1vw"
+          >
+            Next Mission
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+</div>

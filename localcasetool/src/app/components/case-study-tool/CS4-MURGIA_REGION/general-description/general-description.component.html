@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="general-description.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">CASE STUDY TOOL</span> -->
+      <span class="nevermore-top-title">{{
+        "CASE_STUDY_TOOL_COMPONENT.THE_CASE_STUDY_TOOL_TITLE" | translate
+      }}</span>
+
+      <!-- <span class="CS-4_MURCIA_REGION_TITLE">CS-4 MURCIA REGION</span> -->
+      <span class="CS-4_MURCIA_REGION_TITLE">{{
+        "CASE_STUDY_TOOL_COMPONENT." + selectedTitleCase | translate
+      }}</span>
+    </section>
+
+    <section id="general_description">
+      <!-- <p>
+        In this section , you can find a general description of this case study
+        and relevant information about the priority sectors and challenges to be
+        covered during the adaptation and mitigation assessment.
+        <a href="#">More information>>></a>
+      </p> -->
+      <p>
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SECTION_DESCRIPTION"
+            | translate
+        }}
+        <!-- <a href="#">More information>>></a> -->
+        <!-- <a href="#">{{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.MORE_INFO"
+            | translate
+        }}</a> -->
+      </p>
+    </section>
+
+    <section id="more_infomartion_title">
+      <!-- <p>Click on a sector to know more information!</p> -->
+      <p>
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SECTOR_INFO"
+            | translate
+        }}
+      </p>
+    </section>
+
+    <section id="sector_list">
+      <ul>
+        <div *ngFor="let sector of sectorsReceived">
+          <li>
+            <div class="tooltip-container">
+              <button
+                mat-raised-button
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="sector-button"
+                (click)="chosedSector(sector)"
+                (click)="selectTheSector(sector)"
+                (click)="checkNeddedSelections()"
+                [class.active]="selectedSector === sector"
+              >
+              <!-- <button
+                mat-raised-button
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="sector-button"
+                (click)="chosedSector(sector.the_sector)"
+                (click)="selectTheSector(sector.the_sector)"
+                (click)="checkNeddedSelections()"
+                [class.active]="selectedSector === sector.the_sector"
+              > -->
+                <!-- Here i will put every name of every sector -->
+                <!-- {{
+                  "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT." +
+                    sector.the_sector | translate
+                }} -->
+                    {{sector}}
+              </button>
+              <!-- <div class="tooltip">This is an info bubble !</div> -->
+            </div>
+          </li>
+        </div>
+      </ul>
+
+      <!-- <ul>
+        <li>
+          <div class="tooltip-container">
+            <button
+              mat-raised-button
+              [routerLink]="['/CS4-Murcia_region/Agriculture, forestry and fishing']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+            >
+               {{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.AGRICULTURE_FORESTRY_AND_FISHING' | translate}}
+            </button>
+            <div class="tooltip">This is an info bubble !</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="tooltip-container">
+            <button
+              mat-raised-button
+              [routerLink]="['/CS4-Murcia_region/Water_and_waste']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+            >
+              {{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.WATER_AND_WASTE' | translate}}
+
+            </button>
+            <div class="tooltip">This is an info bubble !</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="tooltip-container">
+            <button
+              mat-raised-button
+              [routerLink]="['/CS4-Murcia_region/Industry_and_commerce']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+            >
+              {{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.INDUSTRY_AND_COMMERCE' | translate}}
+
+            </button>
+            <div class="tooltip">This is an info bubble !</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="tooltip-container">
+            <button
+              mat-raised-button
+              [routerLink]="['/CS4-Murcia_region/Tourism_leisure_and_cultural_heritag']"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+            >
+              {{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.TOURISM' | translate}}
+
+            </button>
+            <div class="tooltip">This is an info bubble !</div>
+          </div>
+        </li>
+      </ul> -->
+    </section>
+
+    <section id="main_challenges_title">
+      <!-- <p>Main Challenges</p> -->
+      <p>
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.MAIN_CHALLENGES"
+            | translate
+        }}
+      </p>
+    </section>
+
+    <section id="main_challenges_items">
+      <ul>
+        <div *ngFor="let challenge of main_challenges_list">
+          <li>
+            <figure
+              (click)="selectTheChallenge(challenge)"
+              [class.active]="selectedChallenge === challenge"
+              (click)="checkNeddedSelections()"
+              style="display: flex;justify-content: center;flex-direction: column;align-items: center;"
+            >
+            <img [src]="imagesForChallenges(challenge)" alt="challenge_image" class="image_challenge" style="width: 9vh">
+
+              <!-- <img
+                src="{{ image_source[the_main_challenges.indexOf(challenge)] }}"
+                alt="deserticated_tree"
+              /> -->
+              <!-- <figcaption>Desertification due to soil erosion</figcaption> -->
+              <!-- <figcaption>
+                {{
+                  "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT." +
+                    challenge | translate
+                }}
+              </figcaption> -->
+              {{challenge}}
+            </figure>
+          </li>
+        </div>
+
+        <!-- <li>
+
+          <figure>
+            <img src="assets/images/tree_image.png" alt="deserticated_tree" />
+            <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.DESERTIFICATION' | translate}}</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="assets/images/water_drop.png" alt="sustainable water" />
+            <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SUSTAINABLE_WATER_MANAGEMENT' | translate}}</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="assets/images/grain_image.png" alt="sustainable food" />
+            <figcaption>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.AGRICULTURAL_PRODUCTION' | translate}}</figcaption>
+          </figure>
+        </li> -->
+      </ul>
+    </section>
+
+    <section id="next-button">
+      <!-- <p class="visualize_ecv_and_more"
+        >Visualize ECV's and climate hazards >>></p
+      > -->
+      <p class="visualize_ecv_and_more">
+        {{
+          "CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.VISUALIZE_ECV"
+            | translate
+        }}
+      </p>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/caseStudySelected_Info']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/'+theRoutingTitleCase+'/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="enableNextButton"
+        class="the-next-button"
+      >
+        Next
+      </button>
+    </section>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

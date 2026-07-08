@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: '3.7'
+services:
+  nevermore-localcasetool-ui:
+    image: nevermore-localcasetool-ui
+    container_name: nevermore-localcasetool-ui
+    build: ./
+    ports:
+      - 4200:4200
+
+  

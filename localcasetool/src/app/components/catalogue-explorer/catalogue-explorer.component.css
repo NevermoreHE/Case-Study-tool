@@ -1,0 +1,138 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .wrapper {
+    background-image: url('/assets/images/bg.PNG');
+    background-size: cover;
+    background-position: center;
+    min-height: 92.3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-top: 10px; 
+    padding-right: 20px;
+    overflow-x: hidden;
+  }
+  
+  .catalogue-content-wrapper{
+    width: 100%;
+  }
+  
+  .catalogue-info {
+    text-align: center;
+    max-width: 800px;
+    color: #000;
+    margin: 7% auto;
+  }
+  
+  .catalogue-info img {
+    width: 30%;
+    height: auto;
+    margin-bottom: 6%;
+  }
+  
+  .catalogue-info h1 {
+    text-align: center; 
+    font-size: 2rem;
+    font-weight: bold;
+    width: 52%;
+    margin: 0 auto 20px auto;
+  }
+  
+  .catalogue-info p {
+    font-size: 14px;
+    line-height: 1.5;
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  .the_footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  } */
+
+
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+}
+
+
+
+
+.wrapper {
+  background-image: url("/assets/images/bg.PNG");
+  background-size: cover;
+  background-position: center;
+  min-height: 92.3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 10px;
+  /* padding-right: 20px; */
+  overflow-x: hidden;
+}
+
+.eu-catalogue-wrapper {
+  height: 100vh;
+  overflow-y: hidden;
+  margin-bottom: 3.5rem;
+  /* width: 100vh; */
+}
+.catalogue-content-wrapper {
+  width: 100%;
+}
+
+.catalogue-info {
+  text-align: center;
+  max-width: 800px;
+  color: #000;
+  margin: 7% auto;
+}
+
+.catalogue-info img {
+  width: 30%;
+  height: auto;
+  margin-bottom: 6%;
+}
+
+.catalogue-info h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 52%;
+  margin: 0 auto 20px auto;
+}
+
+.catalogue-info p {
+  font-size: 14px;
+  line-height: 1.5;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

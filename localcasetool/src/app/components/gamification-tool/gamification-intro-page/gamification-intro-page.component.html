@@ -1,0 +1,98 @@
+<div class="wrapper">
+  <div class="header-buttons">
+     <button
+      mat-raised-button
+      [routerLink]="['/aboutUs']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      About Us
+    </button>
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      Help
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+      disabled="true"
+    >
+      <!-- Tool selection -->
+      CC game
+    </button>
+  </div>
+  <div class="local_case_tool_info">
+    <div class="local-case-tool">
+      <h1
+        style="
+          margin-bottom: 5%;
+          height: 20%;
+          font-weight: bold;
+          font-size: 2.5vh;
+        "
+      >
+        Welcome to NEVERMORE Climate Change game!
+      </h1>
+
+      <p class="info_text" style="text-align: center">
+        NEVERMORE Climate Change game is an educational simulation game where
+        players explore different solutions to fight and adapt to the impacts of
+        climate change. <br /><br />
+        The game teaches players about the impacts of climate change while
+        inspiring hope and motivating users to act and find effective solutions
+        that will help to define a greener, better adapted and safe future. The
+        game players must complete <span style="color: #465C95;">two different missions</span> to finish the game. In
+        <span style="color: #465C95;">mission one</span>, players will explore pathways to reduce greenhouse gas
+        (GHG) emissions applying solutions. Decisions in the first mission will
+        lead players to a high, medium or low carbon scenario in mission two. In
+        this <span style="color:#465C95;">second mission</span>, players will be able to select one of the NEVERMORE
+        case studies (mountain, Mediterranean, boreal/northern, island and east
+        of EU-Wetland) and must act to prepare the communities for the impacts
+        of climate change. Click on START to play with the game!
+      </p>
+
+      <p class="start-text" style="margin-top: 1.5vh">
+        Click on <em>START</em> to play with the game!
+      </p>
+
+      <button
+        mat-raised-button 
+        [routerLink]="['/gamificationMissionSelect']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+      >
+        START
+      </button>
+    </div>
+  </div>
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0;"></app-footer>
+  </section>
+</div>
+
+        <!-- [routerLink]="['/single_player/Policy_Recommendations']" -->

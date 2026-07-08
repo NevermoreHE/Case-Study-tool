@@ -1,0 +1,526 @@
+<div
+  class="wrapper"
+  style="
+    height: 95vh;
+    background-color: rgba(215, 223, 219);
+    margin-bottom: 5vh;
+    overflow-x: hidden;
+  "
+>
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      Help
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/gamificationMissionSelect']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      CC game
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    style="
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      height: 100%; /* Make sure it takes up the full height of its parent */
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 1%;
+      background-color: white;
+      margin-bottom: 5rem;
+    "
+  >
+    <div style="background-color: white; height: 100%; margin-bottom: 5rem">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          height: 4%;
+        "
+      >
+        Climate Change Game
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+
+      <div class="toggle-container">
+        <div
+          class="toggle-option"
+          [class.active]="selected === 'Round 1: 2030'"
+          (click)="select('Round 1: 2030')"
+        >
+          Round 1: 2030
+        </div>
+        <div
+          class="toggle-option"
+          [class.active]="selected === 'Round 2: 2040'"
+          (click)="select('Round 2: 2040')"
+        >
+          Round 2: 2040
+        </div>
+        <div
+          class="toggle-option"
+          [class.active]="selected === 'Round 3: 2050'"
+          (click)="select('Round 3: 2050')"
+        >
+          Round 3: 2050
+        </div>
+        <div
+          class="toggle-option"
+          [class.active]="selected === 'Round 4: 2060'"
+          (click)="select('Round 4: 2060')"
+        >
+          Round 4: 2060
+        </div>
+      </div>
+
+      <div
+        class="key-definitions"
+        style="
+          display: flex;
+          flex-direction: row;
+          color: #465c95;
+          width: 61%;
+
+          justify-content: flex-end;
+          cursor: pointer;
+          position: absolute;
+          bottom: 77%;
+        "
+      >
+        <div
+          class="keydefinitionsbutton"
+          style="display: flex; flex-direction: row"
+          [routerLink]="['/keyDefinitions']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <div>Key Definitions</div>
+          <div>
+            <img
+              src="assets/images/key_definitions.png"
+              style="width: 3vh"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="hazard-buttons">
+        <div class="hazard-text">
+          <p
+            style="
+              font-weight: bold;
+              font-size: 2.5vh;
+              margin-left: 5%;
+              margin-top: 4%;
+            "
+          >
+            Hazard
+          </p>
+          <p style="font-size: 2vh; margin-left: 10%">
+            The hazard is defined by the temperature increase obtained from the
+            mitigation mission. If you are not satisfied with this result or
+            would like to try another value, you may select it.
+          </p>
+        </div>
+        <div
+          class="hazard-but"
+          style="display: flex; justify-content: space-around; width: 100%"
+        >
+          <button
+            style="
+              display: flex;
+              flex-direction: column;
+              font-size: 2vh;
+              background-color: #52d38966;
+              border-style: none;
+              width: 25%;
+              border-radius: 3vh;
+            "
+          >
+            <div>Low</div>
+            <div>&lt; 1.5 &deg;C</div>
+          </button>
+          <button
+            style="
+              display: flex;
+              flex-direction: column;
+              font-size: 2vh;
+              background-color: #ffb74a;
+              border-style: none;
+              width: 25%;
+              border-radius: 3vh;
+            "
+          >
+            <div>Medium</div>
+            <div>1.6 - 2.5 &deg;C</div>
+          </button>
+          <button
+            style="
+              display: flex;
+              flex-direction: column;
+              font-size: 2vh;
+              background-color: #bf050566;
+              border-style: none;
+              width: 25%;
+              border-radius: 3vh;
+            "
+          >
+            <div>High</div>
+            <div>&gt;2.6 &deg;C</div>
+          </button>
+        </div>
+        <div class="climate-event">
+          <p
+            style="
+              font-weight: bold;
+              font-size: 2.5vh;
+              margin-left: 5%;
+              margin-top: 4%;
+            "
+          >
+            Climate
+          </p>
+          <p style="font-size: 2vh; margin-left: 10%">Select a card</p>
+
+          <div class="tool-container">
+            <!-- <h2 class="tool-selection-title">Tool selection</h2> -->
+            <h2 class="tool-selection-title" style="font-size: 3vh">
+              {{
+                "HOME_COMPONENT.HOME_PAGE_TOOL_SELECTION.TOOL_SELECTION"
+                  | translate
+              }}
+            </h2>
+            <div class="tool-selection-wrapper">
+              <button class="nav-button left" (click)="navigateLeft()">
+                <img src="/assets/images/left_arr.png" alt="Left Arrow" />
+              </button>
+              <div class="tool-cards">
+                <div
+                  class="tool-card"
+                  *ngFor="let tool of getVisibleTools(); let i = index"
+                  [class.active]="i === 1"
+                >
+                  <!-- <div>
+                    <p>{{tool.description}}</p>
+                  </div> -->
+                  <div class="tool-icon">
+                    <img [src]="tool.image" [alt]="tool.name" />
+                    <p>{{ tool.name }}</p>
+                  </div>
+                  <div class="popup">
+                    {{ tool.description }}
+                    <!-- You can customize what information to show here -->
+                  </div>
+                </div>
+              </div>
+              <button class="nav-button right" (click)="navigateRight()">
+                <img src="/assets/images/right_arr.png" alt="Right Arrow" />
+              </button>
+            </div>
+            <!-- <button class="confirm-button" (click)="selectTool()">Confirm Selection</button> -->
+            <!-- <button class="confirm-button" (click)="selectTool()">{{'HOME_COMPONENT.HOME_PAGE_TOOL_SELECTION.CONFIRM_SELECTION' | translate}}</button> -->
+          </div>
+
+          <p
+            style="
+              font-weight: bold;
+              font-size: 2.5vh;
+              margin-left: 5%;
+              margin-top: 4%;
+            "
+          >
+            Adaptation measures
+          </p>
+          <p style="font-size: 2vh; margin-left: 10%">Select 1 or 2 cards</p>
+          <div
+            class="tool-container"
+            style="margin-top: 10%; display: flex; flex-direction: column"
+          >
+            <!-- <h2 class="tool-selecqtion-title">Tool selection</h2> -->
+            <div class="tool-selection-wrapper">
+  <button class="nav-button left" (click)="navigateLeftForAdapt()">
+    <img src="/assets/images/left_arr.png" alt="Left Arrow" />
+  </button>
+
+  <div class="tool-cards">
+    <div
+  class="tool-card"
+  *ngFor="let item of getVisibleToolsForAdapt()"
+  [class.active]="isSelected(item.realIndex)"
+  (click)="toggleSelection(item.realIndex)"
+>
+  <div class="tool-icon" style="background: #465c9566">
+    <img [src]="item.tool.image" [alt]="item.tool.name" />
+    <p>{{ item.tool.name }}</p>
+  </div>
+
+  <div class="popup">
+    {{ item.tool.description }}
+  </div>
+</div>
+  </div>
+
+  <button class="nav-button right" (click)="navigateRightForAdapt()">
+    <img src="/assets/images/right_arr.png" alt="Right Arrow" />
+  </button>
+</div>
+            <!-- <button class="confirm-button" (click)="selectTool()">Confirm Selection</button> -->
+          </div>
+
+          <div
+            class="tool-container"
+            style="
+              margin-top: 10%;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 5%;
+            "
+          >
+            <!-- <h2 class="tool-selecqtion-title">Tool selection</h2> -->
+            <p
+              style="
+                font-weight: bold;
+                font-size: 2.5vh;
+                margin-left: 5%;
+                margin-top: 4%;
+                text-align: left;
+              "
+            >
+              Bonus
+            </p>
+            <p style="font-size: 2vh; margin-left: 10%; text-align: left">
+              Select a card
+            </p>
+            <div class="tool-selection-wrapper" style="flex-direction: column">
+              <div class="tool-cards">
+                <div
+                  class="tool-card"
+                  *ngFor="let tool of getVisibleToolsForBonus(); let i = index"
+                  [ngClass]="{ selected: bonusSelected === tool.name }"
+                  (click)="selectedBonusTool(tool.name)"
+                >
+                  <!-- <div>
+                    <p>{{tool.description}}</p>
+                  </div> -->
+                  <div
+                    class="tool-icon"
+                    style="background-color: #ffb74a; cursor: pointer"
+                  >
+                    <img [src]="tool.image" [alt]="tool.name" />
+                    <p>{{ tool.name }}</p>
+                  </div>
+                  <div class="popup">
+                    {{ tool.description }}
+                    <!-- You can customize what information to show here -->
+                  </div>
+                </div>
+              </div>
+              <div
+                style="display: flex; width: 30%; justify-content: space-around"
+              >
+                <button class="confirm-button" style="margin-right: 5%">
+                  {{
+                    "HOME_COMPONENT.HOME_PAGE_TOOL_SELECTION.CONFIRM_SELECTION"
+                      | translate
+                  }}
+                </button>
+                <button class="confirm-button" style="margin-left: 5%">
+                  Apply Selection
+                </button>
+              </div>
+
+              <div
+                class="next-round-button"
+                style="
+                  display: flex;
+                  position: absolute;
+                  bottom: -18%;
+                  right: 2%;
+                  align-items: center;
+                  cursor: pointer;
+                "
+                (click)="nextRoundButton()"
+                [routerLink]="['/resultsGraphs']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <div style="font-size: 2vh; color: #52d389">Next Round</div>
+                <div>
+                  <img
+                    src="assets/images/next-round-button.png"
+                    style="width: 4vh"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- <button class="confirm-button" (click)="selectTool()">Confirm Selection</button> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="hazard-coins">
+        <div class="different-coins">
+          <div class="coinsTitle">
+            <div>Hazard</div>
+            <div class="coins">
+              <div *ngFor="let coin of hazardCOins">
+                <img
+                  src="assets/images/kpi-hazard-green.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="coinsTitle">
+            <div>Budget</div>
+            <div class="coins">
+              <div *ngFor="let coin of budgetCoins">
+                <img
+                  src="assets/images/risk-by-budget.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="coinsTitle"
+            style="
+              width: 90%;
+              margin-left: 5%;
+              margin-top: 4%;
+              margin-bottom: 0%;
+            "
+          >
+            <div>Risk by factor</div>
+          </div>
+          <div class="coinsTitle">
+            <div>Energy</div>
+            <div class="coins">
+              <div *ngFor="let coin of energyCoints">
+                <img
+                  src="assets/images/kpi-energy.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="coinsTitle">
+            <div>Water</div>
+            <div class="coins">
+              <div *ngFor="let coin of waterCoins">
+                <img
+                  src="assets/images/kpi-water.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="coinsTitle">
+            <div>Health</div>
+            <div class="coins">
+              <div *ngFor="let coin of healthCoints">
+                <img
+                  src="assets/images/kpi-health.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="coinsTitle">
+            <div>Transport</div>
+            <div class="coins">
+              <div *ngFor="let coin of transportCoins">
+                <img
+                  src="assets/images/kpi-transport.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="coinsTitle">
+            <div>Co-benefit</div>
+            <div class="coins">
+              <div *ngFor="let coin of cobenefitCoins">
+                <img
+                  src="assets/images/kpi-cobenefit.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="coinsTitle">
+            <div>Total risk</div>
+            <div class="coins">
+              <div *ngFor="let coin of totalriskCoins">
+                <img
+                  src="assets/images/kpi-globarRisk.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+</div>

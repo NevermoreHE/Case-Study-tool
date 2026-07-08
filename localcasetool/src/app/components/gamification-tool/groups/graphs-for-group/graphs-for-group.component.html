@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="graphs-for-group.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">GAMIFICATION TOOL</span> -->
+      <span class="nevermore-top-title">{{'GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE' | translate}}</span>
+      <!-- <h2 class="mission_tool" 
+        >MISSION 1: CLIMATE CHANGE MITIGATION</h2
+      > -->
+      <h2 class="mission_tool" 
+        >{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.MISSION_1' | translate}}</h2
+      >
+    </section>
+
+
+    <section id="graphs_and_results">
+    <!-- <h1>TEAM 1 RESULTS</h1> -->
+    <h1>{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.RECOMMANDATION_GRAPH_DATA_COMPONENT.TEAM_1_RESULTS' | translate}}</h1>
+    
+    <form>
+      <mat-form-field style="width: 300px;margin-top: -10px;"> 
+        <!-- <mat-label>Choose a graph</mat-label> -->
+        <mat-label>{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.RECOMMANDATION_GRAPH_DATA_COMPONENT.CHOOSE_A_GRAPH' | translate}}</mat-label>
+        <select matNativeControl [(ngModel)]="selectedGraph" name="graph">
+          <option *ngFor="let graph of graphsForClimateMitigation" [value]="graph.graphImage">
+            {{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.' +  graph.graphInfo | translate}}
+          
+          </option>
+        </select>
+      </mat-form-field>
+      <p class="selected_graph_type"> <img src="{{selectedGraph}}" alt="" style="height: 350px;"> </p>
+    </form>
+    
+    
+    </section>
+
+
+    <section id="next-button">
+      <!-- <p style="font-weight: 500;">*This selection is key to provide you useful policy recommendation before implementation</p> -->
+      <p style="font-weight: 500;">{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.RECOMMANDATION_GRAPH_DATA_COMPONENT.SELECTION_INFO' | translate}}</p>
+      <button
+        mat-raised-button
+        [routerLink]="['/by_group/Policy_Recommendations_For_Group']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/by_group/Comparison_of_results']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="false"
+        class="the-next-button"
+      >
+        Next
+      </button>
+    </section>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

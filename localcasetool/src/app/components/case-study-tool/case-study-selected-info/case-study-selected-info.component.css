@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+  font-family: "Inter", sans-serif !important ;
+}
+
+.wrapper {
+  display: flex
+;
+    justify-content: center;
+    background-color: rgb(234, 238, 236);
+    flex-direction: column;
+}
+
+.header-buttons{
+        display: flex
+;
+    justify-content: flex-end;
+    /* flex-direction: row; */
+    padding-top: 2%;
+    padding-right: 2%;
+}
+
+.header-button{
+        margin-right: 1vh;
+    font-size: 1.5vh;
+    padding: 1.5vh;
+    color: #2A40B1;
+}
+
+.header-button-help{
+    margin-right: 1vh;
+    font-size: 1.5vh;
+    padding: 1.5vh;
+      background-color: #ccc;
+      color: #2A40B1;
+}
+
+.header-button-home{
+    margin-right: 1vh;
+    font-size: 1.5vh;
+    padding: 1.5vh;
+      background-color: #ccc;
+      color: #2A40B1;
+
+}
+
+.header-button-help:hover{
+    margin-right: 1vh;
+    font-size: 1.5vh;
+    padding: 1.5vh;
+      background-color: white;
+      color: #2A40B1;
+}
+
+.header-button-home:hover{
+    margin-right: 1vh;
+    font-size: 1.5vh;
+    padding: 1.5vh;
+      background-color: white;
+      color: #2A40B1;
+
+}
+
+.intern-wrapper {
+  height: 90%;
+  width: 100%;
+  padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* padding-bottom:5%; */
+}
+
+.context {
+  width: 50%;
+  font-size: 2vh;
+}
+
+.custom-words{
+  color: #465C95;
+  font-weight: 600;
+}
+
+.data-context {
+  margin-right: 0%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  /* margin-left: 8%; */
+  /* margin-top: 10%; */
+  /* margin-bottom: 10%;*/
+  margin: 1vh 0;
+}
+
+.data-context img {
+  height: 10vh;
+}
+
+.context-graph {
+  display: flex
+;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    font-size: 2vh;
+    padding-bottom: 4vh;
+}
+
+.the_next_button {
+  background-color: #52d389;
+  color: #465c95;
+  margin-top: 4vh; 
+    position: sticky;
+
+    width: 7%;
+    margin-bottom: 2%;
+    margin-left: 90%;
+    font-size: 2vh;
+    padding: 2vh;
+
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+}

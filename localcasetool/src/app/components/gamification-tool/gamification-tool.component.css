@@ -1,0 +1,192 @@
+html,
+body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.nevermore_top_icon img {
+  width: 100px;
+  height: 40px;
+}
+
+.nav-button {
+  background-color: rgb(129, 216, 129);
+  width: 50px;
+  height: 26.4px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 9px;
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+.nevermore-top-title {
+  /* background-color: rgb(129, 216, 129); */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #465c95;
+}
+
+h2 {
+  text-align: center;
+}
+
+#gamification-description {
+  text-align: center;
+  margin: 0 200px;
+}
+
+#game_modes {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+a,button {
+  background-color: #465c95;
+  margin: 0 40px;
+  color: white;
+  text-decoration: none;
+}
+
+button:disabled{
+    background-color: #A4B5D8; /* Lighter shade */
+  color: #D1D8E8; /* Light grayish text */
+  pointer-events: none; /* Disable interactions */
+  opacity: 0.7; /* Optionally, adjust opacity */
+}
+
+a img ,button img {
+  height: 100px;
+}
+
+figcaption {
+  text-align: center;
+  width: 100px;
+}
+
+a,button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  border: 2px solid #52d389;
+  transition: ease-in 0.2s;
+}
+
+#previous_page button {
+  width: 200px;
+  height: 50px;
+  background-color: #465c95;
+  color: white;
+  margin-left: 100px;
+  border-radius: 15px;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#next-button {
+  text-align: center;
+}
+
+.the-next-button {
+  text-align: center;
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: 4.5rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .nevermore-top-title {
+    width: 100%;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  #gamification-description {
+    margin: 10px 2%;
+  }
+
+  #game_modes a {
+    margin-top: 40px;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+
+/* Medium screens (tablets, 600px to 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .nevermore-top-title {
+    width: 100%;
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  #gamification-description {
+    margin: 10px 2%;
+  }
+
+  #game_modes a {
+    margin-top: 40px;
+  }
+
+  #game_modes {
+    padding-bottom: 20%;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .nevermore-top-title {
+    width: 100%;
+    font-size: 18px;
+    margin-left: 0;
+  }
+  #gamification-description {
+    margin: 10px 2%;
+  }
+
+  #game_modes a {
+    margin-top: 40px;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}

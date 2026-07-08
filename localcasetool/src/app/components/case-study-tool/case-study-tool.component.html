@@ -1,0 +1,183 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="case-study-tool.component.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <main>
+
+    <section id="navigation_button">
+
+       <span class="nevermore-top-title" style="font-size: 2vh !important;">{{'CASE_STUDY_TOOL_COMPONENT.THE_CASE_STUDY_TOOL_TITLE' | translate}}</span>
+    </section>
+    
+    <section id="case-study-tool-welcome" style="font-size: 2vh !important;">
+        <h1>{{'CASE_STUDY_TOOL_COMPONENT.WELCOME_CASE_STUDY_TOOL' | translate}}</h1>
+
+        <p>{{'CASE_STUDY_TOOL_COMPONENT.CASE_STUDY_TOOL_INFO' | translate}}</p>
+        <p>{{'CASE_STUDY_TOOL_COMPONENT.CASE_STUDY_TOOL_SELECT_CASE_STUDY' | translate}}</p>
+    </section>
+        
+    <section id="select-your-case-study" style="font-size: 2vh !important;">
+         <h2>{{'CASE_STUDY_TOOL_COMPONENT.SELECT_YOUR_CASE_STUDY' | translate}}</h2>
+         
+        <ul>
+
+          <li *ngFor="let case of caseStudiesReceived"  style="font-size: 2vh !important;"><button  
+              mat-raised-button 
+              routerLinkActive="active" 
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="case-study-button" (click)="theChosedCase(case)" (click)="showType(case)"  (click)="case_title_selected()">{{case}}</button></li>
+</ul>
+
+    </section>
+
+    
+
+
+    <section id="next-button" style="font-size: 2vh !important;">
+      <p class="navigation_advice">{{'CASE_STUDY_TOOL_COMPONENT.NAVIGATION_ADVICE' | translate}}</p>
+      <button mat-raised-button 
+      [routerLink]="['/caseStudyToolInfo']" 
+      routerLinkActive="active" 
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="the_next_button" >
+        Back</button>
+
+
+<button mat-raised-button 
+      [routerLink]="['/caseStudySelected_Info']" 
+      routerLinkActive="active" 
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="the_next_button"
+      [disabled]='enabledButton' >
+        Next</button>
+      
+    </section>
+
+ 
+
+    <section class="the_footer">
+       <app-footer class="fixed bottom-0" style="bottom: 0;"></app-footer>
+    </section>
+  </main>
+  </body>
+</html> -->
+
+
+<!-- <div class="wrapper">
+  <div class="internal-wrapper">
+    <div class="case-study-title">
+
+      <hr>
+    </div>
+    <div class="case-studies">
+
+    </div>
+
+  </div>
+</div> -->
+
+
+<div class="wrapper">
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      {{ "HEADER.HELP" | translate }}
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      Case Study Tool
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+  >
+    <div style="background-color: white; margin-bottom: 4.5rem; ">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        Select your case study
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div class="context-graph" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+        
+        <div class="case-studies" >
+          <div class="case-study" *ngFor="let case of caseStudiesReceived;let i=index" [class.active]="selectedCase === case"><img [src]="imageList[i]" alt=" " style="width: 27vh;"><button  
+              mat-raised-button 
+              routerLinkActive="active" 
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="case-study-button" (click)="theChosedCase(case)" (click)="showType(case)"  (click)="case_title_selected()">{{ checkTrentinoSwitch(case) }}</button></div>
+        </div>
+        <button
+            mat-raised-button
+            [routerLink]="['/caseStudySelected_Info' ]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="enabledButton"
+            style="margin: 6vh;
+    width: 15%;"
+          >
+            Next
+          </button>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+</div>

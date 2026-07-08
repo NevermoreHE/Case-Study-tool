@@ -1,0 +1,473 @@
+<div class="wrapper">
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      {{ "HEADER.HELP" | translate }}
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/caseStudy']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      Case Study Tool
+    </button>
+  </div>
+
+  <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS4_MURCIA_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        CS4 - Murcia Region
+      </div>
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; margin-top: 3%; font-size: 3vh;">
+        Main Challenges
+      </p>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex;">
+          <div class="context" style="width: 80%;line-height: 3vh;margin-left: 2%;">
+            <div class="data-context" *ngFor="let challenge of main_challenges_list" (click)="selectTheChallenge(challenge)" [class.active]="selectedChallenge === challenge" (click)="checkNeddedSelections()" style="display: flex; flex-direction: row; margin-left: 3vh; align-items: center; justify-content: flex-start;">
+              <div class="challenge_icon" style="margin: 0 2vh;">
+                <img [src]="imagesForChallenges(challenge)" alt="challenge_image" class="image_challenge" style="width: 9vh; border-radius: 3vh;">
+              </div>
+              <div class="challenge_text" style="font-size: 2vh;">
+                {{challenge}}
+              </div>
+            </div>
+          </div>
+
+          <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-image.jpg" alt="" style="width: 70vh; border-radius: 3vh;" />
+          </div>
+        </div>
+      </div>
+
+      <div class="sectors-context">
+        <div class="relevant-sector-text">
+          <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; font-size: 2.5vh;">
+            Relevant sectors - <span style="font-weight: 500;">Click on each sector to know more information!</span>
+          </p>
+          <!-- <div class="more-info-button">
+            i
+          </div> -->
+        </div>
+
+        <div class="sectors-buttons" style="display: flex; justify-content: center;">
+          <div *ngFor="let sector of sectorsReceived" class="sector_div" (click)="chooseSector(sector)">
+            <img [src]="imagesForSectors(sector)" alt="" style="width: 9vh;">
+            <button
+              mat-raised-button
+              routerLinkActive="active"
+              [routerLink]="['/moreSectorInfo']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+              (click)="chosedSector(sector)"
+              (click)="selectTheSector(sector)"
+              (click)="checkNeddedSelections()"
+              (click)="chooseSector(sector)"
+            >
+              {{sector}}
+            </button>
+          </div>
+        </div>
+      </div>
+           <button
+            mat-raised-button
+            [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+    </div>
+
+  </div>
+
+    <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS1_CRETE_ISLAND'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        CS1 - Sitia municipality
+      </div>
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; margin-top: 3%; font-size: 3vh;">
+        Main Challenges
+      </p>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex;">
+          <div class="context" style="width: 80%;line-height: 3vh;margin-left: 2%;">
+            <div class="data-context" *ngFor="let challenge of main_challenges_for_sitia"    style="display: flex; flex-direction: row; margin-left: 3vh; align-items: center; justify-content: flex-start;">
+              <div class="challenge_icon" style="margin: 0 2vh;">
+                <img [src]="challenge.challenge_image" alt="challenge_image" class="image_challenge" style="width: 9vh; border-radius: 3vh;">
+              </div>
+              <div class="challenge_text" style="font-size: 2vh;">
+                {{challenge.challenge_name}}
+              </div>
+            </div>
+          </div>
+
+          <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\cs1-sitia-image.png" alt="" style="width: 70vh; border-radius: 3vh;" />
+          </div>
+        </div>
+      </div>
+
+      <div class="sectors-context">
+        <div class="relevant-sector-text">
+          <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; font-size: 2.5vh;">
+            Relevant sectors - <span style="font-weight: 500;">Click on each sector to know more information!</span>
+          </p>
+          <!-- <div class="more-info-button">
+            i
+          </div> -->
+        </div>
+
+        <div class="sectors-buttons" style="display: flex; justify-content: center;">
+          <div *ngFor="let sector of sectorsReceived" class="sector_div" (click)="chooseSector(sector)">
+            <img [src]="imagesForSectors(sector)" alt="" style="width: 9vh;">
+            <button
+              mat-raised-button
+              routerLinkActive="active"
+              [routerLink]="['/moreSectorInfo']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+              (click)="chosedSector(sector)"
+              (click)="selectTheSector(sector)"
+              (click)="checkNeddedSelections()"
+              (click)="chooseSector(sector)"
+            >
+              {{sector}}
+            </button>
+          </div>
+        </div>
+      </div>
+           <button
+            mat-raised-button
+            [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+    </div>
+
+  </div>
+
+   <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS2_TRENTINO_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        CS2 - Trentino Province
+      </div>
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; margin-top: 3%; font-size: 3vh;">
+        Main Challenges
+      </p>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex;">
+          <div class="context" style="width: 80%;line-height: 3vh;margin-left: 2%;">
+            <div class="data-context" *ngFor="let challenge of main_challenges_for_trentino"  (click)="checkNeddedSelections()" style="display: flex; flex-direction: row; margin-left: 3vh; align-items: center; justify-content: flex-start;">
+              <div class="challenge_icon" style="margin: 0 2vh;">
+                <img [src]="challenge.challenge_image" alt="challenge_image" class="image_challenge" style="width: 9vh; border-radius: 3vh;">
+              </div>
+              <div class="challenge_text" style="font-size: 2vh;">
+                {{challenge.challenge_name}}
+              </div>
+            </div>
+          </div>
+
+          <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\trentino-immage.png" alt="" style="width: 70vh; border-radius: 3vh;" />
+          </div>
+        </div>
+      </div>
+
+      <div class="sectors-context">
+        <div class="relevant-sector-text">
+          <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; font-size: 2.5vh;">
+            Relevant sectors - <span style="font-weight: 500;">Click on each sector to know more information!</span>
+          </p>
+          <!-- <div class="more-info-button">
+            i
+          </div> -->
+        </div>
+
+        <div class="sectors-buttons" style="display: flex; justify-content: center;">
+          <div *ngFor="let sector of sectorsReceived" class="sector_div" (click)="chooseSector(sector)">
+            <img [src]="imagesForSectors(sector)" alt="" style="width: 9vh;">
+            <button
+              mat-raised-button
+              routerLinkActive="active"
+              [routerLink]="['/moreSectorInfo']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+              (click)="chosedSector(sector)"
+              (click)="selectTheSector(sector)"
+              (click)="checkNeddedSelections()"
+              (click)="chooseSector(sector)"
+            >
+              {{sector}}
+            </button>
+          </div>
+        </div>
+      </div>
+           <button
+            mat-raised-button
+            [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+    </div>
+
+    
+
+  </div>
+
+   <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        CS3 - Norrbotten County
+      </div>
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; margin-top: 3%; font-size: 2vh;">
+        Main Challenges
+      </p>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex;">
+          <div class="context" style="width: 80%;line-height: 3vh;margin-left: 2%;">
+            <div class="data-context" *ngFor="let challenge of main_challenges_for_norbotten"  (click)="checkNeddedSelections()" style="display: flex; flex-direction: row; margin-left: 3vh; align-items: center; justify-content: flex-start;">
+              <div class="challenge_icon" style="margin: 0 2vh;">
+                <img [src]="challenge.challenge_image" alt="challenge_image" class="image_challenge" style="width: 9vh; border-radius: 3vh;">
+              </div>
+              <div class="challenge_text" style="font-size: 2vh;">
+                {{challenge.challenge_name}}
+              </div>
+            </div>
+          </div>
+
+          <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\cs3-norbotten-image.png" alt="" style="width: 70vh; border-radius: 3vh;" />
+          </div>
+        </div>
+      </div>
+
+      <div class="sectors-context">
+        <div class="relevant-sector-text">
+          <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; font-size: 2.5vh;">
+            Relevant sectors - <span style="font-weight: 500;">Click on each sector to know more information!</span>
+          </p>
+          <!-- <div class="more-info-button">
+            i
+          </div> -->
+        </div>
+
+        <div class="sectors-buttons" style="display: flex; justify-content: center;">
+          <div *ngFor="let sector of sectorsReceived" class="sector_div" (click)="chooseSector(sector)">
+            <img [src]="imagesForSectors(sector)" alt="" style="width: 9vh;">
+            <button
+              mat-raised-button
+              routerLinkActive="active"
+              [routerLink]="['/moreSectorInfo']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+              (click)="chosedSector(sector)"
+              (click)="selectTheSector(sector)"
+              (click)="checkNeddedSelections()"
+              (click)="chooseSector(sector)"
+            >
+              {{sector}}
+            </button>
+          </div>
+        </div>
+      </div>
+           <button
+            mat-raised-button
+            [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+    </div>
+
+  </div>
+
+   <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        CS5 - Danube Delta
+      </div>
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; margin-top: 3%; font-size: 3vh;">
+        Main Challenges
+      </p>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex;">
+          <div class="context" style="width: 80%;line-height: 3vh;margin-left: 2%;">
+            <div class="data-context" *ngFor="let challenge of main_challenges_for_danube"  style="display: flex; flex-direction: row; margin-left: 3vh; align-items: center; justify-content: flex-start;">
+              <div class="challenge_icon" style="margin: 0 2vh;">
+                <img [src]="challenge.challenge_image" alt="challenge_image" class="image_challenge" style="width: 9vh; border-radius: 3vh;">
+              </div>
+              <div class="challenge_text" style="font-size: 2vh;">
+                {{challenge.challenge_name}}
+              </div>
+            </div>
+          </div>
+
+          <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\cs5-danube-delta.png" alt="" style="width: 70vh; border-radius: 3vh;" />
+          </div>
+        </div>
+      </div>
+
+      <div class="sectors-context">
+        <div class="relevant-sector-text">
+          <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; font-size: 2.5vh;">
+            Relevant sectors - <span style="font-weight: 500;">Click on each sector to know more information!</span>
+          </p>
+          <!-- <div class="more-info-button">
+            i
+          </div> -->
+        </div>
+
+        <div class="sectors-buttons" style="display: flex; justify-content: center;">
+          <div *ngFor="let sector of sectorsReceived" class="sector_div" (click)="chooseSector(sector)">
+            <img [src]="imagesForSectors(sector)" alt="" style="width: 9vh;">
+            <button
+              mat-raised-button
+              routerLinkActive="active"
+              [routerLink]="['/moreSectorInfo']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+              (click)="chosedSector(sector)"
+              (click)="selectTheSector(sector)"
+              (click)="checkNeddedSelections()"
+              (click)="chooseSector(sector)"
+            >
+              {{sector}}
+            </button>
+          </div>
+        </div>
+      </div>
+           <button
+            mat-raised-button
+            [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+    </div>
+
+  </div>
+
+<!-- <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS2_TRENTINO_REGIOND'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        CS4 - Murcia Region
+      </div>
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; margin-top: 3%; font-size: 2vh;">
+        Main Challenges
+      </p>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex;">
+          <div class="context" style="width: 60%;line-height: 3vh;">
+            <div class="data-context" *ngFor="let challenge of main_challenges_list" (click)="selectTheChallenge(challenge)" [class.active]="selectedChallenge === challenge" (click)="checkNeddedSelections()" style="display: flex; flex-direction: row; margin-left: 3vh; align-items: center; justify-content: flex-start;">
+              <div class="challenge_icon" style="margin: 0 2vh;">
+                <img [src]="imagesForChallenges(challenge)" alt="challenge_image" class="image_challenge" style="width: 9vh; border-radius: 3vh;">
+              </div>
+              <div class="challenge_text" style="font-size: 2vh;">
+                {{challenge}}
+              </div>
+            </div>
+          </div>
+
+          <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-image.jpg" alt="" style="width: 70vh; border-radius: 3vh;" />
+          </div>
+        </div>
+      </div>
+
+      <div class="sectors-context">
+        <div class="relevant-sector-text">
+          <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; font-size: 2vh;">
+            Relevant sectors - <span>Click on each sector to know more information!</span>
+          </p>
+          <div class="more-info-button">
+            i
+          </div>
+        </div>
+
+        <div class="sectors-buttons" style="display: flex; justify-content: center;">
+          <div *ngFor="let sector of sectorsReceived" class="sector_div" (click)="chooseSector(sector)">
+            <img [src]="imagesForSectors(sector)" alt="" style="width: 9vh;">
+            <button
+              mat-raised-button
+              routerLinkActive="active"
+              [routerLink]="['/moreSectorInfo']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              class="sector-button"
+              (click)="chosedSector(sector)"
+              (click)="selectTheSector(sector)"
+              (click)="checkNeddedSelections()"
+              (click)="chooseSector(sector)"
+            >
+              {{sector}}
+            </button>
+          </div>
+        </div>
+      </div>
+           <button
+            mat-raised-button
+            [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+    </div> -->
+
+ 
+
+<section class="the_footer">
+  <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+</section>

@@ -1,0 +1,236 @@
+html,
+body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.nevermore_top_icon img {
+  width: 100px;
+  height: 40px;
+}
+
+.nav-button {
+  background-color: rgb(129, 216, 129);
+  width: 50px;
+  height: 26.4px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 9px;
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+/* .nevermore-top-title {
+  background-color: rgb(129, 216, 129);
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(40, 140, 241);
+} */
+
+.nevermore-top-title {
+  /* background-color: rgb(129, 216, 129); */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #465c95;
+}
+
+h1 {
+  color: #465c95;
+  font-size: 20px;
+}
+
+h2 {
+  margin-left: 100px;
+  margin-top: 60px;
+  color: #465c95;
+}
+
+#temp_indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+#temp_indicators ul {
+  display: flex;
+  list-style: none;
+}
+
+.mission_tool {
+  margin-left: 350px;
+  font-weight: 600;
+}
+
+#next-button {
+  text-align: center;
+  height: 40px;
+  margin-top: 40px;
+}
+
+.the-next-button {
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: 4.5rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.the-next-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  #navigation_button {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #navigation_button span {
+    margin-left: 0px;
+  }
+
+  .mission_tool {
+    margin-left: 0px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 4%;
+  }
+
+  #temp_indicators ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+  }
+
+  .the-next-button {
+    margin-bottom: 20%;
+  }
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+
+/* Medium screens (tablets, 600px to 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  #navigation_button {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #navigation_button span {
+    margin-left: 0px;
+  }
+
+  .mission_tool {
+    margin-left: 0px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 4%;
+  }
+
+  #temp_indicators ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+  }
+  .the-next-button {
+    margin-bottom: 10%;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #navigation_button {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #navigation_button span {
+    margin-left: 0px;
+  }
+
+  .mission_tool {
+    margin-left: 0px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 4%;
+  }
+
+  #temp_indicators ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}

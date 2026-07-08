@@ -1,0 +1,91 @@
+<div class="external-container">
+    <div class="wrapper">
+        <div class="header-wrapper">
+
+<button
+    mat-raised-button
+    [routerLink]="['/aboutUsInfo']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- About us -->
+    About Us
+  </button>
+
+        <button
+    mat-raised-button
+    [routerLink]="['/helpInfo']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- About us -->
+    Help
+  </button>
+
+  <button
+    mat-raised-button
+    [routerLink]="['/auth']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- Help -->
+    Log In
+  </button>
+
+  <button
+    mat-raised-button
+    [routerLink]="['/auth']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    Register
+  </button>
+  </div>
+           <div class="nevermore-logo"> <img src="/assets/logos/logo.png" /></div>
+
+      <div class="login-content-wrapper">
+        <div class="welcome-info">
+          <!-- <h1>Welcome to NEVERMORE ICT Toolkit!</h1> -->
+
+
+          <div class="tool-selection-description" style="font-size: 2.5vh;
+    padding: 4vh;
+    border-radius: 3vh;
+    text-align: left;">
+            
+<h1 style="color:#465C95">Gamification Tool</h1>
+            
+         <p>
+
+The Gamification Tool is the most recent and introductory component of the NEVERMORE toolset, designed to support learning and awareness on climate change mitigation and adaptation through an interactive game-based experience. Although still at an early stage, it benefits from the knowledge generated across the project, especially the databases, policy catalogue and outputs from the other ICT tools, which will serve as the foundation for building realistic and meaningful scenarios. <br><br>
+The tool aims to help users explore the effects of climate adaptation decisions in a simplified and accessible way. By combining climate event cards, adaptation measures, and sector-specified consequences, it allows players to understand the trade-offs behind mitigation and adaptation actions and the evolution of risks across different sectors. The approach is primarily educational, enabling users with little or no technical background to learn how climate risks evolve and how different strategies influence resilience. <br><br>
+The Gamification Tool will serve both educational and awareness-raising purposes, helping users - regardless of their experience - better understand climate risks, adaptation pathways and sectoral vulnerabilities. In the future, it may support broader engagement process and help familiarise civil society with key concepts surrounding climate change mitigation and adaptation. <br><br>
+<div style="display: flex;justify-content: center;"><img style="width: 30vh;" src="/assets/images/gamification-info.png" alt=""></div>
+
+            <!-- <p style="font-weight: 800; font-size: 17px;color: #003399;">{{tools[selectedToolIndex].name}} Description</p>
+            <p>{{tools[selectedToolIndex].description}}</p> -->
+            <div style="display: flex;justify-content: flex-end;">
+            <button mat-raised-button
+    [routerLink]="['/auth']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button-return">Return</button>
+            </div>
+          </div>
+          <!-- <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum.
+          </p> -->
+        </div>
+        
+        
+          
+      </div>
+    </div>
+    <div class="the_footer">
+    <app-footer class="fixed bottom-0"></app-footer></div>
+  </div>
+  

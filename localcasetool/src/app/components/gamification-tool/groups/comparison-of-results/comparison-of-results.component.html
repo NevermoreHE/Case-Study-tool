@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="comparison-of-results.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <section id="navigation_button">
+      <!-- <span class="nevermore-top-title">GAMIFICATION TOOL</span>
+      <span class="mission_tool">MISSION 1: CLIMATE CHANGE MITIGATION</span> -->
+      <span class="nevermore-top-title">{{'GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE' | translate}}</span>
+      <span class="mission_tool">{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.MISSION_1' | translate}}</span>
+    </section>
+
+    <!-- <h2>COMPARISON OF RESULTS</h2> -->
+    <h2>{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TITLE' | translate}}</h2>
+
+    <section id="temp_indicators">
+      <ul>
+        <li>
+          <!-- <p style="text-align: center; font-size: 18px; color: #52D389;">TEAM 1</p> -->
+          <p style="text-align: center; font-size: 18px; color: #52D389;">{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TEAMS.TEAM_1' | translate}}</p>
+          <figure>
+            <img src="assets/images/increasing_temp.png" alt="increasing_temperature" style="height: 200px;" />
+            <!-- <figcaption style="color: #465C95; font-weight: bold; font-size: 18px; text-align: center;">
+              Temperature Increases: <br /><span style="color: red;">1.8°C</span>
+            </figcaption> -->
+            <figcaption style="color: #465C95; font-weight: bold; font-size: 18px; text-align: center;">
+              {{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TEMPERATURE_STATUS' | translate}} <br /><span style="color: red;">1.8°C</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <!-- <p style="text-align: center; font-size: 18px; color: #52D389;">TEAM 2</p> -->
+          <p style="text-align: center; font-size: 18px; color: #52D389;">{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TEAMS.TEAM_2' | translate}}</p>
+          <figure>
+            <img src="assets/images/increasing_temp.png" alt="increasing_temperature" style="height: 200px;" />
+            <!-- <figcaption style="color: #465C95; font-weight: bold; font-size: 18px; text-align: center;">
+              Temperature Increases: <br /><span style="color: red;">2.2°C</span>
+            </figcaption> -->
+            <figcaption style="color: #465C95; font-weight: bold; font-size: 18px; text-align: center;">
+              {{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TEMPERATURE_STATUS' | translate}} <br /><span style="color: red;">2.2°C</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <!-- <p style="text-align: center; font-size: 18px; color: #52D389;">TEAM 3</p> -->
+          <p style="text-align: center; font-size: 18px; color: #52D389;">{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TEAMS.TEAM_3' | translate}}</p>
+          <figure>
+            <img src="assets/images/increasing_temp.png" alt="increasing_temperature" style="height: 200px;" />
+            <!-- <figcaption style="color: #465C95; font-weight: bold; font-size: 18px; text-align: center;">
+              Temperature Increases: <br /><span style="color: #F5DE09;">1.1°C</span>
+            </figcaption> -->
+            <figcaption style="color: #465C95; font-weight: bold; font-size: 18px; text-align: center;">
+              {{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TEMPERATURE_STATUS' | translate}} <br /><span style="color: #F5DE09;">1.1°C</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <!-- <p style="text-align: center; font-size: 18px; color: #52D389;">TEAM 4</p> -->
+          <p style="text-align: center; font-size: 18px; color: #52D389;">{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TEAMS.TEAM_4' | translate}}</p>
+          <figure>
+            <img src="assets/images/increasing_temp.png" alt="increasing_temperature" style="height: 200px;" />
+            <!-- <figcaption style="color: #465C95; font-weight: bold; font-size: 18px; text-align: center;">
+              Temperature Increases: <br /><span style="color: #DD710DEB;">1.8°C</span>
+            </figcaption> -->
+            <figcaption style="color: #465C95; font-weight: bold; font-size: 18px; text-align: center;">
+              {{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.TEMPERATURE_STATUS' | translate}} <br /><span style="color: #DD710DEB;">1.8°C</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <section id="next-button">
+      <!-- <p>Continue to MISSION 2>></p> -->
+      <p>{{'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.COMPARISON_OF_RESULTS_COMPONENT.CONTINUE_TO_MISSION_2' | translate}}</p>
+      <button
+        mat-raised-button
+        [routerLink]="['/by_group/Recommendations_GraphData_For_Group']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/by_group/Climate_Change_Adaptation_For_Groups']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="false"
+        class="the-next-button"
+      >
+        Next
+      </button>
+    </section>
+
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

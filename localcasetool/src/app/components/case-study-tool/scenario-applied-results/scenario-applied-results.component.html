@@ -1,0 +1,4253 @@
+<div class="wrapper">
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      {{ "HEADER.HELP" | translate }}
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/caseStudy']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      Case Study Tool
+    </button>
+  </div>
+
+  
+
+  
+
+  
+
+  <div
+    class="intern-wrapper"
+    
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select (change)="onIndicatorChange($event)" style="margin-left:2%; margin-bottom: 2%">
+  <option value="" selected disabled>Select an indicator...</option>
+
+  <option *ngFor="let opt of indicatorOptions" [value]="opt.code">
+    {{ opt.label }}
+  </option>
+</select>
+             <div class="chart-rect">
+  <div class="chart-placeholder" *ngIf="!selectedIndicator">
+    Select an indicator to display the chart
+  </div>
+
+  <!-- keep canvas always in DOM to avoid ViewChild timing issues -->
+  <canvas #resultsChart [style.display]="selectedIndicator ? 'block' : 'none'"></canvas>
+</div>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+  <input type="checkbox" (change)="onBaselineToggle($event)" />
+  <span class="slider"></span>
+</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <!-- <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' &&
+      policyPreviouslySelected ==
+        'Protecting agricultural production through improved cropland, and water management'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Agricultural area</option>
+                <option value="">Crops adaptation</option>
+                <option value="">Crops sensitivity</option>
+                <option value="">Groundwater resources</option>
+                <option value="">Risk index crops</option>
+                <option value="">Storage water</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div> -->
+
+  <!-- <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' &&
+      policyPreviouslySelected == 'Sustainable use of water resources'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Attractiveness for tourism</option>
+                <option value="">Infrastructure capacity</option>
+                <option value="">Risk index tourism</option>
+                <option value="">Tourism index</option>
+                <option value="">Water demand from urban</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' &&
+      policyPreviouslySelected == 'A resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Water Demand</option>
+                <option value="">Water Supply</option>
+                <option value="">Water Security</option>
+                <option value="">Water demand from agriculture</option>
+                <option value="">Storage water</option>
+                <option value="">Groundwater resources</option>
+                <option value="">Request from groundwater extraction</option>
+                <option value="">Agriculture</option>
+                <option value="">Wetland</option>
+                <option value="">Irrigated crop area</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' &&
+      policyPreviouslySelected ==
+        'A more efficient use of energy for climate change mitigation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Energy Consumption</option>
+                <option value="">Energy consumption share</option>
+                <option value="">Total carbon emissions</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policyPreviouslySelected ==
+        'A more resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Attractiveness for tourists</option>
+                <option value="">Risk index tourism</option>
+                <option value="">Tourism index</option>
+                <option value="">Water demand from urban</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policyPreviouslySelected == 'Shaping climate-resilient ski resorts'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Water demand</option>
+                <option value="">Water used for snow production</option>
+                <option value="">Energy consumption</option>
+                <option value="">Energy used for snow production</option>
+                <option value="">Artificial snow production yearly</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policyPreviouslySelected == 'Sustainable use of water resources'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Water demand</option>
+                <option value="">Water supply</option>
+                <option value="">Water security</option>
+                <option value="">Water demand from agriculture</option>
+                <option value="">Storage water</option>
+                <option value="">Groundwater resources</option>
+                <option value="">Request from groundwater extraction</option>
+                <option value="">Agriculture</option>
+                <option value="">Wetland</option>
+                <option value="">Irrigated crop area</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policyPreviouslySelected ==
+        'The water-energy nexus: increasing efficiency to reduce competition'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Water demand</option>
+                <option value="">Water use for snow production</option>
+                <option value="">Water requirements from H2 production</option>
+                <option value="">Energy consumption</option>
+                <option value="">Energy consumption water treatment</option>
+                <option value="">Energy used for snow production</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policyPreviouslySelected ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Energy consumption</option>
+                <option value="">Energy consumption share</option>
+                <option value="">Total carbon emissions</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policyPreviouslySelected == 'Increasing the capacity to adapt'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Risk index population</option>
+                <option value="">Adaptation for population</option>
+                <option value="">Sensitivity for population</option>
+                <option value="">Expected losses by floods</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policyPreviouslySelected == 'A pathway to decarbonization'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Total production</option>
+                <option value="">Total production considering H2</option>
+                <option value="">Import</option>
+                <option value="">Export</option>
+                <option value="">Import with H2</option>
+                <option value="">Export with H2</option>
+                <option value="">Energy consumption</option>
+                <option value="">Energy consumption share</option>
+                <option value="">Total carbon emissions</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policyPreviouslySelected ==
+        'Forest protection and management for climate change adaptation and mitigation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Forest</option>
+                <option value="">Protected forest</option>
+                <option value="">Biomass stock</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policyPreviouslySelected ==
+        'Solar deployment and effects in competition for land'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Solar Land</option>
+                <option value="">Forest</option>
+                <option value="">Agriculture</option>
+                <option value="">Protected forest</option>
+                <option value="">Wetlands</option>
+                <option value="">Protected wetlands</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policyPreviouslySelected ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Energy Consumption</option>
+                <option></option>
+                <option value="">Energy consumption share</option>
+                <option value="">Total carbon emissions</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policyPreviouslySelected == 'Increasing the capacity to adapt'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Risk index population</option>
+                <option></option>
+                <option value="">Adaptation for population</option>
+                <option value="">Sensitivity for population</option>
+                <option value="">Expected losses by floods</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policyPreviouslySelected ==
+        'A more resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Attractiveness for tourism</option>
+                <option></option>
+                <option value="">Infrastructure capacity</option>
+                <option value="">Risk index tourism</option>
+                <option value="">Tourism index</option>
+                <option value="">Water demand from urban</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policyPreviouslySelected == 'A pathway to decarbonization'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Total production</option>
+                <option></option>
+                <option value="">Total production considering H2</option>
+                <option value="">Import</option>
+                <option value="">Export</option>
+                <option value="">Import with H2</option>
+                <option value="">Export with H2</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policyPreviouslySelected == 'Increasing the capacity to adapt'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Risk index population</option>
+                <option></option>
+                <option value="">Adaptation for population</option>
+                <option value="">Sensitivity for population</option>
+                <option value="">Expected losses by floods</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policyPreviouslySelected ==
+        'Protecting agricultural production through improved cropland, forest and water management'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Agricultural area</option>
+                <option></option>
+                <option value="">Crops adaptation</option>
+                <option value="">Crops sensitivity</option>
+                <option value="">Groundwater resources</option>
+                <option value="">Risk index crops</option>
+                <option value="">Storage water</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policyPreviouslySelected == 'Sustainable use of water resources'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Water demand</option>
+                <option value="">Water supply</option>
+                <option value="">Water security</option>
+                <option value="">Water demand from agriculture</option>
+                <option value="">Storage water</option>
+                <option value="">Groundwater resources</option>
+                <option value="">Request from groundwater extraction</option>
+                <option value="">Agriculture</option>
+                <option value="">Wetland</option>
+                <option value="">Irrigated crop area</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policyPreviouslySelected ==
+        'A more resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Attractiveness for tourism</option>
+                <option></option>
+                <option value="">Infrastructure capacity</option>
+                <option value="">Risk index tourism</option>
+                <option value="">Tourism index</option>
+                <option value="">Water demand from urban</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policyPreviouslySelected ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Energy Consumption</option>
+                <option></option>
+                <option value="">Energy consumption share</option>
+                <option value="">Total carbon emissions</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policyPreviouslySelected == 'A pathway to decarbonization'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Total production</option>
+                <option></option>
+                <option value="">Total production considering H2</option>
+                <option value="">Import</option>
+                <option value="">Export</option>
+                <option value="">Import with H2</option>
+                <option value="">Export with H2</option>
+                <option value="">Energy consumption</option>
+                <option value="">Energy consumption share</option>
+                <option value="">Total carbon emissions</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policyPreviouslySelected == 'Increasing the capacity to adapt'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Risk index population</option>
+                <option></option>
+                <option value="">Adaptation for population</option>
+                <option value="">Sensitivity for population</option>
+                <option value="">Expected losses by floods</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policyPreviouslySelected ==
+        'Protecting agriculture production through improved cropland and water mamagement'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Agricultural area</option>
+                <option value="">Crops adaptation</option>
+                <option value="">Crops sensitivity</option>
+                <option value="">Groundwater resources</option>
+                <option value="">Risk index crops</option>
+                <option value="">Storage water</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policyPreviouslySelected == 'Sustainable use of water resources'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Water demand</option>
+                <option value="">Water supply</option>
+                <option value="">Water security</option>
+                <option value="">Water demand from agriculture</option>
+                <option value="">Storage water</option>
+                <option value="">Groundwater resources</option>
+                <option value="">Request from groundwater extraction</option>
+                <option value="">Agriculture</option>
+                <option value="">Wetland</option>
+                <option value="">Irrigated crop area</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policyPreviouslySelected ==
+        'A more resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Attractiveness for tourism</option>
+                <option></option>
+                <option value="">Infrastructure capacity</option>
+                <option value="">Risk index tourism</option>
+                <option value="">Tourism index</option>
+                <option value="">Water demand from urban</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policyPreviouslySelected ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Energy Consumption</option>
+                <option></option>
+                <option value="">Energy consumption share</option>
+                <option value="">Total carbon emissions</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policyPreviouslySelected == 'A pathway to decarbonization'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Total production</option>
+                <option></option>
+                <option value="">Total production considering H2</option>
+                <option value="">Import</option>
+                <option value="">Export</option>
+                <option value="">Import with H2</option>
+                <option value="">Export with H2</option>
+                <option value="">Energy consumption</option>
+                <option value="">Energy consumption share</option>
+                <option value="">Total carbon emissions</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policyPreviouslySelected ==
+        'Protecting ecosystems for climate change adaptation & mitigation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <span>{{ policyPreviouslySelected }}</span>
+            </p>
+          </div>
+
+          <div class="resultsOfTheScenarioSelected">
+            Results of the applied scenario:
+          </div>
+
+          <div style="text-align: right; transform: translateY(-105%)">
+            <img
+              src="assets/images/floppy-disc.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+            <img
+              src="assets/images/download-image.png"
+              style="
+                height: 3vh;
+                margin-left: 1vh;
+                margin-right: 1vh;
+                background-color: #8d8d90;
+                padding: 2vh;
+                border-radius: 1vh;
+              "
+              alt=""
+            />
+          </div>
+          <div style="text-align: left">
+            <div class="indicator">
+              <p>Indicator</p>
+              <select
+                name="indicator"
+                id=""
+                style="margin-left: 2%; margin-bottom: 20%"
+              >
+                <option value="">Forest</option>
+                <option></option>
+                <option value="">Protected forest</option>
+                <option value="">Wetlands</option>
+                <option value="">Protected wetlands</option>
+                <option value="">Biomass stock</option>
+                <option value="">Total carbon stock</option>
+              </select>
+            </div>
+
+            <div
+              class="compare_with_baselines"
+              style="
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                align-items: center;
+              "
+            >
+              Compare with baselines:
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="width: 100%; display: flex; justify-content: center">
+        <button
+          mat-raised-button
+          [routerLink]="['/caseStudy']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="false"
+          style="margin-top: 4vh; color: #465c95"
+        >
+          Select new Case Study
+        </button>
+      </section>
+    </div>
+  </div> -->
+</div>
+
+<section class="the_footer">
+  <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+</section>

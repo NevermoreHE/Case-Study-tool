@@ -1,0 +1,1498 @@
+<div class="wrapper">
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      {{ "HEADER.HELP" | translate }}
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/caseStudy']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      Case Study Tool
+    </button>
+  </div>
+  <!-- <div class="intern-wrapper" *ngIf="selectedSectorData == 'Water and wastewater'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        CS4 - Murcia Region
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: center;">
+        <div class="sector-text">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors:</strong> Water and wastewater
+      </p>
+      
+        <p>
+
+The Region of Murcia is characterized by an arid climate and severe water limitations. Low rainfall, dependence on the Tajo-Segura water transfer since the 1980s, and intensive use of water for agriculture are the main causes of this situation. <br><br>
+
+Water scarcity particularly affects irrigated crops and domestic consumption. Water quality is also a major issue, with critical cases such as the Mar Menor, whose degradation is linked to agricultural discharges of fertilizers and pesticides. <br><br>
+
+Currently, water supply comes almost equally from surface and groundwater sources, putting aquifers at risk. Since 2008, the available volume has decreased, affecting both economic activities and household consumption. About 80% of water is allocated to domestic use, which manages to sustain its demand, especially during drought periods. However, water costs in Murcia are significantly higher than the national average: 25% more for consumption and 50% more for supply, although treatment costs remain similar. <br><br>
+
+Climate change, overexploitation, and pollution intensify this challenge. According to the Water Stress Index (WSI), Spain is under absolute water stress (500 m³/capita/year), while Murcia has slightly improved since 2010 but remains a highly vulnerable region that requires well-defined strategies for sustainable water management.
+
+</p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\murcia-water-graph-1.png" alt="" style="width:70vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 2vh;">Volume of water available by origin. Source:Own elaboration based on INE data</p>
+    </div>
+    <div class="graph2" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+            <img src="assets\images\murcia-water-graph-2.png" alt="" style="width: 70vh;">
+    <p style="text-align: center;
+    width: 60%;color: #465C95;font-size: 1vw;
+    line-height: 2vh;">Cost of water by volume consumed, supplied and wastewater in Murcia and national average. Source: Own elaboration based on INE data</p>
+    </div>
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="[title_case]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div> -->
+
+    <div class="intern-wrapper" *ngIf="selectedSectorData == 'Agriculture, forest and fishing' && selectedTitleCase == 'CS1_CRETE_ISLAND'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-agriculture-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Agriculture is the backbone of Sitia’s economy, with 32.6% of its land devoted to farming. The region’s mountainous and rocky terrains supports olive groves, citrus and nut trees, and vineyards, alongside cereals crops like wheat and barley. Olive cultivation dominates local production — Sitia’s extra virgin olive oil, recognized globally for its superior quality, has received numerous international awards. The region’s wines are also renowned, maintaining a tradition of excellence dating back to ancient times. 
+
+Livestock farming and apiculture complement agriculture, with sheep, goats, and poultry raised across the province. Beekeeping, deeply rooted in Sitia’s culture, benefits from the area’s aromatic herbs, producing honey prized for its distinct flavour. Financial support encourages both traditional and organic practices, promoting sustainable growth in these key rural sectors. 
+
+However, the region faces mounting challenges from climate change. Rising temperatures, prolonged droughts, reduced rainfall, and extreme weather events are expected to severely affect olive and vine crops, reducing yields and quality. Water scarcity, soil degradation, and increased pests further threaten agricultural productivity. 
+
+For livestock, climate change may increase disease risks, water shortages, and feed costs, undermining production efficiency. Adapting farming practices and improving resilience are essential to safe guarding Sitia’s agricultural heritage and rural livelihoods. 
+</p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs1-agriculte-forestry-graph-1.png" alt="" style="width:95vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Percentage of area by use. Source: Geospatial Information Infrastructure (GIS) of the Region of Crete</p>
+    </div>
+    <div class="graph2" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+            <img src="assets\images\cs1-agriculture-forestry-graph-2.png" alt="" style="width: 95vh;">
+    <p style="text-align: center;
+    width: 60%;color: #465C95;font-size: 1vw;
+    line-height: 1vw;">Evolution of the olive production. Source: Hellenic Statistical Authority</p>
+    </div>
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+
+      <div class="intern-wrapper" *ngIf="selectedSectorData == 'Water and wastewater'  && selectedTitleCase == 'CS1_CRETE_ISLAND'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/cs3-better-water-management.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Sitia faces <span style="color: #465C95;">growing water challenges due to its dry climate, limited rainfall, and high demand from agriculture and tourism.</span> Much of the <span style="color: #465C95;">water network is old and inefficient</span>, with frequent leaks and salt build-up in pipes. <span style="color: #465C95;">Agriculture is the main water consumer</span>, particularly olive groves and vineyards, while the key Sitia–Palaikastro aquifer is under stress from overuse and seawater intrusion. <br><br>
+
+Although Crete generally has sufficient water, Sitia often experiences summer shortages. <span style="color: #465C95;">Groundwater levels are declining</span>, and several local aquifers shows signs of salinity and nitrate pollution from farming. Efforts are underway to <span style="color: #465C95;">improve irrigation efficiency and monitor water quality.</span> <br><br>
+
+Sitia’s <span style="color: #465C95;">wastewater treatment plant serves about 20,000 people, using biological processes to protect the environment</span>, but growing urban and tourism needs will require system upgrades. <br><br>
+
+<span style="color: #465C95;">Climate change amplifies existing vulnerabilities</span>, with higher temperatures, longer droughts, and heavier rainfall expected to reduce groundwater recharge and worsen desertification. Rising sea levels could further degrade coastal aquifers, increasing costs for water extraction and treatment, and affecting agriculture, tourism, and residents’ quality of life.</p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\citia-water-and-waste-map.png" alt="" style="width:70vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Topographic map of Municipality of Sitia with water streams. Source: Geospatial Information Infrastructure (GIS) of the Region of Crete.</p>
+    </div>
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+
+        <div class="intern-wrapper" *ngIf="selectedSectorData == 'biodiversity'  && selectedTitleCase == 'CS1_CRETE_ISLAND'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/cs1-biodiversity.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+<p class="sector-paragraph">
+
+Sitia’s UNESCO Geopark is one of the Mediterranean’s most unique natural environments, combining striking geological formations with exceptional biodiversity. Its dry, warm climate and location at the crossroads of Europe and Asia Minor have created habitats found nowhere else. The landscape includes aromatic shrublands, gorges rich in vegetation, and the famous Vai Palm Forest — the only natural palm forest in Europe, home to the rare Cretan date palm (Phoenix theophrastii). <br><br>
+
+The geopark hosts hundreds of plant species, many endemic to Crete and southeastern Aegean. Its gorges, such as Zakros and and Chochlakia, serve as refuges for rare flora including orchids, tulips, and wild herbs like thyme and oregano. Coastal zones support unique plant species and nesting grounds for sea lilies, further enriching Sitia’s ecological diversity. <br><br>
+
+The region’s fauna is equally diverse, featuring migratory birds, endangered raptors like the golden eagle and lammergeier, as well as mammals, reptiles, amphibians, and sea turtles. The nearby Dioysades Islands are internationally significant for hosting the world’s largest colony of Eleonora’s falcon and rare marine species such as dolphins and monk seals.  <br><br>
+
+However, climate changes threatens this dedicate balance. Rising temperatures, prolonged droughts, reduced rainfall, and sea level rise could alter ecosystems, cause habitats loss, and increase invasive species and disease risks — endangering both biodiversity and the region’s ecological heritage.</p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs1-biodiversity1.png" alt="" style="width:30vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">The Natura 2000 of Municipality of Sitia. Source: Geospatial Information Infrastructure of the Region of Crete</p>
+    </div>
+    <div class="graph2" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+            <img src="assets\images\cs1-biodiversity2.png" alt="" style="width: 70vh;">
+    <p style="text-align: center;
+    width: 60%;color: #465C95;font-size: 1vw;
+    line-height: 1vw;">The Sitia UNESCO Global Geopark’s map. Source: www.cretesitia.gr</p>
+    </div>
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+
+        <div class="intern-wrapper" *ngIf="selectedSectorData == 'Tourism, leisure and cultural heritage'  && selectedTitleCase == 'CS1_CRETE_ISLAND'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-turism-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Tourism is a key pillar of Sitia’s economy, <span style="color: #465C95;">contributing significantly to local income and employment.</span> However, the sector remains underdeveloped compared to other Cretan destinations. The municipality offers around 6,500 beds, with most accommodations concentrated in Makris Gialos, Palekastro, Zakros, and Xerokampos. Despire its rich archaeological heritage, stunning coastline, and pleasant Mediterranean climate, <span style="color: #465C95;"> Sitia’s tourism potential is still not fully realized due to limited infrastructure and promotion.</span> <br><br>
+
+The <span style="color: #465C95;">region’s climate is both an asset and vulnerability.</span>  Visitors are attracted by its sunny, warm weather, yet rising temperatures, stronger winds, heatwaves, and water shortages caused by climate change pose growing challenges. These conditions can reduce visitor comfort, increase operational costs for cooling, and threaten key attractions such as coastal resorts, beaches, and archaeological sites. <br><br>
+
+<span style="color: #465C95;">Sea level rise and extreme weather also endanger Sitia’s coastal infrastructure</span>, leading to potential economic losses and higher maintenance costs for tourism business. Additionally, <span style="color: #465C95;">climate-related degradation of natural ecosystems</span> could undermine the area’s appeal to eco-tourists and outdoor enthusiasts. <br><br>
+
+On a positive note, <span style="color: #465C95;"> milder winters may extend the tourist season beyond summer</span>, creating opportunities for year-round tourism. This seasonal diversification could help stabilize local employment and reduce the sector’s dependency on summer visitors.
+
+</p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs1-sitia-turism-graph.png" alt="" style="width:90vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Evolution of the hotel facilities of the Municipality of Sitia. Source: Hellenic Chamber of Hotels</p>
+    </div>
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+ 
+<div class="intern-wrapper" *ngIf="selectedSectorData == 'Energy'  && selectedTitleCase == 'CS2_TRENTINO_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/energy-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+The energy sector is a <span style="color: #465C95;">cornerstone of the Trentino’s economy</span>, largely driven by renewable sources. Around <span style="color: #465C95;">83% of Trentino’s electricity comes from renewables</span>, with hydropower as the dominant source, producing over 4,300GWh annually. This output exceeds the province’s consumption by about 65%, allowing Trentino to <span style="color: #465C95;">export surplus green energy</span>. Solar power and biomass-based co-generation also contribute, while fossil fuels are mainly used from transport and industrial heating. <br><br>
+
+<span style="color: #465C95;">Hydropower</span> has deep historical roots in the region, <span style="color: #465C95;">transforming mountain rivers into vital energy sources</span> since the late 19th century. <span style="color: #465C95;">Biomass remains important for heating</span>, especially in domestic and district systems using wood and wood chips. However, the <span style="color: #465C95;">province still imports around two-thirds of its total energy needs</span>, mainly oil and natural gas. <br><br>
+
+<span style="color: #465C95;">Tourism and industry are the most energy-demanding sectors</span>, with electricity use in tourism rising significantly before the pandemic. The ski industry, central to Trentino’s winter economy, consumes large amounts of energy for lifts, snowmaking, and heating. <br><br>
+
+<span style="color: #465C95;">Climate change poses growing challenges</span>, including shifts in heating and cooling demands and potential impacts on hydropower and infrastructure. To address this, Trentino’s 2030-2050 decarbonization plan emphasizes electrification, renewable expansion, and smarter energy management to achieve climate neutrality. 
+
+
+</p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs2-energy-sector-graph.png" alt="" style="width:85vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Final consumption of energy divided by source (mean data for 2014-2016) (APPA, 2020 - Report on Energy, original data from APRIE)</p>
+    </div>
+        <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs2-energy-graph2-sector.png" alt="" style="width:90vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Energy consumption divided by sectors for the Autonomous Province of Trento, million kWh (1996-2021) (data from ISPAT - originally collected by Terna Spa)</p>
+    </div>
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+  <div class="intern-wrapper" *ngIf="selectedSectorData == 'Water and wastewater'  && selectedTitleCase == 'CS2_TRENTINO_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-water-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Water resources are one of Trentino’s greatest assets, shaping its economy, landscape and tourism identity. The province’s hydrographic system includes 9 major river basins, 297 alpine lakes, and over 10,000 springs, all influenced by its rugged Alpine terrain. Hydropower dominates water use, accounting for about 91% of total concessions, making a water strategic renewable energy source for the region. Other key uses include fish farming, agriculture, and civil consumption. <br><br>
+
+Tourism also depends heavily on Trentino’s water resources, both for its scenic value and its practical uses. Alpine lakes, rivers, and reservoirs are vital for recreation, while artificial snow making has become essential for ski resorts facing reduced snowfall. However, this activity increases water and energy demand and can impact local ecosystems. Climate change is intensifying these challenges, with decreasing snow cover and glacier retreat affecting water availability, especially during summer. <br><br>
+
+The province’s glaciers have lost more than 70% of their surface since the 19th century, leading to reduced downstream water supplies. Increasing droughts and extreme weather events, such as those seen in 2022, have already strained hydropower, agriculture, and tourism sectors. <br><br>
+
+To secure its future water resilience, Trentino is prioritising integrated, cross-sectoral water management, balancing hydropower, agriculture, and tourism needs while adapting to changing climate.
+
+</p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs2-trentino-water-waste-graph-image-1.png" alt="" style="width:85vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">River water bodies and lakes in the Autonomous Province of Trento. Source: Own elaboration</p>
+    </div>
+        <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs2-trentino-water-waste-graph-image-2.png" alt="" style="width:90vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Quantity of water conceded for different uses [million m3/year].
+Source: data from ISPAT in 2021</p>
+    </div>
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+  <div class="intern-wrapper" *ngIf="selectedSectorData == 'biodiversity'  && selectedTitleCase == 'CS2_TRENTINO_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/cs1-biodiversity.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Trentino is one of Italy’s most environmentally rich regions, with 30,4% of its territory under protection — one of the highest rates in the country. Its conservation network includes three major parks: the Stelvio National Park, the Adamello Brenta Natural Park (a UNESCO Global Geopark), and the Paneveggio Pale di San Martino Nature Park. The province also boasts UNESCO World Heritage Sites, such as the Dolomites, as welas over 150 Natura 2000 sites, 46 provincial reserves, and 10 Reserve Networks that promote biodiversity and local sustainable development.  <br><br>
+
+Trentino’s mountain landscapes host more than 3,700 recorded plant and animal species, including emblematic Alpine wildlife like the chamois, ibex, brown bear, lynx, and wolf. Forest cover 63% of the province, dominated by spruce, beech, larch, and fir. Protected areas are not only key to conserving biodiversity but also central to Trentino’s tourism and recreation economy. <br><br>
+
+All of Trentino’s protected areas have been awarded the European Charter for Sustainable Tourism (CETS), recognizing their commitment to responsible and high-quality tourism. These initiatives encourage collaboration among local communities, parks, and tourism operations to promote eco-friendly practices. <br><br>
+
+However, climate change poses growing risks — shifting vegetation zones, altering species distribution, and increasing the spread of invasive species and plant diseases. These pressures threaten biodiversity, freshwater ecosystems, and forest stability, underscoring the need for adaptative conservation strategies.
+</p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs2-trentino-biodiversity-graph-1.png" alt="" style="width:55vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Promotional infographic of the Autonomous Province of Trento on natural assets (land distribution and percentage under environmental protection) (Visittentino.info; data for 2020).</p>
+    </div>
+        <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs2-trentino-biodiversity-graph-2.png" alt="" style="width:55vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Protected areas in the Autonomous Province of Trento (2013-2019). Source: APPA, from 2022</p>
+    </div>
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+    <div class="intern-wrapper" *ngIf="selectedSectorData == 'Tourism, leisure and cultural heritage'  && selectedTitleCase == 'CS2_TRENTINO_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-turism-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Tourism is a cornerstone of Trentino’s economy, contributing around 11% to its GDP and employing about 10,000 people. The province hosts over 1,400 hotels and 480,000 bed places, supported both Italian and international visitors. In 2019, Trentino recorded 6 million arrivals and nearly 33 million overnight stays, with tourism rebounding strongly after the COVID-19 pandemic. The region benefits from a balanced mix of winter and summer tourism, with growing interest in spring and autumn visits, reducing its traditional seasonality.  <br><br>
+
+Nature and sustainability are central to Trentino’s appeal. Tourists come to experience the Dolomites, a UNESCO World Heritage Site, 297 lakes, and vast forest covering over 60% of the land. Protected areas and three natural parks support biodiversity and promote eco-friendly tourism through the European Charter for Sustainable Tourism. Cableways are a key part of mountain mobility, serving over 80 million passengers in winter and more than 5 million in summer. <br><br>
+
+However, climate change poses increasing risks. Warmer winters are reducing snow cover —down 38% in Trento since 1990—threatening the ski industry and increasing reliance on artificial snowmaking. Summer tourism may expand due to milder mountain climates, but water shortages, forest decline, and more frequent extreme weather events threaten infrastructure and natural  attractions. <br><br>
+
+Trentino’s future tourism strategy focuses on sustainability, resilience, and preserving its natural and cultural heritage while adapting to a changing climate. </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs2-trentino-turism-graph1.png" alt="" style="width:90vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Distribution of tourism nights (absolute values in thousands of people) by month in 2022, and variation between 2022/2019</p>
+    </div>
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+
+      <div class="intern-wrapper" *ngIf="selectedSectorData == 'Agriculture, forest and fishing'  && selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text" style="width: 50%;">
+          <div style="display: flex;"><img src="assets/images/murcia-agriculture-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Norbotten Country’s economy is strongly influenced by its natural resources, particularly forestry, reindeer husbandry, agriculture, and fishing. Nearly 40% of the county is covered by productive forest, dominated by Scots pine, spruce, and birch. The forestry sector is vital, employing around 6,000 people, supported by sawmills and paper industries. Despite slow tree growth due to the cold climate, Norrbotten holds 29% of Sweden’s old-growth forests, with nearly half protected for conservation. Forestry remains sustainable, harvesting less than half of the forest’s annual growth. <br><br>
+
+Reindeer husbandry, central to Sami culture and livelihoods, is another key activity. Around 4,000 reindeer owners manage up to 160,000 animals through 32 Sami communities. Reindeer herding contributes about €4 million annually but faces challenges from forest management practices, which reduce old forest areas with lichens essential for grazing. <br><br>
+
+Agriculture in Norrbotten, limited by its Arctic climate, focuses mainly on dairy, meat, and grass cultivation. Only 0.3% of land is farmed, with 78% used for fodder. Livestock numbers are declining overall, though pig farming is increasing. The number of farms and full-time farmers has decreased sharply, reflecting economic and generational challenges. <br><br>
+
+Fishing, both inland and in the Bothnian Bay, remains a traditional livelihood and tourist attraction. While professional catches have declined, aquaculture is expanding, making northern Sweden a growing hub for farmed fish production.
+
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs3-agriculture-graph-1.png" alt="" style="width:70vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Land cover of Norbotten Country</p>
+    </div>
+        <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs3-norbotten-agriculture-graph2.png" alt="" style="width:70vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Arable land in Norrbotten 1981-2022. Source: Swedish Board of Agriculture</p>
+    </div>
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+        <div class="intern-wrapper" *ngIf="selectedSectorData == 'Energy'  && selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/energy-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Norrbotten is one of Sweden’s most energy-intensive regions, driven by its cold climate, vast transport distances, and heavy industry. In 2018, total energy use reached about 31 terawatt-hours (TWh), with renewables making up roughly 50% of consumption. Most fossil fuel use comes from coal and coke in steel and iron production, particularly at SSAB in Luleå and LKAB in Kiruna. <br><br>
+
+The region is now leading Sweden’s green industrial transformation. Plans to replace coal-based steelmaking with hydrogen-based processes could eliminate nearly 10% of Sweden’s total CO₂ emissions, producing only water vapor instead of carbon dioxide. This shift will significantly reshape Norrbotten’s energy landscape and position it as a model for sustainable heavy industry. <br><br>
+
+Hydropower remains the backbone of Norrbotten’s electricity, accounting for about 90% of local production. Complementing this, the region is rapidly expanding its wind energy capacity. The Markbygden wind farm near Piteå, Europe’s largest, is expected to reach 12 TWh of annual output when completed in 2026. Solar energy is also growing, though still at small scale. <br><br>
+
+Electricity demand is projected to soar from 8 TWh in 2019 to over 100 TWh by 2050, driven largely by hydrogen production. Meeting this demand will require major expansion in renewable generation and infrastructure.
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs3-energy-graph.png" alt="" style="width:85vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Energy use distributed between different fuel categories</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+        <div class="intern-wrapper" *ngIf="selectedSectorData == 'biodiversity' && selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/cs1-biodiversity.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Norrbotten County, located in northern Sweden, spans from the Bothnian Bay coast to the alpine border with Norway, encompassing forests, wetlands, mountains, and river valleys. About 60% of the county is forested, mainly with Scots pine and Norway spruce, while 12% consists of mires that store large amounts of carbon and host specialized species. The region’s rivers — including the Torne, Lule, Kalix, and Pite — and its low-salinity coastal waters support valuable fish populations such as salmon, perch, and pike. <br><br>
+
+Norrbotten holds Sweden’s largest area of protected nature, with 2.6 million ha — about 25% of its total land area — under protection. This includes 8 of Sweden’s 30 national parks, making it the country’s most conservation-rich region. Vast mountain and forest reserves provide habitats for numerous species adapted to northern and alpine environments. <br><br>
+
+However, biodiversity faces significant threats. The number of red-listed species in northern Sweden has increased by 19% since 2015, primarily due to clear-cut forestry, climate change, wetland drainage, and hydropower regulation. Alpine habitats generally remain in good condition, while forest habitats show poor conservation status due to ongoing industrial forestry practices. <br><br>
+
+Norrbotten’s vast, diverse landscapes make it a vital region for Sweden’s biodiversity and climate resilience, highlighting the importance of sustainable land use and ecosystem protection.
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs3-biodiversity-graph.png" alt="" style="width:fit-content;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Protected areas in Sweden. Green: land area; light blue: freshwater; dark blue: marine protected areas. The area of protected nature is largest in the north, and especially in the mountainous region (SLU Artdatabanken, 2022)</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+        <div class="intern-wrapper" *ngIf="selectedSectorData == 'mining'  && selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;align-items: flex-start;
+    ">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/mining-image.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Norrbotten is Sweden’s leading mining region, home to five active metal mines — four producing iron and one extracting copper, gold, and silver. Mining has been central to the county’s economy for centuries, with some operations, such as Malmberget, dating back to the 1820s. The Aitik mine, operated by Boliden Mineral AB, is one of Europe’s largest copper mines. Since its opening in 1968, production has expanded from 2 million to over 43 million tonnes of ore annually, with reserves expected to last for decades. <br><br>
+
+The region’s other major mining operations — Kiirunavaara, Malmberget, Leveäniemi, and Kaunisvaara — are operated primarily by LKAB and Kaunis Iron AB. These mines are key suppliers of high-quality iron ore that supports Sweden’s position as one of Europe’s largest iron producers. <br><br>
+
+Sweden’s total ore production has nearly doubled over the past decade, with Norrbotten contributing significantly to this growth. The mining industry has also seen strong employment growth, with a 37% increase in workers between 2000 and 2022. <br><br>
+
+Mining in Norrbotten continues to be a cornerstone of both regional and national industry, combining technological innovation with vast mineral resources to meet global demand for metals essential to modern manufacturing and green technologies. 
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs3-mining-graph.png" alt="" style="width:fit-content;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Active mines and know mineralisations in Sweden 2022. Source: SGU (2023)</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+        <div class="intern-wrapper" *ngIf="selectedSectorData == 'Tourism, leisure and cultural heritage'  && selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-turism-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Tourism in Norrbotten is deeply connected to its pristine natural landscapes,  offering visitors unique experiences shaped by the region’s wildness and Artic environment. With 8 national parks and more than 430 nature reserves, Norrbotten is a hub for outdoor adventures such as skiing, trekking, dog sledding, and Northen Lights tours. Iconic attractions like the world-famous Icehotel in Jukkasjärvi exemplify how nature and innovation combine to draw international visitors. <br><br>
+
+Nature-based tourism is the cornerstone of Norrbotten’s travel insdustry, focusing on authetic experiences that immerse visitors in the local environment — from walking on frozen lakes to berry picking in the forests. These simple, small-scale activities are highly valued by tourists seeking sustainable and meaningful travel experiences. The region has increasingly positioned itself as a destination for eco-friendly tourism that benefits local communities while protecting the environment. <br><br>
+
+Between 2009 and 2019, Norrbotten recorded a 26% rise in guest nights, reflecting steady tourism growth until the COVID-19 pandemic temporarily disrupted the trend. While total visits have not fully returned to pre-pandemic levels, summer tourism has alredy surpassed them, showing strong seasonal recovery and continued international appeal. <br><br>
+
+Norrbotten’s sustainable, experience-drivem tourism continues to grow, balancing nature conservation with economic opportunity.
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs3-turism-graph.png" alt="" style="width:90vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Number of nights in Norrbotten during June, July and August, 2008-2022. Source: Sandlund & Öhman, 2020</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+          <div class="intern-wrapper" *ngIf="selectedSectorData == 'Agriculture, forest and fishing'  && selectedTitleCase == 'CS4_MURCIA_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-agriculture-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> <span style="color: #465C95;">{{selectedSectorData}}</span> 
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+The agriculture, forestry, and fishing sectors form the foundation of Murcia’s economy, with agriculture alone covering half of the region’s total area. This dominance highlights the importance of the primary sector in managing scarce water resources and supporting local livelihoods. Murcia’s Mediterranean climate and innovative irrigation practices have made it one of Spain’s most productive agricultural regions, especially in fruit and vegetable cultivation, where output has grown steadily despite limited arable land. <br><br>
+
+Over the past decades, Murcia has transitioned toward more intensive crop management, leading to higher yields and productivity. Woody crops such as citrus fruits have expanded significantly, while herbaceous crops like vegetables have become the most produced category, reaching over 1.8 million tonnes annually. Historical milestones, such as Spain’s entry into the EU, further boosted competitiveness and exports, particularly for horticultural products. <br><br>
+
+Employment in the primary sector represents 10–15% of the regional workforce, fluctuating in response to economic cycles but remaining a key contributor to rural stability. Livestock farming is also vital, with pig production leading the sector and steady growth observed in cattle numbers. Fisheries, though smaller, have shown resilience, with aquaculture surpassing traditional sea fishing in both volume and market value. Forest areas, largely composed of drought-resistant conifers and scrublands, reflect Murcia’s adaptation to arid conditions and limited water availability. 
+
+
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs4-agriculture-graph1.png" alt="" style="width:70%;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Percentage of area by use. Source: Own elaboration based on IFN4 data.</p>
+    </div>
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs4-agriculture-graph2.png" alt="" style="width:95%;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Evolution of the percentage of total employment in the agriculture and livestock sector. Source: Own elaboration based on INE data</p>
+    </div>
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+          <div class="intern-wrapper" *ngIf="selectedSectorData == 'Water and wastewater'  && selectedTitleCase == 'CS4_MURCIA_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-water-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+The Region of Murcia is characterized by an arid climate and severe water limitations. Low rainfall, dependence on the Tajo-Segura water transfer since the 1980s, and intensive use of water for agriculture are the main causes of this situation. <br><br>
+
+Water scarcity particularly affects irrigated crops and domestic consumption. Water quality is also a major issue, with critical cases such as the Mar Menor, whose degradation is linked to agricultural discharges of fertilizers and pesticides. <br><br>
+
+Currently, water supply comes almost equally from surface and groundwater sources, putting aquifers at risk. Since 2008, the available volume has decreased, affecting both economic activities and household consumption. About 80% of water is allocated to domestic use, which manages to sustain its demand, especially during drought periods. However, water costs in Murcia are significantly higher than the national average: 25% more for consumption and 50% more for supply, although treatment costs remain similar.  <br><br>
+
+Climate change, overexploitation, and pollution intensify this challenge. According to the Water Stress Index (WSI), Spain is under absolute water stress ( less than 500 m³/capita/year>), while Murcia has slightly improved since 2010 but remains a highly vulnerable region that requires well-defined strategies for sustainable water management. <br><br>
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs4-water-graph1.png" alt="" style="width:100vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Volume of water available by origin. Source: Own elaboration based on INE data.</p>
+    </div>
+        <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs4-water-grahp2.png" alt="" style="width:100vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Cost of water by volume consumed, supplied and wastewater in Murcia and national average. Source: Own elaboration based on INE data</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+          <div class="intern-wrapper" *ngIf="selectedSectorData == 'Industry and commerce'  && selectedTitleCase == 'CS4_MURCIA_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: center;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-industry-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Industry and commerce are key drivers of Murcia’s economy, fostering innovation, job creation, and overall regional development. Commerce thrives mainly on the export of agricultural products and tourism, while industry sustains the production of goods and services that support domestic and international trade. However, climate change poses a growing challenge, affecting crop yields and tourism patterns due to changing temperatures, rainfall, and water availability. <br><br>
+
+Murcia’s GDP per capita has shown a steady upward trend since 2000, except during the 2008 financial crisis and the COVID-19 pandemic. Although still around 15–18% below Spain’s national average, the continuous recovery reflects stronger economic performance and improved living standards. <br><br>
+
+Industrial performance, measured by the Industrial Production Index (IPI), declined sharply after 2008 but has since rebounded to levels comparable to the early 2000s. This recovery is driven by renewed demand, government incentives, and a shift toward sustainable industrial practices. <br><br>
+
+Employment in the industrial sector mirrors these fluctuations, with notable drops during economic crises and steady recovery since 2018. Overall, Murcia’s industry and commerce remain vital to its economic resilience, with future growth depending on sustainable practices and continued adaptation to climate and market challenges.
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs4-industry-graph.png" alt="" style="width:90vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">GDP per capita in Murcia and national average. 
+Source: Own elaboration based on INE data.</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+          <div class="intern-wrapper" *ngIf="selectedSectorData == 'Tourism, leisure and cultural heritage'  && selectedTitleCase == 'CS4_MURCIA_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-turism-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Tourism is a vital part of Murcia’s economy, supported by its Mediterranean climate, coastline, and cultural heritage. However, challenges like climate change and water scarcity threaten beach quality and water resources, highlighting the need for sustainable tourism focused on eco-friendly, cultural, and gastronomic experiences. <br><br>
+
+Domestic tourism has shown strong recovery, with over 15 million overnight stays between 2015 and 2021. After the COVID-19 decline, visitor numbers and spending quickly rebounded, driven by longer stays and higher average expenditures, placing Murcia above national tourism averages. <br><br>
+
+International tourism, which peaks during summer, also recovered rapidly after pandemic-related declines. By 2022, both visitor numbers and spending surpassed pre-pandemic levels, supported by improved marketing, effective health management, and Murcia’s natural appeal. <br><br>
+
+Overall, Murcia’s tourism sector is expanding again, strengthening local employment and economic growth. Continued focus on sustainability and climate adaptation will be essential to preserve its long-term appeal and resilience.
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs4-turism-graph1.png" alt="" style="width:95%">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Evolution of the average trip length and money spent per person by national tourism. Source: Own elaboration based on INE or CARM data.</p>
+    </div>
+
+        <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs4-turism-graph2.png" alt="" style="width:95%;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Evolution of the total money spent by international tourism. Source: Own elaboration based on INE or CARM data</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+            <div class="intern-wrapper" *ngIf="selectedSectorData == 'Agriculture, forest and fishing'  && selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-agriculture-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Tulcea County’s economy is strongly influenced by the nearby Danube Delta, where strict environmental rules shape agricultural practices. Agriculture is the main economic activity, employing over 35% of the population and covering nearly 364,000 ha. Although soil quality and drought limit productivity, agricultural value has grown by about 30% between 2014 and 2021, with strong performance in the vegetable and organic farming sectors. Tulcea also leads Romania in ecological agriculture and beekeeping, holding the highest number of certified bee families. <br><br>
+
+Livestock farming focuses mainly on sheeps and goats, both of which have expanded in recent years, while pig farming declined due to African swine fever. Beekeeping has seen rapid growth, though honey production varies with weather conditions. <br><br>
+
+Fishing, once central to Tulcea’s economy, has greatly decreased due to climate change, reduced water quality, and inconsistent policies. The sector now faces labour shortages and lower production levels. <br><br>
+
+Forestry has slightly expanded, emphasizing biodiversity protection and sustainable management. Promoting traditional crafts and responsible land use could enhance rural employment while preserving Tulcea’s unique natural environment.
+ </p>
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs5-danube-delta-agriculture-sector-graph1.png" alt="" style="width:90%;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Productivity in agriculture (thousands Lei) by branch. Source: Own elaboration based on Ro-INS data.</p>
+    </div>
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs5-danube-delta-agriculture-sector-graph2.png" alt="" style="width:90%;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Evolution of livestock. Source: Own elaboration based on Ro-INS data.</p>
+    </div>
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+
+  
+            <div class="intern-wrapper" *ngIf="selectedSectorData == 'Energy'  && selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex;
+    align-items: center;
+    flex-direction: column;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/energy-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+The energy sector in Tulcea County plays a crucial role in supporting both local communities and major industries. The main electricity supplier, ENEL ENERFIE SA, operates through E-Distribuție Dobrogea, which manages an extensive network of over 120 transformer stations and more than 6,000 transformer points. A key infrastructure milestone is the refurbishment of the 400/110/20 kV Tulcea Vest Transformation Station, a major energy hub that powers the municipality and large industrial platforms such as Vimetco Alum and the Tulcea Vard shipyard. <br><br>
+
+Over the past decade, Tulcea’s energy sector has experienced strong growth. Despite the reduction in the number of active companies—from 21 in 2013 to 12 in 2021—the sector’s turnover soared from €138 million to nearly €1 billion. This remarkable rise highlights increasing efficiency and profitability, driven by modernization, diversification, and investment in renewable energy infrastructure.  <br><br>
+
+Dobrogea, the wider region encompassing Tulcea, stands out as one of Europe’s most promising areas for wind energy. With average wing speeds of 7.2 m/s and flat terrain, the region offers ideal conditions for wind power generation. To date, 83 wind parks have received environmental approval, enabling the installation of up to 839 turbines, making Tulcea a leader in Romania’s transition to sustainable energy.</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs5-energy-sector-graph.png" alt="" style="width:90vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Productivity in agriculture (thousands Lei) by branch. Source: Own elaboration based on Ro-INS data.</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+    
+            <div class="intern-wrapper" *ngIf="selectedSectorData == 'Water and wastewater'  && selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-water-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+The Danube Delta and Dobrogea region form a vast hydrographic network of rivers, lakes, and coastal waters, shaped by the Danube’s three main branches — Chilia, Sulina, and Sfântu Gheorghe. Although the river’s flow remains stable, human interventions have disrupted natural sediment transport, affecting delta ecosystems and water quality. <br><br>
+
+Many localities in the Danube Delta Biosphere Reserve lack proper sewage and wastewater treatment systems, leading to pollution from untreated water, agriculture, and maritime transport. To improve this, EU Water Framework Directive measures have focused on expanding sewer networks, upgrading treatment facilities, and enforcing stricter discharge controls. <br><br>
+
+Pollution from heavy metals like nickel and cadmium is mainly linked to industrial and navigation activities, but overall contamination levels remain low, posing only minor ecological risks. Continuous monitoring and improved infrastructure are vital to safeguard water quality and biodiversity. <br><br>
+
+Sustainable Water and wastewater management are essential for preserving the Danube Delta’s unique environment, protecting local communities, and ensuring the long-term resilience of this globally important ecosystem. </p> 
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs5-danube-delta-water-waste-graph.png" alt="" style="width:110vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Sampling Stations along the lower Danube River Source: Assessment of Heavy Metal Pollution Levels in Sediments and of Ecological Risk by Quality Indices, Applying a Case Study: The Lower Danube River, Romania</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+              <div class="intern-wrapper" *ngIf="selectedSectorData == 'Industry and commerce'  && selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: center;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/industry-image-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Industry and commerce are key pillars of Tulcea County’s economy, concentrated mainly in urban centers like Tulcea, Babadag, Măcin, and Sulina, as well as some rural areas. The region’s industrial base is diverse, producing alumina, ferroalloys, furniture, textiles, food products, and shipbuilding components. Additionally, ten authorized quarries supply essential construction materials. These industries play a crucial role in supporting both local employment and exports. <br><br>
+
+Between 2013 and 2021, Tulcea’s industrial sector experienced remarkable growth, with total turnover more than doubling from €5.5 billion to over €13 billion. Although the 2017 floods caused a temporary decline, the sector rebounded quickly, driven by manufacturing, energy production, and trade. Wholesale and retail trade remain dominant contributors, followed by manufacturing and energy generation. <br><br>
+
+Investment in the region also grew significantly, reaching €1.3 billion in 2021. The strongest sub-sectors include bakery and pastry production, metal construction, shipbuilding, and clothing manufacturing. These industries demonstrate Tulcea’s ability to combine traditional craftsmanship with modern industrial capabilities. <br><br>
+
+Overall, Tulcea’s industrial and commercial landscape is evolving rapidly, driven by innovation, investment, and regional development. Its strategic location along the Danube supports logistics and trade, positioning the county as a growing industrial hub in southeastern Romania. </p> 
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs5-industry-sector-graph.png" alt="" style="width:60%">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">Companies in Tulcea region according to main national economical accounts. 
+Source: Scientific Papers Series Managment, Economic Engineering in Agriculture and Rural Development. </p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+
+              <div class="intern-wrapper" *ngIf="selectedSectorData == 'Tourism, leisure and cultural heritage'  && selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        {{title_case}}
+      </div>
+      
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <div class="sectors-challanges" style="display: flex
+;
+    align-items: flex-start;">
+        <div class="sector-text">
+          <div style="display: flex;"><img src="assets/images/murcia-turism-sector.png" alt="" style="width: 10vh;margin-left: 1vh;margin-right: 1vh;margin-top: 1vh;margin-bottom: 1vh;">
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important;  margin-top: 3%; font-size: 2vh;">
+        <strong>Relevant Sectors: <br></strong> {{selectedSectorData}}
+      </p>
+      </div>
+        <p style="line-height: 1.5vw;">
+
+Tulcea County is one of Romania’s most unique tourist destinations, combining exceptional biodiversity, scenic landscapes, and cultural heritage. The Danube Delta, a UNESCO Biosphere Reserve, hosts over 5,000 species across 30 ecosystems, while the Măcin Mountains National Park and 49 protected areas add to its natural appeal. <br><br>
+
+The region also offers rich cultural and historical attractions, including ancient fortresses like Enisala and Argamum, and hosts renowned events such as the ANONIMUL Film Festival and Rowmania Fest, which draw visitors from around the world. <br><br>
+
+Tourism has grown steadily, with more than 580 accommodation facilities and increasing interest in agritourism and eco-friendly stays. The Danube Delta attracts most tourists between May and September, emphasizing its strong seasonal nature. <br><br>
+
+To preserve its fragile ecosystems, Tulcea is promoting ecotourism and sustainable development, aiming to balance tourism growth with environmental protection and maintain its reputation as a natural and cultural paradise.</p> 
+</div>
+
+<div class="graphs">
+    <div class="graph1" style="display: flex
+;
+    flex-direction: column;
+    align-items: center;">
+    <img src="assets\images\cs5-turism-graph-sector.png" alt="" style="width:90vh;">
+    <p style="text-align: center;color: #465C95;width: 60%;font-size: 1vw;
+    line-height: 1vw;">20 years evolution of tourists’ number in the Danube Delta and Tulcea County</p>
+    </div>
+
+
+
+</div>
+      </div>
+
+
+
+           <button
+            mat-raised-button
+            [routerLink]="['/'+title_case_url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div>
+ 
+</div>
+
+
+
+
+
+<section class="the_footer">
+  <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+</section>

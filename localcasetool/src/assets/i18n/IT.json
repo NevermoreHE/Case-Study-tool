@@ -1,0 +1,515 @@
+{
+    "HEADER": {
+        "ABOUT_US": "Chi siamo",
+        "HELP": "Aiuto",
+        "TOOL_SELECTION": "Selezione dello strumento",
+        "LOG_OUT": "Disconnettersi",
+        "CHANGE_LANGUAGE": "Cambia lingua",
+        "LANGUAGES": {
+            "ITALIAN": "ITALIANO",
+            "ROMANIAN": "RUMENO",
+            "SWEDISH": "SVEDESE",
+            "GREEK": "GRECO",
+            "SPANISH": "SPAGNOLO",
+            "ENGLISH": "INGLESE"
+        }
+    },
+    "FOOTER": {
+        "EU_FUNDING_BY": "Finanziato da",
+        "EU_FUNDING_UNION": "l'Unione Europea",
+        "EU_FUNDING_INFO": "Questo progetto ha ricevuto finanziamenti dal programma di ricerca e innovazione Horizon dell'Unione Europea con l'accordo di sovvenzione n. 101056858"
+    },
+    "HOME_COMPONENT": {
+        "HOME_PAGE_CONTENT_TOOL_DESCRIPTION": {
+            "DESCRIPTION": "Descrizione",
+            "WELCOME_TITLE": "Benvenuti al Toolkit ICT di NEVERMORE!",
+            "CATALOGUE_EXPLORER_TITLE": "Esploratore del Catalogo",
+            "EU_SCALE_TOOL_TITLE": "Strumento EU-SCALE",
+            "CASE_STUDY_TOOL_TITLE": "Strumento di Caso di Studio",
+            "GAMIFICATION_TOOL_TITLE": "Strumento di Gamification",
+            "ICT_TOOLS_DESCRIPTION": {
+                "CATALOGUE_EXPLORER_TOOL_DESCRIPTION": "Lo Strumento del Catalogo di Adattamento e Mitigazione (A&M) è un componente integrale del toolkit ICT NEVERMORE. Questo strumento intuitivo si allinea ai principi fondamentali del toolkit ICT, mirando a consentire agli utenti di comprendere l'intricata interazione tra cambiamento climatico e politiche di adattamento e mitigazione attraverso un'interfaccia user-friendly e interattiva. Lo strumento è progettato per fornire un catalogo di soluzioni relative alla mitigazione e adattamento al cambiamento climatico. Comprende una revisione delle misure intersettoriali già messe in atto, potenziali soluzioni identificate tramite ricerca bibliografica, e scenari sviluppati in collaborazione con consigli locali e parti interessate.",
+                "GAMIFICATION_TOOL_DESCRIPTION": "L'obiettivo principale dello strumento di gamification NEVERMORE è creare consapevolezza sul cambiamento climatico. È sviluppato come un gioco di simulazione educativa dove i giocatori esplorano diverse soluzioni per combattere e adattarsi agli impatti del cambiamento climatico. Il gioco insegna ai giocatori gli impatti del cambiamento climatico mentre ispira speranza e motiva gli utenti ad agire e trovare soluzioni efficaci che contribuiranno a definire un futuro più verde, meglio adattato e più sicuro. I giocatori del gioco devono completare due missioni diverse per finire il gioco.",
+                "CASE_STUDY_TOOL_DESCRIPTION": "Lo strumento di Caso di Studio NEVERMORE sarà un componente software che consente agli utenti di selezionare un caso di studio e visualizzare i principali impatti, vulnerabilità e rischi del cambiamento climatico. Le informazioni fornite saranno utili per creare diversi scenari di azione politica di adattamento e mitigazione basati su misure selezionate dall'utente dal catalogo A&M a scala locale.",
+                "EU_SCALE_TOOL": "L'obiettivo dello strumento è diventare uno 'strumento di policy-making' che potrebbe offrire rilevanti raccomandazioni politiche. Lo strumento utilizzerà risultati di dati pre-simulati da un Modello di Valutazione Integrata (IAM), per ridurre la complessità attraverso la riduzione del grado di libertà delle variabili di input del cliente. Questo filtraggio e riduzione degli input saranno effettuati utilizzando la conoscenza delle parti interessate."
+            }
+        },
+        "HOME_PAGE_TOOL_SELECTION": {
+            "CONFIRM_SELECTION": "Conferma Selezione",
+            "TOOL_SELECTION": "Selezione Strumento",
+            "EU_SCALE_TOOL_SELECTOR": "Strumento EU-SCALE",
+            "CATALOGUE_EXPLORER_TOOL_SELECTOR": "Esploratore del Catalogo",
+            "CASE_STUDY_TOOL_SELECTOR": "Strumento di Caso di Studio",
+            "GAMIFICATION_TOOL_SELECTOR": "Strumento di Gamification"
+        }
+    },
+    "EU_SCALE_TOOL_COMPONENT": {
+        "WELCOME_EU_SCALE_TOOL_TITLE": "Benvenuti alla pagina dello strumento EU-SCALE",
+        "EU_SCALE_TOOL_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "CATALOGUE_EXPLORER_COMPONENT": {
+        "WELCOME_CATALOGUE_EXPLORER": "Benvenuti alla pagina dell'esploratore del catalogo",
+        "CATALOGUE_EXPLORER_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "HELP_COMPONENT": {
+        "HELP_EXPLORER": "Benvenuti alla pagina di Aiuto",
+        "HELP_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "CASE_STUDY_TOOL_COMPONENT": {
+        "THE_CASE_STUDY_TOOL_TITLE": "STRUMENTO DI CASO DI STUDIO",
+        "WELCOME_CASE_STUDY_TOOL": "Benvenuti allo Strumento di Caso di Studio NEVERMORE",
+        "CASE_STUDY_TOOL_INFO": "Lo strumento renderà possibile la valutazione degli impatti del cambiamento climatico, delle vulnerabilità e dei rischi. Successivamente, saranno fornite alcune raccomandazioni politiche in base ai rischi predefiniti, alle competenze e agli interessi. Di conseguenza, saranno forniti indicatori di mitigazione e adattamento per valutare gli effetti della selezione delle politiche.",
+        "CASE_STUDY_TOOL_SELECT_CASE_STUDY": "Seleziona un caso di studio per effettuare la tua valutazione!",
+        "SELECT_YOUR_CASE_STUDY": "Seleziona il tuo caso di studio",
+        "CS1_CRETE_ISLAND": "CS1-Isola di Creta",
+        "CS2_TRENTINO_REGION": "CS2-Regione Trentino",
+        "CS3_NORRBOTTEN_COUNTRY": "CS3-Paese di Norrbotten",
+        "CS4_MURCIA_REGION": "CS4-Regione Murcia",
+        "CS5_DANUBE_DELTA": "CS5-Delta del Danubio",
+        "NAVIGATION_ADVICE": "#Per andare al caso di studio desiderato, premi sul nome dello studio",
+        "MURCIA_REGION_COMPONENT": {
+            "SECTION_DESCRIPTION": "In questa sezione, puoi trovare una descrizione generale di questo caso di studio e informazioni rilevanti sui settori prioritari e sulle sfide da affrontare durante la valutazione dell'adattamento e mitigazione.",
+            "MORE_INFO": "Maggiori informazioni>>>",
+            "SECTOR_INFO": "Clicca su un settore per sapere più informazioni!",
+            "AGRICULTURE_FORESTRY_AND_FISHING": "Agricoltura, silvicoltura e pesca",
+            "WATER_AND_WASTE": "Acqua e rifiuti",
+            "INDUSTRY_AND_COMMERCE": "Industria e commercio",
+            "TOURISM": "Turismo, tempo libero e patrimonio culturale",
+            "ENERGY":"Energia",
+            "MAIN_CHALLENGES": "Principali Sfide",
+            "DESERTIFICATION": "Desertificazione dovuta all'erosione del suolo",
+            "SUSTAINABLE_WATER_MANAGEMENT": "Gestione sostenibile delle acque",
+            "AGRICULTURAL_PRODUCTION": "Produzione agricola",
+            "VISUALIZE_ECV": "Visualizza ECV e pericoli climatici >>>",
+            "ECVS_COMPONENT": {
+                "ESSENTIAL_ECVS": "Variabili Climatiche Essenziali (ECV)",
+                "ECV_DOC": "Documentazione ECV",
+                "ECV_GRAPH_SELECTION": "Scegli un tipo di grafico",
+                "MAIN_HAZARDS": "Principali Pericoli. Clicca su ciascuno per sapere più informazioni",
+                "SEA_LEVEL_RAISE": "Aumento del livello del mare",
+                "FLOODING": "Inondazione",
+                "DROUGHTS_AND_WATER_SCARCITY": "Siccità e scarsità d'acqua",
+                "SOIL_EROSION": "Erosione del suolo",
+                "HEATING_AND_COOLING_DEMAND": "Domanda di riscaldamento e raffreddamento",
+                "CROP_PRODUCTION": "Produzione agricola",
+                "BIODIVERSITY_LOSS": "Perdita di biodiversità",
+                "EXPLORE_ASSETS_AND_RISKS": "Esplora beni, vulnerabilità e rischi >>"
+            },
+            "ASSETS_AND_RISKS_COMPONENT": {
+                "ASSETS_AND_RISKS_TITLE": "Beni, vulnerabilità e rischi",
+                "TOPIC_SELECTION": "Selezione argomento",
+                "SECTOR_SELECTION": "Selezione settore",
+                "HAZARD_SELECTION": "Selezione pericolo",
+                "TOPIC_OPTIONS": "Scegli un argomento",
+                "SECTOR_OPTIONS": "Scegli un settore",
+                "HAZARD_OPTIONS": "Scegli un pericolo",
+                "VULNERABILITY": "Vulnerabilità",
+                "AGRICULTURE": "Agricoltura",
+                "DROUGHTS": "Siccità",
+                "DESCRIPTION": "Descrizione",
+                "DESCRIPTION_BOX": " In questa casella verranno fornite informazioni relative alla valutazione della vulnerabilità. Includerà i diversi componenti utilizzati per caratterizzare la vulnerabilità, compreso il numero di beni colpiti, i principali pericoli e gli indicatori utilizzati nella procedura di valutazione",
+                "DOWNLOAD_MAP": "Scarica Mappa",
+                "SECTORAL_COMPARISON": "Confronto settoriale >>>"
+            },
+            "SECTORAL_COMPARISON_COMPONENT": {
+                "VULNERABILITIES_AND_RISKS": "Vulnerabilità e rischi - Confronto settoriale",
+                "HAZARD_SELECTION": "Selezione pericolo",
+                "HAZARD_OPTIONS": "Scegli un pericolo",
+                "DROUGHTS": "Siccità",
+                "VULNERABILITIES": "Vulnerabilità",
+                "RISK": "Rischio",
+                "POLICY_PRIORITIES": "Priorità politiche >>"
+            },
+            "POLICY_PRIORITIES_COMPONENT": {
+                "POLICY_PRIORITIES_TITLE": "Priorità Politiche",
+                "WHAT_ARE_YOUR_OBJ": "Quali sono i tuoi obiettivi e priorità?",
+                "PROVIDE_INPUTS": "Fornisci i tuoi input per ottenere le misure di adattamento e mitigazione più correlate con il caso di studio e il pericolo correlato.",
+                "MAIN_SECTOR_SELECTOR": {
+                    "SELECT_MAIN_SECTOR": "Seleziona i settori principali da valutare",
+                    "AGRICULTURE": "Agricoltura",
+                    "TURISM": "Turismo",
+                    "WATER": "Acqua"
+                },
+                "MAIN_PRIORITIES_SELECTOR": {
+                    "SELECT_MAIN_PRIORITIES": "Seleziona priorità e obiettivi",
+                    "WATER_SECURITY": "Sicurezza Idrica",
+                    "WELL_BEING": "Benessere",
+                    "ENERGY_SECURITY": "Sicurezza Energetica",
+                    "JOB_CREATION": "Creazione di Lavoro"
+                },
+                "ADAPTATION_AND_MITIGATION_SELECTOR": {
+                    "SELECT_ADAPTATION_AND_MITIGATION": "Adattamento e Mitigazione",
+                    "ADAPTAION": "Adattamento",
+                    "MITIGATION": "Mitigazione"
+                },
+                "PROVIDE_RANK": {
+                    "SELECT_PROVIDE_RANK": "Si prega di fornire un punteggio per gli obiettivi precedentemente selezionati",
+                    "1)WATER_SCARCITY": "1. Sicurezza Idrica",
+                    "2)WELL_BEING": "2. Benessere"
+                },
+                "RECOMMENDED_POLICIES": "Politiche Raccomandate >>"
+            },
+            "RECOMMENDED_POLICIES_COMPONENT": {
+                "RECOMMENDED_POLICIES_TITLE": "Politiche Raccomandate",
+                "SET_OF_RECOMMENDED_POLICIES": "Secondo i criteri precedentemente definiti, questo è il set di politiche raccomandate da applicare nel caso di studio per adattarsi al cambiamento climatico.",
+                "IMPROVE_WATER_STORAGE_TANKS": {
+                    "MAIN_OBJECTIVE": "Migliorare i serbatoi d'acqua",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Questa politica potrebbe essere applicata ai serbatoi d'acqua..",
+                        "OPTION2": "Il costo di questa politica...",
+                        "OPTION3": "I benefici sono..."
+                    }
+                },
+                "IMPROVE_DESALINATION_PLANTS": {
+                    "MAIN_OBJECTIVE": "Migliorare gli impianti di desalinizzazione",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Questa politica potrebbe essere applicata agli impianti di desalinizzazione..",
+                        "OPTION2": "Il costo di questa politica...",
+                        "OPTION3": "I benefici sono..."
+                    }
+                },
+                "IMPROVE_WATER_SAVINGS_AT_HOUSEHOLD_LEVEL": {
+                    "MAIN_OBJECTIVE": "Migliorare il risparmio idrico a livello domestico",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Questa politica potrebbe essere applicata per migliorare il risparmio idrico a livello domestico..",
+                        "OPTION2": "Il costo di questa politica...",
+                        "OPTION3": "I benefici sono..."
+                    }
+                },
+                "IMPROVE_PATTERN_IN_AGRICULTURE": {
+                    "MAIN_OBJECTIVE": "Migliorare il modello in agricoltura",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Questa politica potrebbe essere applicata al modello in agricoltura..",
+                        "OPTION2": "Il costo di questa politica...",
+                        "OPTION3": "I benefici sono..."
+                    }
+                },
+                "IMPROVE_REFORESTATION_WITH_ADAPTED_SPICIES": {
+                    "MAIN_OBJECTIVE": "Migliorare la riforestazione con specie adattate",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Questa politica potrebbe essere applicata alla riforestazione con specie adattate..",
+                        "OPTION2": "Il costo di questa politica...",
+                        "OPTION3": "I benefici sono..."
+                    }
+                }
+            }
+        }
+    },
+    "GAMIFICATION_TOOL_COMPONENT": {
+        "THE_GAMIFICATION_TOOL_TITLE": "STRUMENTO DI GAMIFICATION",
+        "WELCOME_TO_GAMIFICATION_TOOL": "Benvenuti allo strumento di gamification NEVERMORE!",
+        "GAMIFICATION_TOOL_INFO": "Il gioco insegna ai giocatori gli impatti del cambiamento climatico mentre ispira speranza e motiva gli utenti ad agire e trovare soluzioni efficaci che contribuiranno a definire un futuro più verde, meglio adattato e sicuro. I giocatori devono completare due missioni diverse per finire il gioco. Nella missione 1 i giocatori esploreranno percorsi per ridurre le emissioni di gas serra (GHG) applicando soluzioni. Le decisioni nella missione 1 porteranno i giocatori a uno scenario ad alto, medio o basso contenuto di carbonio nella missione 2. Nella missione 2 i giocatori saranno in grado di selezionare uno dei cinque studi di caso NEVERMORE (montagna, Mediterraneo, boreale, isola e inondazione) e dovranno agire per preparare le comunità agli impatti del cambiamento climatico.",
+        "CHOOSING_OPTION_INFO": "Il gioco sarà eseguibile come giocatore singolo o in gruppi. Scegli la tua opzione!",
+        "SINGLE_PLAYER_OPTION_INFO": "Gioca come utente singolo",
+        "GROUP_OPTION_INFO": "Usa il gioco per dinamiche di gruppo",
+        "SINGLE_PLAYER": {
+            "SINGLE_PLAYER_GAMIFICATION_TOOL_TITLE": "MISSIONE 1: MITIGAZIONE DEL CAMBIAMENTO CLIMATICO",
+            "ROLE_SELECTION": "Seleziona il tuo ruolo",
+            "ENERGY_EXPERT": "Esperto di energia",
+            "ENVIRONMENTAL_EXPERT": "Esperto ambientale",
+            "ECONOMY_EXPERT": "Esperto economico",
+            "SOCIAL_EXPERT": "Esperto sociale",
+            "SELECTION_KEY_INFO": "*Questa selezione è fondamentale per fornire raccomandazioni politiche utili prima dell'implementazione",
+            "POLICY_RECOMMENDATION_COMPONENT": {
+                "PROVIDE_INPUTS_FOR_QUESTIONS": "Fornisci le tue risposte alle seguenti domande",
+                "QUESTIONNARE": {
+                    "QUESTION_1": {
+                        "THE_QUESTION": "1. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_2": {
+                        "THE_QUESTION": "2. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_3": {
+                        "THE_QUESTION": "3. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_4": {
+                        "THE_QUESTION": "4. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_5": {
+                        "THE_QUESTION": "5. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_6": {
+                        "THE_QUESTION": "6. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_7": {
+                        "THE_QUESTION": "7. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_8": {
+                        "THE_QUESTION": "8. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_9": {
+                        "THE_QUESTION": "9. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_10": {
+                        "THE_QUESTION": "10. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    }
+                },
+                "NEXT_QUESTION": "Prossima Domanda",
+                "PROFILE_SELECTION_RECOMMANDATION": "*Secondo il tuo profilo (esperto di energia), la selezione più appropriata sarebbe applicare una politica che generi un grande cambiamento nelle modalità di domanda di trasporto."
+            },
+            "RECOMMANDATION_GRAPH_DATA_COMPONENT": {
+                "GRAPH_OPTIONS": {
+                    "OPTION_1": "Emissioni di CO2 pro capite",
+                    "OPTION_2": "Opzione2",
+                    "OPTION_3": "Opzione3",
+                    "OPTION_4": "Opzione4"
+                },
+                "TEMPERATURE_STATUS": "Aumenti di temperatura:",
+                "CONTINUE_TO_MISSION_2": "Continua alla MISSIONE 2 >>"
+            },
+            "MISSION_2_COMPONENT": {
+                "MISSION_2_TITLE": "MISSIONE 2: ADATTAMENTO AL CAMBIAMENTO CLIMATICO",
+                "SELECT_CASE_STUDY": "Seleziona il tuo strumento di caso di studio",
+                "SEA_LEVEL_RAISE": "Aumento del livello del mare",
+                "FLOODING": "Inondazione",
+                "DROUGHTS_AND_WATER_SCARCITY": "Siccità e scarsità d'acqua",
+                "SOIL_EROSION": "Erosione del suolo",
+                "HEATING_AND_COOLING_DEMAND": "Domanda di riscaldamento e raffreddamento",
+                "CROP_PRODUCTION": "Produzione agricola",
+                "BIODIVERSITY_LOSS": "Perdita di biodiversità",
+                "CS1_CRETE_ISLAND": "CS1-Isola di Creta",
+                "CS2_TRENTINO_REGION": "CS2-Regione Trentino",
+                "CS3_NORRBOTTEN_COUNTRY": "CS3-Paese di Norrbotten",
+                "CS4_MURCIA_REGION": "CS4-Regione Murcia",
+                "CS5_DANUBE_DELTA": "CS5-Delta del Danubio",
+                "SELECT_MAIN_HAZARD_FOR_ADAPT": "Seleziona il principale pericolo a cui vuoi adattarti"
+            },
+            "CLIMATE_CHANGE_ADAPTATION_COMPONENT": {
+                "MONEY_AMOUNT_FOR_MEASURES": "Questo è l'importo iniziale di denaro per implementare le misure",
+                "IMPLEMENT_WATER_STORAGE_TANKS": "Implementa serbatoi d'acqua.",
+                "DESALINATION_PLANTS": "Costruisci nuovi impianti di desalinizzazione.",
+                "WATER_SAVINGS": "Migliora il risparmio idrico a livello domestico.",
+                "CHANGES_IN_AGRICULTURE": "Cambia i modelli d'uso in agricoltura.",
+                "REFORESTATION": "Riforestazione con specie adattate."
+            }
+        },
+        "BY_GROUP": {
+            "MISSION_1": "MISSIONE 1: MITIGAZIONE DEL CAMBIAMENTO CLIMATICO",
+            "SELECT_TEAM": "Seleziona la tua squadra",
+            "CHOOSE_TEAM": "*Scegli Squadra 1",
+            "TEAM_1": "Squadra 1",
+            "TEAM_2": "Squadra 2",
+            "TEAM_3": "Squadra 3",
+            "SELECT_ROLE": "Seleziona il tuo ruolo",
+            "ENERGY_EXPERT": "Esperto di energia",
+            "ENVIRONMENTAL_EXPERT": "Esperto ambientale",
+            "ECONOMY_EXPERT": "Esperto economico",
+            "SOCIAL_EXPERT": "Esperto sociale",
+            "SELECTION_INFO": "*Questa selezione è fondamentale per fornire raccomandazioni politiche utili prima dell'implementazione",
+            "POLICY_RECOMMENDATION_COMPONENT": {
+                "PROVIDE_INPUTS_FOR_QUESTIONS": "Fornisci le tue risposte alle seguenti domande",
+                "QUESTIONNARE": {
+                    "QUESTION_1": {
+                        "THE_QUESTION": "1. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_2": {
+                        "THE_QUESTION": "2. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_3": {
+                        "THE_QUESTION": "3. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_4": {
+                        "THE_QUESTION": "4. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_5": {
+                        "THE_QUESTION": "5. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_6": {
+                        "THE_QUESTION": "6. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_7": {
+                        "THE_QUESTION": "7. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_8": {
+                        "THE_QUESTION": "8. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_9": {
+                        "THE_QUESTION": "9. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    },
+                    "QUESTION_10": {
+                        "THE_QUESTION": "10. Secondo la tua conoscenza, ritieni necessario applicare politiche che influenzino la domanda di trasporto nel modello di partecipazione?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Non è necessaria una politica per modificare la quota di trasporto",
+                            "ANSWER_2": "2.È necessario implementare una politica con valori medi",
+                            "ANSWER_3": "3.È necessario implementare una politica con valori elevati"
+                        }
+                    }
+                },
+                "CHAT": {
+                    "THE_CHAT": "Chat",
+                    "PLAYER_1": "L'opzione migliore è la politica uno",
+                    "PLAYER_2": "L'opzione migliore è la politica due",
+                    "PLAYER_3": "La più fattibile è la politica tre",
+                    "PLAYER_2_ANSWER": "Dobbiamo raggiungere un accordo",
+                    "PLAYER_3_ANSWER": "Selezioniamo tutti la politica due"
+                },
+                "NEXT_QUESTION": "Prossima Domanda",
+                "PROFILE_SELECTION_RECOMMANDATION": "*Secondo il tuo profilo (esperto di energia), la selezione più appropriata sarebbe applicare una politica che generi un grande cambiamento nelle modalità di domanda di trasporto."
+            },
+            "RECOMMANDATION_GRAPH_DATA_COMPONENT": {
+                "TEAM_1_RESULTS": "RISULTATI DELLA SQUADRA 1",
+                "CHOOSE_A_GRAPH": "Scegli un grafico",
+                "GRAPH_OPTIONS": {
+                    "OPTION_1": "Emissioni di CO2 pro capite",
+                    "OPTION_2": "Opzione 2"
+                },
+                "SELECTION_INFO": "*Questa selezione è fondamentale per fornire raccomandazioni politiche utili prima dell'implementazione"
+            },
+            "COMPARISON_OF_RESULTS_COMPONENT": {
+                "TITLE": "CONFRONTO DEI RISULTATI",
+                "TEAMS": {
+                    "TEAM_1": "SQUADRA 1",
+                    "TEAM_2": "SQUADRA 2",
+                    "TEAM_3": "SQUADRA 3",
+                    "TEAM_4": "SQUADRA 4"
+                },
+                "TEMPERATURE_STATUS": "Aumenti di temperatura:",
+                "CONTINUE_TO_MISSION_2": "Continua alla MISSIONE 2>>"
+            },
+            "CLIMATE_CHANGE_ADAPTATION_FOR_GROUPS_COMPONENT": {
+                "TITLE": "MISSIONE 2: ADATTAMENTO AL CAMBIAMENTO CLIMATICO",
+                "SELECT_YOUR_CASE_STUDY_TOOL": "Seleziona il tuo strumento di caso di studio",
+                "CASE_STUDY_TOOL_SELECTION_ADVISE": "*Scegli CS4-Regione Murgia",
+                "CS1_CRETE_ISLAND": "CS1-Isola di Creta",
+                "CS2_TRENTINO_REGION": "CS2-Regione Trentino",
+                "CS3_NORRBOTTEN_COUNTRY": "CS3-Paese di Norrbotten",
+                "CS4_MURCIA_REGION": "CS4-Regione Murcia",
+                "CS5_DANUBE_DELTA": "CS5-Delta del Danubio",
+                "SELECT_MAIN_HAZARD_FOR_ADAPT": "Seleziona il principale pericolo a cui vuoi adattarti",
+                "MAIN_HAZARD_SELECTION_ADVISE": "*Scegli 'Siccità e scarsità d'acqua'",
+                "SEA_LEVEL_RAISE": "Aumento del livello del mare",
+                "FLOODING": "Inondazione",
+                "DROUGHTS_AND_WATER_SCARCITY": "Siccità e scarsità d'acqua",
+                "SOIL_EROSION": "Erosione del suolo",
+                "HEATING_AND_COOLING_DEMAND": "Domanda di riscaldamento e raffreddamento",
+                "CROP_PRODUCTION": "Produzione agricola",
+                "BIODIVERSITY_LOSS": "Perdita di biodiversità"
+            },
+            "CLIMATE_CHANGE_GAME_FOR_GROUPS_COMPONENT": {
+                "MONEY_AMOUNT_FOR_MEASURES": "Questo è l'importo iniziale di denaro per implementare le misure",
+                "IMPLEMENT_WATER_STORAGE_TANKS": "Implementa serbatoi d'acqua.",
+                "DESALINATION_PLANTS": "Costruisci nuovi impianti di desalinizzazione.",
+                "WATER_SAVINGS": "Migliora il risparmio idrico a livello domestico.",
+                "CHANGES_IN_AGRICULTURE": "Cambia i modelli d'uso in agricoltura.",
+                "REFORESTATION": "Riforestazione con specie adattate.",
+                "CHAT": {
+                    "THE_CHAT": "Chat",
+                    "PLAYER_1": "Possiamo selezionare 'Migliora il risparmio idrico'",
+                    "PLAYER_2": "Sono d'accordo",
+                    "PLAYER_3": "Anch'io",
+                    "PLAYER_2_ANSWER": "Che ne dici della riforestazione?",
+                    "PLAYER_3_ANSWER": "È anche una buona selezione"
+                }
+            },
+            "COMPARISON_OF_RESULTS_FOR_GROUPS_COMPONENT": {
+                "TITLE": "CONFRONTO DEI RISULTATI",
+                "CHOSEN_CASE": "Caso di studio: CS4-Regione Murcia / Pericolo: Siccità e scarsità d'acqua",
+                "TEAMS": {
+                    "TEAM_1": "SQUADRA 1",
+                    "TEAM_2": "SQUADRA 2",
+                    "TEAM_3": "SQUADRA 3",
+                    "TEAM_4": "SQUADRA 4"
+                },
+                "TOTAL_INVESTMENT": "Totale investito: 30",
+                "COST_OF_INACTION": "Costo dell'inazione: 60",
+                "BENEFITS": "Benefici: 30",
+                "WINNER": "VINCITORE"
+            }
+        }
+    }
+}

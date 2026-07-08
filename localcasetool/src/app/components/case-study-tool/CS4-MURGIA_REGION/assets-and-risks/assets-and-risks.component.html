@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets-and-risks.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+
+      <!-- <span class="nevermore-top-title">CASE STUDY TOOL</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">CS-4 MURCIA REGION</span> -->
+      <span class="nevermore-top-title">{{'CASE_STUDY_TOOL_COMPONENT.THE_CASE_STUDY_TOOL_TITLE' | translate}}</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">{{
+        "CASE_STUDY_TOOL_COMPONENT." + selectedTitleCase | translate
+      }}</span>
+    </section>
+
+    <section id="assets_and_risks_title">
+      <!-- <h3 style="font-weight: bold; font-size: 20px">
+        Assets, vulnerabilities and risks
+      </h3> -->
+      <h3 style="font-weight: bold; font-size: 20px">
+      {{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.ASSETS_AND_RISKS_TITLE' | translate}}      
+      </h3>
+    </section>
+
+    <section id="TSH-select">
+      <span
+        ><p class="TSH-select">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.TOPIC_SELECTION' | translate}}</p>
+        <select name="topic" id="the_topic" (click)="image_for_exploring_choices()" (change)="specific_description()" [(ngModel)] = "selectedTopic" (click)="checkOLNeeds()" (change)="checkTheTopicValue()">
+          <!-- <option value="">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.TOPIC_OPTIONS' | translate}}</option>
+          <option value="vulnerability" >{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.VULNERABILITY' | translate}}</option> -->
+          <option value="vulnerability" selected>Vulnerability</option>
+          <!-- <option value="ol_test_topic">OL TEST TOPIC</option> -->
+        </select>
+      </span>
+      <!-- <span
+        ><p class="TSH-select">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.SECTOR_SELECTION' | translate}}</p>
+        <select name="sector" id="the_sector" (click)="image_for_exploring_choices()" (change)="specific_description()"  [(ngModel)] = "selectedSector" (click)="checkOLNeeds()" (change)="checkTheSectorValue()">
+          <option value="">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.SECTOR_OPTIONS' | translate}}</option>
+          <option value="agriculture" >{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.AGRICULTURE' | translate}}</option>
+          <option value="energy">Energy</option>
+          <option value="water_and_waste">Water and waste</option>
+          <option value="tourism">Toursim</option>
+          <option value="industry_and_commerce">Industry and commerce</option>
+
+        </select>
+      </span> -->
+      <span
+        ><p class="TSH-select">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.SECTOR_SELECTION' | translate}}</p>
+        <select name="sector" id="the_sector" (click)="image_for_exploring_choices()" (change)="specific_description()"  [(ngModel)] = "selectedSector" (click)="checkOLNeeds()" (change)="checkTheSectorValue()" >
+          <!-- <option value="sector-choose">Choose a sector</option> -->
+          <option value="sector-options-{{sector}}" *ngFor="let sector of sectorsReceived">{{sector}}</option>
+
+
+        </select>
+      </span>
+      <span
+        ><p class="TSH-select">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.HAZARD_SELECTION' | translate}}</p>
+        <select name="hazard" id="the_hazard" (click)="image_for_exploring_choices()" (change)="specific_description()"  [(ngModel)] = "selectedHazard" (click)="checkOLNeeds()" (change)="checkTheHazardValue()" >
+          <!-- <option value="hazard-choose">Choose a hazard</option> -->
+          <option value="hazard-options-{{hazard}}" *ngFor="let hazard of hazardsReceived">{{hazard}}</option>
+
+        </select>
+      </span>
+      <!-- <span
+        ><p class="TSH-select">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.HAZARD_SELECTION' | translate}}</p>
+        <select name="hazard" id="the_hazard" (click)="image_for_exploring_choices()" (change)="specific_description()"  [(ngModel)] = "selectedHazard" (click)="checkOLNeeds()" (change)="checkTheHazardValue()">
+          <option value="" >{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.HAZARD_OPTIONS' | translate}}</option>
+          <option value="droughts"  >{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.DROUGHTS' | translate}}</option>
+          <option value="flood">Flood</option>
+          <option value="heavy_rain">Heavy Rain</option>
+          <option value="heatwave">Heatwave</option>
+          <option value="cold_spell">Cold spell</option>
+        </select>
+      </span> -->
+    </section>
+
+    <section id="location-on-map">
+      <div *ngIf="olNeedsChecked">
+      <div class="point-on-map-image">
+        <div #mapdiv class="map-container"></div>
+      </div>
+    </div>
+    <div *ngIf="!olNeedsChecked">
+      <div class="point-on-map-image">
+        <img src={{choices_image}} alt="select the options you want for the image to display">
+      </div>
+    </div>
+      <div class="description_and_download">
+        <div class="image-point-description">
+          <!-- <p style="font-weight: bold; font-size: 18px">Description</p> -->
+          <!-- <p style="font-weight: bold; font-size: 18px">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.DESCRIPTION' | translate}}</p> -->
+          <p>
+            In this box information related with the vulnerability assessment
+            will be provided. It will include the different components used to
+            characterize the vulnerability, including the number of affected
+            assets, the main hazards and the indicators used in the assessment
+            procedure
+          </p>
+          <!-- <div *ngIf="choices_counter === 3">
+          <p>
+            {{choices_description | translate}}
+          </p>
+        </div>
+
+        <div *ngIf="choices_counter !== 3 && olNeedsChecked == false">
+          <p>
+            {{default_description | translate}}
+          </p>
+        </div>
+
+        <div *ngIf="olNeedsChecked && choices_counter !== 3">
+          <p>
+            {{choices_description | translate}}
+          </p>
+        </div> -->
+
+        
+
+        </div>
+        <!-- <button class="download-map-button">Download Map</button> -->
+        <button class="download-map-button">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.DOWNLOAD_MAP' | translate}}</button>
+      </div>
+    </section>
+
+    <section id="next-button">
+      <!-- <p style="margin-left: 20px">Sectoral Comparison >>></p> -->
+      <p style="margin-left: 20px">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.ASSETS_AND_RISKS_COMPONENT.SECTORAL_COMPARISON' | translate}}</p>
+      <button mat-raised-button 
+            [routerLink]="['/'+theRoutingTitleCase+'/Visualize_ECVs_and_climate_hazards']" 
+            routerLinkActive="active" 
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the-next-button" >
+            Back
+        </button>
+      <button
+        class="the-next-button"
+        mat-raised-button
+        [routerLink]="['/'+theRoutingTitleCase+'/Sectoral_Comparison']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="false"
+      >
+        Next
+      </button>
+      
+    </section>
+
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

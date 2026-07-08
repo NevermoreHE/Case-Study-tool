@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="single-player.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!--    
+    <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section>
+    <section id="navigation_button">
+      <button class="nav-button"><i class="fa fa-bars"></i></button>
+      <span class="nevermore-top-title">NEVERMORE Gamification tool</span>
+    </section> -->
+
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">GAMIFICATION TOOL</span> -->
+      <span class="nevermore-top-title">{{
+        "GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE" | translate
+      }}</span>
+    </section>
+
+    <!-- <h1>MISSION 1: CLIMATE CHANGE MITIGATION</h1> -->
+    <h1>
+      {{
+        "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.SINGLE_PLAYER_GAMIFICATION_TOOL_TITLE"
+          | translate
+      }}
+    </h1>
+
+    <section id="gamification-description">
+      <!-- <p>Select your role</p> -->
+      <p>
+        {{
+          "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.ROLE_SELECTION" | translate
+        }}
+      </p>
+    </section>
+
+    <section id="roles">
+      <ul id="roles_list">
+        <li *ngFor="let role of rolesList" tabindex="1">
+          <button class="roleButtons"
+            (click)="checkRoleSelected(role.roleName)"
+            [class.active]="selectedRole === role.roleName"
+            [disabled]="role.status"
+          >
+            <section id="energy">
+              <figure>
+                <img [src]="role.roleImage" alt="energy_expert" />
+                <figcaption>
+                  {{
+                    "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER." + role.roleName
+                      | translate
+                  }}
+                </figcaption>
+              </figure>
+            </section>
+          </button>
+        </li>
+        <!-- <li tabindex="1" value="energy" (click)="checkRoleSelected(role)">
+            <section id="energy"  >
+                <figure>
+                <img src="assets/images/energy_expert.png" alt="energy_expert">
+                <figcaption>{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.ENERGY_EXPERT' | translate}}</figcaption>
+                </figure>
+            </section>
+            </li>
+
+            <li tabindex="1" value="environmental">
+            <section id="environmental-disabled" >
+                <figure>
+                <img src="assets/images/enviromental_expert.png" alt="enviromental_expert">
+                <figcaption >{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.ENVIRONMENTAL_EXPERT' | translate}}</figcaption>
+                </figure>
+            </section>
+        </li>
+
+        <li tabindex="1" value="economy">
+            <section id="economy-disabled">
+                <figure>
+                <img src="assets/images/economy_expert.png" alt="economy_expert">
+                <figcaption>{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.ECONOMY_EXPERT' | translate}}</figcaption>
+                </figure>
+            </section>
+        </li>
+
+        <li tabindex="1" value="social">
+            <section id="social-disabled">
+                <figure>
+                <img src="assets/images/social_expert.png" alt="social_expert">
+                <figcaption>{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.SOCIAL_EXPERT' | translate}}</figcaption>
+                </figure>
+            </section>
+        </li> -->
+      </ul>
+    </section>
+
+    <section id="next-button">
+      <!-- <p style="font-weight: 500;">*This selection is key to provide you useful policy recommendation before implementation</p> -->
+      <p style="font-weight: 500">
+        {{
+          "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.SELECTION_KEY_INFO"
+            | translate
+        }}
+      </p>
+      <button
+        mat-raised-button
+        [routerLink]="['/gamification']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/single_player/Policy_Recommendations']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="checkRoleSelectedStatus"
+        class="the-next-button"
+      >
+        Next
+      </button>
+      <!-- <p style="font-weight: 500;">*This selection is key to provide you useful policy recommendation before implementation</p> -->
+    </section>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

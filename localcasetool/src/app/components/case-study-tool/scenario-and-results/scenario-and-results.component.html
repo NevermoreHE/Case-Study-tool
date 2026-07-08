@@ -1,0 +1,4540 @@
+<div class="wrapper">
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      {{ "HEADER.HELP" | translate }}
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/caseStudy']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      Case Study Tool
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ thePolicySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              {{appliedPoliciesDescriptionsReceived?.[theScenarioIndex-1]?.storyline_description}}
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul *ngFor="let policy of appliedPoliciesReceived;let i = index">
+                <li>{{policy.apl_policy}}</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <!-- <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' &&
+      policySelectedPreviously ==
+        'Protecting agricultural production through improved cropland, and water management'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Drought threatens agricultural production in SItia, which can be
+              preserved by diversifying the production, increasing water
+              availability from wastewater treatment and at the same time
+              increasing water use efficiency.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Crop diversification</li>
+                <li>Increase ratio of irrigated crop area</li>
+                <li>Investment in crop adaptation</li>
+                <li>Efficient water demand from agriculture</li>
+                <li>Water storage increase</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' &&
+      policySelectedPreviously == 'A resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Private companies within the tourism sector implement measures to
+              increase its capacity to cope with climate related hazards, while
+              also increasing its sustainability.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Promote domestic tourism</li>
+                <li>Promote all-year tourism</li>
+                <li>Investment in tourism adaptation and resilience</li>
+                <li>Investment in infrastructures</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' &&
+      policySelectedPreviously == 'Sustainable use of water resources'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Water scarcity is contrasted by a comprehensive integrated water
+              policy, aimed at increasing water availability as well as reducing
+              water demand.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Desalination</li>
+                <li>Wastewater treatment</li>
+                <li>Efficient water demand from agriculture</li>
+                <li>Efficient water demand from urban</li>
+                <li>Incentives for efficient water demand from urban</li>
+                <li>Efficient water demand from industry</li>
+                <li>Increase irrigated crop</li>
+                <li>Afforestation</li>
+                <li>Wetland protection</li>
+                <li>Forest protection</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policySelectedPreviously ==
+        'A more resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Public authorities, civil society, and private companies within
+              the tourism sector implement measures to increase its capacity to
+              cope with climate related hazards, while also increasing its
+              resilience.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Promote domestic tourism</li>
+                <li>Promote all-year tourism</li>
+                <li>Investment in tourism adaptation and resilience</li>
+                <li>Investment in infrastructures</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policySelectedPreviously == 'Shaping climate-resilient ski resorts'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Private companies focus on optimising the artificial snow making
+              process to decrease water needs and energy consumption. Efforts
+              are also directed toward reducing the quantity of artificial snow
+              needed, also through nature-based solutions such as snow farming.
+              Public authorities support technological development and/or the
+              purchase of more resource efficient equipment.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>
+                  Sustainable snow making and conservation practices (e.g. snow
+                  farming)
+                </li>
+                <li>Technical improvements in snow production</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policySelectedPreviously == 'Sustainable use of water resources'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Competition for water resources is contrasted by a comprehensive
+              integrated water policy, aimed at increasing water availability as
+              well as reducing water demand and dispersion.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Desalination</li>
+                <li>Wastewater treatment</li>
+                <li>Efficient water demand from agriculture</li>
+                <li>Efficient water demand from urban</li>
+                <li>Incentives for efficient water demand from urban</li>
+                <li>Efficient water demand from industry</li>
+                <li>Increase irrigated crop</li>
+                <li>Afforestation</li>
+                <li>Wetland protection</li>
+                <li>Forest protection</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policySelectedPreviously ==
+        'The water-energy nexus: increasing efficiency to reduce competition'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Public authorities, civil society, and private companies within
+              the tourism sector implement measures to increase its capacity to
+              cope with climate related hazards, while also increasing its
+              resilience.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Promote domestic tourism</li>
+                <li>Investment in infrastructures</li>
+                <li>Promote all-year tourism</li>
+                <li>Investment in tourism adaptation and resilience</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policySelectedPreviously ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Climate change adaptation and mitigation go hand in hand, so that
+              improving resource use efficiency can both increase resilience and
+              reduce emissions.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Incentives for energy efficiency</li>
+                <li>Incentive for carbon emissions decrease</li>
+                <li>Energy share objective</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policySelectedPreviously == 'Increasing the capacity to adapt'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Trentino’s population and professionals receive education and
+              training on how to deal with climate hazards, increasing their
+              adaptative capacity and reducing risks.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+
+              <ul>
+                <li>Flood defences for urban areas</li>
+                <li>Green urban planning</li>
+                <li>Incentives for education and training</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      policySelectedPreviously == 'A pathway to decarbonization'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Public authorities recognize the importance of mitigation actions,
+              incentivizing a switch to clean energy, cutting down on carbon
+              emissions and moving toward a low-carbon future.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Incentives for increase in solar</li>
+                <li>Incentives for increase in hydro</li>
+                <li>Incentives for increase in wind</li>
+                <li>H2 policy</li>
+                <li>
+                  Carbon tax for decrease installed capacity of non-renewables
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policySelectedPreviously ==
+        'Forest protection and management for climate change adaptation and mitigation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Forest protection and afforestation efforts increase the
+              resilience of Norrbotten against climate change, protecting
+              biodiversity and contributing to mitigation efforts.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Increase forest protected land</li>
+                <li>Forest management</li>
+                <li>Afforestation</li>
+                <li>Afforestation subsidies</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policySelectedPreviously ==
+        'Solar deployment and effects in competition for land'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Afforestation and increase in protected fore land can prevent
+              trade-offs between the need to increase in solar energy production
+              while protecting forests and preserving biodiversity and granting
+              access to traditional reindeer herding areas.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+
+              <ul>
+                <li>Increase forest protected land</li>
+                <li>Forest management</li>
+                <li>Afforestation</li>
+                <li>Afforestation subsidies</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policySelectedPreviously ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Climate change adaptation and mitigation go hand in hand, so that
+              improving resource use efficiency can both increase resilience and
+              reduce emissions.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Incentives for energy efficiency</li>
+                <li>Incentive for carbon emissions decrease</li>
+                <li>Energy share objective</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policySelectedPreviously == 'Increasing the capacity to adapt'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Norrbotten’s population recieves education and training on how to
+              deal with climate hazards, increasing their adaptative capacity
+              and reducing risks.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Flood defences for urban areas</li>
+                <li>Green urban planning</li>
+                <li>Incentives for education and training</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policySelectedPreviously ==
+        'A more resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/decarbonization-image.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Private companies within the tourism sector implement measures to
+              increase its capacity to cope with climate related hazards, while
+              also increasing its sustainability.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+
+              <ul>
+                <li>Promote domestic tourism</li>
+                <li>Promote all-year tourism</li>
+                <li>Investment in tourism adaptation and resilience</li>
+                <li>Investment in infrastructures</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      policySelectedPreviously == 'A pathway to decarbonization'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/decarbonization-image.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Public authorities recognize the importance of mitigation actions,
+              incentivizing a switch to clean energy, cutting down on carbon
+              emissions and moving toward a low-carbon future.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+
+              <ul>
+                <li>Incentives for increase in solar</li>
+                <li>Incentives for increase in hydro</li>
+                <li>Incentives for increase in wind</li>
+                <li>H2 policy</li>
+                <li>
+                  Carbon tax for decrease installed capacity of non-renewables
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policySelectedPreviously == 'Increasing the capacity to adapt'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/capacity-to-adapt.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Murcia region works to be more resilient to climate change adding
+              defences to flood or improving the urban planning against the
+              extreme heat. In parallel, Murcia’s population receives education
+              and training on how to deal with climate hazards, increasing their
+              adaptative capacity and reducing risks.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+
+              <ul>
+                <li>Flood defences for urban areas</li>
+                <li>Green urban planning</li>
+                <li>Incentives for education and training</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policySelectedPreviously ==
+        'Protecting agricultural production through improved cropland, forest and water management'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/agricultural-prod.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Drought threatens agricultural production in Murcia, which can be
+              preserved by diversifying the production, increasing water
+              availability from waste water treatment and the same time
+              increasing water use efficiency.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Crop diversification</li>
+                <li>Increase ratio of irrigated crop area</li>
+                <li>Investment in crop adaptation</li>
+                <li>Efficient water demand from agriculture</li>
+                <li>Water storage increase</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policySelectedPreviously == 'Sustainable use of water resources'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/sustainable-water.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Water scarcity is contrasted by a comprehensive integrated water
+              policy, aimed at increasing water availability as well as reducing
+              water demand.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Desalination</li>
+                <li>Wastewater treatment</li>
+                <li>Efficient water demand from agriculture</li>
+                <li>Efficient water demand from urban</li>
+                <li>Incentives for efficient water demand from urban</li>
+                <li>Efficient water demand from industry</li>
+                <li>Increase irrigated crop</li>
+                <li>Afforestation</li>
+                <li>Wetland protection</li>
+                <li>Forest protection</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policySelectedPreviously ==
+        'A more resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/resilient-turism.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Private companies within the tourism sector implement measures to
+              increase its capacity to cope with climate related hazards, while
+              also increasing its sustainability.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+
+              <ul>
+                <li>Promote domestic tourism</li>
+                <li>Promote all-year tourism</li>
+                <li>Investment in tourism adaptation and resilience</li>
+                <li>Investment in infrastructures</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policySelectedPreviously ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/energy-eficincy.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Climate change adaptation and mitigation go hand in hand, so that
+              improving resource use efficiency can both increase resilience and
+              reduce emissions.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Incentives for energy efficiency</li>
+                <li>Incentive for carbon emissions decrease</li>
+                <li>Energy share objective</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      policySelectedPreviously ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/mitigation-adaptation.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Public authorities recognize the importance of mitigation actions,
+              incentivizing a switch to clean energy, cutting down on carbon
+              emissions and moving toward a low-carbon future.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Incentives for increase in solar</li>
+                <li>Incentives for increase in hydro</li>
+                <li>Incentives for increase in wind</li>
+                <li>H2 policy</li>
+                <li>
+                  Carbon tax for decrease installed capacity of non-renewables
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policySelectedPreviously == 'Increasing the capacity to adapt'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/capacity-to-adapt.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Tulcea’s population receives education and training on how to deal
+              with climate hazards, increasing their adaptative capacity and
+              reducing risks.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Flood defences for urban areas</li>
+                <li>Green urban planning</li>
+                <li>Incentives for education and training</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policySelectedPreviously ==
+        'Protecting agriculture production through improved cropland and water mamagement'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/agricultural-prod.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Drought threatens agricultural production in Tulcea, which can be
+              preserved by diversifying the production, increasing water
+              availability from waste water treatment and the same time
+              increasing water use efficiency.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Crop diversification</li>
+                <li>Increase ratio of irrigated crop area</li>
+                <li>Investment in crop adaptation</li>
+                <li>Efficient water demand from agriculture</li>
+                <li>Water storage increase</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policySelectedPreviously == 'Sustainable use of water resources'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/sustainable-water.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Water scarcity is contrasted by a comprehensive integrated water
+              policy, aimed at increasing water availability as well as reducing
+              water demand.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Desalination</li>
+                <li>Wastewater treatment</li>
+                <li>Efficient water demand from agriculture</li>
+                <li>Efficient water demand from urban</li>
+                <li>Incentives for efficient water demand from urban</li>
+                <li>Efficient water demand from industry</li>
+                <li>Increase irrigated crop</li>
+                <li>Afforestation</li>
+                <li>Wetland protection</li>
+                <li>Forest protection</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policySelectedPreviously ==
+        'A more resilient and diversified tourism sector'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/resilient-turism.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Private companies within the tourism sector implement measures to
+              increase its capacity to cope with climate related hazards, while
+              also increasing its sustainability.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Promote domestic tourism</li>
+                <li>Promote all-year tourism</li>
+                <li>Investment in tourism adaptation and resilience</li>
+                <li>Investment in infrastructures</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policySelectedPreviously ==
+        'A more efficient use of energy for climate change mitigation & adaptation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/mitigation-adaptation.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Climate change adaptation and mitigation go hand in hand, so that
+              improving resource use efficiency can both increase resilience and
+              reduce emissions.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Incentives for energy efficiency</li>
+                <li>Incentive for carbon emissions decrease</li>
+                <li>Energy share objective</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policySelectedPreviously == 'A pathway to decarbonization'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/decarbonization-image.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Public authorities recognize the importance of mitigation actions,
+              incentivizing a switch to clean energy, cutting down on carbon
+              emissions and moving toward a low-carbon future.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                <li>Incentives for increase in solar</li>
+                <li>Incentives for increase in hydro</li>
+                <li>Incentives for increase in wind</li>
+                <li>H2 policy</li>
+                <li>
+                  Carbon tax for decrease installed capacity of non-renewables
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' &&
+      policySelectedPreviously ==
+        'Protecting ecosystems for climate change adaptation & mitigation'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: 'Inter', sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+                color: #465c95;
+              "
+            >
+              <strong>{{ policySelectedPreviously }}</strong>
+            </p>
+          </div>
+
+          <div style="width: 100%; display: flex; justify-content: center">
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-image" style="display: flex; justify-content: end">
+            <img
+              src="assets/images/protecting-ecosystem.png"
+              style="width: 10vh; transform: translateY(-125%)"
+              alt=""
+            />
+          </div>
+          <div style="text-align: center">
+            <p style="line-height: 1.5vw; padding: 1vh 0vh; text-align: left">
+              Tulcea is home to the most important protected areas in Romania,
+              with the wetland and forest. Protecting and restoring these
+              ecosystems is key to preserve biodiversity and keep providing key
+              ecosystem services, including ones related to climate change
+              adaptation and mitigation.
+            </p>
+
+            <div style="text-align: left">
+              <strong>Applied Policies:</strong>
+              <ul>
+                
+                <li>Increase protected forest land</li>
+                <li>Forest management</li>
+                <li>Afforestation</li>
+                <li>Afforestation subsidies</li>
+                <li>Increase protected wetlands</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin-top: 5%; margin-bottom: 4%">
+              Explore results under the following alternatives:
+            </p>
+            <div
+              class="inputs"
+              style="display: flex; justify-content: space-evenly"
+            >
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Low policy application')"
+                />
+                <label for="policy">Low policy application </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Medium policy application')"
+                />
+                <label for="policy">Medium policy application</label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('High policy application')"
+                />
+                <label for="policy">High policy application</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAppliedResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div> -->
+  <!-- </div> -->
+</div>
+
+<section class="the_footer">
+  <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+</section>

@@ -1,0 +1,251 @@
+<!-- <div class="header-wrapper" *ngIf="showHeader">
+  <button mat-raised-button 
+          [routerLink]="['/aboutUs']" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }"
+          [disabled]="true"
+          class="header-button">
+    About us
+  </button>
+  
+  <button mat-raised-button 
+          [routerLink]="['/help']" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }"
+          [disabled]="true"
+          class="header-button">
+    Help
+  </button>
+
+  <button mat-raised-button 
+          [routerLink]="['/forgot_password']" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="header-button"
+          hidden>
+    Password Reset
+  </button>
+  
+  <button mat-raised-button 
+          [routerLink]="['/register']" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="header-button">
+    Register
+  </button>
+
+  <button mat-raised-button 
+          [routerLink]="['']" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="header-button">
+    Log in
+  </button>
+</div> -->
+
+<!-- HOME HEADER
+<div class="header-wrapper" *ngIf="showHomeHeader"></div> -->
+
+<!-- 
+<div class="header-wrapper">
+  <button
+    mat-raised-button
+    [routerLink]="['/aboutUs']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    About us
+  </button>
+
+  <button
+    mat-raised-button
+    [routerLink]="['/help']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    Help
+  </button>
+
+  <button
+    mat-raised-button
+    [routerLink]="['/home']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    Tool selection
+  </button>
+
+  <button mat-raised-button (click)="logout()" class="header-button">
+    Log out
+  </button>
+
+    <div class="hero">
+      <nav>
+        <img src="assets/images/profile.png" alt="" />
+
+        <div class="sub-menu-wrap" id="subMenu" [ngClass]="{'open-menu':isMenuOpen}">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="assets/images/profile.png" alt=""  (click)="toggleMenu()"/>
+              <h2>Nevermore User</h2>
+            </div>
+            <hr />
+            <a href="#" class="sub-menu-link">
+              <img src="assets/images/profile.png" alt="" />
+              <p>Edit Profile</p>
+              <span>></span>
+            </a>
+            <a href="#" class="sub-menu-link">
+              <img src="assets/images/setting.png" alt="" />
+              <p>Setting and Privacy</p>
+              <span>></span>
+            </a>
+            <a href="#" class="sub-menu-link">
+              <img src="assets/images/help.png" alt="" />
+              <p>Help & Support</p>
+              <span>></span>
+            </a>
+            <a href="#" class="sub-menu-link">
+              <img src="assets/images/logout.png" alt="" />
+              <p>Logout</p>
+              <span>></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+</div> -->
+
+<div class="header-wrapper">
+  
+
+  <!-- Other buttons remain the same -->
+  <button
+    mat-raised-button
+    [routerLink]="['/aboutUs']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- About us -->
+    {{ "HEADER.ABOUT_US" | translate }}
+  </button>
+
+  <button
+    mat-raised-button
+    [routerLink]="['/help']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- Help -->
+    {{ "HEADER.HELP" | translate }}
+  </button>
+
+  <button
+    mat-raised-button
+    [routerLink]="['/home']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- Tool selection -->
+    {{ "HEADER.TOOL_SELECTION" | translate }}
+  </button>
+
+
+
+  <button mat-raised-button (click)="logout()" class="header-button">
+    <!-- Log out -->
+    {{ "HEADER.LOG_OUT" | translate }}
+  </button>
+
+  <div class="language_menu" (click)="toggleMenu()" >
+    <i class="fa-solid fa-language" id="language_menu_icon" ></i>
+  </div>
+
+  <div class="sub-menu-wrap" *ngIf="isMenuOpen">
+    <div class="sub-menu">
+      <div class="user-info">
+        <h2>{{ "HEADER.CHANGE_LANGUAGE" | translate }}</h2>
+      </div>
+      <hr />
+      <a href="#" class="sub-menu-link" (click)="switchLanguage('IT')">
+        <img src="assets/images/Flag_of_Italy-64x43.png" />
+        <p>{{ "HEADER.LANGUAGES.ITALIAN" | translate }}</p>
+        <span>></span>
+      </a>
+      <a href="#" class="sub-menu-link" (click)="switchLanguage('ES')">
+        <img src="assets/images/Flag_of_Spain-64x43.png" />
+        <p>{{ "HEADER.LANGUAGES.SPANISH" | translate }}</p>
+        <span>></span>
+      </a>
+      <a href="#" class="sub-menu-link" (click)="switchLanguage('SV')">
+        <img src="assets/images/Flag_of_Sweden-64x40.png" />
+        <p>{{ "HEADER.LANGUAGES.SWEDISH" | translate }}</p>
+        <span>></span>
+      </a>
+      <a href="#" class="sub-menu-link" (click)="switchLanguage('EN')">
+        <img src="assets/images/Flag_of_United_States-64x34.png" />
+        <p>{{ "HEADER.LANGUAGES.ENGLISH" | translate }}</p>
+        <span>></span>
+      </a>
+
+      <a href="#" class="sub-menu-link" (click)="switchLanguage('GR')">
+        <img src="assets/images/Flag_of_Greece-64x43.png" />
+        <p>{{ "HEADER.LANGUAGES.GREEK" | translate }}</p>
+        <span>></span>
+      </a>
+      <a href="#" class="sub-menu-link" (click)="switchLanguage('RO')">
+        <img src="assets/images/Flag_of_Romania-64x43.png" />
+        <p>{{ "HEADER.LANGUAGES.ROMANIAN" | translate }}</p>
+        <span>></span>
+      </a>
+    </div>
+  </div>
+
+  <section id="app_user">
+    <img src="assets/images/profile.png" alt="Profile" class="user-pic" />
+    <span style=" font-weight: 500;">{{username}}</span>
+  </section>
+  <!-- Profile Menu Button -->
+  <!-- <button mat-raised-button class="header-button" (click)="toggleMenu()">
+    <img src="assets/images/profile.png" alt="Profile" class="user-pic" />
+  </button> -->
+
+  <!-- Profile Submenu -->
+  <!-- <div class="sub-menu-wrap" *ngIf="isMenuOpen">
+    <div class="sub-menu">
+      <div class="user-info">
+        <img src="assets/images/profile.png" />
+        <h2>Nevermore User</h2>
+      </div>
+      <hr />
+      <a href="#" class="sub-menu-link">
+        <img src="assets/images/profile.png"  />
+        <p>Edit Profile</p>
+        <span>></span>
+      </a>
+      <a href="#" class="sub-menu-link">
+        <img src="assets/images/setting.png"  />
+        <p>Setting and Privacy</p>
+        <span>></span>
+      </a>
+      <a href="#" class="sub-menu-link">
+        <img src="assets/images/help.png" />
+        <p>Help & Support</p>
+        <span>></span>
+      </a>
+     
+      <a href="#" class="sub-menu-link" (click)="logout()" >
+        <img src="assets/images/logout.png"  />
+        <p>Logout</p>
+        <span>></span>
+      </a>
+    
+    </div>
+  </div> -->
+</div>

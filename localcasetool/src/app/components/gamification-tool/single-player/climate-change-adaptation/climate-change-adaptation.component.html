@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="climate-change-adaptation.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section>
+    <section id="navigation_button">
+      <button class="nav-button"><i class="fa fa-bars"></i></button>
+      <span class="nevermore-top-title">NEVERMORE Gamification tool</span> -->
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">GAMIFICATION TOOL</span> -->
+      <span class="nevermore-top-title">{{
+        "GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE" | translate
+      }}</span>
+      <!-- <span class="mission_tool">MISSION 2: CLIMATE CHANGE ADAPTATION</span> -->
+      <span class="mission_tool">{{
+        "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.MISSION_2_COMPONENT.MISSION_2_TITLE"
+          | translate
+      }}</span>
+    </section>
+
+    <section id="initial_money_amount">
+      <!-- <p><span style="font-size: 20px;">100 </span><span><img src="assets/images/dollar_image" alt="coin_image" style="height: 50px;"></span>This is your initial amount of money to implement measures</p> -->
+      <p>
+        <span style="font-size: 20px">100 </span
+        ><span
+          ><img
+            src="assets/images/dollar_image"
+            alt="coin_image"
+            style="height: 50px" /></span
+        >{{
+          "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.CLIMATE_CHANGE_ADAPTATION_COMPONENT.MONEY_AMOUNT_FOR_MEASURES"
+            | translate
+        }}
+      </p>
+    </section>
+
+    <div class="prices_and_place">
+      <section id="prices">
+        <section id="measures">
+          <div class="price">
+            <input
+              type="radio"
+              id="water_storage"
+              name="option_1"
+              value="water_storage"
+            />
+            <!-- <label for="water_storage" ><span class="option_with_price">Implement water storage tanks. <span style="font-size: 20px; margin-left: 20px;"> 20 </span><span><img src="assets/images/dollar_image" alt="coin_image" style="height: 30px;"></span></span></label><br> -->
+            <label for="water_storage"
+              ><span class="option_with_price"
+                >{{
+                  "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.CLIMATE_CHANGE_ADAPTATION_COMPONENT.IMPLEMENT_WATER_STORAGE_TANKS"
+                    | translate
+                }}<span style="font-size: 20px; margin-left: 20px"> 20 </span
+                ><span
+                  ><img
+                    src="assets/images/dollar_image"
+                    alt="coin_image"
+                    style="height: 30px" /></span></span></label
+            ><br />
+          </div>
+
+          <div class="price">
+            <input
+              type="radio"
+              id="desalination"
+              name="option_2"
+              value="desalination"
+            />
+            <!-- <label for="desalination"><span class="option_with_price">Build new desalination plants. <span style="font-size: 20px;  margin-left: 20px;"> 40 </span><span><img src="assets/images/dollar_image" alt="coin_image" style="height: 30px;"></span></span></label><br> -->
+            <label for="desalination"
+              ><span class="option_with_price"
+                >{{
+                  "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.CLIMATE_CHANGE_ADAPTATION_COMPONENT.DESALINATION_PLANTS"
+                    | translate
+                }}<span style="font-size: 20px; margin-left: 20px"> 40 </span
+                ><span
+                  ><img
+                    src="assets/images/dollar_image"
+                    alt="coin_image"
+                    style="height: 30px" /></span></span></label
+            ><br />
+          </div>
+
+          <div class="price">
+            <input
+              type="radio"
+              id="water_savings"
+              name="option_3"
+              value="water_savings"
+            />
+            <!-- <label for="water_savings"><span class="option_with_price">Improve water savings at household level. <span style="font-size: 20px;  margin-left: 20px;"> 10 </span><span><img src="assets/images/dollar_image" alt="coin_image" style="height: 30px;"></span></span></label><br> -->
+            <label for="water_savings"
+              ><span class="option_with_price"
+                >{{
+                  "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.CLIMATE_CHANGE_ADAPTATION_COMPONENT.WATER_SAVINGS"
+                    | translate
+                }}<span style="font-size: 20px; margin-left: 20px"> 10 </span
+                ><span
+                  ><img
+                    src="assets/images/dollar_image"
+                    alt="coin_image"
+                    style="height: 30px" /></span></span></label
+            ><br />
+          </div>
+
+          <div class="price">
+            <input
+              type="radio"
+              id="water_use"
+              name="option_4"
+              value="water_use"
+            />
+            <!-- <label for="water_use"><span class="option_with_price">Change use patterns in agriculture. <span style="font-size: 20px;  margin-left: 20px;"> 10 </span><span><img src="assets/images/dollar_image" alt="coin_image" style="height: 30px;"></span></span></label><br> -->
+            <label for="water_use"
+              ><span class="option_with_price"
+                >{{
+                  "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.CLIMATE_CHANGE_ADAPTATION_COMPONENT.CHANGES_IN_AGRICULTURE"
+                    | translate
+                }}<span style="font-size: 20px; margin-left: 20px"> 10 </span
+                ><span
+                  ><img
+                    src="assets/images/dollar_image"
+                    alt="coin_image"
+                    style="height: 30px" /></span></span></label
+            ><br />
+          </div>
+
+          <div class="price">
+            <input
+              type="radio"
+              id="reforestation"
+              name="option_5"
+              value="reforestation"
+            />
+            <!-- <label for="reforestation"><span class="option_with_price">Reforestation with adapted species. <span style="font-size: 20px;  margin-left: 20px;"> 20 </span><span><img src="assets/images/dollar_image" alt="coin_image" style="height: 30px;"></span></span></label><br> -->
+            <label for="reforestation"
+              ><span class="option_with_price"
+                >{{
+                  "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.CLIMATE_CHANGE_ADAPTATION_COMPONENT.REFORESTATION"
+                    | translate
+                }}<span style="font-size: 20px; margin-left: 20px"> 20 </span
+                ><span
+                  ><img
+                    src="assets/images/dollar_image"
+                    alt="coin_image"
+                    style="height: 30px" /></span></span></label
+            ><br />
+          </div>
+        </section>
+      </section>
+
+      <div class="deserted_place_with_measures">
+        <img
+          src="assets/images/deserted_place_with_measures.png"
+          alt="a photo of a deserted place"
+        />
+        <!-- 
+        <img src="assets/images/water_drop_given.png" alt="water savings" class="image_front">
+        <img src="assets/images/city.png" alt="city blocks" class="image_front_2">
+        <img src="assets/images/trees_image.png" alt="an image of a tree" class="image_front_3">
+        <img src="assets/images/trees_image.png" alt="an image of a tree" class="image_front_4">
+        <img src="assets/images/trees_image.png" alt="an image of a tree" class="image_front_5"> -->
+      </div>
+    </div>
+
+    <section id="next-button">
+      <button
+        mat-raised-button
+        [routerLink]="['/single_player/MISSION_2']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/single_player/Adaptation_Indicators']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="false"
+        class="the-next-button"
+      >
+        Next
+      </button>
+    </section>
+
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

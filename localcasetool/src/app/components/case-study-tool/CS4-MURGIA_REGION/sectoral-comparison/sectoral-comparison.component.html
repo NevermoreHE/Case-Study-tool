@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sectoral-comparison.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">CASE STUDY TOOL</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">CS-4 MURCIA REGION</span> -->
+      <span class="nevermore-top-title">{{'CASE_STUDY_TOOL_COMPONENT.THE_CASE_STUDY_TOOL_TITLE' | translate}}</span>
+      <span class="CS-4_MURCIA_REGION_TITLE">{{
+        "CASE_STUDY_TOOL_COMPONENT." + selectedTitleCase | translate
+      }}</span>
+    </section>
+
+
+    <!-- <h2>Vulnerabilities and risks - Sectoral comparison Hazard</h2> -->
+    <h2>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SECTORAL_COMPARISON_COMPONENT.VULNERABILITIES_AND_RISKS' | translate}}</h2>
+    <section id="hazard">
+      <span
+        ><p class="the_hazard" style="font-weight: bold;">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SECTORAL_COMPARISON_COMPONENT.HAZARD_SELECTION' | translate}}</p>
+        <select name="hazard" id="hazard">
+          <option value="default">Choose a hazard</option>
+          <option value="hazard-chose" *ngFor="let hazard of hazardsReceived">{{hazard}}</option>
+          <!-- <option value="draughts">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SECTORAL_COMPARISON_COMPONENT.DROUGHTS' | translate}}</option>
+          <option value="flood">Flood</option>
+          <option value="heavy_rain">Heavy Rain</option>
+          <option value="heatwave">Heatwave</option>
+          <option value="cold_spell">Cold Spell</option>
+          <option value="snow_season">Snow Season</option>
+          <option value="strong_winds">Strong Winds</option> -->
+
+        </select>
+      </span>
+    </section>
+    <section id="vulnerabilities_and_risks">
+      <div class="vulnerability-graph">
+        <!-- <p>Vulnerabilities</p> -->
+         <p>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SECTORAL_COMPARISON_COMPONENT.VULNERABILITIES' | translate}}</p>
+        <img
+          src="assets/images/vulnerability_graph.png"
+          alt="image of vulnerability graph"
+        />
+      </div>
+      <div class="risk-graph">
+        <!-- <p>Risk</p> -->
+         <p>{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SECTORAL_COMPARISON_COMPONENT.RISK' | translate}}</p>
+        <img src="assets/images/risk_graph.png" alt="image of risk graph" />
+      </div>
+    </section>
+
+    <section id="next-button">
+      <!-- <p style="margin-left: 20px">Policy Priorities >></p> -->
+      <p style="margin-left: 20px">{{'CASE_STUDY_TOOL_COMPONENT.MURCIA_REGION_COMPONENT.SECTORAL_COMPARISON_COMPONENT.POLICY_PRIORITIES' | translate}}</p>
+
+        <button mat-raised-button 
+        [routerLink]="['/'+theRoutingTitleCase+'/Explore_assets_and_vulnerabilities']" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button" >
+        Back
+        </button>
+
+        <button
+          class="the-next-button"
+          mat-raised-button
+          [routerLink]="['/'+theRoutingTitleCase+'/Policy_Priorities']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [disabled]="false"
+        >
+          Next
+        </button>
+        
+      </section>
+      <section class="the_footer">
+        <app-footer class="fixed bottom-0"></app-footer>
+      </section>
+  </body>
+</html>

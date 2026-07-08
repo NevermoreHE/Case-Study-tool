@@ -1,0 +1,422 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+  font-family: "Inter", sans-serif !important ;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(234, 238, 236);
+  flex-direction: column;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: flex-end;
+  /* flex-direction: row; */
+  padding-top: 2%;
+  padding-right: 2%;
+}
+
+.header-button {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  color: #2a40b1;
+}
+
+.header-button-help {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: #ccc;
+  color: #2a40b1;
+}
+
+.header-button-home {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: #ccc;
+  color: #2a40b1;
+}
+
+.header-button-help:hover {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: white;
+  color: #2a40b1;
+}
+
+.header-button-home:hover {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: white;
+  color: #2a40b1;
+}
+
+.intern-wrapper {
+  height: 90%;
+  width: 100%;
+  padding-top: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  /* padding-bottom:5%; */
+}
+
+.context {
+  width: 50%;
+  font-size: 2vh;
+}
+
+.custom-words {
+  color: #465c95;
+  font-weight: 600;
+}
+
+.data-context {
+  margin-right: 0%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  /* margin-left: 8%; */
+  /* margin-top: 10%; */
+  /* margin-bottom: 10%;*/
+  margin: 1vh 0;
+}
+
+.data-context img {
+  height: 10vh;
+}
+
+.context-graph {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  font-size: 2vh;
+  padding-bottom: 4vh;
+}
+
+.the_next_button {
+  background-color: #52d389;
+  color: #465c95;
+  margin-top: 4vh; 
+    position: sticky;
+
+    width: fit-content;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 2vh;
+    padding: 2vh;
+
+}
+
+.relevant-sector-text{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.more-info-button{
+      display: flex
+;
+    width: 3vh;
+    height: 3vh;
+    background-color: #E5E5E5;
+    /* text-align: center; */
+    color: black;
+    font-size: 2vh;
+    border-radius: 50%;
+    margin-right: 3%;
+    justify-content: center;
+    align-items: center;
+}
+
+.more-info-button:hover{
+cursor: pointer;
+}
+
+/* .sector_div:hover{
+      border: 2px solid  #465C95  !important;
+  cursor: pointer !important;
+
+} */
+
+.sector_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh 3vh;
+}
+
+.sector-text{
+font-size: 1vw;
+    display: flex
+;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    line-height: 3vh;
+}
+
+/* .image-and-button :hover{
+  cursor: pointer;
+    border: 2px solid  #465C95  !important;
+} */
+
+/* .sector_div:focus{
+  border: 2px solid  #465C95 !important;
+
+} */
+
+/* .sector_div:hover{
+  border: 2px solid  #465C95 !important;
+  transform: scale(1.1) !important; 
+  cursor: pointer;
+
+} */
+
+/* button.active{
+    border: 2px solid  #465C95 !important;
+  transform: scale(1.3) !important; 
+} */
+
+.more-info-button{
+      display: flex
+;
+    width: 3vh;
+    height: 3vh;
+    background-color: #E5E5E5;
+    /* text-align: center; */
+    color: black;
+    font-size: 2vh;
+    border-radius: 50%;
+    margin-right: 3%;
+    justify-content: center;
+    align-items: center;
+}
+
+.know_more_button_policy{
+    padding: 1vh;
+    color: #465C95;
+    background-color: rgb(219, 218, 218);
+    border-radius: 3vh;
+    margin-left: 1vh;
+    font-size: 2vh;
+}
+
+.know_more_button_policy:hover{
+
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    border: 2px solid #465C95;
+    cursor: pointer;
+
+
+}
+
+.input_policy_button{
+    display: flex;
+
+}
+
+input{
+    margin-left: 1vh;
+    margin-right: 1vh;
+        width: 2.5vh;
+
+}
+
+input[type="radio"]:checked {
+
+  border-color: green;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  margin: 10px;
+}
+
+.icon {
+  font-size: 24px;
+  color: #555;
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.chart-rect {
+  width: 90%;
+  height: 45vh;              /* match your design */
+  margin: 2vh auto;
+
+  background: #e9edf3;       /* grey rectangle */
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+
+  position: relative;
+  overflow: hidden;
+  padding: 14px;             /* small inner padding */
+}
+
+/* Canvas fills the rectangle */
+.chart-rect canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Optional placeholder message */
+.chart-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5a6b8a;
+  font-size: 14px;
+}
+
+/* Base popup styling - always hidden initially */
+.popuptext {
+  visibility: hidden; /* Ensure popups are hidden initially */
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 12px 0;
+  position: absolute;
+  z-index: 1;
+  animation: fadeIn 0.5s;
+}
+
+/* Popup arrow */
+.popuptext::after {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Popup above the icon with 65vh width */
+.popuptext.above {
+  width: 65vh; /* Set width to 65vh */
+  bottom: 125%; /* Position it above the icon */
+  left: 50%;
+  transform: translateX(-50%); /* Center it horizontally */
+}
+
+/* Popup arrow for the above popup */
+.popuptext.above::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Popup to the right of the icon with 50vh width */
+.popuptext.right {
+  width: 50vh; /* Set width to 50vh */
+top: -105%;
+    left: 220%;
+  transform: translateY(-50%); /* Center it vertically */
+}
+
+/* Popup arrow for the right popup */
+.popuptext.right::after {
+  left: auto;
+  right: 100%; /* Position the arrow to the left of the popup */
+  margin-left: 0;
+  margin-right: -5px; /* Adjust arrow position */
+}
+
+/* Show the popup (this is controlled by the 'show' class) */
+.popuptext.show {
+  visibility: visible; /* Only show when the 'show' class is added */
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider (background) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+/* The circle knob */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* When checked */
+input:checked + .slider {
+  background-color: #4ade80; /* green shade */
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+.sector-button:focus {
+  border: 2px solid #465c95 !important;
+  transform: scale(1.1) !important;
+  color: #465c95;
+  background-color: #52d389;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

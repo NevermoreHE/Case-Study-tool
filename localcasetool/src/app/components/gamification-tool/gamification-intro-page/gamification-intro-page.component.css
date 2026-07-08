@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+  font-size: 2vh;
+  font-family: "Inter", sans-serif !important ;
+}
+
+.local_case_tool_info { 
+  font-family: "Inter", sans-serif !important ;
+
+  background-image: url("/assets/images/gamification-intro-img.jpg");
+  height: 100vh;
+  /* width: 100vh; */
+  background-size: cover; /* Makes the image cover the whole area */
+  background-repeat: no-repeat; /* Prevents repeating */
+  background-position: center; /* Centers the image */
+}
+
+.local_case_tool_info {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+}
+
+.local-case-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2vh;
+  width: 45%;
+  background-color: white;
+  padding: 8vh;
+}
+
+.header-buttons{
+position: absolute;
+    display: flex
+;
+    padding-top: 0.5%;
+    padding-right: 1%;
+    /* right: 0%; */
+    width: -webkit-fill-available;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.header-buttons button{
+  margin-right: 1%;
+}
+
+.the_next_button {
+  margin-top: 3vh;
+  background-color: #52d389;
+  color: #465c95;
+  border-radius: 2vh;
+  padding: 1vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+  /* width: 10vh; */
+  font-size: 3vh;
+  /* margin-bottom: 4.5rem; */
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

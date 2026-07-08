@@ -1,0 +1,227 @@
+html,
+body {
+  min-height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: white;
+}
+
+.nevermore_top_icon img {
+  margin-top: 10px;
+  width: 100px;
+  height: 40px;
+}
+
+.nav-button {
+  background-color: rgb(129, 216, 129);
+  width: 50px;
+  height: 30px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 15px;
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+#navigation_button {
+  align-items: center;
+  display: flex;
+}
+
+.nav-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+/* .nevermore-top-title {
+  display: flex;
+  background-color: rgb(129, 216, 129);
+  margin-left: 30px;
+  width: 800px;
+  height: 35px;
+  border: none;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(40, 140, 241);
+} */
+
+.nevermore-top-title {
+  /* background-color: rgb(129, 216, 129); */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #465c95;
+}
+
+.CS-4_MURCIA_REGION_TITLE {
+  margin-left: 150px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#hazard {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#hazard p {
+  text-align: center;
+  margin-left: 30px;
+  font-size: 18px;
+}
+
+#hazard select {
+  margin-left: 30px;
+  font-size: 18px;
+  width: 200px;
+  height: 30px;
+}
+
+#hazard select option {
+  text-align: center;
+}
+
+#vulnerabilities_and_risks {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#vulnerabilities_and_risks p {
+  text-align: center;
+}
+
+#next-button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.the-next-button {
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 4.5rem;
+
+}
+
+.the-next-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+}
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .nevermore-top-title {
+    width: 80%;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  #navigation_button{
+    justify-content: space-evenly;
+  }
+
+  #vulnerabilities_and_risks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .the-next-button{
+    margin-bottom: 4.5rem;
+  }
+}
+
+/* Medium screens (tablets, 600px to 1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px){
+  .nevermore-top-title {
+    width: 60%;
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  #navigation_button{
+    justify-content: space-evenly;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    margin-left: 50px;
+    font-size: 18px;
+  }
+
+  #vulnerabilities_and_risks {
+    justify-content: center;
+  }
+
+  #vulnerabilities_and_risks img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  .the-next-button{
+    margin-bottom: 4.5rem;
+  }
+
+}
+
+
+@media screen and (min-width: 1025px) {
+  .nevermore-top-title {
+    width: 500px;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    font-size: 20px;
+  }
+
+  #vulnerabilities_and_risks img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  #navigation_button{
+    justify-content: space-evenly;
+  }
+
+}

@@ -1,0 +1,423 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="policy-recommendations.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
+  </head>
+  <body> -->
+
+<div
+  class="wrapper"
+  style="
+    height: 95vh;
+    background-color: rgba(215, 223, 219);
+    margin-bottom: 5vh;
+    overflow-x: hidden;
+  "
+>
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      Help
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/gamificationMissionSelect']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+      (click)="resetToCCgame()"
+    >
+      <!-- Tool selection -->
+      CC game
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    style="width: 90%; margin-left: 5%; margin-top: 1%; background-color: white"
+  >
+    <div style="background-color: white; height: 100%; margin-bottom: 5rem">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        Mission 1: Climate Change Mitigation
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="context-graph"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 89%;
+          justify-content: space-between;
+        "
+      >
+        <div class="case-studies" style="width: 70%; height: 70%">
+          <section
+            id="question_number"
+            style="
+              display: flex;
+              font-size: 2vh;
+              height: 100%;
+              margin-top: 2%;
+              flex-direction: column;
+              justify-content: space-around;
+            "
+          >
+            <div>
+              <div style="text-align: center; font-size: 2.5vh">
+                <strong
+                  >Provide your answers for the following questions</strong
+                >
+              </div>
+
+              <section id="question_number">
+                <div class="progressbar_and_question_number">
+                  <ul class="question_number">
+                    <li
+                      *ngFor="let q of questions; let i = index"
+                      [ngClass]="{
+                        active: i === questionIndex,
+                        completed: i < questionIndex,
+                      }"
+                    >
+                      {{ i + 1 }}
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+
+            <section
+              class="question-container"
+              style="width: 100%; margin-top: 2%; margin-bottom: 4%"
+            >
+              <p
+                style="
+                  margin-left: 10%;
+                  font-size: 1.3vw;
+                  text-align: left;
+                  font-weight: bold;
+                  line-height: 1.3vw;
+                "
+              >
+                {{ questionAndAnswersReceived[questionIndex - 1].question }}
+              </p>
+
+              <section class="answers-container">
+                <form [formGroup]="form">
+                  <div
+                    *ngFor="
+                      let answer of questionAndAnswersReceived[
+                        questionIndex - 1
+                      ].answers;
+                      let i = index
+                    "
+                    style="margin-top: 2%; margin-bottom: 2%"
+                  >
+                    <label
+                      class="question_label"
+                      style="
+                        font-size: 1.2vw;
+                        line-height: 1.2vw;
+                        display: flex;
+                        align-items: flex-start;
+                      "
+                    >
+                      <input
+                        type="radio"
+                        formControlName="answer"
+                        [value]="answer"
+                        (click)="getAnswer(answer, i)"
+                      />
+                      {{ answer }}
+                    </label>
+                  </div>
+                  <p
+                    style="
+                      font-size: 1.2vw;
+                      line-height: 1.2vw;
+                      text-align: left;
+                      margin-top: 2vh;
+                    "
+                  >
+                    <strong>*Relevant Information: </strong
+                    >{{
+                      questionAndAnswersReceived[questionIndex - 1].relevantInfo
+                    }}
+                  </p>
+
+                  <!-- <button class="next_question_button" type="submit" [disabled]="!form.valid" >Next Question</button> -->
+                  <!-- <button class="next_question_button" type="submit" [disabled]="!form.valid" >{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.POLICY_RECOMMENDATION_COMPONENT.NEXT_QUESTION' | translate}}</button> -->
+                  <!-- <button class="next_question_button" type="submit" [disabled]="previousQuestionButtonStatus"  (click)="loadPreviousQuestion()">Previous Question</button> -->
+
+                  <!-- <button class="next_question_button" type="submit" [disabled]="questionAnsweredStatus" *ngIf="showNextQuestionButton" (click)="onSubmit()" >Next Question</button> -->
+                </form>
+              </section>
+            </section>
+          </section>
+        </div>
+
+        <!-- <button
+      mat-raised-button
+      [routerLink]="['/gamification']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="the-next-button"
+    >
+      Back
+    </button> -->
+        <!-- <button
+            mat-raised-button
+            [routerLink]="['/caseStudySelected_Info' ]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="disableNextPageButton"
+            style="margin: 6vh;
+    width: 15%;"
+          >
+            Next
+          </button> -->
+        <div style="display: flex; justify-content: space-evenly; align-items: center;width: 30%;
+    margin-bottom: 1%;">
+
+  <!-- Previous -->
+  <button
+    mat-raised-button
+    class="the_next_button"
+    type="button"
+    style="margin-right: 4%;width: fit-content;"
+    [disabled]="previousQuestionButtonStatus"
+    *ngIf="showNextQuestionButton"
+    (click)="loadPreviousQuestion()"
+  >
+    Previous Question
+  </button>
+
+  <!-- Normal questions: show Next -->
+  <button
+    mat-raised-button
+    class="the_next_button"
+    type="button"
+    style="margin-left: 4%;width: fit-content;"
+    [disabled]="questionAnsweredStatus"
+    *ngIf="showNextQuestionButton && !isLastQuestion()"
+    (click)="onSubmit()"
+  >
+    Next Question
+  </button>
+
+  <!-- Last question: show View Results instead -->
+  <button
+    mat-raised-button
+    class="header-button-help"
+    type="button"
+    [disabled]="questionAnsweredStatus"
+    *ngIf="showNextQuestionButton && isLastQuestion()"
+    (click)="goToResults()"
+  >
+    View Results
+  </button>
+
+</div>
+      </div>
+    </div>
+  </div>
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+  <!-- 
+    <section id="navigation_button">
+
+      <h2 class="nevermore-top-title">{{'GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE' | translate}}</h2>
+
+      <h2 class="mission_title"
+        >{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.SINGLE_PLAYER_GAMIFICATION_TOOL_TITLE' | translate}}</h2
+      >
+    </section>
+
+    <h2 style="text-align: center;font-weight: 500">{{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.PROVIDE_INPUTS_FOR_QUESTIONS' | translate }}</h2>
+
+    <section id="question_number">
+
+        <section id="question_number">
+          <div class="progressbar_and_question_number">
+
+            <ul class="question_number">
+              <li *ngFor="let q of questions; let i = index" [ngClass]="{ 'active': i === questionIndex, 'completed': i < questionIndex }">
+                {{ i + 1 }}
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      
+      <section class="question-container" >
+        <h3 style="margin-left: 10%;">{{questionAndAnswersReceived[questionIndex-1].question}}</h3>
+
+  
+
+            <section class="answers-container">
+          <form [formGroup]="form" >
+            <div *ngFor="let answer of questionAndAnswersReceived[questionIndex-1].answers;; let i = index" style="margin-top: 10px;">
+              <label class="question_label">
+                <input type="radio" formControlName="answer" [value]="answer" (click)="getAnswer(answer,i)" />
+                  {{answer}}
+              </label>
+            </div>
+  <button class="next_question_button" type="submit" [disabled]="previousQuestionButtonStatus"  (click)="loadPreviousQuestion()">Previous Question</button>
+
+            <button class="next_question_button" type="submit" [disabled]="questionAnsweredStatus" *ngIf="showNextQuestionButton" (click)="onSubmit()" >Next Question</button>
+
+          </form>
+        </section>
+
+        <p>{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.POLICY_RECOMMENDATION_COMPONENT.PROFILE_SELECTION_RECOMMANDATION' | translate}} </p>   
+      </section>
+
+    </section> -->
+
+  <!-- <mat-progress-bar mode="determinate" value="{{questionIndex * 10}}" style="margin-top: -20px;"></mat-progress-bar> -->
+
+  <!-- <section class="question-container">
+      <h2 style="text-align: center;margin:0 200px">{{ currentQuestion }}</h2>
+
+
+      <section class="answers-container">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div *ngFor="let answer of answers" style="margin-top: 10px;">
+            <label style="font-size: 20px;">
+              <input type="radio" formControlName="answer" [value]="answer" />
+                {{ answer }}
+            </label>
+          </div>
+
+          <button class="next_question_button" type="submit" [disabled]="!form.valid" >Next Question</button>
+        </form>
+      </section>
+      <p>*According to your profile (Energy expert), the most appropriate
+      selection would be to apply a policy that generates a large change in
+      transportation demand modes. </p>   
+    </section> -->
+
+  <!-- <section id="question_number">
+      <ul class="question_number" >
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+
+      </ul>
+    </section>
+
+    <section id="questions">
+
+        <form>
+
+            <p>According to your knowledge , do you consider it necessary to apply policies that influence the transport demand in participation model?</p>
+
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">1.Policy to modify transport is not requiered</label><br>
+                <br>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="question_2">2.It is necessary to implement a policy with medium values </label><br>
+                <br>
+                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="question_1">3.It is necessary to implement a policy with high values</label>
+        
+        
+        <br>
+        <p style="font-weight: 350;">
+            *According to your profile (Energy expert), the most appropriate
+            selection would be to apply a policy that generates a large change in
+            transportation demand modes.
+        </p>
+    </form> 
+   
+    </section> -->
+
+  <!-- <section id="next-button"> -->
+  <!-- <button
+      mat-raised-button
+      [routerLink]="['/gamification']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="the-next-button"
+    >
+      Back
+    </button> -->
+  <!-- <button
+        mat-raised-button
+        [routerLink]="['/single_player/Recommendations_GraphData']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="disableNextPageButton"
+        class="the-next-button"
+      >
+        Next
+      </button> -->
+
+  <!-- </section>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section> -->
+  <!-- <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section> -->
+  <!-- </body>
+</html> -->
+</div>

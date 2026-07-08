@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="local_case_tool_info">
+    <div class="local-case-tool">
+      <h1 style="margin-bottom: 5%;height: 20%;font-weight: bold;font-size: 2.5vh;">Welcome to NEVERMORE Case study tool!</h1>
+
+      <p class="info_text" style="text-align: center;">
+        The tool is designed to provide user with a complete understanding of a
+        case study from baseline to future scenarios through the implementation
+        of policy-action scenarios. As a user, you will have the opportunity to
+        evaluate climate change impacts, vulnerabilities and risks in the
+        selected case study. After that, some policy recommendations will be
+        provided according to your predefined hazards, expertise and interests
+        to guide you on the implementation of policy action scenarios. As a
+        result of the ex-ante evaluation of relevant mitigation and adaptation
+        policy action, indicators will be provided in order to evaluate the
+        effects of policy selection in climate change adaptation and mitigation.
+      </p>
+
+      <p class="start-text" style="margin-top: 1.5vh;">Click on <em>START</em> carry out your assessment!</p>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/caseStudy']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+      >
+        START
+      </button>
+    </div>
+     
+  </div>
+  <section class="the_footer">
+       <app-footer class="fixed bottom-0" style="bottom: 0;"></app-footer>
+    </section>
+</div>

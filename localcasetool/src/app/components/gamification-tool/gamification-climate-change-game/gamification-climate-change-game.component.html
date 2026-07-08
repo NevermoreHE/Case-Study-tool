@@ -1,0 +1,532 @@
+<div
+  class="wrapper"
+  style="
+    height: 95vh;
+    background-color: rgba(215, 223, 219);
+    margin-bottom: 5vh;
+    overflow-x: hidden;
+  "
+>
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      Help
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/gamificationMissionSelect']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+      (click)="resetToCCgame()"
+    >
+      CC game
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    style="
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      height: 100%;
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 1%;
+      background-color: white;
+      margin-bottom: 5rem;
+    "
+  >
+    <div style="background-color: white; height: 100%; margin-bottom: 5rem">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          height: 4%;
+        "
+      >
+        Climate Change Game
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+
+      <!-- ROUNDS (tabs only, click disabled by TS select()) -->
+      <div
+        class="round-navigation"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          margin-top: 1rem;
+          margin-left: 5%;
+        "
+      >
+        <div
+          class="toggle-container"
+          style="
+            display: flex;
+            gap: 0.75rem;
+          "
+        >
+          <div class="toggle-option" [class.active]="selected === 'Round 1: 2030'">
+            Round 1: 2030
+          </div>
+
+          <div class="toggle-option" [class.active]="selected === 'Round 2: 2040'">
+            Round 2: 2040
+          </div>
+
+          <div class="toggle-option" [class.active]="selected === 'Round 3: 2050'">
+            Round 3: 2050
+          </div>
+
+          <div class="toggle-option" [class.active]="selected === 'Round 4: 2060'">
+            Round 4: 2060
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Definitions -->
+      <div
+        class="key-definitions"
+        style="
+          display: flex;
+          flex-direction: row;
+          color: #465c95;
+          width: 61%;
+          justify-content: flex-end;
+          cursor: pointer;
+          position: absolute;
+          bottom: 77%;
+        "
+      >
+        <div
+          class="keydefinitionsbutton"
+          style="display: flex; flex-direction: row"
+          [routerLink]="['/keyDefinitions']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <div>Key Definitions</div>
+          <div>
+            <img
+              src="assets/images/key_definitions.png"
+              style="width: 3vh"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="hazard-buttons">
+        <div class="hazard-text">
+          <p
+            style="
+              font-weight: bold;
+              font-size: 2.5vh;
+              margin-left: 5%;
+              margin-top: 4%;
+            "
+          >
+            Hazard
+          </p>
+          <p style="font-size: 2vh; margin-left: 10%">
+            The hazard is defined by the temperature increase obtained from the
+            mitigation mission. If you are not satisfied with this result or
+            would like to try another value, you may select it.
+          </p>
+        </div>
+
+        <div class="hazard-but" style="display: flex; justify-content: space-around; width: 100%">
+          <!-- LOW -->
+          <button
+            class="temp-btn"
+            [class.active]="selectedTempLevel === 'low'"
+            (click)="selectTempLevel('low')"
+            style="background-color: #52d389"
+          >
+            <div>Low</div>
+            <div>&lt; 1.5 &deg;C</div>
+          </button>
+
+          <!-- MEDIUM -->
+          <button
+            class="temp-btn"
+            [class.active]="selectedTempLevel === 'medium'"
+            (click)="selectTempLevel('medium')"
+            style="background-color: #ffb74a"
+          >
+            <div>Medium</div>
+            <div>1.6 - 2.5 &deg;C</div>
+          </button>
+
+          <!-- HIGH -->
+          <button
+            class="temp-btn"
+            [class.active]="selectedTempLevel === 'high'"
+            (click)="selectTempLevel('high')"
+            style="background-color: #bf050566"
+          >
+            <div>High</div>
+            <div>&gt; 2.6 &deg;C</div>
+          </button>
+        </div>
+
+        <div class="climate-event">
+          <p
+            style="
+              font-weight: bold;
+              font-size: 2.5vh;
+              margin-left: 5%;
+              margin-top: 4%;
+            "
+          >
+            Climate
+          </p>
+          <p style="font-size: 2vh; margin-left: 10%">Select a card</p>
+
+          <div class="tool-container">
+            <h2 class="tool-selection-title" style="font-size: 3vh">
+              Hazard selection
+            </h2>
+
+            <div class="tool-selection-wrapper">
+              <button class="nav-button left" (click)="navigateLeft()">
+                <img src="/assets/images/left_arr.png" alt="Left Arrow" />
+              </button>
+
+              <div class="tool-cards">
+                <div
+                  class="tool-card"
+                  *ngFor="let item of visibleTools"
+                  [class.active]="item.realIndex === selectedClimateIndex"
+                  (click)="selectClimateCard(item.realIndex)"
+                >
+                  <div class="tool-icon">
+                    <img [src]="item.tool.image" [alt]="item.tool.name" />
+                    <p>{{ item.tool.name }}</p>
+                  </div>
+
+                  <div class="popup">
+                    {{ item.tool.description }}
+                  </div>
+                </div>
+              </div>
+
+              <button class="nav-button right" (click)="navigateRight()">
+                <img src="/assets/images/right_arr.png" alt="Right Arrow" />
+              </button>
+            </div>
+          </div>
+
+          <p
+            style="
+              font-weight: bold;
+              font-size: 2.5vh;
+              margin-left: 5%;
+              margin-top: 4%;
+            "
+          >
+            Adaptation measures
+          </p>
+          <p style="font-size: 2vh; margin-left: 10%">Select 1 or 2 cards</p>
+
+          <div class="tool-container" style="margin-top: 10%; display: flex; flex-direction: column">
+            <div class="tool-selection-wrapper">
+              <button class="nav-button left" (click)="navigateLeftForAdapt()">
+                <img src="/assets/images/left_arr.png" alt="Left Arrow" />
+              </button>
+
+              <div class="tool-cards">
+                <div
+                  class="tool-card"
+                  *ngFor="let item of visibleAdaptTools"
+                  [class.active]="isSelected(item.realIndex)"
+                  (click)="toggleSelection(item.realIndex)"
+                >
+                  <div class="tool-icon" style="background: #465c9566">
+                    <img [src]="item.tool.image" [alt]="item.tool.name" />
+                    <p>{{ item.tool.name }}</p>
+                  </div>
+
+                  <div class="popup">
+                    {{ item.tool.description }}
+                  </div>
+                </div>
+              </div>
+
+              <button class="nav-button right" (click)="navigateRightForAdapt()">
+                <img src="/assets/images/right_arr.png" alt="Right Arrow" />
+              </button>
+            </div>
+          </div>
+
+          <!-- BONUS -->
+          <div
+            class="tool-container"
+            style="
+              margin-top: 10%;
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 5%;
+            "
+          >
+            <p
+              style="
+                font-weight: bold;
+                font-size: 2.5vh;
+                margin-left: 5%;
+                margin-top: 4%;
+                text-align: left;
+              "
+            >
+              Bonus
+            </p>
+            <p style="font-size: 2vh; margin-left: 10%; text-align: left">
+              Select a card
+            </p>
+
+            <div class="tool-selection-wrapper" style="flex-direction: column">
+              <div class="tool-cards">
+                <div
+                  class="tool-card"
+                  *ngFor="let tool of visibleBonusTools; let i = index"
+                  [ngClass]="{ selected: bonusSelected === tool.name }"
+                  (click)="!isSelectionLocked && selectedBonusTool(tool.name)"
+                >
+                  <div class="tool-icon" style="background-color: #ffb74a; cursor: pointer">
+                    <img [src]="tool.image" [alt]="tool.name" />
+                    <p>{{ tool.name }}</p>
+                  </div>
+
+                  <div class="popup">
+                    {{ tool.description }}
+                  </div>
+                </div>
+              </div>
+
+              <!-- LOCK / APPLY -->
+              <div style="display: flex; width: 100%; justify-content: center; gap: 16px; margin-top: 18px;">
+                <button
+                  class="confirm-button"
+                  (click)="toggleSelectionLock()"
+                  [disabled]="isRoundAlreadyApplied()"
+                >
+                  {{ isSelectionLocked ? 'Unlock cards' : 'Lock selected cards' }}
+                </button>
+
+                <button
+                  class="confirm-button"
+                  (click)="applyRound()"
+                  [disabled]="!isSelectionLocked || isRoundAlreadyApplied()"
+                >
+                  Apply Selection
+                </button>
+              </div>
+
+              <!-- ✅ MOVED HERE: PREVIOUS / NEXT (and transforms to Dynamic Results) -->
+              <div style="display: flex; width: 100%; justify-content: center; gap: 16px; margin-top: 18px;">
+                <button
+                  class="round-nav-btn"
+                  (click)="goToPreviousRound()"
+                  [disabled]="selected === 'Round 1: 2030'"
+                >
+                  ◀ Previous
+                </button>
+
+                <!-- If all rounds are applied -> Dynamic Results -->
+                <button
+                  class="round-nav-btn"
+                  *ngIf="canSeeGraphs"
+                  (click)="goToResultsGraphs()"
+                >
+                  Dynamic Results ▶▶
+                </button>
+
+                <!-- Otherwise -> Next round -->
+                <button
+                  class="round-nav-btn"
+                  *ngIf="!canSeeGraphs"
+                  (click)="goToNextRound()"
+                  [disabled]="!canGoNext || isFinalRound()"
+                >
+                  Next ▶
+                </button>
+
+                <!-- Optional: show Reset on final round (kept from your logic) -->
+                <button
+                  class="round-nav-btn"
+                  *ngIf="isFinalRound() && !canSeeGraphs"
+                  (click)="resetGame()"
+                >
+                  Reset Game
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COINS PANEL (unchanged) -->
+      <div class="hazard-coins">
+        <div class="different-coins">
+          <div class="coinsTitle">
+            <div>Hazard</div>
+            <div class="coins">
+              <div *ngFor="let coin of hazardCOins">
+                <img
+                  src="assets/images/kpi-hazard-green.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="coinsTitle">
+            <div>Budget</div>
+            <div class="coins">
+              <div *ngFor="let coin of budgetCoins">
+                <img
+                  src="assets/images/risk-by-budget.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="coinsTitle"
+            style="width: 90%; margin-left: 5%; margin-top: 4%; margin-bottom: 0%;"
+          >
+            <div>Risk by factor</div>
+          </div>
+
+          <div class="coinsTitle">
+            <div>Energy</div>
+            <div class="coins">
+              <div *ngFor="let coin of energyCoints">
+                <img
+                  src="assets/images/kpi-energy.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="coinsTitle">
+            <div>Water</div>
+            <div class="coins">
+              <div *ngFor="let coin of waterCoins">
+                <img
+                  src="assets/images/kpi-water.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="coinsTitle">
+            <div>Health</div>
+            <div class="coins">
+              <div *ngFor="let coin of healthCoints">
+                <img
+                  src="assets/images/kpi-health.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="coinsTitle">
+            <div>Transport</div>
+            <div class="coins">
+              <div *ngFor="let coin of transportCoins">
+                <img
+                  src="assets/images/kpi-transport.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="coinsTitle">
+            <div>Co-benefit</div>
+            <div class="coins">
+              <div *ngFor="let coin of cobenefitCoins">
+                <img
+                  src="assets/images/kpi-cobenefit.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="coinsTitle">
+            <div>Total risk</div>
+            <div class="coins">
+              <div *ngFor="let coin of totalriskCoins">
+                <img
+                  src="assets/images/kpi-globarRisk.png"
+                  alt=""
+                  style="width: 50%"
+                  [ngStyle]="{ opacity: coin.coinOpacity }"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+</div>

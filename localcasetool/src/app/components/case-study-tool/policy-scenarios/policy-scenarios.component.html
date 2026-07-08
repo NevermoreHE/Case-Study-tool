@@ -1,0 +1,1471 @@
+<div class="wrapper">
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      {{ "HEADER.HELP" | translate }}
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/caseStudy']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      Case Study Tool
+    </button>
+  </div>
+
+  <div class="intern-wrapper">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: &quot;Inter&quot;, sans-serif !important;
+                margin-top: 3%;
+                /* font-size: 2vh; */
+                font-weight: 400;
+                text-align: center;
+              "
+            >
+              <em style="font-size: 3vh; color: #465c95"
+                >Assessment of policy scenarios</em
+              >
+              <span style="margin-left: 1vh">
+                <div
+                  class="popup"
+                  (click)="togglePopup('right')"
+                  style="
+                    background-color: #52d389;
+                    padding: 1.5vh;
+                    border-radius: 100%;
+                    font-size: 3vh;
+                  "
+                >
+                  i<span
+                    class="popuptext right"
+                    [ngClass]="{ show: isPopupVisibleRight }"
+                  >
+                    This selection enables the exploration of predefined global
+                    policy scenarios, each addressing critical sustainability
+                    challenges. Users can select a scenario, review its
+                    objectives and policy intensity levels
+                  </span>
+                </div>
+              </span>
+            </p>
+          </div>
+          <div style="text-align: center">
+            <!-- <p
+              style="
+                line-height: 1.5vw;
+                padding: 1vh;
+                background-color: #52d3891a;
+                border-radius: 3vh;
+              "
+            >
+              Sitia focuses on strong public-led adaptation to climate impacts
+              such as wildfires and water scarcity. The local government drives
+              ambitious policies and infrastructure projects across sectors,
+              while citizens and businesses follow its lead. By 2050, adaptative
+              capacity has grown, though rising temperatures and limited
+              mitigation remain challenges.
+            </p> -->
+<p>{{ policyScenariosReceived?.[0]?.asm_policy_scen }}</p>
+          </div>
+
+          <div
+            class="more_info_about_mathematical_models"
+            style="
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div
+              class="popup"
+              (click)="togglePopup('above')"
+              style="
+                text-align: center;
+                font-size: 3vh;
+                background-color: #52d389;
+                padding: 1vh;
+                border-radius: 100%;
+              "
+            >
+              i
+              <span
+                class="popuptext above"
+                [ngClass]="{ show: isPopupVisibleAbove }"
+                ><div>
+                  <div>
+                    <strong>Select a future climate scenario </strong><br />
+                    You must select a common future climate scenario common to
+                    all the alternatives.
+                  </div>
+                  <br /><br />
+                  <div style="margin-left: 2%">
+                    <strong>SSP2 - Middle of the Road</strong>: A future similar
+                    to today’s world. Progress continues, but changes toward
+                    sustainability happen slowly and unevenly across countries.
+                    <br /><br />
+                    <strong>SSP5 - Fossil fuelled development</strong>: A future
+                    with fast economic growth and high energy use, mostly from
+                    fossil fuels. Living standards rise, but pollution and
+                    climate impacts also increase.
+                  </div>
+                </div></span
+              >
+            </div>
+
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div *ngFor="let scenario of policyScenariosReceived;let i = index">
+            <div class="input_policy_button">
+                <input
+                  type="radio"
+                  [value]="scenario.storyline_name"
+                  name="value"
+                  (click)="checkInputValue(scenario.storyline_name,i)"
+                />
+                <label for="policy"
+                  >{{scenario.storyline_name}}
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+          </div>
+
+          <!-- <div>
+            <p>
+              <em style="margin-left: 30%; margin-top: 5%; margin-bottom: 4%"
+                >Select one scenario to evaluate the alternatives and
+                results</em
+              >
+            </p>
+            <div class="inputs">
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Increasing the capacity to adapt')"
+                />
+                <label for="policy"
+                  >Increasing the capacity to adapt
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'Protecting agricultural production through improved cropland, and water management'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >Protecting agricultural production through improved cropland,
+                  and water management
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'A resilient and diversified tourism sector'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >A resilient and diversified tourism sector
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'A more efficient use of energy for climate change mitigation'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >A more efficient use of energy for climate change mitigation
+                  <button class="know_more_button_policy">Know More >></button>
+                </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue('Sustainable use of water resources')
+                  "
+                />
+                <label for="policy"
+                  >Sustainable use of water resources
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAndResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+<!-- 
+  <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS2_CRETE_ISLAND'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: &quot;Inter&quot;, sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+              "
+            >
+              <em style="font-size: 3vh; color: #465c95"
+                >Assessment of policy scenarios</em
+              >
+              <span style="margin-left: 1vh">
+                <div
+                  class="popup"
+                  (click)="togglePopup('right')"
+                  style="
+                    background-color: #52d389;
+                    padding: 1.5vh;
+                    border-radius: 100%;
+                    font-size: 3vh;
+                  "
+                >
+                  i<span
+                    class="popuptext right"
+                    [ngClass]="{ show: isPopupVisibleRight }"
+                  >
+                    This selection enables the exploration of predefined global
+                    policy scenarios, each addressing critical sustainability
+                    challenges. Users can select a scenario, review its
+                    objectives and policy intensity levels
+                  </span>
+                </div>
+              </span>
+            </p>
+          </div>
+          <div style="text-align: center">
+            <p
+              style="
+                line-height: 1.5vw;
+                padding: 1vh;
+                background-color: #52d3891a;
+                border-radius: 3vh;
+              "
+            >
+              A sustainable future from Trentino envisions a resilient,
+              low-carbon tourisms sector that adapts to climate change through
+              innovation, diversification, and efficient resource use.
+              Collaboration among public, private, and community actors would
+              strengthen water-energy management, education, and long-term
+              regional resilience.
+            </p>
+          </div>
+
+          <div
+            class="more_info_about_mathematical_models"
+            style="
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div
+              class="popup"
+              (click)="togglePopup('above')"
+              style="
+                text-align: center;
+                font-size: 3vh;
+                background-color: #52d389;
+                padding: 1vh;
+                border-radius: 100%;
+              "
+            >
+              i
+              <span
+                class="popuptext above"
+                [ngClass]="{ show: isPopupVisibleAbove }"
+                ><div>
+                  <div>
+                    <strong>Select a future climate scenario </strong><br />
+                    You must select a common future climate scenario common to
+                    all the alternatives.
+                  </div>
+                  <br /><br />
+                  <div style="margin-left: 2%">
+                    <strong>SSP2 - Middle of the Road</strong>: A future similar
+                    to today’s world. Progress continues, but changes toward
+                    sustainability happen slowly and unevenly across countries.
+                    <br /><br />
+                    <strong>SSP5 - Fossil fuelled development</strong>: A future
+                    with fast economic growth and high energy use, mostly from
+                    fossil fuels. Living standards rise, but pollution and
+                    climate impacts also increase.
+                  </div>
+                </div></span
+              >
+            </div>
+
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p>
+              <em style="margin-left: 30%; margin-top: 5%; margin-bottom: 4%"
+                >Select one scenario to evaluate the alternatives and
+                results</em
+              >
+            </p>
+            <div class="inputs">
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'A more resilient and diversified tourism sector'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >A more resilient and diversified tourism sector
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue('Shaping climate-resilient ski resorts')
+                  "
+                />
+                <label for="policy"
+                  >Shaping climate-resilient ski resorts
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue('Sustainable use of water resources')
+                  "
+                />
+                <label for="policy"
+                  >Sustainable use of water resources
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'The water-energy nexus: increasing efficiency to reduce competition'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >The water-energy nexus: increasing efficiency to reduce
+                  competition
+                  <button class="know_more_button_policy">Know More >></button>
+                </label>
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'A more efficient use of energy for climate change mitigation & adaptation'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >A more efficient use of energy for climate change mitigation
+                  & adaptation
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Increasing the capacity to adapt')"
+                />
+                <label for="policy"
+                  >Increasing the capacity to adapt
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('A pathway to decarbonization')"
+                />
+                <label for="policy"
+                  >A pathway to decarbonization
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAndResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY'"
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: &quot;Inter&quot;, sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+              "
+            >
+              <em style="font-size: 3vh; color: #465c95"
+                >Assessment of policy scenarios</em
+              >
+              <span style="margin-left: 1vh">
+                <div
+                  class="popup"
+                  (click)="togglePopup('right')"
+                  style="
+                    background-color: #52d389;
+                    padding: 1.5vh;
+                    border-radius: 100%;
+                    font-size: 3vh;
+                  "
+                >
+                  i<span
+                    class="popuptext right"
+                    [ngClass]="{ show: isPopupVisibleRight }"
+                  >
+                    This selection enables the exploration of predefined global
+                    policy scenarios, each addressing critical sustainability
+                    challenges. Users can select a scenario, review its
+                    objectives and policy intensity levels
+                  </span>
+                </div>
+              </span>
+            </p>
+          </div>
+          <div style="text-align: center">
+            <p
+              style="
+                line-height: 1.5vw;
+                padding: 1vh;
+                background-color: #52d3891a;
+                border-radius: 3vh;
+              "
+            >
+              Norrbotten follows a sustainable path focused on protecting nature
+              and traditional livelihoods while embracing clean technologies.
+              Strong environmental policies, green investments, and active
+              citizen engagement drive renewable energy growth, forest
+              conservation, and improved biodiversity. By 2050, the region
+              achieves significant climate and adaptation progress.
+            </p>
+          </div>
+
+          <div
+            class="more_info_about_mathematical_models"
+            style="
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div
+              class="popup"
+              (click)="togglePopup('above')"
+              style="
+                text-align: center;
+                font-size: 3vh;
+                background-color: #52d389;
+                padding: 1vh;
+                border-radius: 100%;
+              "
+            >
+              i
+              <span
+                class="popuptext above"
+                [ngClass]="{ show: isPopupVisibleAbove }"
+                ><div>
+                  <div>
+                    <strong>Select a future climate scenario </strong><br />
+                    You must select a common future climate scenario common to
+                    all the alternatives.
+                  </div>
+                  <br /><br />
+                  <div style="margin-left: 2%">
+                    <strong>SSP2 - Middle of the Road</strong>: A future similar
+                    to today’s world. Progress continues, but changes toward
+                    sustainability happen slowly and unevenly across countries.
+                    <br /><br />
+                    <strong>SSP5 - Fossil fuelled development</strong>: A future
+                    with fast economic growth and high energy use, mostly from
+                    fossil fuels. Living standards rise, but pollution and
+                    climate impacts also increase.
+                  </div>
+                </div></span
+              >
+            </div>
+
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p>
+              <em style="margin-left: 30%; margin-top: 5%; margin-bottom: 4%"
+                >Select one scenario to evaluate the alternatives and
+                results</em
+              >
+            </p>
+            <div class="inputs">
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'Forest protection and management for climate change adaptation and mitigation'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >Forest protection and management for climate change
+                  adaptation and mitigation
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'Solar deployment and effects in competition for land'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >Solar deployment and effects in competition for land<button
+                    class="know_more_button_policy"
+                  >
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'A more efficient use of energy for climate change mitigation & adaptation'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >A more efficient use of energy for climate change mitigation
+                  & adaptation<button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Increasing the capacity to adapt')"
+                />
+                <label for="policy"
+                  >Increasing the capacity to adapt
+                  <button class="know_more_button_policy">Know More >></button>
+                </label>
+              </div>
+
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'A more resilient and diversified tourism sector'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >A more resilient and diversified tourism sector<button
+                    class="know_more_button_policy"
+                  >
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('A pathway to decarbonization')"
+                />
+                <label for="policy"
+                  >A pathway to decarbonization
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAndResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS4_MURCIA_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="sectors-challanges"
+        style="display: flex; align-items: center"
+      >
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: &quot;Inter&quot;, sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+              "
+            >
+              <em style="font-size: 3vh; color: #465c95"
+                >Assessment of policy scenarios</em
+              >
+              <span style="margin-left: 1vh">
+                <div
+                  class="popup"
+                  (click)="togglePopup('right')"
+                  style="
+                    background-color: #52d389;
+                    padding: 1.5vh;
+                    border-radius: 100%;
+                    font-size: 3vh;
+                  "
+                >
+                  i<span
+                    class="popuptext right"
+                    [ngClass]="{ show: isPopupVisibleRight }"
+                  >
+                    This selection enables the exploration of predefined global
+                    policy scenarios, each addressing critical sustainability
+                    challenges. Users can select a scenario, review its
+                    objectives and policy intensity levels
+                  </span>
+                </div>
+              </span>
+            </p>
+          </div>
+          <div style="text-align: center">
+            <p
+              style="
+                line-height: 1.5vw;
+                padding: 1vh;
+                background-color: #52d3891a;
+                border-radius: 3vh;
+              "
+            >
+              Murcia faces growing risks from droughts and floods but is
+              strengthening resilience through water reuse, desalination, and
+              climate-smart farming. Over time, efficiency, and renewable energy
+              policies reinforce adaptation, leading to greater water security,
+              resilient agriculture, and steady progress toward a net-zero by
+              2050.
+            </p>
+          </div>
+
+          <div
+            class="more_info_about_mathematical_models"
+            style="
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div
+              class="popup"
+              (click)="togglePopup('above')"
+              style="
+                text-align: center;
+                font-size: 3vh;
+                background-color: #52d389;
+                padding: 1vh;
+                border-radius: 100%;
+              "
+            >
+              i
+              <span
+                class="popuptext above"
+                [ngClass]="{ show: isPopupVisibleAbove }"
+                ><div>
+                  <div>
+                    <strong>Select a future climate scenario </strong><br />
+                    You must select a common future climate scenario common to
+                    all the alternatives.
+                  </div>
+                  <br /><br />
+                  <div style="margin-left: 2%">
+                    <strong>SSP2 - Middle of the Road</strong>: A future similar
+                    to today’s world. Progress continues, but changes toward
+                    sustainability happen slowly and unevenly across countries.
+                    <br /><br />
+                    <strong>SSP5 - Fossil fuelled development</strong>: A future
+                    with fast economic growth and high energy use, mostly from
+                    fossil fuels. Living standards rise, but pollution and
+                    climate impacts also increase.
+                  </div>
+                </div></span
+              >
+            </div>
+
+            <div class="toggle-container">
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP245'"
+                (click)="select('SSP245')"
+              >
+                SSP245
+              </div>
+              <div
+                class="toggle-option"
+                [class.active]="selected === 'SSP585'"
+                (click)="select('SSP585')"
+              >
+                SSP585
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p>
+              <em style="margin-left: 30%; margin-top: 5%; margin-bottom: 4%"
+                >Select one scenario to evaluate the alternatives and
+                results</em
+              >
+            </p>
+            <div class="inputs">
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('Increasing the capacity to adapt')"
+                />
+                <label for="policy"
+                  >Increasing the capacity to adapt<button
+                    class="know_more_button_policy"
+                  >
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'Protecting agricultural production through improved cropland, forest and water management'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >Protecting agricultural production through improved cropland,
+                  forest and water management
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue('Sustainable use of water resources')
+                  "
+                />
+                <label for="policy"
+                  >Sustainable use of water resources
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'A more resilient and diversified tourism sector'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >A more resilient and diversified tourism sector
+                  <button class="know_more_button_policy">Know More >></button>
+                </label>
+              </div>
+
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="
+                    checkInputValue(
+                      'A more efficient use of energy for climate change mitigation & adaptation'
+                    )
+                  "
+                />
+                <label for="policy"
+                  >A more efficient use of energy for climate change mitigation
+                  & adaptation
+                  <button class="know_more_button_policy">
+                    Know More >>
+                  </button></label
+                >
+              </div>
+              <div class="input_policy_button">
+                <input
+                  type="radio"
+                  value="policy"
+                  name="value"
+                  (click)="checkInputValue('A pathway to decarbonization')"
+                />
+                <label for="policy"
+                  >A pathway to decarbonization<button
+                    class="know_more_button_policy"
+                  >
+                    Know More >>
+                  </button></label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        [routerLink]="['/scenariosAndResults']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="execute_button"
+        style="margin-top: 4vh"
+      >
+        Execute
+      </button>
+    </div>
+  </div>
+
+  <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 90%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>{{ title_case }}</div>
+        <div>Storylines</div>
+      </div>
+
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div>
+        <div class="sector-text">
+          <div>
+            <p
+              style="
+                font-weight: bold;
+                font-family: &quot;Inter&quot;, sans-serif !important;
+                margin-top: 3%;
+                font-size: 2vh;
+                text-align: center;
+              "
+            >
+              <em style="font-size: 3vh; color: #465c95"
+                >Assessment of policy scenarios</em
+              >
+              <span style="margin-left: 1vh">
+                <div
+                  class="popup"
+                  (click)="togglePopup('right')"
+                  style="
+                    background-color: #52d389;
+                    padding: 1.5vh;
+                    border-radius: 100%;
+                    font-size: 3vh;
+                  "
+                >
+                  i<span
+                    class="popuptext right"
+                    [ngClass]="{ show: isPopupVisibleRight }"
+                  >
+                    This selection enables the exploration of predefined global
+                    policy scenarios, each addressing critical sustainability
+                    challenges. Users can select a scenario, review its
+                    objectives and policy intensity levels
+                  </span>
+                </div>
+              </span>
+            </p>
+          </div>
+          <div style="text-align: center">
+            <p
+              style="
+                line-height: 1.5vw;
+                padding: 1vh;
+                background-color: #52d3891a;
+                border-radius: 3vh;
+              "
+            >
+              By 2050, Tulcea envisions a sustainable future driven by green
+              growth and technological innovation. Collaboration among
+              government, business, and NGOs focuses on climate mitigation,
+              adaptation, and protecting the Danube Delta, revitalising the
+              economy tourism, and local resilience.
+            </p>
+
+            <div
+              class="more_info_about_mathematical_models"
+              style="
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <div
+                class="popup"
+                (click)="togglePopup('above')"
+                style="
+                  text-align: center;
+                  font-size: 3vh;
+                  background-color: #52d389;
+                  padding: 1vh;
+                  border-radius: 100%;
+                "
+              >
+                i
+                <span
+                  class="popuptext above"
+                  [ngClass]="{ show: isPopupVisibleAbove }"
+                  ><div>
+                    <div>
+                      <strong>Select a future climate scenario </strong><br />
+                      You must select a common future climate scenario common to
+                      all the alternatives.
+                    </div>
+                    <br /><br />
+                    <div style="margin-left: 2%">
+                      <strong>SSP2 - Middle of the Road</strong>: A future
+                      similar to today’s world. Progress continues, but changes
+                      toward sustainability happen slowly and unevenly across
+                      countries. <br /><br />
+                      <strong>SSP5 - Fossil fuelled development</strong>: A
+                      future with fast economic growth and high energy use,
+                      mostly from fossil fuels. Living standards rise, but
+                      pollution and climate impacts also increase.
+                    </div>
+                  </div></span
+                >
+              </div>
+
+              <div class="toggle-container">
+                <div
+                  class="toggle-option"
+                  [class.active]="selected === 'SSP245'"
+                  (click)="select('SSP245')"
+                >
+                  SSP245
+                </div>
+                <div
+                  class="toggle-option"
+                  [class.active]="selected === 'SSP585'"
+                  (click)="select('SSP585')"
+                >
+                  SSP585
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p>
+                <em style="margin-top: 5%; margin-bottom: 4%"
+                  >Select one scenario to evaluate the alternatives and
+                  results</em
+                >
+              </p>
+              <div class="inputs">
+                <div class="input_policy_button">
+                  <input
+                    type="radio"
+                    value="policy"
+                    name="value"
+                    (click)="
+                      checkInputValue('Increasing the capacity to adapt')
+                    "
+                  />
+                  <label for="policy"
+                    >Increasing the capacity to adapt
+                    <button class="know_more_button_policy">
+                      Know More >>
+                    </button></label
+                  >
+                </div>
+                <div class="input_policy_button">
+                  <input
+                    type="radio"
+                    value="policy"
+                    name="value"
+                    (click)="
+                      checkInputValue(
+                        'Protecting agriculture production through improved cropland and water mamagement'
+                      )
+                    "
+                  />
+                  <label for="policy"
+                    >Protecting agriculture production through improved cropland
+                    and water mamagement
+                    <button class="know_more_button_policy">
+                      Know More >>
+                    </button></label
+                  >
+                </div>
+                <div class="input_policy_button">
+                  <input
+                    type="radio"
+                    value="policy"
+                    name="value"
+                    (click)="
+                      checkInputValue('Sustainable use of water resources')
+                    "
+                  />
+                  <label for="policy"
+                    >Sustainable use of water resources
+                    <button class="know_more_button_policy">
+                      Know More >>
+                    </button></label
+                  >
+                </div>
+                <div class="input_policy_button">
+                  <input
+                    type="radio"
+                    value="policy"
+                    name="value"
+                    (click)="
+                      checkInputValue(
+                        'A more resilient and diversified tourism sector'
+                      )
+                    "
+                  />
+                  <label for="policy"
+                    >A more resilient and diversified tourism sector<button
+                      class="know_more_button_policy"
+                    >
+                      Know More >>
+                    </button>
+                  </label>
+                </div>
+
+                <div class="input_policy_button">
+                  <input
+                    type="radio"
+                    value="policy"
+                    name="value"
+                    (click)="
+                      checkInputValue(
+                        'A more efficient use of energy for climate change mitigation & adaptation'
+                      )
+                    "
+                  />
+                  <label for="policy"
+                    >A more efficient use of energy for climate change
+                    mitigation & adaptation
+                    <button class="know_more_button_policy">
+                      Know More >>
+                    </button></label
+                  >
+                </div>
+                <div class="input_policy_button">
+                  <input
+                    type="radio"
+                    value="policy"
+                    name="value"
+                    (click)="checkInputValue('A pathway to decarbonization')"
+                  />
+                  <label for="policy"
+                    >A pathway to decarbonization<button
+                      class="know_more_button_policy"
+                    >
+                      Know More >>
+                    </button></label
+                  >
+                </div>
+                <div class="input_policy_button">
+                  <input
+                    type="radio"
+                    value="policy"
+                    name="value"
+                    (click)="
+                      checkInputValue(
+                        'Protecting ecosystems for climate change adaptation & mitigation'
+                      )
+                    "
+                  />
+                  <label for="policy"
+                    >Protecting ecosystems for climate change adaptation &
+                    mitigation<button class="know_more_button_policy">
+                      Know More >>
+                    </button></label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          mat-raised-button
+          [routerLink]="['/scenariosAndResults']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="the_next_button"
+          [disabled]="execute_button"
+          style="margin-top: 4vh"
+        >
+          Execute
+        </button>
+      </div>
+    </div>
+  </div> -->
+
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+</div>

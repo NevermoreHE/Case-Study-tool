@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="graphs.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+   
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section>
+    <section id="navigation_button">
+      <button class="nav-button"><i class="fa fa-bars"></i></button>
+      <span class="nevermore-top-title">NEVERMORE Gamification tool</span> -->
+      <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button" style="display: flex; justify-content: space-between;">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">GAMIFICATION TOOL</span> -->
+      <span class="nevermore-top-title">{{'GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE' | translate}}</span>
+      <!-- <span style="margin-left: 350px; font-weight: 600"
+        >MISSION 1: CLIMATE CHANGE MITIGATION</span
+      > -->
+      <!-- <h2 class="mission_tool" 
+        >MISSION 1: CLIMATE CHANGE MITIGATION</h2
+      > -->
+      <h2 class="mission_tool" 
+        >{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.SINGLE_PLAYER_GAMIFICATION_TOOL_TITLE' | translate}}</h2
+      >
+    </section>
+
+<!-- 
+    <section id="graph_selection">
+      <select  id="graph_type">
+        <option value="option_1">CO2 emissions per capita</option>
+        <option value="option_2">Option2</option>
+        <option value="option_3">Option3</option>
+        <option value="option_4">Option4</option>
+      </select>
+    
+
+      <div id="option1" class="content">
+        <h1>Option 1</h1>
+        <p>Content block 1</p>
+     </div>
+     <div id="option2" class="content">
+        <h1>Content 2</h1>
+        <p>Content block 2</p>
+     </div>
+     <div id="option3" class="content">
+        <h1>Content 3</h1>
+        <p>Content block 3</p>
+     </div>
+</section> -->
+
+<section id="graph_selection">
+<select  id="graph_type">
+    <!-- <option value="option_1">CO2 emissions per capita</option>
+    <option value="option_2">Option2</option>
+    <option value="option_3">Option3</option>
+    <option value="option_4">Option4</option> -->
+    <option value="option_1">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.OPTION_1' | translate}}</option>
+    <!-- <option value="option_2">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.OPTION_2' | translate}}</option>
+    <option value="option_3">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.OPTION_3' | translate}}</option>
+    <option value="option_4">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.GRAPH_OPTIONS.OPTION_4' | translate}}</option> -->
+  </select>
+</section>
+
+<section id="graph_and_icon_data">
+    <!-- <img src="assets/images/increasing_temp_graph.png" alt="temp_graph_image" style="height: 400px;" class="temperature_graph_image">
+    <figure>
+        <img src="assets/images/increasing_temp.png" alt="increasing_temperature" style="height: 250px; margin-top: 80px;">
+        <figcaption style="color: #465C95;font-weight: bold;font-size: 18px;text-align: center;">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.TEMPERATURE_STATUS' | translate}} <br><span style="color:red;">1.8°C</span></figcaption>
+        </figure> -->
+          <div class="myDataChart" >
+    <canvas #myScenaryChart id="windSpeedChartCanvas" style="height: 70vh;" ></canvas>
+  </div>
+</section>
+     
+    <section id="next-button">
+      <!-- <p class="continue_to_next_page_info">Continue to MISSION 2 >></p> -->
+      <p class="continue_to_next_page_info">{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER.RECOMMANDATION_GRAPH_DATA_COMPONENT.CONTINUE_TO_MISSION_2' | translate}}</p>
+      <button
+      mat-raised-button
+      [routerLink]="['/single_player/Policy_Recommendations']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="the-next-button"
+    >
+      Back
+    </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/single_player/MISSION_2']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="false"
+        class="the-next-button"
+      >
+        Next
+      </button>
+    </section>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

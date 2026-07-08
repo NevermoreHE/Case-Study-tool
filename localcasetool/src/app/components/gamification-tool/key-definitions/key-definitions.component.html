@@ -1,0 +1,274 @@
+<div
+  class="wrapper"
+  style="
+    height: 95vh;
+    background-color: rgba(215, 223, 219);
+    margin-bottom: 5vh;
+    overflow-x: hidden;
+  "
+>
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      Help
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/gamificationMissionSelect']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+      (click)="resetToCCgame()"
+    >
+      <!-- Tool selection -->
+      CC game
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    style="
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      height: 100%; /* Make sure it takes up the full height of its parent */
+      width: 90%;
+      margin-left: 5%;
+      margin-top: 1%;
+      background-color: white;
+      margin-bottom: 5rem;
+    "
+  >
+    <div style="background-color: white; height: 100%; margin-bottom: 5rem">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+          height: 4%;
+        "
+      >
+        Climate Change Game
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+
+      <div
+        class="key-definitions-container"
+        style="
+          width: 98%;
+          margin-right: 1%;
+          margin-left: 1%;
+          margin-bottom: 1%;
+          background-color: #eefbf4
+;
+          height: 85%;
+          position: absolute;
+          bottom: 0%;
+          border-radius: 3vh;
+        "
+      >
+        <div class="key-defintions-title" style="color: #465c95;display: flex;align-items: center;margin-left: 5%;margin-top: 2%;margin-bottom: 3%;">
+          <img
+            src="assets/images/key_definitions.png"
+            style="width: 7vh"
+            alt=""
+          />
+          <div style="font-size: 4vh;">Key Definitions</div>
+        </div>
+
+        <div class="key-definitions-select" style="margin-left: 7%; font-size: 2vh;margin-bottom: 2%;">
+          <select name="" id="" style="font-size: 3vh;border-radius: 2vh;">
+            <option value="climate-events">Climate events</option>
+            <option value="climate-scenarios">Climate scenarios</option>
+            <option value="adaptation-measures">Adaptation measures</option>
+            <option value="bonus-card">Bonus cards</option>
+            <option value="KPIs">KPIs</option>
+          </select>
+        </div>
+
+        <div class="climate-events-title">
+          <div
+            style="
+              margin-left: 5%;
+              width: 95%;
+              font-size: 3vh;
+              margin-bottom: 2%;
+            "
+          >
+            CLIMATE EVENTS
+          </div>
+          <div
+            class="climate-events-info"
+            style="width: 100%; display: flex; font-size: 2.5vh;justify-content: center;margin-top: 3%;"
+          >
+            <div
+              class="first-4"
+              style="width: 43%; margin-left: 1.5%; margin-left: 1.5%"
+            >
+              <div class="heatwave-event" style="display: flex;margin-bottom: 4%;align-items: center;">
+                <div style="margin-right: 1%;">
+                  <img
+                    src="assets/images/card-heatwave.png"
+                    style="width: 4vh;margin-right: 1%;"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <strong>Heatwave</strong>: A long period of unusually high
+                  temperatures that can affect health, water use, and energy
+                  demand.
+                </div>
+              </div>
+              <div class="draugt-event" style="display: flex;margin-bottom: 4%;align-items: center;">
+                <div style="margin-right: 1%;"> 
+                  <img 
+                    src="assets/images/draught-card.png"
+                    style="width: 4vh;margin-right: 1%;"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <strong>Drought</strong>: A lack of rainfall over time,
+                  reducing water availability for people, nature, and
+                  agriculture.
+                </div>
+              </div>
+              <div class="coastal-event" style="display: flex;margin-bottom: 4%;align-items: center;">
+                <div style="margin-right: 1%;">
+                  <img
+                    src="assets/images/coastal-event-card.png"
+                    style="width: 4vh;margin-right: 1%;"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <strong>Coastal event</strong>: Flooding or erosion cased by
+                  storms, high waves or rising sea levels along the coast.
+                </div>
+              </div>
+              <div class="energy-blackout-event" style="display: flex;margin-bottom: 4%;align-items: center;">
+                <div style="margin-right: 1%;">
+                  <img
+                    src="assets/images/energy-blackout.png"
+                    style="width: 4vh;margin-right: 1%;"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <strong>Energy blackout</strong>: A temporary loss of
+                  electricity due to extreme conditions or system failures.
+                </div>
+              </div>
+            </div>
+            <div
+              class="second-4"
+              style="width: 43%; margin-left: 1.5%; margin-left: 1.5%"
+            >
+              <div class="precipitation-event" style="display: flex;margin-bottom: 4%;align-items: center;">
+                <div style="margin-right: 1%;">
+                  <img
+                    src="assets/images/extreme-precipitation.png"
+                    style="width: 4vh;margin-right: 1%;"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <strong>Extreme precipitation</strong>: Very heavy rainfall in
+                  short time, increasing the risks of floods and damage.
+                </div>
+              </div>
+              <div class="negative-public-perception-event" style="display: flex;margin-bottom: 4%;align-items: center;">
+                <div style="margin-right: 1%;">
+                  <img
+                    src="assets/images/negative-public-card.png"
+                    style="width: 4vh;margin-right: 1%;"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <strong>Negative public perception</strong>: When communities
+                  resist or disagree with adaptation actions, slowing process.
+                </div>
+              </div>
+              <div class="urban-heat-event" style="display: flex;margin-bottom: 4%;align-items: center;">
+                <div style="margin-right: 1%;">
+                  <img
+                    src="assets/images/urban-heat-card.png"
+                    style="width: 4vh;margin-right: 1%;"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <strong>Urban heat island</strong>: Cities become hotter than
+                  nearby areas due to buildings traffic, and limited green.
+                </div>
+              </div>
+              <div class="wildfires-event" style="display: flex;margin-bottom: 4%;align-items: center;">
+                <div style="margin-right: 1%;">
+                  <img
+                    src="assets/images/wildfires-card.png"
+                    style="width: 4vh;margin-right: 1%;"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <strong>Wildfires</strong>: Uncontrolled fires in forest or
+                  dry landscapes, often triggered by heat and drought.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              color: #465c95;
+              font-size: 3vh;
+              cursor: pointer;
+              position: absolute;
+              bottom: 4%;
+              left: 2%;
+            "
+            [routerLink]="['/gamificationClimateChangeGame']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            &lt;Go back
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+</div>

@@ -1,0 +1,339 @@
+<div
+  class="wrapper"
+  style="
+    height: 95vh;
+    background-color: rgba(215, 223, 219);
+    margin-bottom: 5vh;
+    overflow-x: hidden;
+  "
+>
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      Help
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/gamificationMissionSelect']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+      disabled="true"
+    >
+      <!-- Tool selection -->
+      CC game
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    style="width: 90%; margin-left: 5%; margin-top: 1%; background-color: white"
+  >
+    <div
+      style="
+        background-color: white;
+        height: 100%;
+        margin-bottom: 5rem;
+        padding-bottom: 20vh;
+      "
+    >
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        Climate Change Game
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div
+        class="context-graph"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 89%;
+          justify-content: space-between;
+        "
+      >
+        <div class="case-studies" style="width: 70%; height: 70%" *ngIf="userMission1Status!=true">
+          <p
+            style="
+              font-size: 1.3vw;
+              text-align: center;
+              margin-top: 4vh;
+              line-height: 2vw;
+            "
+          >
+            <strong>Click on Mission 1 to start playing</strong>
+          </p>
+          <p
+            style="
+              font-size: 1.1vw;
+              text-align: center;
+              margin-top: 2vh;
+              line-height: 2vw;
+            "
+          >
+            In this mission you will explore different pathways to reduce
+            greenhouse gas (GHG) emissions. You need to answer specific question
+            to understand how your decisions affects the emissions at global
+            level. Your answers are used to create a policy-action scenario that
+            is connected with a simulation of WILIAM model, which is used in the
+            background as the modelling engine.
+          </p>
+
+          <div
+            class="missions-for-game"
+            style="display: flex; justify-content: center; margin-top: 5vh"
+          >
+            <div class="mission-1" >
+              <div
+                class="mission-1-container"
+                style="margin-right: 5vh; display: flex; flex-direction: column"
+              >
+                <img
+                  src="assets/images/gamification-mission-1.jpg"
+                  alt=""
+                  style="width: 40vh"
+                />
+                <button
+                  mat-raised-button
+                  [routerLink]="['/single_player/Policy_Recommendations']"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  [disabled]="userMission1Status"
+                  class="the_next_button"
+                >
+                  Mission 1: Mitigation
+                </button>
+              </div>
+            </div>
+            <div class="mission-2">
+              <div
+                class="mission-2-container"
+                style="margin-right: 5vh; display: flex; flex-direction: column"
+              >
+                <img
+                  src="assets/images/gamification-mission-2.jpg"
+                  alt=""
+                  style="width: 37.5vh"
+                />
+
+                <button
+                  mat-raised-button
+                  [disabled]="true"
+                  [routerLink]="['/single_player/Policy_Recommendations']"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  [disabled]="!userMission1Status"
+                  class="the_next_button"
+                >
+                  Mission 2:Adaptation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        
+
+
+        <div class="case-studies" style="width: 70%; height: 70%" *ngIf="userMission1Status!=false">
+
+<div class="overlay" *ngIf="showPopup">
+  <div class="popup">
+
+    <button style="display: flex;" (click)="closePopup()">X</button>
+
+    <ng-container *ngIf="popupStep === 1">
+      <span style="font-weight: bold; font-size: 3vh;">STORYLINE</span>
+      <br /><br />
+      <div style="text-align: center;font-weight: bold;">Adaptation mission</div>
+      <br><br>
+      <div style="text-align: left; font-size: 2vh;">
+        
+
+Global warming is reshaping the world faster than ever, intensifying heatwaves, storms, droughts, and other climate impacts that affect communities and ecosystems, but also providing new opportunities to rethink how we live. To face this challenge, your mission is to <span style="font-weight: bold;">guide a territory through a dynamic adaptation journey</span>: reduce risks, strengthen resilience, and improve people's overall quality of life. <br><br>
+
+As you navigate each challenge, you will make strategic decisions, implement adaptation measures, and balance resources wisely.<span style="font-weight: bold;"> Every choice counts</span>. By protecting ecosystems, upgrading infrastructure, and supporting vulnerable sectors, you will guide your territory toward a safer and more sustainable future. <br><br>
+
+The goal is clear: <span style="color: #465C95;"> Transform uncertainty into action, risk into resilience</span>, and <span style="color: #465C95;">today’s challenges into tomorrow’s opportunities.</span> <br><br> 
+
+
+
+
+      </div>
+      <div style=" text-align: center;"><span style="color: #FFB74A;">Are you ready to lead the mission?</span>
+</div>
+    </ng-container>
+
+    <ng-container *ngIf="popupStep === 2">
+      <span style="font-weight: bold; font-size: 3vh;">QUICK RULES</span>
+      <br /><br />
+      <div style="text-align: left; font-size: 2vh;">
+        🎯 <strong>Round setup</strong><br />
+        Adjust the hazard level based on your <strong>mitigation mission scenario</strong>. The new value updates automatically.
+        <br /><br />
+
+        🌪️ <strong>Climate event</strong><br />
+        Pick 1 event card per round — its effects on each sector will apply instantly.
+        <br /><br />
+
+        🛠️ <strong>Adaptation measures</strong><br />
+        Play up to <strong>2 measure cards</strong> per round. Their costs and risk reductions are applied immediately.
+        <br /><br />
+
+        💰 <strong>Budget & timing</strong><br />
+        If a measure has lag, effects start later. When the <strong>lifetime ends</strong>, impacts and co-benefits are halved, but OPEX continues.
+        <br /><br />
+
+        ⚖️ <strong>Risk rules</strong><br />
+        Risk per sector can’t drop below <strong>15</strong> or exceed <strong>90</strong>. Manage your budget wisely to keep balance!
+      </div>
+    </ng-container>
+
+  </div>
+</div>
+
+
+          <p
+            style="
+              font-size: 1.3vw;
+              text-align: center;
+              margin-top: 4vh;
+              line-height: 2vw;
+            "
+          >
+            <strong>Click on Mission 2 to start playing</strong>
+          </p>
+          <p
+            style="
+              font-size: 1.1vw;
+              text-align: center;
+              margin-top: 2vh;
+              line-height: 2vw;
+            "
+          >
+            In this mission you will explore different pathways to reduce
+            greenhouse gas (GHG) emissions. You need to answer specific question
+            to understand how your decisions affects the emissions at global
+            level. Your answers are used to create a policy-action scenario that
+            is connected with a simulation of WILIAM model, which is used in the
+            background as the modelling engine. <br>
+            <span style="text-align: center;color: #52D389;"><span>Every choice matters</span><br><span>Can you keep region safe and sustainable by 2060</span></span>
+          </p>
+
+          <div
+            class="missions-for-game"
+            style="display: flex; justify-content: center; margin-top: 5vh"
+          >
+            <div class="mission-1" >
+              <div
+                class="mission-1-container"
+                style="margin-right: 5vh; display: flex; flex-direction: column"
+              >
+                <img
+                  src="assets/images/gamification-mission-1.jpg"
+                  alt=""
+                  style="width: 40vh"
+                />
+                <button
+                  mat-raised-button
+                  [routerLink]="['/single_player/Policy_Recommendations']"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  [disabled]="userMission1Status"
+                  class="the_next_button"
+                >
+                  Mission 1: Mitigation
+                </button>
+              </div>
+            </div>
+            <div class="mission-2">
+              <div
+                class="mission-2-container"
+                style="margin-right: 5vh; display: flex; flex-direction: column"
+              >
+                <img
+                  src="assets/images/gamification-mission-2.jpg"
+                  alt=""
+                  style="width: 37.5vh"
+                />
+
+                <button
+                  mat-raised-button
+                  [routerLink]="['/gamificationClimateChangeGame']"
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{ exact: true }"
+                  [disabled]="!userMission1Status"
+                  class="the_next_button"
+                >
+                  Mission 2:Adaptation
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+          "
+        >
+          <!-- <button
+            mat-raised-button
+            [routerLink]="['/gamification']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            style="margin: 6vh; font-size: 1.1vw"
+            type="submit"
+          >
+            Next Mission
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+</div>

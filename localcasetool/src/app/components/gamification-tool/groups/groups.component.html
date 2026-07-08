@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="groups.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">GAMIFICATION TOOL</span> -->
+      <span class="nevermore-top-title">{{
+        "GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE" | translate
+      }}</span>
+    </section>
+
+    <!-- <h1>MISSION 1: CLIMATE CHANGE MITIGATION</h1> -->
+    <h1>{{ "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.MISSION_1" | translate }}</h1>
+
+    <section id="team_selection">
+      <!-- <h2>Select your team</h2> -->
+      <h2>
+        {{ "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.SELECT_TEAM" | translate }}
+      </h2>
+
+      <select name="team_selection" id="select_team">
+        <!-- <option value="team1">Team 1</option>
+        <option value="team1">Team 2</option>
+        <option value="team1">Team 3</option> -->
+        <option value="team1">
+          {{ "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.TEAM_1" | translate }}
+        </option>
+        <option value="team2">
+          {{ "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.TEAM_2" | translate }}
+        </option>
+        <option value="team3">
+          {{ "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.TEAM_3" | translate }}
+        </option>
+      </select>
+      <!-- *Choose Team 1 -->
+      {{ "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.CHOOSE_TEAM" | translate }}
+    </section>
+
+    <section id="gamification-description">
+      <!-- <p>Select your role</p> -->
+      <p>
+        {{ "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.SELECT_ROLE" | translate }}
+      </p>
+    </section>
+
+    <section id="roles">
+      <ul id="roles_list">
+        <li *ngFor="let role of rolesList" tabindex="1">
+          <button class="roleButtons"
+            (click)="checkRoleSelected(role.roleName)"
+            [class.active]="selectedRole === role.roleName"
+            [disabled]="role.status"
+          >
+            <section id="energy">
+              <figure>
+                <img [src]="role.roleImage" alt="energy_expert" />
+                <figcaption>
+                  {{
+                    "GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER." + role.roleName
+                      | translate
+                  }}
+                </figcaption>
+              </figure>
+            </section>
+          </button>
+        </li>
+        <!-- <li tabindex="1">
+          <section id="energy">
+            <figure>
+              <img src="assets/images/energy_expert.png" alt="energy_expert" />
+              <figcaption>
+                {{
+                  "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.ENERGY_EXPERT"
+                    | translate
+                }}
+              </figcaption>
+            </figure>
+          </section>
+        </li>
+
+        <li tabindex="1">
+          <section id="environmental">
+            <figure>
+              <img
+                src="assets/images/enviromental_expert.png"
+                alt="enviromental_expert"
+              />
+              <figcaption>
+                {{
+                  "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.ENVIRONMENTAL_EXPERT"
+                    | translate
+                }}
+              </figcaption>
+            </figure>
+          </section>
+        </li>
+
+        <li tabindex="1">
+          <section id="economy">
+            <figure>
+              <img
+                src="assets/images/economy_expert.png"
+                alt="economy_expert"
+              />
+              <figcaption>
+                {{
+                  "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.ECONOMY_EXPERT"
+                    | translate
+                }}
+              </figcaption>
+            </figure>
+          </section>
+        </li>
+
+        <li tabindex="1">
+          <section id="social">
+            <figure>
+              <img src="assets/images/social_expert.png" alt="social_expert" />
+              <figcaption>
+                {{
+                  "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.SELECT_ROLE" | translate
+                }}
+              </figcaption>
+            </figure>
+          </section>
+        </li> -->
+      </ul>
+    </section>
+
+    <section id="next-button">
+      <!-- <p style="font-weight: 500;">*This selection is key to provide you useful policy recommendation before implementation</p> -->
+      <p style="font-weight: 500">
+        {{ "GAMIFICATION_TOOL_COMPONENT.BY_GROUP.SELECTION_INFO" | translate }}
+      </p>
+      <button
+        mat-raised-button
+        [routerLink]="['/gamification']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/by_group/Policy_Recommendations_For_Group']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="checkRoleSelectedStatus"
+        class="the-next-button"
+      >
+        Next
+      </button>
+    </section>
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

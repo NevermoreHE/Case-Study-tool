@@ -1,0 +1,850 @@
+<div class="wrapper">
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      {{ "HEADER.HELP" | translate }}
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/caseStudy']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      Case Study Tool
+    </button>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY'"
+  >
+    <div style="background-color: white;  margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS3 - Norrbotten County
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div class="context-graph">
+        <div class="context">
+          <p
+            style="
+              font-weight: bold;
+              font-family: 'Inter', sans-serif !important;
+              margin-left: 20%;
+              margin-top: 5%;
+              font-size: 2vh;
+              line-height: 3vh;
+            "
+          >
+            Context
+          </p>
+          <div class="data-context">
+            <div class="geographic-icon">
+              <img src="assets\images\sweden-icon.png" alt="" />
+            </div>
+            <div class="geographic-info">
+              The county of Norrbotten is
+              <span class="custom-words">Sweden’s northernmost county</span> and
+              is divided into 14 municipalities.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="temperature-icon">
+              <img src="assets\images\sweden-temp.png" alt="" />
+            </div>
+            <div class="temperature-info" style="margin-left: 2%">
+              It experiences a
+              <span class="custom-words">subarctic to continental climate</span>
+              characterized by long cold winters with persistent snow cover and
+              short mild summers.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="agriculture-icon">
+              <img src="assets\images\sweden-bio.png" alt="" />
+            </div>
+            <div class="agriculture-info" style="margin-left: 2%">
+              The most relevant sector is
+              <span class="custom-words"
+                >biodiversity and natural heritage.</span
+              >
+              It has the largest area as well as the highest proportion of
+              protected nature in Sweden.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="water-icon">
+              <img src="assets\images\sweden-tree.png" alt="" />
+            </div>
+            <div class="water-info" style="margin-left: 2%">
+              <span class="custom-words">Forestry</span> is an important sector,
+              as the 40% of the surface is covered by productive forest, thanks
+              to the cold climate, in which trees grow slowly and get a dense
+              wood of high quality.
+              <span class="custom-words">Reindeer husbandry</span> is also
+              relevant especially for the Sami population.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="biodiversity-icon">
+              <img src="assets\images\sweden-hidra.png" alt="" />
+            </div>
+            <div class="biodiversity-info" style="margin-left: 2%">
+              <span class="custom-words">Energy</span> is a key sector, with
+              high consumption driven by the cold climate, long transport
+              distances, and energy-intensive industry. Most energy comes from
+              fossil fuels, while hydropower, accounts for nearly 90% of
+              electricity produced.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            height: -webkit-fill-available;
+            align-items: flex-end;
+          "
+        >
+          <div class="graph-site" style="display: flex; padding-top: 16vh">
+            <div
+              class="graph-image"
+              style="display: flex; justify-content: center"
+            >
+              <img
+                src="assets\images\sweden-map.png"
+                alt=""
+                style="width: 70vh"
+              />
+            </div>
+          </div>
+          <button
+            mat-raised-button
+            [routerLink]="['/' + title_case]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS1_CRETE_ISLAND'">
+    <div style="background-color: white;  margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS1 - Sitia municipality
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div class="context-graph">
+        <div class="context">
+          <p
+            style="
+              font-weight: bold;
+              font-family: 'Inter', sans-serif !important;
+              margin-left: 20%;
+              margin-top: 5%;
+              font-size: 2vh;
+            "
+          >
+            Context
+          </p>
+          <div class="data-context">
+            <div class="geographic-icon">
+              <img src="assets\images\geographic-icon-greece.png" alt="" />
+            </div>
+            <div class="geographic-info">
+              The Municipality of Sitia is located in the
+              <span class="custom-words">eastern part of the Crete island</span>
+              (Greece) in the regional department of Lasithi.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="temperature-icon">
+              <img src="assets\images\greece-temperature-icon.png" alt="" />
+            </div>
+            <div class="temperature-info" style="margin-left: 2%">
+              It is the most
+              <span class="custom-words">“extreme climate hotspot”</span> in
+              Europe, characterized by high winds and almost 300 sunshine days
+              per year, with few rain events.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="agriculture-icon">
+              <img src="assets\images\greece-agriculture-icon.png" alt="" />
+            </div>
+            <div class="agriculture-info" style="margin-left: 2%">
+              <span class="custom-words">Agriculture</span> is the main economic
+              activity, with most of the population engaged in farming,
+              livestock, or fishing. Tree crops cover 53% of agricultural land
+              and are highly vulnerable to extreme events caused by climate
+              change.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="water-icon">
+              <img src="assets\images\greece-water-icon.png" alt="" />
+            </div>
+            <div class="water-info" style="margin-left: 2%">
+              Another relevant sector is
+              <span class="custom-words">water</span>. A major challenge is
+              maintaining sufficient, high-quality freshwater, as water scarcity
+              from droughts threatens both agriculture and the population,
+              including tourism.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="biodiversity-icon">
+              <img src="assets\images\greece-biodiversity-icon.png" alt="" />
+            </div>
+            <div class="biodiversity-info" style="margin-left: 2%">
+              <span class="custom-words">Biodiversity</span> is also a key
+              vulnerable sector. Sitia’s Geopark is one of the most important
+              environmental areas of the Mediterranean.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            height: -webkit-fill-available;
+            align-items: flex-end;
+          "
+        >
+          <div class="graph-site" style="display: flex; padding-top: 16vh">
+            <div
+              class="graph-image"
+              style="display: flex; justify-content: center"
+            >
+              <img
+                src="assets\images\cs3-map-img.png"
+                alt=""
+                style="width: 70vh"
+              />
+            </div>
+          </div>
+          <button
+            mat-raised-button
+            [routerLink]="['/' + title_case]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="selectedTitleCase == 'CS2_TRENTINO_REGION'"
+  >
+    <div style="background-color: white;  margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS2 - Trentino Province
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div class="context-graph">
+        <div class="context">
+          <p
+            style="
+              font-weight: bold;
+              font-family: 'Inter', sans-serif !important;
+              margin-left: 20%;
+              margin-top: 5%;
+              font-size: 2vh;
+            "
+          >
+            Context
+          </p>
+          <div class="data-context">
+            <div class="geographic-icon">
+              <img src="assets\images\italy-geo.png" alt="" />
+            </div>
+            <div class="geographic-info">
+              The Autonomous Province of Trento is located in the
+              <span class="custom-words">north-east of Italy</span> and it is
+              commonly known as Trentino.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="temperature-icon">
+              <img src="assets\images\italy-weather.png" alt="" />
+            </div>
+            <div class="temperature-info" style="margin-left: 2%">
+              The climate varies from
+              <span class="custom-words"
+                >temperate continental to alpine climate</span
+              >
+              characterized by cold snowy winters in the mountains and warm
+              summers in the valleys.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="agriculture-icon">
+              <img src="assets\images\italy-hydro.png" alt="" />
+            </div>
+            <div class="agriculture-info" style="margin-left: 2%">
+              The most relevant sector is
+              <span class="custom-words">energy</span>, particularly
+              hydroelectric production. However, about 65% of consumption relies
+              on imported natural gas and oil, and the ski industry adds high
+              seasonal demand.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="water-icon">
+              <img src="assets\images\italy-ski.png" alt="" />
+            </div>
+            <div class="water-info" style="margin-left: 2%">
+              <span class="custom-words">Tourism</span> is a great economic
+              sector. It is mainly related to ski and to cooler temperatures in
+              summer. In winter, higher temperatures are leading to shorter
+              period of winter sports.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="biodiversity-icon">
+              <img src="assets\images\italy-water.png" alt="" />
+            </div>
+            <div class="biodiversity-info" style="margin-left: 2%">
+              Another key sector is <span class="custom-words">water</span>,
+              closely linked to agriculture, energy production, and tourism,
+              particularly for snowmaking.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            height: -webkit-fill-available;
+            align-items: flex-end;
+          "
+        >
+          <div class="graph-site" style="display: flex; padding-top: 16vh">
+            <div
+              class="graph-image"
+              style="display: flex; justify-content: center"
+            >
+              <img
+                src="assets\images\italy-map.png"
+                alt=""
+                style="width: 70vh"
+              />
+            </div>
+          </div>
+          <button
+            mat-raised-button
+            [routerLink]="['/' + title_case]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS4_MURCIA_REGION'">
+    <div style="background-color: white;  margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS4 - Murcia region
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div class="context-graph">
+        <div class="context">
+          <p
+            style="
+              font-weight: bold;
+              font-family: 'Inter', sans-serif !important;
+              margin-left: 20%;
+              margin-top: 5%;
+              font-size: 2vh;
+            "
+          >
+            Context
+          </p>
+          <div class="data-context">
+            <div class="geographic-icon">
+              <img src="assets\images\murcia-icon.png" alt="" />
+            </div>
+            <div class="geographic-info">
+              The Region of Murcia is an autonomous community of Spain located
+              in the
+              <span class="custom-words"
+                >southeast of the Iberian Peninsula</span
+              >, on the coast of the Mediterranean Sea.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="temperature-icon">
+              <img src="assets\images\murcia-temp.png" alt="" />
+            </div>
+            <div class="temperature-info" style="margin-left: 2%">
+              The climate is defined as
+              <span class="custom-words"
+                >semi-arid subtropical Mediterranean</span
+              >, characterized by high temperatures and scarce and irregular
+              rainfall.  
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="agriculture-icon">
+              <img src="assets\images\murcia-agriculture.png" alt="" />
+            </div>
+            <div class="agriculture-info" style="margin-left: 2%">
+              The most relevant sector is
+              <span class="custom-words">agriculture</span> considering its role
+              in the regional economy. The climatic and territorial conditions
+              allow agriculture to acquire great volume of production and
+              productivity of the crops.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="water-icon">
+              <img src="assets\images\murcia-water.png" alt="" />
+            </div>
+            <div class="water-info" style="margin-left: 2%">
+              <span class="custom-words">Water</span> is a key resource,
+              considering the arid climate conditions. The lack of water is due
+              to the scarcity of rainfall and the water exploitation of the
+              primary sector.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="biodiversity-icon">
+              <img src="assets\images\murcia-turism.png" alt="" />
+            </div>
+            <div class="biodiversity-info" style="margin-left: 2%">
+              Another important economic activity is
+              <span class="custom-words">tourism</span>. Climate change and
+              water scarcity are two issues that affect the tourism in this
+              region.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            height: -webkit-fill-available;
+            align-items: flex-end;
+          "
+        >
+          <div class="graph-site" style="display: flex; padding-top: 16vh">
+            <div
+              class="graph-image"
+              style="display: flex; justify-content: center"
+            >
+              <img
+                src="assets\images\murcia-map.png"
+                alt=""
+                style="width: 70vh"
+              />
+            </div>
+          </div>
+          <button
+            mat-raised-button
+            [routerLink]="['/' + title_case]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white;  margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS5 - Danube Delta
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div class="context-graph">
+        <div class="context">
+          <p
+            style="
+              font-weight: bold;
+              font-family: 'Inter', sans-serif !important;
+              margin-left: 20%;
+              margin-top: 5%;
+              font-size: 2vh;
+            "
+          >
+            Context
+          </p>
+          <div class="data-context">
+            <div class="geographic-icon">
+              <img src="assets\images\romania-icon.png" alt="" />
+            </div>
+             <div class="geographic-info">
+              Tulcea County is situated in the
+              <span class="custom-words">South-East of Romania</span>, in
+              Dobrogea region, being bordered by the Danube and Black Sea.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="temperature-icon">
+              <img src="assets\images\romania-temp.png" alt="" />
+            </div>
+            <div class="temperature-info" style="margin-left: 2%">
+              The climate is <span class="custom-words">continental</span>, with
+              low precipitation, high atmospheric humidity, hot summers, cold
+              winters and high temperature amplitudes.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="agriculture-icon">
+              <img src="assets\images\murcia-agriculture.png" alt="" />
+            </div>
+            <div class="agriculture-info" style="margin-left: 2%">
+              <span class="custom-words">Agriculture</span> is the main economic
+              activity in the county. Tulcea is intensively exposed to drought
+              and desertification processes, contributing to the amplification
+              of the rural livelihoods’ vulnerability.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="water-icon">
+              <img src="assets\images\romania-energy.png" alt="" />
+            </div>
+            <div class="water-info" style="margin-left: 2%">
+              <span class="custom-words">Energy</span> is a profitable sector in
+              terms of productivity. Dobrogea is considered one of the most
+              promising regions in Europe in terms of wind potential.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="biodiversity-icon">
+              <img src="assets\images\murcia-water.png" alt="" />
+            </div>
+            <div class="biodiversity-info" style="margin-left: 2%">
+              Another relevant sector is
+              <span class="custom-words">water management</span>. The region has 115 bodies
+              of surface water.Nevertheless these water bodies are often polluted due to
+              inadequate wastewater systems, intensive agriculture, industrial
+              activities, and poor waste and sewage management.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            height: -webkit-fill-available;
+            align-items: flex-end;
+          "
+        >
+          <div class="graph-site" style="display: flex; padding-top: 16vh">
+            <div
+              class="graph-image"
+              style="display: flex; justify-content: center"
+            >
+              <img
+                src="assets\images\romania-map.png"
+                alt=""
+                style="width: 70vh"
+              />
+            </div>
+          </div>
+          <button
+            mat-raised-button
+            [routerLink]="['/' + title_case]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS5_DANUBE_DELTA'">
+    <div style="background-color: white;  margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS5 - Danube Delta
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div class="context-graph">
+        <div class="context">
+          <p
+            style="
+              font-weight: bold;
+              font-family: 'Inter', sans-serif !important;
+              margin-left: 20%;
+              margin-top: 5%;
+              font-size: 2vh;
+            "
+          >
+            Context
+          </p>
+          <div class="data-context">
+            <div class="geographic-icon">
+              <img src="assets\images\romania-icon.png" alt="" />
+            </div>
+            <div class="geographic-info">
+              Context Tulcea County is situated in the
+              <span class="custom-words">South-East of Romania</span>, in
+              Dobrogea region, being bordered by the Danube and Black Sea.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="temperature-icon">
+              <img src="assets\images\romania-temp.png" alt="" />
+            </div>
+            <div class="temperature-info" style="margin-left: 2%">
+              The climate is <span class="custom-words">continental</span>, with
+              low precipitation, high atmospheric humidity, hot summers, cold
+              winters and high temperature amplitudes.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="agriculture-icon">
+              <img src="assets\images\murcia-agriculture.png" alt="" />
+            </div>
+            <div class="agriculture-info" style="margin-left: 2%">
+              <span class="custom-words">Agriculture</span> is the main economic
+              activity in the county. Tulcea is intensively exposed to drought
+              and desertification processes, contributing to the amplification
+              of the rural livelihoods’ vulnerability.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="water-icon">
+              <img src="assets\images\romania-energy.png" alt="" />
+            </div>
+            <div class="water-info" style="margin-left: 2%">
+              <span class="custom-words">Energy</span> is a profitable sector in
+              terms of productivity. Dobrogea is considered one of the most
+              promising regions in Europe in terms of wind potential.
+            </div>
+          </div>
+
+          <div class="data-context">
+            <div class="biodiversity-icon">
+              <img src="assets\images\murcia-water.png" alt="" />
+            </div>
+            <div class="biodiversity-info" style="margin-left: 2%">
+              Another relevant sector is
+              <span class="custom-words">water</span>. The region has 115 bodies
+              of surface water. These water bodies are often polluted due to
+              inadequate wastewater systems, intensive agriculture, industrial
+              activities, and poor waste and sewage management.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            height: -webkit-fill-available;
+            align-items: flex-end;
+          "
+        >
+          <div class="graph-site" style="display: flex; padding-top: 16vh">
+            <div
+              class="graph-image"
+              style="display: flex; justify-content: center"
+            >
+              <img
+                src="assets\images\romania-map.png"
+                alt=""
+                style="width: 70vh"
+              />
+            </div>
+          </div>
+
+        </div>
+        <button
+            mat-raised-button
+            [routerLink]="[title_case]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            START
+          </button>
+      </div>
+    </div>
+  </div> -->
+
+  <section class="the_footer">
+    <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+  </section>
+</div>

@@ -1,0 +1,366 @@
+/* 
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+
+
+html,body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.nevermore_top_icon img {
+  width: 100px;
+  height: 40px;
+}
+
+.nav-button {
+  background-color: rgb(129, 216, 129);
+  width: 50px;
+  height: 26.4px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 9px;
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+
+
+
+.nevermore-top-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color:  #465C95;
+  
+}
+
+#case-study-tool-welcome {
+  text-align: center;
+  margin-left: 320px;
+  margin-right: 320px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+#select-your-case-study ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline: 0;
+  list-style: none;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+#select-your-case-study ul li {
+  margin: 10px 15px;
+}
+
+#select-your-case-study {
+  justify-items: center;
+  text-align: center;
+}
+  */
+.case-study-button {
+  list-style: none;
+  background-color: rgb(129, 216, 129);
+  border: none;
+  /* padding: 4px 4px; */
+  /* border-radius: 15px; */
+  font-size: 2vh;
+  /* padding: 8px 10px; */
+  cursor: pointer;
+}
+
+.case-study-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+.case-study-button:focus {
+  border: 2px solid rgb(40, 140, 241);
+  /* color: rgb(40, 140, 241); */
+      background-color:#52D389 !important ;
+  color: #465C95 !important;
+
+}
+
+/* .the_next_button{
+  background-color:#52D389 ;
+  color: #465C95;
+} */
+
+button.active{
+    background-color:#52D389 !important ;
+  color: #465C95 !important;
+}
+
+button.disabled{
+      background-color:grey !important ;
+  color: #465C95 !important;
+}
+/*
+
+
+#next-button {
+  margin-top: 80px;
+  text-align: center;
+
+}
+
+.the_next_button {
+  text-align: center;
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: 4.5rem;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.the_next_button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+#back_and_next_buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.navigation_advice{
+  text-align: center;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .nevermore-top-title {
+    width: 80%;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  #navigation_button{
+    justify-content: space-evenly;
+  }
+
+  #case-study-tool-welcome{
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  #select-your-case-study{
+    max-width: fit-content;
+  }
+  
+  .the_next_button{
+    margin-bottom: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px){
+  .nevermore-top-title {
+    width: 60%;
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  #navigation_button{
+    justify-content: space-evenly;
+  }
+
+  #case-study-tool-welcome{
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  #select-your-case-study{
+    max-width: fit-content;
+  }
+  
+  .the_next_button{
+    margin-bottom: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .nevermore-top-title {
+    width: 60%;
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  #navigation_button{
+    justify-content: space-evenly;
+  }
+
+  #case-study-tool-welcome{
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+
+   .the_next_button{
+    margin-bottom: 4.5rem;
+  }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+  font-family: "Inter", sans-serif !important ;
+}
+
+.wrapper {
+  /* display: flex; */
+  justify-content: center;
+  background-color: rgb(234, 238, 236);
+  flex-direction: column;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: flex-end;
+  /* flex-direction: row; */
+  padding-top: 2%;
+  padding-right: 2%;
+}
+
+.header-button {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  color: #2a40b1;
+}
+
+.header-button-help {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: #ccc;
+  color: #2a40b1;
+}
+
+.header-button-home {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: #ccc;
+  color: #2a40b1;
+}
+
+.header-button-help:hover {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: white;
+  color: #2a40b1;
+}
+
+.header-button-home:hover {
+  margin-right: 1vh;
+  font-size: 1.5vh;
+  padding: 1.5vh;
+  background-color: white;
+  color: #2a40b1;
+}
+
+.intern-wrapper {
+padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    /* height: 100vh; */
+}
+
+.case-study-button {
+  width: 30vh;
+  height: 4vh;
+}
+
+.case-studies {
+      font-size: 2vh !important;
+    display: flex
+;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+}
+
+.case-study {
+  font-size: 2vh !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1vh;
+}
+
+.the_next_button{
+  background-color:#52D389 ;
+  color: #465C95;
+}
+
+.the_next_button:disabled{
+  background-color:#ccc ;
+  /* color: #465C95; */
+}
+
+
+button.active{
+    background-color:#52D389 !important ;
+  color: #465C95 !important;
+}

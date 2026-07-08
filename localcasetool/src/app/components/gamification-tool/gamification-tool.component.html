@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="gamification-tool.component.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+   
+    <!-- <section id="nevermore-top-icon" class="nevermore_top_icon">
+      <img src="assets/logos/logo.png" alt="the-nevermore-logo" />
+    </section> -->
+    <section id="navigation_button">
+      <!-- <button class="nav-button"><i class="fa fa-bars"></i></button> -->
+      <!-- <span class="nevermore-top-title">GAMIFICATION TOOL</span> -->
+      <span class="nevermore-top-title">{{'GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE' | translate}}</span>
+    </section>
+
+    <!-- <h2>Welcome to NEVERMORE gamification tool!</h2> -->
+    <h2>{{'GAMIFICATION_TOOL_COMPONENT.WELCOME_TO_GAMIFICATION_TOOL' | translate}}</h2>
+
+    <section id="gamification-description">
+        <!-- <p>
+             The game teaches players about the impacts of climate change while inspiring hope and 
+             motivating users to act and find effective solutions that will help to define a greener, better adapted and safe future. 
+             The game players must complete two different missions to finish the game. 
+             In mission 1 players will explore pathways to reduce greenhouse gas (GHG) emissions applying solutions. 
+             Decisions in mission 1 will lead players to a high, medium or low carbon scenario in mission 2. 
+             In mission 2 players will be able to select one of the five NEVERMORE case studies (mountain, Mediterranean, boreal,
+              island and flooding) and must 
+             act to prepare the communities for the impacts of climate change.<br><br> 
+            The game will be able for execution as a single player or in groups. Choose your option!
+        </p> -->
+        <p>{{'GAMIFICATION_TOOL_COMPONENT.GAMIFICATION_TOOL_INFO' | translate}}
+          <br><br> 
+          {{'GAMIFICATION_TOOL_COMPONENT.CHOOSING_OPTION_INFO' | translate}}
+     </p>
+    </section>
+
+    <section id="game_modes">
+            <button href="#" 
+            [routerLink]="['/gamificationInfo']" 
+            routerLinkActive="active" 
+            [routerLinkActiveOptions]="{ exact: true }">
+            <section id="individual">
+                <figure>
+                <img src="assets/images/individual_game_mode.png" alt="individual_game_mode">
+                <!-- <figcaption>Play the game as an individual user</figcaption> -->
+                <figcaption>{{'GAMIFICATION_TOOL_COMPONENT.SINGLE_PLAYER_OPTION_INFO' | translate}}</figcaption>
+                </figure>
+            </section>
+          </button>
+          
+          <button href="#" [disabled]="true"
+          [routerLink]="['/by_group']" 
+          routerLinkActive="active" 
+          [routerLinkActiveOptions]="{ exact: true }">
+          
+            <section id="by_group">
+                <figure>
+                <img src="assets/images/mutiplayer_game_mode.png" alt="individual_game_mode">
+                <!-- <figcaption>Use the game for group dynamics</figcaption> -->
+                <figcaption>{{'GAMIFICATION_TOOL_COMPONENT.GROUP_OPTION_INFO' | translate}}</figcaption>
+                </figure>
+            </section>
+          </button>
+    </section>
+
+    <!-- <section id="previous_page">
+
+      <button>
+        &lt; &lt; &lt;   Previous Page</button>
+    </section> -->
+
+    <section id="next-button">
+      <button
+        mat-raised-button
+        [routerLink]="['/home']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+    </section>
+    
+    <section class="the_footer">
+        <app-footer class="fixed bottom-0"></app-footer>
+      </section>
+  </body>
+</html>
+    

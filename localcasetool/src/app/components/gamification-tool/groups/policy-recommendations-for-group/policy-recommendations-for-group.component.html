@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nevermore Case Study Tool Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="policy-recommendations-for-group.component.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    
+  </head>
+  <body>
+    <section id="navigation_button">
+      <h2 class="nevermore-top-title">{{ 'GAMIFICATION_TOOL_COMPONENT.THE_GAMIFICATION_TOOL_TITLE' | translate }}</h2>
+      <h2 class="mission_title">
+        {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.MISSION_1' | translate }}
+      </h2>
+    </section>
+
+    <h2 style="text-align: center;font-weight: 500">
+      {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.PROVIDE_INPUTS_FOR_QUESTIONS' | translate }}
+    </h2>
+
+    <section id="questions_and_chat">
+      
+
+      <section class="question-container" style="margin-left: 20px;width: 60%;">
+        <section id="question_number">
+          <div class="progressbar_and_question_number">
+            <!-- Progress bar with animation -->
+            <!-- <mat-progress-bar
+              mode="determinate"
+              [value]="(questionIndex / totalQuestions) * 100"
+              [ngStyle]="{ transition: 'width 0.5s ease' }"
+            ></mat-progress-bar> -->
+  
+            <ul class="question_number">
+              <li *ngFor="let q of questions; let i = index" [ngClass]="{ 'active': i === questionIndex, 'completed': i < questionIndex }">
+                {{ i + 1 }}
+              </li>
+            </ul>
+          </div>
+        </section>
+        <h2 style="text-align: center; max-width: 800px;">
+          <!-- {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.QUESTIONNARE.' + currentQuestion + '.THE_QUESTION' | translate }} -->
+        {{questionAndAnswersReceived[questionIndex-1].question}}
+        </h2>
+
+        <section class="answers-container">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div *ngFor="let answer of questionAndAnswersReceived[questionIndex-1].answers" style="margin-top: 10px;">
+              <label style="font-size: 20px;">
+                <input type="radio" formControlName="answer" [value]="answer" />
+                <!-- {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.QUESTIONNARE.' + currentQuestion + '.ANSWERS.' + answer | translate }} -->
+              {{answer}}
+              </label>
+            </div>
+
+            <button class="next_question_button" type="submit" [disabled]="!form.valid">
+              {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.NEXT_QUESTION' | translate }}
+            </button>
+          </form>
+        </section>
+
+        <br>
+        <p class="profile_recommandation">
+          {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.PROFILE_SELECTION_RECOMMANDATION' | translate }}
+        </p>
+      </section>
+
+      <section id="chat">
+        <button class="the_chat_button">
+          {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.CHAT.THE_CHAT' | translate }}
+        </button>
+        <br /><br />
+        <p style="color: blue;">
+          Player 1:
+          <span style="color: black;">
+            {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.CHAT.PLAYER_1' | translate }}
+          </span>
+        </p>
+        <br />
+        <p style="color: blue;">
+          Player 2:
+          <span style="color: black;">
+            {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.CHAT.PLAYER_2' | translate }}
+          </span>
+        </p>
+        <br />
+        <p style="color: blue;">
+          Player 3:
+          <span style="color: black;">
+            {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.CHAT.PLAYER_3' | translate }}
+          </span>
+        </p>
+        <br />
+        <p style="color: blue;">
+          Player 2:
+          <span style="color: black;">
+            {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.CHAT.PLAYER_2_ANSWER' | translate }}
+          </span>
+        </p>
+        <br />
+        <p style="color: blue;">
+          Player 3:
+          <span style="color: black;">
+            {{ 'GAMIFICATION_TOOL_COMPONENT.BY_GROUP.POLICY_RECOMMENDATION_COMPONENT.CHAT.PLAYER_3_ANSWER' | translate }}
+          </span>
+        </p>
+        <br />
+      </section>
+    </section>
+
+    <section id="next-button">
+      <button
+        mat-raised-button
+        [routerLink]="['/by_group']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the-next-button"
+      >
+        Back
+      </button>
+      <button
+        mat-raised-button
+        [routerLink]="['/by_group/Recommendations_GraphData_For_Group']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [disabled]="false"
+        class="the-next-button"
+      >
+        Next
+      </button>
+    </section>
+
+    <section class="the_footer">
+      <app-footer class="fixed bottom-0"></app-footer>
+    </section>
+  </body>
+</html>

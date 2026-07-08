@@ -1,0 +1,515 @@
+{
+    "HEADER": {
+        "ABOUT_US": "Despre noi",
+        "HELP": "Ajutor",
+        "TOOL_SELECTION": "Selecția instrumentului",
+        "LOG_OUT": "Deconectare",
+        "CHANGE_LANGUAGE": "Schimbă limba",
+        "LANGUAGES": {
+            "ITALIAN": "ITALIANĂ",
+            "ROMANIAN": "ROMÂNĂ",
+            "SWEDISH": "SUEDEZĂ",
+            "GREEK": "GREACĂ",
+            "SPANISH": "SPANIOLĂ",
+            "ENGLISH": "ENGLEZĂ"
+        }
+    },
+    "FOOTER": {
+        "EU_FUNDING_BY": "Sustinut financiar de",
+        "EU_FUNDING_UNION": "Uniunea Europeană",
+        "EU_FUNDING_INFO": "Acest proiect a primit finanțare din programul de cercetare și inovare al Uniunii Europene Orizont, în baza acordului de grant nr. 101056858"
+    },
+    "HOME_COMPONENT": {
+        "HOME_PAGE_CONTENT_TOOL_DESCRIPTION": {
+            "DESCRIPTION": "Descriere",
+            "WELCOME_TITLE": "Bun venit la NEVERMORE ICT Toolkit!",
+            "CATALOGUE_EXPLORER_TITLE": "Instrument Catalogue Explorer",
+            "EU_SCALE_TOOL_TITLE": "Instrument EU-Scale",
+            "CASE_STUDY_TOOL_TITLE": "Instrument de studiu de caz",
+            "GAMIFICATION_TOOL_TITLE": "Instrument de gamification",
+            "ICT_TOOLS_DESCRIPTION": {
+                "CATALOGUE_EXPLORER_TOOL_DESCRIPTION": "Instrumentul de catalog pentru adaptare și atenuare (A&M) este o componentă integrală a setului de instrumente TIC NEVERMORE. Acest instrument ușor de utilizat se aliniază cu principiile de bază ale setului de instrumente TIC, având ca scop să împuternicească utilizatorii să înțeleagă interacțiunea complicată dintre schimbările climatice și politicile de adaptare și atenuare printr-o interfață ușor de utilizat și interactivă. Instrumentul este conceput pentru a oferi un catalog de soluții legate de atenuarea și adaptarea la schimbările climatice. Acesta cuprinde o revizuire a măsurilor intersectoriale care au fost deja puse în aplicare, soluții potențiale identificate prin cercetarea literaturii și scenarii dezvoltate în colaborare cu consiliile locale și părțile interesate.",
+                "GAMIFICATION_TOOL_DESCRIPTION": "The main objective of NEVERMORE gamification tool is to create awareness about climate change. It is developed as an educational simulation game where players explore different solutions to fight and adapt to the impacts of climate change. The game teaches players about the impacts of climate change while inspiring hope and motivating users to act and find effective solutions that will help to define a greener, better adapted and safer future. The game players must complete two different missions to finish the game.",
+                "CASE_STUDY_TOOL_DESCRIPTION": "Instrumentul de studiu de caz NEVERMORE va fi o componentă software care permite utilizatorilor să selecteze un studiu de caz și să afișeze principalele impacturi, vulnerabilități și riscuri ale schimbărilor climatice. Informațiile furnizate vor fi utile pentru a crea diferite scenarii de acțiune a politicii de adaptare și atenuare bazate pe măsurile selectate de utilizator din catalogul A&M la scară locală.",
+                "EU_SCALE_TOOL": "Scopul instrumentului este de a deveni un „instrument de elaborare a politicilor” care ar putea oferi recomandări relevante pentru politici. Instrumentul va folosi rezultate de date pre-simulate dintr-un Model de Evaluare Integrată (IAM), pentru a reduce complexitatea prin mijloacele de scădere a gradului de libertate al variabilelor de intrare ale clientului. Această filtrare și reducerea intrărilor se va face folosind cunoștințele părților interesate."
+            }
+        },
+        "HOME_PAGE_TOOL_SELECTION": {
+            "CONFIRM_SELECTION": "Confirmați selecția",
+            "TOOL_SELECTION": "Selectarea instrumentului",
+            "EU_SCALE_TOOL_SELECTOR": "Instrument EU-SCALE",
+            "CATALOGUE_EXPLORER_TOOL_SELECTOR": "Instrument Catalog-Explorer",
+            "CASE_STUDY_TOOL_SELECTOR": "Instrument Studiu de Caz",
+            "GAMIFICATION_TOOL_SELECTOR": "Instrument Gamification"
+        }
+    },
+    "EU_SCALE_TOOL_COMPONENT": {
+        "WELCOME_EU_SCALE_TOOL_TITLE": "Bun venit pe pagina instrumentului EU-SCALE",
+        "EU_SCALE_TOOL_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "CATALOGUE_EXPLORER_COMPONENT": {
+        "WELCOME_CATALOGUE_EXPLORER": "Bine ați venit la pagina Explorator de catalog",
+        "CATALOGUE_EXPLORER_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "HELP_COMPONENT": {
+        "HELP_EXPLORER": "Bun venit la pagina de Ajutor",
+        "HELP_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "CASE_STUDY_TOOL_COMPONENT": {
+        "THE_CASE_STUDY_TOOL_TITLE": "INSTRUMENT DE STUDIU DE CAZ",
+        "WELCOME_CASE_STUDY_TOOL": "Bun venit la instrumentul de studiu de caz NEVERMORE!",
+        "CASE_STUDY_TOOL_INFO": "Instrumentul va face posibilă evaluarea impacturilor, vulnerabilităților și riscurilor schimbărilor climatice. După aceea, unele recomandări de politică vor fi furnizate în funcție de pericolele, expertiza și interesele dvs. predefinite. Ca urmare, vor fi furnizați indicatori de atenuare și adaptare pentru a evalua efectele selecției politicilor.",
+        "CASE_STUDY_TOOL_SELECT_CASE_STUDY": "Selectați un studiu de caz pentru a vă efectua evaluarea!",
+        "SELECT_YOUR_CASE_STUDY": "Selectează-ți studiul de caz",
+        "CS1_CRETE_ISLAND": "CS1-Insula Creta",
+        "CS2_TRENTINO_REGION": "CS2-Regiunea Trentino",
+        "CS3_NORRBOTTEN_COUNTRY": "CS3-Țara Norrbotten",
+        "CS4_MURCIA_REGION": "CS4-Regiunea Murcia",
+        "CS5_DANUBE_DELTA": "CS5-Danube Delta",
+        "NAVIGATION_ADVICE": "#Pentru a merge la studiul de caz dorit, apăsați pe numele studiului",
+        "MURCIA_REGION_COMPONENT": {
+            "SECTION_DESCRIPTION": "În această secțiune, puteți găsi o descriere generală a acestui studiu de caz și informații relevante despre sectoarele prioritare și provocările care trebuie acoperite în timpul evaluării adaptării și atenuării.",
+            "MORE_INFO": "Mai multe informații",
+            "SECTOR_INFO": "Faceți clic pe un sector pentru a afla mai multe informații!",
+            "AGRICULTURE_FORESTRY_AND_FISHING": "Agricultura, silvicultură și pescuit",
+            "WATER_AND_WASTE": "Apă și deșeuri",
+            "INDUSTRY_AND_COMMERCE": "Industrie și comerț",
+            "TOURISM": "Turism, agrement și patrimoniu cultural",
+            "ENERGY":"Energie",
+            "MAIN_CHALLENGES": "Principalele provocări",
+            "DESERTIFICATION": "Deșertificarea din cauza eroziunii solului",
+            "SUSTAINABLE_WATER_MANAGEMENT": "Gestionarea durabilă a apei",
+            "AGRICULTURAL_PRODUCTION": "Producția agricolă",
+            "VISUALIZE_ECV": "Vizualizați ECV-urile și pericolele climatice",
+            "ECVS_COMPONENT": {
+                "ESSENTIAL_ECVS": "Variabilele climatice esențiale (ECV)",
+                "ECV_DOC": "Documentație ECV",
+                "ECV_GRAPH_SELECTION": "Alegeți un tip de grafic",
+                "MAIN_HAZARDS": "Principalele pericole. Faceți clic pe fiecare pentru a afla mai multe informații",
+                "SEA_LEVEL_RAISE": "Creșterea nivelului mării",
+                "FLOODING": "Inundaţii",
+                "DROUGHTS_AND_WATER_SCARCITY": "Secete și deficit de apă",
+                "SOIL_EROSION": "Eroziunea solului",
+                "HEATING_AND_COOLING_DEMAND": "Cererea de încălzire și răcire",
+                "CROP_PRODUCTION": "Producția vegetală",
+                "BIODIVERSITY_LOSS": "Pierderea biodiversităţii",
+                "EXPLORE_ASSETS_AND_RISKS": "Explorați activele, vulnerabilitățile și riscurile >>"
+            },
+            "ASSETS_AND_RISKS_COMPONENT": {
+                "ASSETS_AND_RISKS_TITLE": "Active, vulnerabilități și riscuri",
+                "TOPIC_SELECTION": "Subiect",
+                "SECTOR_SELECTION": "Sector",
+                "HAZARD_SELECTION": "Pericol",
+                "TOPIC_OPTIONS": "Alegeți un subiect",
+                "SECTOR_OPTIONS": "Alegeți un sector",
+                "HAZARD_OPTIONS": "Alegeți un pericol",
+                "VULNERABILITY": "Vulnerabilitate",
+                "AGRICULTURE": "Agricultură",
+                "DROUGHTS": "Secete",
+                "DESCRIPTION": "Descriere",
+                "DESCRIPTION_BOX": "În această casetă vor fi furnizate informații legate de evaluarea vulnerabilității. Acesta va include diferitele componente utilizate pentru a caracteriza vulnerabilitatea, inclusiv numărul de active afectate, principalele pericole și indicatorii utilizați în procedura de evaluare.",
+                "DOWNLOAD_MAP": "Descărcați Harta",
+                "SECTORAL_COMPARISON": "Comparație sectorială"
+            },
+            "SECTORAL_COMPARISON_COMPONENT": {
+                "VULNERABILITIES_AND_RISKS": "Vulnerabilități și riscuri - Comparație sectorială Hazard",
+                "HAZARD_SELECTION": "Pericol",
+                "HAZARD_OPTIONS": "Alegeți un pericol",
+                "DROUGHTS": "Secete",
+                "VULNERABILITIES": "Vulnerabilitati",
+                "RISK": "Risc",
+                "POLICY_PRIORITIES": "Priorități politice >>"
+            },
+            "POLICY_PRIORITIES_COMPONENT": {
+                "POLICY_PRIORITIES_TITLE": "Priorități politice >>",
+                "WHAT_ARE_YOUR_OBJ": "Care sunt obiectivele și prioritățile tale?",
+                "PROVIDE_INPUTS": "Furnizați contribuțiile dvs. pentru a obține măsurile de adaptare și atenuare mai legate de studiul de caz și de pericolul aferent.",
+                "MAIN_SECTOR_SELECTOR": {
+                    "SELECT_MAIN_SECTOR": "Selectați principalele sectoare de evaluat",
+                    "AGRICULTURE": "Agricultură",
+                    "TURISM": "Turism",
+                    "WATER": "Apă"
+                },
+                "MAIN_PRIORITIES_SELECTOR": {
+                    "SELECT_MAIN_PRIORITIES": "Selectați prioritățile și obiectivele",
+                    "WATER_SECURITY": "Securitatea apei",
+                    "WELL_BEING": "Starea de bine",
+                    "ENERGY_SECURITY": "Securitate energetică",
+                    "JOB_CREATION": "Crearea locurilor de muncă"
+                },
+                "ADAPTATION_AND_MITIGATION_SELECTOR": {
+                    "SELECT_ADAPTATION_AND_MITIGATION": "Adaptare și atenuare",
+                    "ADAPTAION": "Adaptare",
+                    "MITIGATION": "Atenuare"
+                },
+                "PROVIDE_RANK": {
+                    "SELECT_PROVIDE_RANK": "Vă rugăm să furnizați un rang pentru obiectivele selectate anterior",
+                    "1)WATER_SCARCITY": "1.Lipsa de apă",
+                    "2)WELL_BEING": "2.Starea de bine"
+                },
+                "RECOMMENDED_POLICIES": "Politici recomandate >>"
+            },
+            "RECOMMENDED_POLICIES_COMPONENT": {
+                "RECOMMENDED_POLICIES_TITLE": "Politici recomandate",
+                "SET_OF_RECOMMENDED_POLICIES": "Conform criteriilor dvs. definite anterior, acesta este setul de politici recomandate care trebuie aplicate în studiul de caz pentru adaptarea la schimbările climatice.",
+                "IMPROVE_WATER_STORAGE_TANKS": {
+                    "MAIN_OBJECTIVE": "Îmbunătățiți rezervoarele de stocare a apei",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Această politică ar putea fi aplicată rezervoarelor de stocare a apei..",
+                        "OPTION2": "Costul acestei polițe...",
+                        "OPTION3": "Beneficiile...."
+                    }
+                },
+                "IMPROVE_DESALINATION_PLANTS": {
+                    "MAIN_OBJECTIVE": "Îmbunătățiți instalațiile de desalinizare",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Această politică ar putea fi aplicată instalațiilor de desalinizare..",
+                        "OPTION2": "Costul acestei polițe...",
+                        "OPTION3": "Beneficiile...."
+                    }
+                },
+                "IMPROVE_WATER_SAVINGS_AT_HOUSEHOLD_LEVEL": {
+                    "MAIN_OBJECTIVE": "Îmbunătățirea economiilor de apă la nivel de gospodărie",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Această politică ar putea fi aplicată pentru a îmbunătăți economiile de apă la nivel de gospodărie..",
+                        "OPTION2": "Costul acestei polițe...",
+                        "OPTION3": "Beneficiile...."
+                    }
+                },
+                "IMPROVE_PATTERN_IN_AGRICULTURE": {
+                    "MAIN_OBJECTIVE": "Îmbunătățirea modelului în agricultură",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Această politică ar putea fi aplicată modelului în agricultură...",
+                        "OPTION2": "Costul acestei polițe...",
+                        "OPTION3": "Beneficiile...."
+                    }
+                },
+                "IMPROVE_REFORESTATION_WITH_ADAPTED_SPICIES": {
+                    "MAIN_OBJECTIVE": "Îmbunătățiți reîmpădurirea cu specii adaptate",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "This policy could be applied to reforestation-with-adapted-species..",
+                        "OPTION2": "Costul acestei polițe...",
+                        "OPTION3": "Beneficiile...."
+                    }
+                }
+            }
+        }
+    },
+    "GAMIFICATION_TOOL_COMPONENT": {
+        "THE_GAMIFICATION_TOOL_TITLE": "INSTRUMENT DE GAMIFICARE",
+        "WELCOME_TO_GAMIFICATION_TOOL": "Bun venit la instrumentul de gamification NEVERMORE!",
+        "GAMIFICATION_TOOL_INFO": "Jocul îi învață pe jucători despre impactul schimbărilor climatice, inspirând speranță și motivând utilizatorii să acționeze și să găsească soluții eficiente care să ajute la definirea unui viitor mai ecologic, mai adaptat și sigur. Jucătorii jocului trebuie să îndeplinească două misiuni diferite pentru a termina jocul. În misiunea 1, jucătorii vor explora căi de reducere a emisiilor de gaze cu efect de seră (GES) aplicând soluții. Deciziile din misiunea 1 vor conduce jucătorii către un scenariu cu emisii ridicate, medii sau scăzute de carbon în misiunea 2. În misiunea 2 jucătorii vor putea selecta unul dintre cele cinci studii de caz NEVERMORE (munte, mediteranee, boreal, insulă și inundații) și trebuie să acționeze pentru a pregăti comunitățile pentru impactul schimbărilor climatice.",
+        "CHOOSING_OPTION_INFO": "Jocul va putea fi executat ca un singur jucător sau în grupuri. Alege-ți opțiunea!",
+        "SINGLE_PLAYER_OPTION_INFO": "Joacă jocul ca utilizator individual",
+        "GROUP_OPTION_INFO": "Utilizați jocul pentru dinamica de grup",
+        "SINGLE_PLAYER": {
+            "SINGLE_PLAYER_GAMIFICATION_TOOL_TITLE": "MISIUNEA 1: MITIGAREA SCHIMBĂRILOR CLIMATICE",
+            "ROLE_SELECTION": "Selectează-ți rolul",
+            "ENERGY_EXPERT": "Expert în energie",
+            "ENVIRONMENTAL_EXPERT": "Expert în mediu",
+            "ECONOMY_EXPERT": "Expert în economie",
+            "SOCIAL_EXPERT": "Expert social",
+            "SELECTION_KEY_INFO": "*Această selecție este esențială pentru a vă oferi recomandări utile privind politicile înainte de implementare",
+            "POLICY_RECOMMENDATION_COMPONENT": {
+                "PROVIDE_INPUTS_FOR_QUESTIONS": "Furnizați contribuțiile dvs. pentru următoarele întrebări",
+                "QUESTIONNARE": {
+                    "QUESTION_1": {
+                        "THE_QUESTION": "1. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_2": {
+                        "THE_QUESTION": "2. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_3": {
+                        "THE_QUESTION": "3. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_4": {
+                        "THE_QUESTION": "4. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_5": {
+                        "THE_QUESTION": "5. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_6": {
+                        "THE_QUESTION": "6. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_7": {
+                        "THE_QUESTION": "7. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_8": {
+                        "THE_QUESTION": "8. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_9": {
+                        "THE_QUESTION": "9. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_10": {
+                        "THE_QUESTION": "10. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    }
+                },
+                "NEXT_QUESTION": "Următoarea întrebare",
+                "PROFILE_SELECTION_RECOMMANDATION": "*După profilul dumneavoastră (expert în energie), cea mai potrivită selecție ar fi aplicarea unei politici care generează o schimbare majoră a modurilor de cerere de transport."
+            },
+            "RECOMMANDATION_GRAPH_DATA_COMPONENT": {
+                "GRAPH_OPTIONS": {
+                    "OPTION_1": "Emisii de CO2 pe cap de locuitor",
+                    "OPTION_2": "Optiunea 2",
+                    "OPTION_3": "Optiunea 3",
+                    "OPTION_4": "Optiunea 4"
+                },
+                "TEMPERATURE_STATUS": "Creșteri de temperatură:",
+                "CONTINUE_TO_MISSION_2": "Continuați la MISIUNEA 2 >>"
+            },
+            "MISSION_2_COMPONENT": {
+                "MISSION_2_TITLE": "MISIUNEA 2: ADAPTARE LA SCHIMBĂRILE CLIMICE",
+                "SELECT_CASE_STUDY": "Selectați instrumentul de studiu de caz",
+                "SEA_LEVEL_RAISE": "Creșterea nivelului mării",
+                "FLOODING": "Inundaţii",
+                "DROUGHTS_AND_WATER_SCARCITY": "Secete și deficit de apă",
+                "SOIL_EROSION": "Eroziunea solului",
+                "HEATING_AND_COOLING_DEMAND": "Cererea de încălzire și răcire",
+                "CROP_PRODUCTION": "Producția vegetală",
+                "BIODIVERSITY_LOSS": "Pierderea biodiversităţii",
+                "CS1_CRETE_ISLAND": "CS1-Insula Creta",
+                "CS2_TRENTINO_REGION": "CS2-Regiunea Trentino",
+                "CS3_NORRBOTTEN_COUNTRY": "CS3-Țara Norrbotten",
+                "CS4_MURCIA_REGION": "CS4-Regiunea Murcia",
+                "CS5_DANUBE_DELTA": "CS5-Danube Delta",
+                "SELECT_MAIN_HAZARD_FOR_ADAPT": "Selectați pericolul principal pe care doriți să îl adaptați"
+            },
+            "CLIMATE_CHANGE_ADAPTATION_COMPONENT": {
+                "MONEY_AMOUNT_FOR_MEASURES": "Aceasta este suma dumneavoastră inițială de bani pentru implementarea măsurilor",
+                "IMPLEMENT_WATER_STORAGE_TANKS": "Implementați rezervoare de stocare a apei.",
+                "DESALINATION_PLANTS": "Construiți noi instalații de desalinizare.",
+                "WATER_SAVINGS": "Îmbunătățirea economiilor de apă la nivel de gospodărie",
+                "CHANGES_IN_AGRICULTURE": "Schimbarea tiparelor de utilizare în agricultură.",
+                "REFORESTATION": "Reîmpădurire cu specii adaptate."
+            }
+        },
+        "BY_GROUP": {
+            "MISSION_1": "MISIUNEA 1: MITIGAREA SCHIMBĂRILOR CLIMATICE",
+            "SELECT_TEAM": "Selectează-ți echipa",
+            "CHOOSE_TEAM": "*Alege echipa 1",
+            "TEAM_1": "Echipa 1",
+            "TEAM_2": "Echipa 2",
+            "TEAM_3": "Echipa 3",
+            "SELECT_ROLE": "Selectează-ți rolul",
+            "ENERGY_EXPERT": "Expert în energie",
+            "ENVIRONMENTAL_EXPERT": "Expert în mediu",
+            "ECONOMY_EXPERT": "Expert în economie",
+            "SOCIAL_EXPERT": "Expert social",
+            "SELECTION_INFO": "*Această selecție este esențială pentru a vă oferi recomandări utile privind politicile înainte de implementare",
+            "POLICY_RECOMMENDATION_COMPONENT": {
+                "PROVIDE_INPUTS_FOR_QUESTIONS": "Furnizați contribuțiile dvs. pentru următoarele întrebări",
+                "QUESTIONNARE": {
+                    "QUESTION_1": {
+                        "THE_QUESTION": "1. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_2": {
+                        "THE_QUESTION": "2. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_3": {
+                        "THE_QUESTION": "3. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_4": {
+                        "THE_QUESTION": "4. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_5": {
+                        "THE_QUESTION": "5. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_6": {
+                        "THE_QUESTION": "6. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_7": {
+                        "THE_QUESTION": "7. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_8": {
+                        "THE_QUESTION": "8. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_9": {
+                        "THE_QUESTION": "9. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    },
+                    "QUESTION_10": {
+                        "THE_QUESTION": "10. După cunoștințele dumneavoastră, considerați că este necesară aplicarea unor politici care influențează cererea de transport în modelul de participare?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Politica de modificare a cotei de transport nu este necesară",
+                            "ANSWER_2": "2.Este necesar să se implementeze o politică cu valori medii",
+                            "ANSWER_3": "3.Este necesar să se implementeze o politică cu valori ridicate"
+                        }
+                    }
+                },
+                "CHAT": {
+                    "THE_CHAT": "Chat",
+                    "PLAYER_1": "Cea mai bună opțiune este politica",
+                    "PLAYER_2": "Cea mai bună opțiune este politica doi",
+                    "PLAYER_3": "Cea mai fezabilă este politica trei",
+                    "PLAYER_2_ANSWER": "Trebuie să avem un acord",
+                    "PLAYER_3_ANSWER": "Să selectăm cu toții politica doi"
+                },
+                "NEXT_QUESTION": "Următoarea întrebare",
+                "PROFILE_SELECTION_RECOMMANDATION": "*După profilul dumneavoastră (expert în energie), cea mai potrivită selecție ar fi aplicarea unei politici care generează o schimbare majoră a modurilor de cerere de transport."
+            },
+            "RECOMMANDATION_GRAPH_DATA_COMPONENT": {
+                "TEAM_1_RESULTS": "REZULTATE ECHIPA 1",
+                "CHOOSE_A_GRAPH": "Alegeți un grafic",
+                "GRAPH_OPTIONS": {
+                    "OPTION_1": "Emisii de CO2 pe cap de locuitor",
+                    "OPTION_2": "Optiunea 2"
+                },
+                "SELECTION_INFO": "*Această selecție este esențială pentru a vă oferi recomandări utile privind politicile înainte de implementare"
+            },
+            "COMPARISON_OF_RESULTS_COMPONENT": {
+                "TITLE": "COMPARAREA REZULTATELOR",
+                "TEAMS": {
+                    "TEAM_1": "Echipa 1",
+                    "TEAM_2": "Echipa 2",
+                    "TEAM_3": "Echipa 3",
+                    "TEAM_4": "Echipa 4"
+                },
+                "TEMPERATURE_STATUS": "Creșteri de temperatură:",
+                "CONTINUE_TO_MISSION_2": "Continuați la MISIUNEA 2 >>"
+            },
+            "CLIMATE_CHANGE_ADAPTATION_FOR_GROUPS_COMPONENT": {
+                "TITLE": "MISIUNEA 2: ADAPTARE LA SCHIMBĂRILE CLIMICE",
+                "SELECT_YOUR_CASE_STUDY_TOOL": "Selectați instrumentul de studiu de caz",
+                "CASE_STUDY_TOOL_SELECTION_ADVISE": "„*Alegeți CS4-Regiunea Murgia”",
+                "CS1_CRETE_ISLAND": "CS1-Insula Creta",
+                "CS2_TRENTINO_REGION": "CS2-Regiunea Trentino",
+                "CS3_NORRBOTTEN_COUNTRY": "CS3-Țara Norrbotten",
+                "CS4_MURCIA_REGION": "CS4-Regiunea Murcia",
+                "CS5_DANUBE_DELTA": "CS5-Danube Delta",
+                "SELECT_MAIN_HAZARD_FOR_ADAPT": "Selectați pericolul principal pe care doriți să îl adaptați",
+                "MAIN_HAZARD_SELECTION_ADVISE": "*Alegeți „Secete și deficit de apă”",
+                "SEA_LEVEL_RAISE": "Creșterea nivelului mării",
+                "FLOODING": "Inundaţii",
+                "DROUGHTS_AND_WATER_SCARCITY": "Secete și deficit de apă",
+                "SOIL_EROSION": "Eroziunea solului",
+                "HEATING_AND_COOLING_DEMAND": "Cererea de încălzire și răcire",
+                "CROP_PRODUCTION": "Producția vegetală",
+                "BIODIVERSITY_LOSS": "Pierderea biodiversităţii"
+            },
+            "CLIMATE_CHANGE_GAME_FOR_GROUPS_COMPONENT": {
+                "MONEY_AMOUNT_FOR_MEASURES": "Aceasta este suma dumneavoastră inițială de bani pentru implementarea măsurilor",
+                "IMPLEMENT_WATER_STORAGE_TANKS": "Implementați rezervoare de stocare a apei.",
+                "DESALINATION_PLANTS": "Construiți noi instalații de desalinizare.",
+                "WATER_SAVINGS": "Îmbunătățirea economiilor de apă la nivel de gospodărie",
+                "CHANGES_IN_AGRICULTURE": "Schimbarea tiparelor de utilizare în agricultură.",
+                "REFORESTATION": "Reîmpădurire cu specii adaptate.",
+                "CHAT": {
+                    "THE_CHAT": "Chat",
+                    "PLAYER_1": "Putem selecta îmbunătățirea „Îmbunătățiți economiile de apă”",
+                    "PLAYER_2": "Sunt de acord",
+                    "PLAYER_3": "Şi eu",
+                    "PLAYER_2_ANSWER": "Dar reîmpădurirea?",
+                    "PLAYER_3_ANSWER": "Este, de asemenea, o selecție bună"
+                }
+            },
+            "COMPARISON_OF_RESULTS_FOR_GROUPS_COMPONENT": {
+                "TITLE": "COMPARAREA REZULTATELOR",
+                "CHOSEN_CASE": "Studiu de caz: CS4-Regiunea Murcia / Pericol: Secetă și deficit de apă",
+                "TEAMS": {
+                    "TEAM_1": "Echipa 1",
+                    "TEAM_2": "Echipa 2",
+                    "TEAM_3": "Echipa 3",
+                    "TEAM_4": "Echipa 4"
+                },
+                "TOTAL_INVESTMENT": "Total investit: 30",
+                "COST_OF_INACTION": "Costul inacțiunii: 60",
+                "BENEFITS": "Beneficii: 30",
+                "WINNER": "CÂŞTIGĂTOR"
+            }
+        }
+    }
+}

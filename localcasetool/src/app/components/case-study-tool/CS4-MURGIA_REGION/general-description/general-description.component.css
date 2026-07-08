@@ -1,0 +1,392 @@
+
+
+html,body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.nevermore_top_icon img {
+  margin-top: 10px;
+  width: 100px;
+  height: 40px;
+}
+
+.nav-button {
+  background-color: rgb(129, 216, 129);
+  width: 50px;
+  height: 30px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 15px;
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+#navigation_button {
+  align-items: center;
+  display: flex;
+}
+
+.nav-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+/* .nevermore-top-title {
+  display: flex;
+  background-color: rgb(129, 216, 129);
+  margin-left: 30px;
+  width: 800px;
+  height: 35px;
+  border: none;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(40, 140, 241);
+} */
+
+.nevermore-top-title {
+  /* background-color: rgb(129, 216, 129); */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #465c95;
+}
+
+.CS-4_MURCIA_REGION_TITLE {
+  margin-left: 150px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#general_description {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#general_description p {
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top: 40px;
+}
+
+#more_infomartion_title {
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#more_infomartion_title p {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.moreinfo{
+  color:blue;
+}
+
+.moreinfo:visited{
+  color:blue;
+
+}
+.moreinfo:hover {
+  color:blue;
+
+}
+.moreinfo:focus{
+  color:blue;
+
+}
+.moreinfo:visited{
+  color:blue;
+
+}
+
+a:hover, a:active{
+    color:blue;
+
+}
+
+#sector_list {
+  justify-items: center;
+  text-align: center;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-container .tooltip {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the text */
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+#sector_list ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline: 0;
+  list-style: none;
+  margin-top: 30px;
+  justify-content: center;
+  width: 900px;
+}
+
+#sector_list ul li {
+  margin: 8px 20px;
+}
+
+.sector-button {
+  list-style: none;
+  background-color: rgb(2, 71, 157);
+  border: none;
+  padding: 6px 6px;
+  border-radius: 18px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.sector-button:hover {
+  border: 2px solid rgb(129, 216, 129);
+  transform: scale(1.2);
+  transition: ease-in 0.3s;
+  color: rgb(129, 216, 129);
+}
+
+.sector-button:focus {
+  border: 2px solid rgb(129, 216, 129);
+  transform: scale(1.2);
+  transition: ease-in 0.3s;
+  color: rgb(129, 216, 129);
+}
+
+#main_challenges_title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#main_challenges_items ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline: 0;
+  list-style: none;
+  margin-top: 25px;
+  justify-content: center;
+  text-align: center;
+}
+
+#main_challenges_items ul li img {
+  width: 90px;
+}
+
+#main_challenges_items ul li:hover{
+  border: 2px solid rgb(129, 216, 129);
+  border-radius: 10px;
+}
+
+figcaption {
+  margin-top: 10px;
+  width: 150px;
+}
+
+#next-button {
+  text-align: center;
+  margin-left: 260px;
+  height: 40px;
+}
+
+button.active{
+  border: 2px solid rgb(129, 216, 129);
+  transform: scale(1.2);
+  transition: ease-in 0.3s;
+  color: rgb(129, 216, 129);
+}
+
+figure.active{
+  border: 2px solid rgb(129, 216, 129);
+  transform: scale(1.2);
+  transition: ease-in 0.3s;
+  color: rgb(129, 216, 129);
+  border-radius: 10px;
+}
+
+figure{
+  cursor: pointer;
+}
+.the-next-button {
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: 4.5rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.the-next-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.visualize_ecv_and_more {
+  margin-left: 20px;
+}
+
+/* Media Queries for Responsiveness */
+
+/*For small screens (phones, 600px and below) */
+@media screen and (max-width: 600px) {
+  .nevermore-top-title {
+    width: 80%;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  #general_description p {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  #sector_list ul {
+    max-width: fit-content;
+  }
+
+  #next-button {
+    margin-left: 0;
+  }
+
+  #navigation_button{
+    justify-content: space-evenly;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+
+  /* Medium screens (tablets, 600px to 1024px) */
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .nevermore-top-title {
+      width: 60%;
+      font-size: 18px;
+      margin-left: 0;
+    }
+
+    .CS-4_MURCIA_REGION_TITLE {
+      margin-left: 50px;
+      font-size: 18px;
+    }
+
+    #general_description p {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    #sector_list ul {
+      max-width: fit-content;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    #next-button {
+      margin-left: 0;
+    }
+
+    #navigation_button{
+      justify-content: space-evenly;
+    }
+
+    .the-next-button {
+      margin-bottom: 4.5rem;
+    }
+  }
+
+
+@media screen and (min-width: 1025px) {
+  .nevermore-top-title {
+    width: 500px;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+
+  .CS-4_MURCIA_REGION_TITLE {
+    margin-left: 150px;
+    font-size: 20px;
+  }
+
+  #next-button {
+    margin-left: 0;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+
+  #navigation_button{
+    justify-content: space-evenly;
+  }
+}

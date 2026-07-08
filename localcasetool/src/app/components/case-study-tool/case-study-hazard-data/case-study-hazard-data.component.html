@@ -1,0 +1,3437 @@
+<div class="wrapper">
+  <div class="header-buttons">
+    <button
+      mat-raised-button
+      [routerLink]="['/help']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-help"
+    >
+      <!-- Help -->
+      {{ "HEADER.HELP" | translate }}
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button-home"
+    >
+      <!-- Tool selection -->
+      Home
+    </button>
+
+    <button
+      mat-raised-button
+      [routerLink]="['/caseStudy']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="header-button"
+    >
+      <!-- Tool selection -->
+      Case Study Tool
+    </button>
+  </div>
+
+  <!-- <div class="intern-wrapper" *ngIf="selectedTitleCase == 'CS4_MURCIA_REGION'">
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div class="header" style="width: 100%; margin-bottom: 1%; margin-left: 5%; color: #465c95; font-size: 3vh; padding-top: 2%;">
+        CS4 - Murcia Region
+      </div>
+      <hr style="height: 1px; display: flex; width: 90%; margin-left: 5%; background-color: #8d8d90;" />
+      <p style="font-weight: bold; font-family: 'Inter', sans-serif !important; margin-left: 5%; margin-top: 3%; font-size: 2vh;">
+        <strong>Main Hazards:</strong>{{hazard_chosen}}
+      </p>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex;">
+          <div class="context" style="font-size: 1vw;
+    display: flex
+;
+    flex-direction: column;
+    width: 45%;
+    margin-left: 5%;
+    margin-right: 5%;
+    line-height: 3vh;
+    align-items: center;">
+
+
+This hazard was calculated using the SPI index. The SPI quantifies the deviation of observed precipitation from the long-term mean for a specific period, standardized by its variability. It expresses how much wetter or drier a given period is compared to what is normally expected. <br><br>
+
+SPI is fundamental for drought monitoring and water resource management. SPI is classified using the following values: 
+<div class="hazard-table" style="margin: 5%;">
+            <img src="assets\images\murcia-region-table-hazard-flood.png" alt="" style="width: 100%;">
+          </div>
+
+          </div>
+          
+         <div class="image-and-select" style="    width: 45%;"> 
+            <div class="selects" style="display: flex
+;
+    justify-content: center;
+    flex-direction: row;">
+            <div style="display: flex;flex-direction: column;margin: 1vh;">
+                <label for="scenario" style="font-size: 2vh;
+    margin-bottom: 0.3vh;">Scenario:</label>
+            <select name="scenario" id="" style="font-size: 2vh;">
+                <option value="">SSP245</option>
+            </select>
+            </div>
+
+            <div style="display: flex;flex-direction: column;margin: 1vh;">
+            <label for="scenario" style="font-size: 2vh;
+    margin-bottom: 0.3vh;">Period:</label>
+
+            <select name="period" id=""  style="font-size: 2vh;">
+                <option value="">
+                    2015-2040
+                </option>
+            </select>
+            </div>
+            </div>
+
+          <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div>
+        </div>
+      </div>
+
+
+
+
+      </div>
+           <button
+            mat-raised-button
+            [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="the_next_button"
+            [disabled]="false"
+            style="margin-top: 4vh"
+          >
+            BACK
+          </button>
+    </div>
+
+  </div> -->
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' && hazard_chosen == 'Drought Days'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS1 - Crete Island
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/draught_focus_img.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the SPI index. The SPI quantifies
+            the deviation of observed precipitation from the long-term mean for
+            a specific period, standardized by its variability. It expresses how
+            much wetter or drier a given period is compared to what is normally
+            expected. SPI is fundamental for drought monitoring and water
+            resource management. SPI is classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\murcia-region-table-hazard-flood.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="selectedTitleCase == 'CS1_CRETE_ISLAND' && hazard_chosen == 'Flood'"
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS1 - Crete Island
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/draught_focus_img.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the River Discharge Return Index.
+            It measures how often river flows exceeds typical levels over a
+            specific period, based on long-term streamflow data. The index helps
+            identify areas more prone to flooding and assess the frequency and
+            intensity of extreme discharge events. It can be measured in cubic
+            meters per second (m3/s) or years (return period). This index is
+            essential for monitoring and preventing floods, is classified using
+            the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\floods-hazard.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+           
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' && hazard_chosen == 'Heatwave'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS1 - Crete Island
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/heatwave-new-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Hot days index. The index
+            measures the number of days when the maximum temperature exceeds
+            30ºC within a given period. It helps identify areas experiencing
+            more frequent or intense heat events, which can impact health,
+            ecosystems, and infrastructures. Hot days index is classified using
+            the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\heatwave-table.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' && hazard_chosen == 'Strong Winds'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS1 - Crete Island
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/strong-winds-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Strong wind days. The index
+            measures the number of days per year when the maximum wind speed
+            exceeds 20 m/s. It helps identify areas exposed to frequent or
+            intense wind events that can cause damage to infrastructure, crops,
+            and ecosystems.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\strong-winds-table.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS1_CRETE_ISLAND' && hazard_chosen == 'Heavy Rain'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS1 - Crete Island
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/heavy-rain-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Heavy rain days. The index
+            measures the number of days when daily precipitation equals or
+            exceeds 20 mm. It indicates how frequently intense rainfall occurs
+            in a given period, helping to assess risks of flooding, soil
+            erosion, and water accumulation.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\heavy-rain-table.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      hazard_chosen == 'Cold Spell'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS2 - Trentino Province
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-trentino-hazard-cold-spell.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the TNx index. The index represents
+            the monthly maximum value of daily minimum temperatures, indicating
+            how cold the lowest night temperatures can get within a month. It
+            helps identify regions exposed to extreme cold events that may
+            affect health, agriculture, and infrastructure. <br /><br />
+
+            TNx is classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets/images/cold-spell-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      hazard_chosen == 'Drought Days'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS2 - Trentino Province
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-draughts-hazard-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the SPI index. The SPI quantifies
+            the deviation of observed precipitation from the long-term mean for
+            a specific period, standardized by its variability. It expresses how
+            much wetter or drier a given period is compared to what is normally
+            expected. <br /><br />
+
+            SPI is fundamental for drought monitoring and water resource
+            management. SPI is classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs2-draughts-hazard-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <div
+              class="graph-image"
+              style="
+                display: flex;
+                justify-content: center;
+                width: -webkit-fill-available;
+              "
+            >
+              <img
+                src="assets\images\cs2-draughts-hazard-scenario-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+
+<div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      hazard_chosen == 'Strong Winds'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS2 - Trentino Province
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/strong-winds-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            
+
+This hazard was calculated using the Strong wind days. The index measures the number of days per year when the maximum wind speed exceeds 20 m/s. It helps identify areas exposed to frequent or intense wind events that can cause damage to infrastructure, crops, and ecosystems.
+
+
+
+
+
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\strong-winds-table.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' && hazard_chosen == 'Flood'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS2 - Trentino Province
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-hazard-floods-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the River Discharge Return Index.
+            It measures how often river flows exceeds typical levels over a
+            specific period, based on long-term streamflow data. The index helps
+            identify areas more prone to flooding and assess the frequency and
+            intensity of extreme discharge events. It can be measured in cubic
+            meters per second (m3/s) or years (return period). <br /><br />
+
+            This index is essential for monitoring and preventing floods, is
+            classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs2-floods-hazard-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' && hazard_chosen == 'Heatwave'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS2 - Trentino Province
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-heatwave-icon-hazard.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Hot days index. The index
+            measures the number of days when the maximum temperature exceeds
+            30ºC within a given period. It helps identify areas experiencing
+            more frequent or intense heat events, which can impact health,
+            ecosystems, and infrastructures. <br /><br />
+
+            Hot days index is classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs2-heatwave-hazard-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      hazard_chosen == 'Heavy Rain'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS2 - Trentino Province
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-heavy-rain-icon-hazard.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Heavy rain days. The index
+            measures the number of days when daily precipitation equals or
+            exceeds 20 mm. It indicates how frequently intense rainfall occurs
+            in a given period, helping to assess risks of flooding, soil
+            erosion, and water accumulation.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs2-heavy-rain-hazard-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS2_TRENTINO_REGION' &&
+      hazard_chosen == 'Snow Season'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS2 - Trentino Province
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-snow-season-icon-hazard.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the snow season duration index. The
+            index measures the total number of days in a year when snow cover is
+            present on the ground. It helps assess how long snowy conditions
+            persist, influencing water availability, ecosystems, and
+            winter-related risks.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs2-snow-season-hazard-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      hazard_chosen == 'Cold Spell'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS3 - Norbotten Country
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs3-cold-spell-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the TNx index. The index represents
+            the monthly maximum value of daily minimum temperatures, indicating
+            how cold the lowest night temperatures can get within a month. It
+            helps identify regions exposed to extreme cold events that may
+            affect health, agriculture, and infrastructure. <br /><br />
+
+            TNx is classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs3-cold-spell-hazard-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' && hazard_chosen == 'Flood'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS3 - Norbotten Country
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-hazard-floods-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the River Discharge Return Index.
+            It measures how often river flows exceeds typical levels over a
+            specific period, based on long-term streamflow data. The index helps
+            identify areas more prone to flooding and assess the frequency and
+            intensity of extreme discharge events. It can be measured in cubic
+            meters per second (m3/s) or years (return period). <br /><br />
+
+            This index is essential for monitoring and preventing floods, is
+            classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs3-floods-hazard-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      hazard_chosen == 'Heatwave'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS3 - Norbotten Country
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-heatwave-icon-hazard.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Hot days index. The index
+            measures the number of days when the maximum temperature exceeds
+            30ºC within a given period. It helps identify areas experiencing
+            more frequent or intense heat events, which can impact health,
+            ecosystems, and infrastructures. <br /><br />
+
+            Hot days index is classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs3-heatwave-graph-hazard.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      hazard_chosen == 'Heavy Rain'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS3 - Norbotten Country
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-heavy-rain-icon-hazard.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Heavy rain days. The index
+            measures the number of days when daily precipitation equals or
+            exceeds 20 mm. It indicates how frequently intense rainfall occurs
+            in a given period, helping to assess risks of flooding, soil
+            erosion, and water accumulation.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs3-heavy-rain-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS3_NORRBOTTEN_COUNTRY' &&
+      hazard_chosen == 'Strong Winds'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS3 - Norbotten Country
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs3-strong-winds-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Strong wind days. The index
+            measures the number of days per year when the maximum wind speed
+            exceeds 20 m/s. It helps identify areas exposed to frequent or
+            intense wind events that can cause damage to infrastructure, crops,
+            and ecosystems.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs3-strong-winds-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="selectedTitleCase == 'CS4_MURCIA_REGION' && hazard_chosen == 'Flood'"
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS4 - Murcia Region
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-hazard-floods-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the River Discharge Return Index.
+            It measures how often river flows exceeds typical levels over a
+            specific period, based on long-term streamflow data. The index helps
+            identify areas more prone to flooding and assess the frequency and
+            intensity of extreme discharge events. It can be measured in cubic
+            meters per second (m3/s) or years (return period). <br /><br />
+
+            This index is essential for monitoring and preventing floods, is
+            classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs4-floods-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      hazard_chosen == 'Drought Days'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS4 - Murcia Region
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/draughts_and_water_scarcity.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the SPI index. The SPI quantifies
+            the deviation of observed precipitation from the long-term mean for
+            a specific period, standardized by its variability. It expresses how
+            much wetter or drier a given period is compared to what is normally
+            expected. <br /><br />
+
+            SPI is fundamental for drought monitoring and water resource
+            management. SPI is classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs4-draught-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' && hazard_chosen == 'Heavy Rain'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS4 - Murcia Region
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs4-heavy-rain-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Heavy rain days. The index
+            measures the number of days when daily precipitation equals or
+            exceeds 20 mm. It indicates how frequently intense rainfall occurs
+            in a given period, helping to assess risks of flooding, soil
+            erosion, and water accumulation.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs4-heavy-rain-icon-hazard.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS4_MURCIA_REGION' &&
+      hazard_chosen == 'Strong Winds'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS4 - Murcia Region
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs3-strong-winds-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Strong wind days. The index
+            measures the number of days per year when the maximum wind speed
+            exceeds 20 m/s. It helps identify areas exposed to frequent or
+            intense wind events that can cause damage to infrastructure, crops,
+            and ecosystems.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs3-strong-winds-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' && hazard_chosen == 'Strong Winds'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS5 - Danube Delta
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs3-strong-winds-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Strong wind days. The index
+            measures the number of days per year when the maximum wind speed
+            exceeds 20 m/s. It helps identify areas exposed to frequent or
+            intense wind events that can cause damage to infrastructure, crops,
+            and ecosystems.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs3-strong-winds-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' && hazard_chosen == 'Drought Days'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS5 - Danube Delta
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-draughts-hazard-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Strong wind days. The index
+            measures the number of days per year when the maximum wind speed
+            exceeds 20 m/s. It helps identify areas exposed to frequent or
+            intense wind events that can cause damage to infrastructure, crops,
+            and ecosystems.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs4-draught-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="selectedTitleCase == 'CS5_DANUBE_DELTA' && hazard_chosen == 'Flood'"
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS5 - Norbotten Country
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-hazard-floods-icon.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the River Discharge Return Index.
+            It measures how often river flows exceeds typical levels over a
+            specific period, based on long-term streamflow data. The index helps
+            identify areas more prone to flooding and assess the frequency and
+            intensity of extreme discharge events. It can be measured in cubic
+            meters per second (m3/s) or years (return period). <br /><br />
+
+            This index is essential for monitoring and preventing floods, is
+            classified using the following values:
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs4-floods-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="intern-wrapper"
+    *ngIf="
+      selectedTitleCase == 'CS5_DANUBE_DELTA' && hazard_chosen == 'Heavy Rain'
+    "
+  >
+    <div style="background-color: white; margin-bottom: 5%; width: 90%">
+      <div
+        class="header"
+        style="
+          width: 100%;
+          margin-bottom: 1%;
+          margin-left: 5%;
+          color: #465c95;
+          font-size: 3vh;
+          padding-top: 2%;
+        "
+      >
+        CS5 - Danube Delta
+      </div>
+      <hr
+        style="
+          height: 1px;
+          display: flex;
+          width: 90%;
+          margin-left: 5%;
+          background-color: #8d8d90;
+        "
+      />
+      <div style="display: flex; align-items: center; margin-left: 5%">
+        <img
+          src="/assets/images/cs2-heavy-rain-icon-hazard.png"
+          style="width: 10vh"
+          alt=""
+        />
+        <p
+          style="
+            font-weight: bold;
+            font-family: &quot;Inter&quot;, sans-serif !important;
+            margin-left: 1%;
+            margin-top: 3%;
+            font-size: 2vh;
+          "
+        >
+          <strong style="font-size: 2.5vh; color: red">Main Hazards: </strong>
+          <span style="color: #465c95"> {{ hazard_chosen }}</span>
+        </p>
+      </div>
+      <div class="sectors-challanges">
+        <div class="context-graph" style="display: flex">
+          <div
+            class="context"
+            style="
+              font-size: 1vw;
+              display: flex;
+              flex-direction: column;
+              width: 45%;
+              margin-left: 5%;
+              margin-right: 5%;
+              line-height: 3vh;
+              align-items: center;
+            "
+          >
+            This hazard was calculated using the Heavy rain days. The index
+            measures the number of days when daily precipitation equals or
+            exceeds 20 mm. It indicates how frequently intense rainfall occurs
+            in a given period, helping to assess risks of flooding, soil
+            erosion, and water accumulation.
+
+            <div class="hazard-table" style="margin: 5%">
+              <img
+                src="assets\images\cs3-heavy-rain-graph.png"
+                alt=""
+                style="width: 100%"
+              />
+            </div>
+          </div>
+
+          <div class="image-and-select" style="width: 45%">
+            <div
+              class="selects"
+              style="
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+              "
+            >
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Scenario:</label
+                >
+                <select name="scenario" id="" style="font-size: 2vh">
+                  <option value="">SSP245</option>
+                </select>
+              </div>
+
+              <div style="display: flex; flex-direction: column; margin: 1vh">
+                <label
+                  for="scenario"
+                  style="font-size: 2vh; margin-bottom: 0.3vh"
+                  >Period:</label
+                >
+
+                <select name="period" id="" style="font-size: 2vh">
+                  <option value="">2015-2040</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="graph-image" style="display: flex; justify-content: center; width: -webkit-fill-available;">
+            <img src="assets\images\murcia-region-water-hazard-image-info.png" alt="" style="width: 50vh; " />
+          </div> -->
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        [routerLink]="[title_case + '/Visualize_ECVs_and_climate_hazards']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="the_next_button"
+        [disabled]="false"
+        style="margin-top: 4vh"
+      >
+        BACK
+      </button>
+    </div>
+  </div>
+</div>
+
+<section class="the_footer">
+  <app-footer class="fixed bottom-0" style="bottom: 0"></app-footer>
+</section>

@@ -1,0 +1,515 @@
+{
+    "HEADER": {
+        "ABOUT_US": "Om oss",
+        "HELP": "Hjälp",
+        "TOOL_SELECTION": "Verktygsval",
+        "LOG_OUT": "Logga ut",
+        "CHANGE_LANGUAGE": "Byt språk",
+        "LANGUAGES": {
+            "ITALIAN": "ITALIENSKA",
+            "ROMANIAN": "RUMÄNSKA",
+            "SWEDISH": "SVENSKA",
+            "GREEK": "GREKISKA",
+            "SPANISH": "SPANSKA",
+            "ENGLISH": "ENGELSKA"
+        }
+    },
+    "FOOTER": {
+        "EU_FUNDING_BY": "Finansierat av",
+        "EU_FUNDING_UNION": "Europeiska unionen",
+        "EU_FUNDING_INFO": "Detta projekt har fått finansiering från Europeiska unionens Horizon forsknings- och innovationsprogram under bidragsavtal nr 101056858"
+    },
+    "HOME_COMPONENT": {
+        "HOME_PAGE_CONTENT_TOOL_DESCRIPTION": {
+            "DESCRIPTION": "Beskrivning",
+            "WELCOME_TITLE": "Välkommen till NEVERMORE ICT Toolkit!",
+            "CATALOGUE_EXPLORER_TITLE": "Katalogutforskare",
+            "EU_SCALE_TOOL_TITLE": "EU-SCALE-verktyg",
+            "CASE_STUDY_TOOL_TITLE": "Verktyg för fallstudier",
+            "GAMIFICATION_TOOL_TITLE": "Gamification-verktyg",
+            "ICT_TOOLS_DESCRIPTION": {
+                "CATALOGUE_EXPLORER_TOOL_DESCRIPTION": "Adaptations- och mitigationskatalogverktyget (A&M) är en integrerad del av NEVERMORE ICT-toolkit. Detta användarvänliga verktyg överensstämmer med kärnprinciperna i ICT-toolkit och syftar till att stärka användarna i att förstå det komplexa samspelet mellan klimatförändringar och anpassnings- och mitigationspolitiker genom en användarvänlig och interaktiv gränssnitt. Verktyget är utformat för att tillhandahålla en katalog med lösningar relaterade till klimatanpassning och mitigering. Det omfattar en översyn av sektorsövergripande åtgärder som redan har satts i verket, potentiella lösningar som identifierats genom litteraturforskning och scenarier som utvecklats i samarbete med lokala råd och intressenter.",
+                "GAMIFICATION_TOOL_DESCRIPTION": "Huvudsyftet med NEVERMORE-gamification-verktyget är att skapa medvetenhet om klimatförändringar. Det utvecklas som ett pedagogiskt simuleringsspel där spelare utforskar olika lösningar för att bekämpa och anpassa sig till klimatförändringarnas påverkan. Spelet lär spelarna om klimatförändringarnas påverkan samtidigt som det inspirerar hopp och motiverar användarna att agera och hitta effektiva lösningar som kommer att bidra till att definiera en grönare, bättre anpassad och säkrare framtid. Spelarna måste genomföra två olika uppdrag för att slutföra spelet.",
+                "CASE_STUDY_TOOL_DESCRIPTION": "NEVERMORE-fallstudievertyget kommer att vara en mjukvarukomponent som låter användare välja en fallstudie och visa de huvudsakliga klimatförändringspåverkan, sårbarheter och risker. Den tillhandahållna informationen kommer att vara användbar för att skapa olika anpassnings- och mitigationspolitiska åtgärdsscenarier baserade på åtgärder valda av användaren från A&M-katalogen på lokal nivå.",
+                "EU_SCALE_TOOL": "Syftet med verktyget är att bli ett “policy-making tool” som kan erbjuda relevanta politiska rekommendationer. Verktyget kommer att använda försimulerade dataresultat från en integrerad bedömningsmodell (IAM) för att minska komplexiteten genom att minska graden av frihet för klientens inmatningsvariabler. Denna filtrering och reduktion av inmatningar kommer att göras med hjälp av intressenternas kunskap."
+            }
+        },
+        "HOME_PAGE_TOOL_SELECTION": {
+            "CONFIRM_SELECTION": "Bekräfta val",
+            "TOOL_SELECTION": "Verktygsval",
+            "EU_SCALE_TOOL_SELECTOR": "EU-SCALE-verktyg",
+            "CATALOGUE_EXPLORER_TOOL_SELECTOR": "Katalogutforskare",
+            "CASE_STUDY_TOOL_SELECTOR": "Verktyg för fallstudier",
+            "GAMIFICATION_TOOL_SELECTOR": "Gamification-verktyg"
+        }
+    },
+    "EU_SCALE_TOOL_COMPONENT": {
+        "WELCOME_EU_SCALE_TOOL_TITLE": "Välkommen till EU-SCALE-verktygssidan",
+        "EU_SCALE_TOOL_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "CATALOGUE_EXPLORER_COMPONENT": {
+        "WELCOME_CATALOGUE_EXPLORER": "Välkommen till katalogutforskarens sida",
+        "CATALOGUE_EXPLORER_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "HELP_COMPONENT": {
+        "HELP_EXPLORER": "Välkommen till hjälpsidan",
+        "HELP_SHORT_INFO": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum."
+    },
+    "CASE_STUDY_TOOL_COMPONENT": {
+        "THE_CASE_STUDY_TOOL_TITLE": "VERKTYG FÖR FALLSTUDIER",
+        "WELCOME_CASE_STUDY_TOOL": "Välkommen till NEVERMOREs verktyg för fallstudier",
+        "CASE_STUDY_TOOL_INFO": "Verktyget gör det möjligt att utvärdera klimatförändringarnas påverkan, sårbarheter och risker. Därefter kommer vissa politiska rekommendationer att ges enligt dina fördefinierade risker, expertis och intressen. Som resultat kommer indikatorer för mitigering och anpassning att tillhandahållas för att utvärdera effekterna av policyval.",
+        "CASE_STUDY_TOOL_SELECT_CASE_STUDY": "Välj en fallstudie för att genomföra din bedömning!",
+        "SELECT_YOUR_CASE_STUDY": "Välj din fallstudie",
+        "CS1_CRETE_ISLAND": "CS1-Kreta",
+        "CS2_TRENTINO_REGION": "CS2-Trentino-regionen",
+        "CS3_NORRBOTTEN_COUNTRY": "CS3-Norrbotten",
+        "CS4_MURCIA_REGION": "CS4-Murcia-regionen",
+        "CS5_DANUBE_DELTA": "CS5-Donau-deltat",
+        "NAVIGATION_ADVICE": "#För att gå till den önskade fallstudien, tryck på studiens namn",
+        "MURCIA_REGION_COMPONENT": {
+            "SECTION_DESCRIPTION": "I den här sektionen hittar du en allmän beskrivning av denna fallstudie och relevant information om prioriterade sektorer och utmaningar som ska täckas under anpassnings- och mitigationsbedömningen.",
+            "MORE_INFO": "Mer information>>>",
+            "SECTOR_INFO": "Klicka på en sektor för att veta mer information!",
+            "AGRICULTURE_FORESTRY_AND_FISHING": "Jordbruk, skogsbruk och fiske",
+            "WATER_AND_WASTE": "Vatten och avfall",
+            "INDUSTRY_AND_COMMERCE": "Industri och handel",
+            "TOURISM": "Turism, fritid och kulturarv",
+            "ENERGY":"Energia",
+            "MAIN_CHALLENGES": "Huvudutmaningar",
+            "DESERTIFICATION": "Ökenspridning på grund av jordförstöring",
+            "SUSTAINABLE_WATER_MANAGEMENT": "Hållbar vattenförvaltning",
+            "AGRICULTURAL_PRODUCTION": "Jordbruksproduktion",
+            "VISUALIZE_ECV": "Visualisera ECV:er och klimatrisker >>>",
+            "ECVS_COMPONENT": {
+                "ESSENTIAL_ECVS": "Väsentliga klimatvariabler (ECVs)",
+                "ECV_DOC": "ECV-dokumentation",
+                "ECV_GRAPH_SELECTION": "Välj en typ av graf",
+                "MAIN_HAZARDS": "Huvudsakliga risker. Klicka på var och en för att veta mer information",
+                "SEA_LEVEL_RAISE": "Havsnivåhöjning",
+                "FLOODING": "Översvämningar",
+                "DROUGHTS_AND_WATER_SCARCITY": "Torka och vattenbrist",
+                "SOIL_EROSION": "Jorderosion",
+                "HEATING_AND_COOLING_DEMAND": "Uppvärmnings- och kylbehov",
+                "CROP_PRODUCTION": "Grödproduktion",
+                "BIODIVERSITY_LOSS": "Förlust av biologisk mångfald",
+                "EXPLORE_ASSETS_AND_RISKS": "Utforska tillgångar, sårbarheter och risker >>"
+            },
+            "ASSETS_AND_RISKS_COMPONENT": {
+                "ASSETS_AND_RISKS_TITLE": "Tillgångar, sårbarheter och risker",
+                "TOPIC_SELECTION": "Ämne",
+                "SECTOR_SELECTION": "Sektor",
+                "HAZARD_SELECTION": "Risk",
+                "TOPIC_OPTIONS": "Välj ett ämne",
+                "SECTOR_OPTIONS": "Välj en sektor",
+                "HAZARD_OPTIONS": "Välj en risk",
+                "VULNERABILITY": "Sårbarhet",
+                "AGRICULTURE": "Jordbruk",
+                "DROUGHTS": "Torka",
+                "DESCRIPTION": "Beskrivning",
+                "DESCRIPTION_BOX": "I denna ruta kommer information relaterad till sårbarhetsbedömningen att tillhandahållas. Det kommer att inkludera de olika komponenterna som används för att karakterisera sårbarheten, inklusive antalet påverkade tillgångar, de huvudsakliga riskerna och de indikatorer som används i bedömningsförfarandet",
+                "DOWNLOAD_MAP": "Ladda ner karta",
+                "SECTORAL_COMPARISON": "Sektorjämförelse >>>"
+            },
+            "SECTORAL_COMPARISON_COMPONENT": {
+                "VULNERABILITIES_AND_RISKS": "Sårbarheter och risker - Sektorjämförelse av risker",
+                "HAZARD_SELECTION": "Risk",
+                "HAZARD_OPTIONS": "Välj en risk",
+                "DROUGHTS": "Torka",
+                "VULNERABILITIES": "Sårbarheter",
+                "RISK": "Risk",
+                "POLICY_PRIORITIES": "Politiska Prioriteringar >>"
+            },
+            "POLICY_PRIORITIES_COMPONENT": {
+                "POLICY_PRIORITIES_TITLE": "Politiska Prioriteringar",
+                "WHAT_ARE_YOUR_OBJ": "Vad är dina mål och prioriteringar?",
+                "PROVIDE_INPUTS": "Ge dina inmatningar för att få de anpassnings- och mitigationsåtgärder som är mer relaterade till fallstudien och relaterade risker.",
+                "MAIN_SECTOR_SELECTOR": {
+                    "SELECT_MAIN_SECTOR": "Välj de huvudsakliga sektorerna att utvärdera",
+                    "AGRICULTURE": "Jordbruk",
+                    "TURISM": "Turism",
+                    "WATER": "Vatten"
+                },
+                "MAIN_PRIORITIES_SELECTOR": {
+                    "SELECT_MAIN_PRIORITIES": "Välj prioriteringar och mål",
+                    "WATER_SECURITY": "Vattensäkerhet",
+                    "WELL_BEING": "Välmående",
+                    "ENERGY_SECURITY": "Energisäkerhet",
+                    "JOB_CREATION": "Jobbskapande"
+                },
+                "ADAPTATION_AND_MITIGATION_SELECTOR": {
+                    "SELECT_ADAPTATION_AND_MITIGATION": "Anpassning och Mitigation",
+                    "ADAPTAION": "Anpassning",
+                    "MITIGATION": "Mitigation"
+                },
+                "PROVIDE_RANK": {
+                    "SELECT_PROVIDE_RANK": "Vänligen ange en rangordning för de tidigare valda målen",
+                    "1)WATER_SCARCITY": "1. Vattensäkerhet",
+                    "2)WELL_BEING": "2. Välmående"
+                },
+                "RECOMMENDED_POLICIES": "Rekommenderade Politiska Åtgärder >>"
+            },
+            "RECOMMENDED_POLICIES_COMPONENT": {
+                "RECOMMENDED_POLICIES_TITLE": "Rekommenderade Politiska Åtgärder",
+                "SET_OF_RECOMMENDED_POLICIES": "Enligt dina tidigare definierade kriterier, är detta uppsättningen av rekommenderade politiska åtgärder som ska tillämpas i fallstudien för att anpassa sig till klimatförändringar.",
+                "IMPROVE_WATER_STORAGE_TANKS": {
+                    "MAIN_OBJECTIVE": "Förbättra vattenlagringstankar",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Denna policy kan tillämpas på vattenlagringstankar..",
+                        "OPTION2": "Kostnaden för denna policy...",
+                        "OPTION3": "Fördelarna är...."
+                    }
+                },
+                "IMPROVE_DESALINATION_PLANTS": {
+                    "MAIN_OBJECTIVE": "Förbättra avsaltningsanläggningar",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Denna policy kan tillämpas på avsaltningsanläggningar..",
+                        "OPTION2": "Kostnaden för denna policy...",
+                        "OPTION3": "Fördelarna är...."
+                    }
+                },
+                "IMPROVE_WATER_SAVINGS_AT_HOUSEHOLD_LEVEL": {
+                    "MAIN_OBJECTIVE": "Förbättra vattenbesparingar på hushållsnivå",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Denna policy kan tillämpas på vattenbesparingar på hushållsnivå..",
+                        "OPTION2": "Kostnaden för denna policy...",
+                        "OPTION3": "Fördelarna är...."
+                    }
+                },
+                "IMPROVE_PATTERN_IN_AGRICULTURE": {
+                    "MAIN_OBJECTIVE": "Förbättra mönster i jordbruket",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Denna policy kan tillämpas på mönster i jordbruket..",
+                        "OPTION2": "Kostnaden för denna policy...",
+                        "OPTION3": "Fördelarna är...."
+                    }
+                },
+                "IMPROVE_REFORESTATION_WITH_ADAPTED_SPICIES": {
+                    "MAIN_OBJECTIVE": "Förbättra återbeskogning med anpassade arter",
+                    "POLICY_DESCRIPTION": {
+                        "OPTION1": "Denna policy kan tillämpas på återbeskogning med anpassade arter..",
+                        "OPTION2": "Kostnaden för denna policy...",
+                        "OPTION3": "Fördelarna är...."
+                    }
+                }
+            }
+        }
+    },
+    "GAMIFICATION_TOOL_COMPONENT": {
+        "THE_GAMIFICATION_TOOL_TITLE": "GAMIFICATION-VERKTYG",
+        "WELCOME_TO_GAMIFICATION_TOOL": "Välkommen till NEVERMORE gamification-verktyget!",
+        "GAMIFICATION_TOOL_INFO": "Spelet lär spelarna om effekterna av klimatförändringar samtidigt som det inspirerar hopp och motiverar användare att agera och hitta effektiva lösningar som kommer att bidra till att definiera en grönare, bättre anpassad och säkrare framtid. Spelarna måste slutföra två olika uppdrag för att slutföra spelet. I uppdrag 1 kommer spelarna att utforska vägar för att minska utsläppen av växthusgaser (GHG) genom att tillämpa lösningar. Beslut i uppdrag 1 kommer att leda spelarna till ett hög-, medel- eller lågkarbonscenario i uppdrag 2. I uppdrag 2 kommer spelarna att kunna välja en av de fem NEVERMORE fallstudierna (berg, Medelhavet, boreal, ö och översvämning) och måste agera för att förbereda samhällena för effekterna av klimatförändringar.",
+        "CHOOSING_OPTION_INFO": "Spelet kan utföras som en enskild spelare eller i grupper. Välj ditt alternativ!",
+        "SINGLE_PLAYER_OPTION_INFO": "Spela spelet som en enskild användare",
+        "GROUP_OPTION_INFO": "Använd spelet för gruppdynamik",
+        "SINGLE_PLAYER": {
+            "SINGLE_PLAYER_GAMIFICATION_TOOL_TITLE": "UPPDRAG 1: MINSKNING AV KLIMATFÖRÄNDRINGAR",
+            "ROLE_SELECTION": "Välj din roll",
+            "ENERGY_EXPERT": "Energi Expert",
+            "ENVIRONMENTAL_EXPERT": "Miljöexpert",
+            "ECONOMY_EXPERT": "Ekonomi Expert",
+            "SOCIAL_EXPERT": "Social Expert",
+            "SELECTION_KEY_INFO": "*Detta val är avgörande för att ge dig användbara policyrekommendationer innan genomförandet",
+            "POLICY_RECOMMENDATION_COMPONENT": {
+                "PROVIDE_INPUTS_FOR_QUESTIONS": "Ge dina svar på följande frågor",
+                "QUESTIONNARE": {
+                    "QUESTION_1": {
+                        "THE_QUESTION": "1. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_2": {
+                        "THE_QUESTION": "2. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_3": {
+                        "THE_QUESTION": "3. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_4": {
+                        "THE_QUESTION": "4. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_5": {
+                        "THE_QUESTION": "5. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_6": {
+                        "THE_QUESTION": "6. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_7": {
+                        "THE_QUESTION": "7. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_8": {
+                        "THE_QUESTION": "8. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_9": {
+                        "THE_QUESTION": "9. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_10": {
+                        "THE_QUESTION": "10. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    }
+                },
+                "NEXT_QUESTION": "Nästa fråga",
+                "PROFILE_SELECTION_RECOMMANDATION": "*Enligt din profil (Energiexpert), skulle det mest lämpliga valet vara att tillämpa en politik som genererar en stor förändring i transportefterfrågans lägen."
+            },
+            "RECOMMANDATION_GRAPH_DATA_COMPONENT": {
+                "GRAPH_OPTIONS": {
+                    "OPTION_1": "CO2-utsläpp per capita",
+                    "OPTION_2": "Alternativ 2",
+                    "OPTION_3": "Alternativ 3",
+                    "OPTION_4": "Alternativ 4"
+                },
+                "TEMPERATURE_STATUS": "Temperaturökningar:",
+                "CONTINUE_TO_MISSION_2": "Fortsätt till MISSION 2 >>"
+            },
+            "MISSION_2_COMPONENT": {
+                "MISSION_2_TITLE": "MISSION 2: ANPASSNING TILL KLIMATFÖRÄNDRINGAR",
+                "SELECT_CASE_STUDY": "Välj ditt verktyg för fallstudie",
+                "SEA_LEVEL_RAISE": "Höjning av havsnivå",
+                "FLOODING": "Översvämningar",
+                "DROUGHTS_AND_WATER_SCARCITY": "Torka och vattenbrist",
+                "SOIL_EROSION": "Jorderosion",
+                "HEATING_AND_COOLING_DEMAND": "Uppvärmnings- och kylbehov",
+                "CROP_PRODUCTION": "Grödproduktion",
+                "BIODIVERSITY_LOSS": "Förlust av biologisk mångfald",
+                "CS1_CRETE_ISLAND": "CS1-Kreta",
+                "CS2_TRENTINO_REGION": "CS2-Trentino-regionen",
+                "CS3_NORRBOTTEN_COUNTRY": "CS3-Norrbotten",
+                "CS4_MURCIA_REGION": "CS4-Murcia-regionen",
+                "CS5_DANUBE_DELTA": "CS5-Donau-deltat",
+                "SELECT_MAIN_HAZARD_FOR_ADAPT": "Välj den huvudsakliga risken du vill anpassa dig till"
+            },
+            "CLIMATE_CHANGE_ADAPTATION_COMPONENT": {
+                "MONEY_AMOUNT_FOR_MEASURES": "Detta är din initiala mängd pengar för att genomföra åtgärder",
+                "IMPLEMENT_WATER_STORAGE_TANKS": "Implementera vattentankar för lagring.",
+                "DESALINATION_PLANTS": "Bygga nya avsaltningsanläggningar.",
+                "WATER_SAVINGS": "Förbättra vattenbesparing på hushållsnivå.",
+                "CHANGES_IN_AGRICULTURE": "Ändra användningsmönster i jordbruket.",
+                "REFORESTATION": "Återbeskogning med anpassade arter."
+            }
+        },
+        "BY_GROUP": {
+            "MISSION_1": "MISSION 1: MINSKNING AV KLIMATFÖRÄNDRINGAR",
+            "SELECT_TEAM": "Välj ditt lag",
+            "CHOOSE_TEAM": "*Välj Lag 1",
+            "TEAM_1": "Lag 1",
+            "TEAM_2": "Lag 2",
+            "TEAM_3": "Lag 3",
+            "SELECT_ROLE": "Välj din roll",
+            "ENERGY_EXPERT": "Energi Expert",
+            "ENVIRONMENTAL_EXPERT": "Miljöexpert",
+            "ECONOMY_EXPERT": "Ekonomi Expert",
+            "SOCIAL_EXPERT": "Social Expert",
+            "SELECTION_INFO": "*Detta val är avgörande för att ge dig användbara policyrekommendationer innan genomförandet",
+            "POLICY_RECOMMENDATION_COMPONENT": {
+                "PROVIDE_INPUTS_FOR_QUESTIONS": "Ge dina svar på följande frågor",
+                "QUESTIONNARE": {
+                    "QUESTION_1": {
+                        "THE_QUESTION": "1. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_2": {
+                        "THE_QUESTION": "2. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_3": {
+                        "THE_QUESTION": "3. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_4": {
+                        "THE_QUESTION": "4. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_5": {
+                        "THE_QUESTION": "5. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_6": {
+                        "THE_QUESTION": "6. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_7": {
+                        "THE_QUESTION": "7. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_8": {
+                        "THE_QUESTION": "8. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_9": {
+                        "THE_QUESTION": "9. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    },
+                    "QUESTION_10": {
+                        "THE_QUESTION": "10. Enligt dina kunskaper, anser du att det är nödvändigt att tillämpa politik som påverkar transportefterfrågan i deltagarmodellen?",
+                        "ANSWERS": {
+                            "ANSWER_1": "1. Policy för att ändra transportandel är inte nödvändig",
+                            "ANSWER_2": "2. Det är nödvändigt att genomföra en policy med medelvärden",
+                            "ANSWER_3": "3. Det är nödvändigt att genomföra en policy med höga värden"
+                        }
+                    }
+                },
+                "CHAT": {
+                    "THE_CHAT": "Chatt",
+                    "PLAYER_1": "Det bästa alternativet är politik ett",
+                    "PLAYER_2": "Det bästa alternativet är politik två",
+                    "PLAYER_3": "Det mest genomförbara är politik tre",
+                    "PLAYER_2_ANSWER": "Vi måste ha en överenskommelse",
+                    "PLAYER_3_ANSWER": "Låt oss alla välja politik två"
+                },
+                "NEXT_QUESTION": "Nästa fråga",
+                "PROFILE_SELECTION_RECOMMANDATION": "*Enligt din profil (Energiexpert), skulle det mest lämpliga valet vara att tillämpa en politik som genererar en stor förändring i transportefterfrågans lägen."
+            },
+            "RECOMMANDATION_GRAPH_DATA_COMPONENT": {
+                "TEAM_1_RESULTS": "RESULTAT FÖR LAG 1",
+                "CHOOSE_A_GRAPH": "Välj ett diagram",
+                "GRAPH_OPTIONS": {
+                    "OPTION_1": "CO2-utsläpp per capita",
+                    "OPTION_2": "Alternativ 2"
+                },
+                "SELECTION_INFO": "*Detta val är avgörande för att ge dig användbara policyrekommendationer innan genomförandet"
+            },
+            "COMPARISON_OF_RESULTS_COMPONENT": {
+                "TITLE": "JÄMFÖRELSE AV RESULTAT",
+                "TEAMS": {
+                    "TEAM_1": "LAG 1",
+                    "TEAM_2": "LAG 2",
+                    "TEAM_3": "LAG 3",
+                    "TEAM_4": "LAG 4"
+                },
+                "TEMPERATURE_STATUS": "Temperaturökningar:",
+                "CONTINUE_TO_MISSION_2": "Fortsätt till MISSION 2>>"
+            },
+            "CLIMATE_CHANGE_ADAPTATION_FOR_GROUPS_COMPONENT": {
+                "TITLE": "MISSION 2: ANPASSNING TILL KLIMATFÖRÄNDRINGAR",
+                "SELECT_YOUR_CASE_STUDY_TOOL": "Välj ditt verktyg för fallstudie",
+                "CASE_STUDY_TOOL_SELECTION_ADVISE": "*Välj CS4-Murcia-regionen",
+                "CS1_CRETE_ISLAND": "CS1-Kreta",
+                "CS2_TRENTINO_REGION": "CS2-Trentino-regionen",
+                "CS3_NORRBOTTEN_COUNTRY": "CS3-Norrbotten",
+                "CS4_MURCIA_REGION": "CS4-Murcia-regionen",
+                "CS5_DANUBE_DELTA": "CS5-Donau-deltat",
+                "SELECT_MAIN_HAZARD_FOR_ADAPT": "Välj den huvudsakliga risken du vill anpassa dig till",
+                "MAIN_HAZARD_SELECTION_ADVISE": "*Välj “Torka och vattenbrist”",
+                "SEA_LEVEL_RAISE": "Havsnivåhöjning",
+                "FLOODING": "Översvämningar",
+                "DROUGHTS_AND_WATER_SCARCITY": "Torka och vattenbrist",
+                "SOIL_EROSION": "Jorderosion",
+                "HEATING_AND_COOLING_DEMAND": "Uppvärmnings- och kylbehov",
+                "CROP_PRODUCTION": "Grödproduktion",
+                "BIODIVERSITY_LOSS": "Förlust av biologisk mångfald"
+            },
+            "CLIMATE_CHANGE_GAME_FOR_GROUPS_COMPONENT": {
+                "MONEY_AMOUNT_FOR_MEASURES": "Detta är din initiala mängd pengar för att genomföra åtgärder",
+                "IMPLEMENT_WATER_STORAGE_TANKS": "Implementera vattentankar för lagring.",
+                "DESALINATION_PLANTS": "Bygga nya avsaltningsanläggningar.",
+                "WATER_SAVINGS": "Förbättra vattenbesparing på hushållsnivå.",
+                "CHANGES_IN_AGRICULTURE": "Ändra användningsmönster i jordbruket.",
+                "REFORESTATION": "Återbeskogning med anpassade arter.",
+                "CHAT": {
+                    "THE_CHAT": "Chatt",
+                    "PLAYER_1": "Vi kan välja att förbättra 'Förbättra vattenbesparing'",
+                    "PLAYER_2": "Jag håller med",
+                    "PLAYER_3": "Jag också",
+                    "PLAYER_2_ANSWER": "Vad sägs om återbeskogning?",
+                    "PLAYER_3_ANSWER": "Det är också ett bra val"
+                }
+            },
+            "COMPARISON_OF_RESULTS_FOR_GROUPS_COMPONENT": {
+                "TITLE": "JÄMFÖRELSE AV RESULTAT",
+                "CHOSEN_CASE": "Fallstudie: CS4-Murcia-regionen / Risk: Torka och vattenbrist",
+                "TEAMS": {
+                    "TEAM_1": "LAG 1",
+                    "TEAM_2": "LAG 2",
+                    "TEAM_3": "LAG 3",
+                    "TEAM_4": "LAG 4"
+                },
+                "TOTAL_INVESTMENT": "Totalt investerat: 30",
+                "COST_OF_INACTION": "Kostnad för inaktivitet: 60",
+                "BENEFITS": "Fördelar: 30",
+                "WINNER": "VINNARE"
+            }
+        }
+    }
+}

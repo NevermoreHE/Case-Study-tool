@@ -1,0 +1,115 @@
+<div class="external-container">
+    <div class="wrapper">
+        <div class="header-wrapper">
+
+<button
+    mat-raised-button
+    [routerLink]="['/aboutUsInfo']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- About us -->
+    About Us
+  </button>
+
+        <button
+    mat-raised-button
+    [routerLink]="['/helpInfo']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- About us -->
+    Help
+  </button>
+
+  <button
+    mat-raised-button
+    [routerLink]="['/auth']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    <!-- Help -->
+    Log In
+  </button>
+
+  <button
+    mat-raised-button
+    [routerLink]="['/auth']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button"
+  >
+    Register
+  </button>
+  </div>
+           <div class="nevermore-logo"> <img src="/assets/logos/logo.png" /></div>
+
+      <div class="login-content-wrapper">
+        <div class="welcome-info">
+          <!-- <h1>Welcome to NEVERMORE ICT Toolkit!</h1> -->
+
+
+          <div class="tool-selection-description" style="font-size: 2.5vh;
+    padding: 4vh;
+    border-radius: 3vh;
+    text-align: left;">
+            
+<h1 style="color:#465C95">The Catalogue Tool</h1>
+            
+         <p>
+
+The catalogue tool is developed as a user-friendly interface to explore mitigation and adaptation solutions at different scales using the NEVERMORE Catalogue developed in WP5. The catalogue of policies, covers different scales following a hierarchical structure for a more efficient exploration of the solutions. Under this hierarchical structure, solutions are organized in primary and secondary sectors. <br><br>
+
+NEVERMORE technical partners have identified and collected some climate-related policy documents covering different policy sectors (e.g., agricultural, energy, tourism, etc.) at the EU and global levels. Similarly, Case Study leaders were asked to provide CMCC with local policies. 
+From those policy documents, CMCC in collaboration with the technical partners has extracted some relevant adaptation and mitigation measures that were consolidated and then analysed. Thanks to the analysis, the catalogue integrates the following information: <br><br></p>
+<div style="display: flex;
+    width: 90%;
+    margin-left: 5%;
+    align-items: center;">
+    <div style="font-size: 2vh;
+  line-height: 1.5;
+  width: 90%;
+  margin: 20px auto;">
+·         The measure description. <br>
+·         The scope of the measure (whether it is adaptation or mitigation). <br>
+·         The type of measure (if it is land management, for example, or risk management). <br>
+·         The actors involved. <br>
+·         To what SDGs it contributes. <br>
+·         Adaptation and mitigation potentials. <br>
+·         Synergies and trade-offs between policies and measures. <br>
+·         Drivers and barriers to their applications. <br>
+</div>
+<div><img src="/assets/images/the_catalogue_tool_img.png" alt=""></div>
+</div>
+<p>
+The catalogue that can be used through the tool is developed as an Excel file and as a PostgreSQL relational database for the integration with the others tools of NEVERMORE and to be available for other projects through API protocol allowing that its functionalities can be reused by other application or software. <br><br>
+
+To explore the catalogue using the tool, a tree is built representing the interlinkages between measures/policies and sectors. The user can navigate through the different sectors by collapsing or expanding the relationship tree to reach the measure about which they want to know more information. On the tool panel, the user will have some basic information about the measures, and then, if the user wants to have more information, there will be a fact sheet available to download with a more detailed explanation of each specific measures. In the fact sheet, you can find all the information per measure as it was collected in the database. <br><br>
+
+Policies and measures will then be simulated and evaluated in the EU and Local tools.</p>
+            <!-- <p style="font-weight: 800; font-size: 17px;color: #003399;">{{tools[selectedToolIndex].name}} Description</p>
+            <p>{{tools[selectedToolIndex].description}}</p> -->
+            <div style="display: flex;justify-content: flex-end;">
+            <button mat-raised-button
+    [routerLink]="['/auth']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="header-button-return">Return</button>
+            </div>
+          </div>
+          <!-- <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus fugit cupiditate quaerat! Voluptate iure sint quidem alias pariatur obcaecati eaque inventore tempora non, harum repellendus accusamus quos fugit ab assumenda sapiente voluptatem, et laudantium laboriosam, rerum mollitia reiciendis nihil? Eius et soluta impedit, esse iure minus quis porro! Sequi deserunt, praesentium temporibus quis nemo voluptatem quaerat quibusdam voluptatum.
+          </p> -->
+        </div>
+        
+        
+          
+      </div>
+    </div>
+    <div class="the_footer">
+    <app-footer class="fixed bottom-0"></app-footer></div>
+  </div>
+  

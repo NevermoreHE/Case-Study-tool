@@ -1,0 +1,276 @@
+
+html,body {
+  min-height: 100vh;
+  background-color: white;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.nevermore_top_icon img {
+  width: 100px;
+  height: 40px;
+}
+
+.nav-button {
+  background-color: rgb(129, 216, 129);
+  width: 50px;
+  height: 26.4px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 9px;
+  color: rgb(40, 140, 241);
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+.mission_tool {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10%;
+
+  /* margin-left: 350px; */
+  font-weight: 600;
+}
+
+/* .nevermore-top-title {
+    background-color: rgb(129, 216, 129);
+    margin-left: 30px;
+    padding: 4px 4px;
+    width: 500px;
+    border: none;
+    border-radius: 9px;
+    display: inline-block;
+    text-align: center;
+    color: rgb(40, 140, 241);
+  } */
+
+.nevermore-top-title {
+  /* background-color: rgb(129, 216, 129); */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  padding: 4px 4px;
+  width: 500px;
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #465c95;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+#roles {
+  text-align: center;
+  justify-items: center;
+  margin-top: 50px;
+}
+
+#roles_list {
+  display: flex;
+}
+
+#roles ul {
+  list-style: none;
+}
+
+#roles ul li {
+  margin: 20px 20px;
+}
+
+#roles ul li:hover {
+  border: 2px solid red;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#roles ul li:focus {
+  border: 2px solid red;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#roles img {
+  height: 100px;
+}
+
+#next-button {
+  text-align: center;
+  height: 40px;
+  margin-top: 40px;
+}
+
+.the-next-button {
+  background-color: rgb(129, 216, 129);
+  border: none;
+  padding: 4px 4px;
+  border-radius: 15px;
+  font-size: 16px;
+  padding: 8px 10px;
+  cursor: pointer;
+  width: 100px;
+  margin-bottom: 4.5rem;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.the-next-button:hover {
+  border: 2px solid rgb(40, 140, 241);
+  color: rgb(40, 140, 241);
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+  font-weight: bold;
+}
+
+#graph_selection select {
+  height: 30px;
+  font-size: 15px;
+  width: 400px;
+  margin-left: 200px;
+  margin-top: 30px;
+}
+
+.content {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #b9f;
+}
+
+#graph_and_icon_data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.continue_to_next_page_info{
+margin-left: 40px;
+}
+
+.the_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  #navigation_button {
+    flex-direction: column;
+  }
+
+  .nevermore-top-title {
+    width: 100%;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .mission_tool {
+    /* width: 100%; */
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: none;
+  }
+
+  #graph_selection {
+    text-align: center;
+  }
+
+  #graph_selection select {
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .temperature_graph_image {
+    /* flex-direction: column; */
+    width: 100%;
+    max-width: fit-content;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+
+  #next-button {
+    bottom: 0;
+  }
+
+}
+  /* Medium screens (tablets, 600px to 1024px) */
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .nevermore-top-title {
+      width: 100%;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  
+  .mission_tool {
+    /* width: 100%; */
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin: none;
+  }
+
+  #graph_selection {
+    text-align: center;
+  }
+
+  #graph_selection select {
+    margin-left: 0px;
+    text-align: center;
+  }
+
+  .temperature_graph_image {
+    /* flex-direction: column; */
+    width: 100%;
+    max-width: fit-content;
+  }
+
+  .the-next-button {
+    margin-bottom: 4.5rem;
+  }
+}
+
+  @media screen and (min-width: 1025px) {
+    .nevermore-top-title {
+      width: 100%;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+
+    .mission_tool{
+      width: 100%;
+    }
+
+    .the-next-button {
+      margin-bottom: 4.5rem;
+    }
+
+    #next-button p{
+      margin-left: 0px;
+    }
+
+    .continue_to_next_page_info{
+      margin-left: 0px;
+      }
+  }
